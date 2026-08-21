@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/commands/transfer-resource.command.schema.json",
+  "title": "Transfer Resource Command",
+  "allOf": [
+    {
+      "$ref": "https://awg.local/contracts/commands/base-command.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "command_type": {
+          "const": "TransferResource"
+        },
+        "from_holder_id": {
+          "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+        },
+        "to_holder_id": {
+          "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+        },
+        "resource_type": {
+          "enum": [
+            "token",
+            "meal",
+            "unique_asset"
+          ]
+        },
+        "quantity": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "asset_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "command_type",
+        "from_holder_id",
+        "to_holder_id",
+        "resource_type",
+        "quantity"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

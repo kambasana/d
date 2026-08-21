@@ -79,6 +79,14 @@ make mvp1
 
 This bounded fixture is implementation evidence, not a validated model of a real population or approval to redistribute candidate external components.
 
+## Run the MVP 2 classical NPC profile
+
+```bash
+make mvp2
+```
+
+Agents use needs, utility scoring, action channels, households/organizations, resource conservation, and perception gating. No LLM is imported or required.
+
 ## Completeness model
 
 The pack is considered structurally complete only when the manifest, authored files, YAML registers, generated indexes, schemas, examples, tests, checksums, and release archives agree. A passed build does not mean that every draft normative decision has received human approval; document status is tracked separately from structural completeness.

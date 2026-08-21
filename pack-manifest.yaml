@@ -74,12 +74,14 @@ required_scripts:
 - scripts/entrypoint.py
 - scripts/build_mvp1_pmtiles.py
 - scripts/run_mvp1.py
+- scripts/run_mvp2.py
 required_tests:
 - tests/test_pack.py
 - tests/test_contracts.py
 - tests/test_traceability.py
 - tests/test_mvp0_invariants.py
 - tests/test_mvp1_district.py
+- tests/test_mvp2_npc.py
 documents:
 - document_id: AWG-VIS-001
   path: docs/00-vision-and-research/product-vision.md

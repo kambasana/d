@@ -95,6 +95,21 @@ Use the cheapest reliable mechanism first:
 
 LLM calls should occur at novelty boundaries, not every simulation tick.
 
+## MVP 2 classical reference
+
+`awg_mvp2.NpcKernel` is the executable classical stack for the bounded district:
+
+- needs (`hunger`, `fatigue`) are explicit, event-sourced, and influence utility scores;
+- schedules and routines remain event-driven; the cheapest applicable behaviour is selected each hour;
+- utility scoring ranks `sleep`, `work`, `eat`, and `home`;
+- a small GOAP-style plan sequences travel, exclusive smart-object reservation, and affordance use for eating;
+- action channels `locomotion`, `hands`, `attention`, and `posture` reject impossible combinations such as sleep+travel or eat+work;
+- households pair agents; organizations own places and unique assets;
+- resource grants, transfers, consumption, and unique-asset ownership are conserved;
+- perception records `AgentObserved` events only for the actor and physically co-located stationary witnesses.
+
+This reference MUST NOT call an LLM. Dialogue adapters remain out of the MVP 2 state-transition path.
+
 ## Proven NPC patterns
 
 Prefer established mechanisms before prompt reinvention:

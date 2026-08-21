@@ -346,13 +346,16 @@ class SimulationKernel:
         while self._calendar and self._calendar[0][0] <= end:
             at, _, kind, payload = heapq.heappop(self._calendar)
             self.now = at
-            if kind == "travel":
-                self._process_travel(payload)
-            elif kind == "arrival":
-                self._process_arrival(payload)
-            else:
-                raise RuntimeError(f"unknown scheduled action: {kind}")
+            self._dispatch(kind, payload)
         self.now = end
+
+    def _dispatch(self, kind: str, payload: dict[str, Any]) -> None:
+        if kind == "travel":
+            self._process_travel(payload)
+        elif kind == "arrival":
+            self._process_arrival(payload)
+        else:
+            raise RuntimeError(f"unknown scheduled action: {kind}")
 
     def run_24_hours(self) -> None:
         self.run_until(self.now + timedelta(hours=24))

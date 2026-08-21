@@ -63,6 +63,10 @@ Individual
 
 An agent can belong to multiple structures simultaneously.
 
+## MVP 2 social reference
+
+The bounded district instantiates generated households of two agents and two organizations (`org:civic-office`, `org:district-cafe`). Membership follows work assignment. Organization knowledge and assets remain distinct from member inventories.
+
 ## Organization state
 
 An organization may have:

@@ -78,6 +78,10 @@ Transactions are typed, validated, time-stamped events. They check availability,
 
 Resources influence plans and feasible actions. Agents cannot consume or transfer resources that do not exist in their accessible inventory/state.
 
+## MVP 2 conservation reference
+
+The classical NPC kernel treats `token` and `meal` quantities as conserved except for explicit consumption events. Unique assets have exactly one owner. Transfers with quantity below 1 or without sufficient inventory MUST be rejected. `examples/mvp2-npc/society.json` records generated starting endowments.
+
 ## Economic LOD
 
 Large populations may use aggregate market/demand models while local/selected agents use individual transactions. Promotion/demotion must conserve quantities and avoid double counting.

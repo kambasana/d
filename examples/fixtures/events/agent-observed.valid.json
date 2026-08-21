@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.2.0",
+  "event_id": "event:observed:001",
+  "event_type": "AgentObserved",
+  "world_id": "world:mvp1-reference-district",
+  "scenario_id": "scenario:mvp2-classical-npc",
+  "branch_id": "branch:baseline",
+  "simulation_time": "2042-05-04T08:15:00Z",
+  "sequence": 42,
+  "recorded_at": "2026-08-21T00:00:00Z",
+  "actor_id": "agent:district-0000",
+  "target_ids": [
+    "agent:district-0002"
+  ],
+  "command_id": null,
+  "parent_event_ids": [],
+  "caused_by_event_ids": [
+    "event:mvp2-00000010"
+  ],
+  "location": {
+    "place_id": "place:office",
+    "precision": "room"
+  },
+  "payload": {
+    "observer_id": "agent:district-0000",
+    "observed_event_id": "event:mvp2-00000010",
+    "observation_id": "observation:001",
+    "channel": "vision",
+    "fidelity": 0.9,
+    "uncertainty": 0.1,
+    "content": {
+      "event_type": "LocationEntered"
+    }
+  }
+}

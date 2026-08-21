@@ -36,6 +36,10 @@ schemas:
   id: https://awg.local/contracts/commands/travel-to-place.command.schema.json
   title: Travel To Place Command
   version: 0.2.0
+- path: contracts/commands/transfer-resource.command.schema.json
+  id: https://awg.local/contracts/commands/transfer-resource.command.schema.json
+  title: Transfer Resource Command
+  version: 0.2.0
 - path: contracts/common/common.schema.json
   id: https://awg.local/contracts/common/common.schema.json
   title: AWG Common Definitions

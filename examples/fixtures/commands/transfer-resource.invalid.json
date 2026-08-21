@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.2.0",
+  "command_id": "cmd:transfer:bad",
+  "command_type": "TransferResource",
+  "world_id": "world:mvp1-reference-district",
+  "scenario_id": "scenario:mvp2-classical-npc",
+  "branch_id": "branch:baseline",
+  "issued_by": "agent:district-0000",
+  "requested_simulation_time": "2042-05-04T12:00:00Z",
+  "from_holder_id": "agent:district-0000",
+  "to_holder_id": "org:district-cafe",
+  "resource_type": "token",
+  "quantity": 0
+}

@@ -10,14 +10,34 @@ fixtures:
   expected_valid: false
   note: Invalid because actor, destination, and permitted transport mode are absent
     or wrong.
+- path: examples/fixtures/commands/transfer-resource.valid.json
+  schema_id: https://awg.local/contracts/commands/transfer-resource.command.schema.json
+  expected_valid: true
+  note: Valid typed resource transfer; the kernel must still conserve quantities and ownership.
+- path: examples/fixtures/commands/transfer-resource.invalid.json
+  schema_id: https://awg.local/contracts/commands/transfer-resource.command.schema.json
+  expected_valid: false
+  note: Invalid because quantity is below the conserved minimum of 1.
 - path: examples/fixtures/events/journey-started.valid.json
   schema_id: https://awg.local/contracts/events/journey-started.event.schema.json
   expected_valid: true
   note: Valid journey start event.
+- path: examples/fixtures/events/agent-observed.valid.json
+  schema_id: https://awg.local/contracts/events/agent-observed.event.schema.json
+  expected_valid: true
+  note: Valid colocated observation; it is not global world knowledge.
 - path: examples/fixtures/agents/agent-profile.valid.json
   schema_id: https://awg.local/contracts/agents/agent-profile.schema.json
   expected_valid: true
   note: Valid synthetic cognitive agent profile with provenance.
+- path: examples/fixtures/agents/observation.valid.json
+  schema_id: https://awg.local/contracts/agents/observation.schema.json
+  expected_valid: true
+  note: Valid bounded observation with an explicit access path.
+- path: examples/fixtures/agents/observation.invalid.json
+  schema_id: https://awg.local/contracts/agents/observation.schema.json
+  expected_valid: false
+  note: Invalid because the access path is empty.
 - path: examples/fixtures/world/place.valid.json
   schema_id: https://awg.local/contracts/world-entities/place.schema.json
   expected_valid: true
@@ -26,6 +46,14 @@ fixtures:
   schema_id: https://awg.local/contracts/world-entities/building.schema.json
   expected_valid: true
   note: Valid building with entrance, floor, room, capacity, and provenance.
+- path: examples/fixtures/world/organization.valid.json
+  schema_id: https://awg.local/contracts/world-entities/organization.schema.json
+  expected_valid: true
+  note: Valid employer organization with members, assets, and generated provenance.
+- path: examples/fixtures/world/organization.invalid.json
+  schema_id: https://awg.local/contracts/world-entities/organization.schema.json
+  expected_valid: false
+  note: Invalid because required membership, assets, and provenance are absent.
 - path: examples/fixtures/claims/claim.valid.json
   schema_id: https://awg.local/contracts/claims-and-provenance/claim.schema.json
   expected_valid: true
@@ -50,6 +78,10 @@ fixtures:
   schema_id: https://awg.local/contracts/scenarios/scenario-package.schema.json
   expected_valid: true
   note: Valid fully offline MVP 1 scenario with 100 deterministic scheduled agents.
+- path: examples/fixtures/scenarios/mvp2-classical-npc.valid.json
+  schema_id: https://awg.local/contracts/scenarios/scenario-package.schema.json
+  expected_valid: true
+  note: Valid fully offline MVP 2 scenario with classical NPC systems and no LLM plugins.
 - path: examples/fixtures/firehose/subscription.valid.json
   schema_id: https://awg.local/contracts/firehose/subscription.schema.json
   expected_valid: true

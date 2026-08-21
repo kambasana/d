@@ -8,6 +8,8 @@
 - Added pack tests proving command validation does not require an AI provider.
 - Added the executable MVP 1 synthetic district with local spatial assets, deterministic journeys, occupancy, immutable events, snapshots, replay, semantic clusters, and a 100-agent 24-hour acceptance profile.
 - Recorded MVP 1 requirements, automated tests, generated-data provenance, performance target, limitations, and phase-gate decision.
+- Added the executable MVP 2 classical NPC kernel with needs, utility, action channels, conserved resources, gated perception, and no LLM dependency.
+- Recorded MVP 2 requirements, automated tests, and phase-gate decision.
 
 ## 0.2.0 — 2026-08-20
 

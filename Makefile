@@ -1,4 +1,4 @@
-.PHONY: generate validate test mvp1 release clean
+.PHONY: generate validate test mvp1 mvp2 release clean
 
 PYTHON ?= python3
 
@@ -13,6 +13,9 @@ test:
 
 mvp1:
 	PYTHONPATH=scripts $(PYTHON) scripts/run_mvp1.py
+
+mvp2:
+	PYTHONPATH=scripts $(PYTHON) scripts/run_mvp2.py
 
 release:
 	PYTHONPATH=scripts $(PYTHON) scripts/build_release.py

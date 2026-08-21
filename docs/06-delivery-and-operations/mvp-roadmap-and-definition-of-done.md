@@ -154,6 +154,25 @@ This gate closes the bounded correctness reference for MVP 1. It does not approv
 - resource/ownership conservation tests pass;
 - perception tests prevent global-state knowledge leakage.
 
+### MVP 2 phase gate (ELE-147)
+
+This gate closes the classical NPC correctness reference. It does not add bounded LLM adapters or claim empirically validated human behaviour.
+
+| Gate field | MVP 2 record |
+| --- | --- |
+| Objectives | Prove scheduled agents already live in the district through needs, utility, action channels, households/organizations, conserved resources, and gated perception, with no LLM in the state path. |
+| In-scope | Needs/drives; utility AI; GOAP-style eat plans; action channels; exclusive smart-object reservations; households; two generated organizations; token/meal/unique-asset conservation; co-location perception. |
+| Non-goals | Ollama/OpenRouter adapters; dialogue realization; information-space social media; real-person populations; production GOAP/HTN engines; claiming Constitution acceptance. |
+| Dependencies | AWG-GOV-001, AWG-DOM-003, AWG-DOM-005, AWG-DOM-006, AWG-DOM-009, AWG-DOM-010, AWG-DOM-011, AWG-PLAT-007, AWG-OPS-001, AWG-OPS-002. |
+| Acceptance tests | AWG-TEST-MVP2-001 through AWG-TEST-MVP2-004; AWG-TEST-OBJ-001; AWG-TEST-PER-001; AWG-TEST-KER-001. |
+| Performance target | The 100-agent 24-hour classical profile completes on documentation-pack CI with zero integrity errors and a matching replay checksum. |
+| Security/offline target | No AI provider import; generated society data only; kernel remains the sole authority for transfers, reservations, and observations. |
+| Validation evidence | `tests/test_mvp2_npc.py`; `make mvp2`; `make validate`; `make test`. |
+| Documentation complete | Agent runtime, economy, perception, organization, requirements, tests, and known limits are recorded. |
+| Known limitations | Hourly utility ticks, not a full behavior-tree authoring tool; one exclusive cafe counter; perception is place co-location only; households are generated pairs. |
+| Unresolved risks | Scaling event volume from co-located observations; richer indoor perception; production planner adapters; human review of draft normative documents. |
+| Release decision | The MVP 2 classical reference MAY proceed to MVP 3 bounded AI adapters. LLM output MUST remain unable to mutate authoritative state. |
+
 ## MVP 3 - Bounded AI adapters
 
 ### Scope

@@ -885,3 +885,31 @@ tests:
   - AWG-REQ-MVP1-007
   automation: tests/test_mvp1_district.py::test_24_hour_target_population_runs_offline_without_integrity_failures
   status: automated
+- id: AWG-TEST-MVP2-001
+  type: acceptance
+  description: 100 classical agents complete a 24-hour home/work day with consumed needs and no LLM dependency.
+  requirements:
+  - AWG-REQ-MVP2-001
+  automation: tests/test_mvp2_npc.py::test_daily_activity_without_llm
+  status: automated
+- id: AWG-TEST-MVP2-002
+  type: invariant
+  description: Sleep plus travel and eat plus work are rejected by action-channel occupancy.
+  requirements:
+  - AWG-REQ-MVP2-002
+  automation: tests/test_mvp2_npc.py::test_impossible_concurrent_actions_are_blocked
+  status: automated
+- id: AWG-TEST-MVP2-003
+  type: invariant
+  description: Transfers conserve tokens, unique assets have one owner, and exclusive cafe-counter reservations cannot overlap.
+  requirements:
+  - AWG-REQ-MVP2-003
+  automation: tests/test_mvp2_npc.py::test_exclusive_reservation_and_resource_conservation
+  status: automated
+- id: AWG-TEST-MVP2-004
+  type: invariant
+  description: Remote location changes and organization grants are not known without a valid observation path.
+  requirements:
+  - AWG-REQ-MVP2-004
+  automation: tests/test_mvp2_npc.py::test_perception_does_not_leak_global_state
+  status: automated

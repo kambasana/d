@@ -48,6 +48,10 @@ This document is normative. Its current status is **draft**. Where this document
 - Digital exposure depends on platform mechanics, subscriptions, ranking, permissions, and connectivity.
 - Observation failure and ambiguity are explicit states rather than silent absence.
 
+## MVP 2 perception reference
+
+Agents MUST NOT read the global firehose as knowledge. An agent knows an event only when they are the actor or when a co-located stationary witness path produced an `AgentObserved` record. Organization inventories are not automatically known to members.
+
 ## Failure modes
 
 - Silent divergence between authoritative state and projections.

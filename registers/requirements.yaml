@@ -1274,3 +1274,54 @@ requirements:
   verified_by:
   - AWG-TEST-MVP1-007
   status: draft
+- id: AWG-REQ-MVP2-001
+  title: 'Agents produce coherent daily activity without LLM calls'
+  statement: 'The MVP 2 classical NPC kernel MUST produce 24-hour home and work activity from needs, utility, schedules, and planners without importing or calling an LLM.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-003
+  - AWG-DOM-011
+  implemented_by:
+  - AWG-DOM-003
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP2-001
+  status: draft
+- id: AWG-REQ-MVP2-002
+  title: 'Impossible concurrent actions are blocked'
+  statement: 'The MVP 2 kernel MUST occupy explicit action channels and MUST reject combinations such as sleep with travel or eat with work.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-003
+  implemented_by:
+  - AWG-DOM-003
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP2-002
+  status: draft
+- id: AWG-REQ-MVP2-003
+  title: 'Resources and unique ownership are conserved'
+  statement: 'Token and meal totals MUST be conserved across transfers, unique assets MUST have one owner, exclusive smart-object slots MUST NOT be double-reserved, and inventories MUST NOT go negative.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-006
+  - AWG-DOM-010
+  implemented_by:
+  - AWG-DOM-006
+  - AWG-DOM-010
+  verified_by:
+  - AWG-TEST-MVP2-003
+  status: draft
+- id: AWG-REQ-MVP2-004
+  title: 'Perception cannot leak global world state'
+  statement: 'An agent MUST know an event only as actor or via a valid co-located observation path and MUST NOT receive organization inventories or remote location changes automatically.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-009
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-DOM-009
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP2-004
+  status: draft
