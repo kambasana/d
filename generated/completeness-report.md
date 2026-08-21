@@ -8,13 +8,13 @@ This report is generated before the final validation report.
 | Normative documents | 69 |
 | Informative documents | 5 |
 | Conversation requirements | 48 |
-| Normative requirements | 107 |
-| Acceptance-test records | 107 |
+| Normative requirements | 114 |
+| Acceptance-test records | 114 |
 | JSON Schemas | 31 |
-| Indexed valid/invalid fixtures | 22 |
+| Indexed valid/invalid fixtures | 23 |
 | Risks | 20 |
 | Assumptions | 10 |
-| Data-source records | 10 |
+| Data-source records | 11 |
 | Component/licensing records | 21 |
 | Evidence records | 26 |
 
