@@ -836,3 +836,52 @@ tests:
   - AWG-REQ-INV-020
   automation: pack catalogue plus contract or kernel tests before feature acceptance
   status: defined
+- id: AWG-TEST-MVP1-001
+  type: integration
+  description: The local district bundle has coherent checksummed OSM, PostGIS, gazetteer, routing, and PMTiles assets.
+  requirements:
+  - AWG-REQ-MVP1-001
+  automation: tests/test_mvp1_district.py::test_offline_bundle_contains_coherent_spatial_assets
+  status: automated
+- id: AWG-TEST-MVP1-002
+  type: invariant
+  description: Teleport, inaccessible modes, invalid topology, and premature arrival are rejected.
+  requirements:
+  - AWG-REQ-MVP1-002
+  automation: tests/test_mvp1_district.py::test_routes_enforce_topology_modes_time_and_no_teleport
+  status: automated
+- id: AWG-TEST-MVP1-003
+  type: invariant
+  description: Building entry terminates at a declared entrance and updates capacity-bound occupancy.
+  requirements:
+  - AWG-REQ-MVP1-003
+  automation: tests/test_mvp1_district.py::test_building_entry_uses_route_entrance_and_updates_occupancy
+  status: automated
+- id: AWG-TEST-MVP1-004
+  type: replay
+  description: Snapshot and immutable-firehose replay reproduce the authoritative state and event checksums.
+  requirements:
+  - AWG-REQ-MVP1-004
+  automation: tests/test_mvp1_district.py::test_snapshot_and_immutable_firehose_replay_to_identical_state
+  status: automated
+- id: AWG-TEST-MVP1-005
+  type: invariant
+  description: Semantic zoom and building occupancy inspection leave authoritative state unchanged.
+  requirements:
+  - AWG-REQ-MVP1-005
+  automation: tests/test_mvp1_district.py::test_semantic_zoom_and_occupancy_are_read_only_projections
+  status: automated
+- id: AWG-TEST-MVP1-006
+  type: offline
+  description: The reference scenario validates local checksums and completes with external networking denied.
+  requirements:
+  - AWG-REQ-MVP1-006
+  automation: tests/test_mvp1_district.py offline and checksum-drift cases
+  status: automated
+- id: AWG-TEST-MVP1-007
+  type: soak
+  description: The 100-agent 24-hour profile completes 200 journeys and 1,400 events within budget with no integrity errors.
+  requirements:
+  - AWG-REQ-MVP1-007
+  automation: tests/test_mvp1_district.py::test_24_hour_target_population_runs_offline_without_integrity_failures
+  status: automated

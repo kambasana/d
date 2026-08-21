@@ -177,6 +177,21 @@ AccessDenied
 
 A packaged city scenario should be able to operate using local OSM extract, local spatial database, local gazetteer, local routing data, local PMTiles, and local model provider where configured.
 
+## MVP 1 reference district
+
+`examples/mvp1-district/bundle.json` is the bounded, generated spatial input for the MVP 1 acceptance profile. It contains no real-person or externally sourced geography. The bundle includes:
+
+- an OSM 0.6 XML extract with generated nodes, ways, access tags, and entrances;
+- a PostGIS migration for places, buildings, entrances, route nodes, and route edges;
+- a Nominatim-compatible local gazetteer projection;
+- a deterministic, mode-aware local routing graph;
+- a standards-valid PMTiles v3 presentation archive;
+- checksums and explicit generated-data provenance.
+
+The reference kernel MUST route through accessible graph edges, MUST consume time using the configured mode speed, and MUST terminate building journeys at a declared entrance. The PMTiles archive remains presentation-only and MUST NOT be used to reconstruct routing or authoritative positions.
+
+Production adoption or redistribution of PostgreSQL, PostGIS, Nominatim, Protomaps, or Valhalla remains subject to the component approvals in `registers/open-source-components.yaml`. The reference runtime does not import or redistribute those candidate implementations.
+
 ## Failure modes
 
 - Silent divergence between authoritative state and projections.

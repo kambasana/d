@@ -6,6 +6,8 @@
 - Mapped constitutional invariants INV-001 through INV-020 to requirement and acceptance-test IDs.
 - Mapped core engines to owned contract groups in AWG-PLAT-001.
 - Added pack tests proving command validation does not require an AI provider.
+- Added the executable MVP 1 synthetic district with local spatial assets, deterministic journeys, occupancy, immutable events, snapshots, replay, semantic clusters, and a 100-agent 24-hour acceptance profile.
+- Recorded MVP 1 requirements, automated tests, generated-data provenance, performance target, limitations, and phase-gate decision.
 
 ## 0.2.0 — 2026-08-20
 

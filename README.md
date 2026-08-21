@@ -69,6 +69,16 @@ docker compose run --rm docs validate
 docker compose run --rm docs release
 ```
 
+## Run the MVP 1 reference district
+
+The dependency-free reference runtime loads the checksummed synthetic OSM, PostGIS model, gazetteer, routing graph, and PMTiles bundle, simulates 100 scheduled agents for 24 hours, and verifies replay:
+
+```bash
+make mvp1
+```
+
+This bounded fixture is implementation evidence, not a validated model of a real population or approval to redistribute candidate external components.
+
 ## Completeness model
 
 The pack is considered structurally complete only when the manifest, authored files, YAML registers, generated indexes, schemas, examples, tests, checksums, and release archives agree. A passed build does not mean that every draft normative decision has received human approval; document status is tracked separately from structural completeness.

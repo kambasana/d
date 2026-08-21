@@ -18,7 +18,7 @@ risks:
   - AWG-DOM-002
   owner: AWG project
   status: open
-  residual_risk: requires implementation evidence
+  residual_risk: bounded synthetic MVP 1 evidence exists; real routing and production adapters remain unverified
 - id: AWG-RISK-003
   description: Agents become omniscient through context assembly
   severity: high
@@ -104,7 +104,7 @@ risks:
   - AWG-UX-009
   owner: AWG project
   status: open
-  residual_risk: requires implementation evidence
+  residual_risk: generated MVP 1 entrances are verified; imported real-world entrance quality remains unverified
 - id: AWG-RISK-011
   description: Event volume overwhelms storage and analysis
   severity: high
@@ -137,7 +137,7 @@ risks:
   - AWG-UX-002
   owner: AWG project
   status: open
-  residual_risk: requires implementation evidence
+  residual_risk: MVP 1 read-only projection tests exist; interactive UI evidence remains outstanding
 - id: AWG-RISK-014
   description: Counterfactual results are overclaimed as causal truth
   severity: critical
@@ -159,7 +159,7 @@ risks:
   - AWG-OPS-002
   owner: AWG project
   status: open
-  residual_risk: requires implementation evidence
+  residual_risk: dependency-free MVP 1 runtime passes network-deny tests; production adapter bundles remain unverified
 - id: AWG-RISK-016
   description: Replay diverges due to nondeterministic ordering or missing model records
   severity: high
@@ -170,7 +170,7 @@ risks:
   - AWG-DOM-008
   owner: AWG project
   status: open
-  residual_risk: requires implementation evidence
+  residual_risk: MVP 1 deterministic replay checksum is automated; stochastic and recorded-model replay remain unverified
 - id: AWG-RISK-017
   description: Licensing obligations block commercial distribution
   severity: high

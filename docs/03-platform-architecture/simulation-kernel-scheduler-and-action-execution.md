@@ -48,6 +48,21 @@ This document is normative. Its current status is **draft**. Where this document
 - Simultaneous events follow stable ordering and conflict-resolution rules.
 - Long-running actions survive snapshots and replay.
 
+## MVP 1 executable reference
+
+`awg_mvp1` implements a deliberately bounded reference kernel for the synthetic district fixture. It:
+
+- schedules typed travel commands using simulation time and a stable calendar sequence;
+- rejects teleport, unknown modes, mismatched origins, inaccessible routes, and routes that do not end at a declared building entrance;
+- keeps authoritative positions unchanged until a journey reaches its computed arrival time;
+- emits append-only `LocationExited`, smart-object, journey, and `LocationEntered` events;
+- enforces building and smart-object capacity;
+- snapshots state with event and state checksums;
+- replays the immutable firehose without external providers;
+- exposes semantic-cluster and building-occupancy read projections that cannot write kernel state.
+
+This package is a correctness reference for MVP 1, not a production distributed scheduler. `make mvp1` MUST complete the 24-hour, 100-agent acceptance profile with no state-integrity errors and an identical replay checksum.
+
 ## Failure modes
 
 - Silent divergence between authoritative state and projections.

@@ -92,6 +92,23 @@ Set different profiles for developer laptop, offline workstation, LAN cluster, a
 
 Numeric targets are added only after baseline benchmarks are measured.
 
+## MVP 1 baseline profile
+
+The first executable baseline is `validation:mvp1-reference-district-v1`:
+
+| Measure | Acceptance target |
+| --- | ---: |
+| Population records / S2 scheduled agents | 100 / 100 |
+| Simulated duration | 24 hours |
+| Scheduled journeys | 200 |
+| Expected domain events | 1,400 |
+| State-integrity failures | 0 |
+| Replay state checksum | identical |
+| External network dependencies | 0 |
+| Wall-clock test budget | less than 5 seconds on the documentation-pack CI runner |
+
+This target measures a small dependency-free correctness fixture, not PostGIS query throughput, map frame rate, or production capacity. Those budgets require measured adapter and UI baselines before they can gate a production deployment.
+
 ## Failure modes
 
 - Silent divergence between authoritative state and projections.

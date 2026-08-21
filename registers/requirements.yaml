@@ -1181,3 +1181,96 @@ requirements:
   verified_by:
   - AWG-TEST-INV-020
   status: draft
+- id: AWG-REQ-MVP1-001
+  title: 'The bounded district uses complete local spatial assets'
+  statement: 'The MVP 1 reference scenario MUST package checksummed generated OSM, a PostGIS spatial model, a local gazetteer, a local routing graph, and a PMTiles presentation archive with explicit provenance.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-002
+  - AWG-PLAT-006
+  implemented_by:
+  - AWG-DOM-002
+  - AWG-PLAT-006
+  verified_by:
+  - AWG-TEST-MVP1-001
+  status: draft
+- id: AWG-REQ-MVP1-002
+  title: 'Journeys cannot teleport and must obey routes and elapsed time'
+  statement: 'The MVP 1 kernel MUST reject teleportation and inaccessible modes, MUST use authoritative route topology, and MUST leave an agent at its origin until computed travel time has elapsed.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-002
+  - AWG-DOM-008
+  implemented_by:
+  - AWG-DOM-002
+  - AWG-DOM-008
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP1-002
+  status: draft
+- id: AWG-REQ-MVP1-003
+  title: 'Building entry uses valid entrances and capacity'
+  statement: 'The MVP 1 kernel MUST terminate a building route at a declared entrance and MUST keep building and smart-object occupancy within capacity.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-002
+  - AWG-DOM-010
+  implemented_by:
+  - AWG-DOM-002
+  - AWG-DOM-010
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP1-003
+  status: draft
+- id: AWG-REQ-MVP1-004
+  title: 'Immutable firehose replay reproduces world state'
+  statement: 'The MVP 1 event firehose MUST be append-only, snapshots MUST contain integrity checksums, and deterministic replay MUST reproduce the authoritative state checksum.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-002
+  - AWG-PLAT-007
+  implemented_by:
+  - AWG-PLAT-002
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP1-004
+  status: draft
+- id: AWG-REQ-MVP1-005
+  title: 'Map and occupancy projections cannot mutate world state'
+  statement: 'Semantic clustering and building occupancy inspection MUST operate as deterministic read projections and MUST NOT change authoritative agent positions or state checksums.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-UX-002
+  - AWG-UX-009
+  implemented_by:
+  - AWG-UX-002
+  - AWG-UX-009
+  verified_by:
+  - AWG-TEST-MVP1-005
+  status: draft
+- id: AWG-REQ-MVP1-006
+  title: 'The reference scenario operates offline'
+  statement: 'The MVP 1 reference scenario MUST complete with no external network dependency and MUST validate every packaged spatial asset against its recorded checksum.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-006
+  implemented_by:
+  - AWG-PLAT-006
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP1-006
+  status: draft
+- id: AWG-REQ-MVP1-007
+  title: 'The 24-hour target population run preserves integrity'
+  statement: 'The MVP 1 acceptance profile MUST simulate 100 scheduled agents for 24 hours and complete 200 journeys and 1,400 domain events with zero state-integrity failures within the declared test budget.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-OPS-002
+  - AWG-OPS-003
+  implemented_by:
+  - AWG-OPS-001
+  - AWG-OPS-002
+  - AWG-OPS-003
+  verified_by:
+  - AWG-TEST-MVP1-007
+  status: draft

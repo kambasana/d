@@ -142,3 +142,21 @@ data_sources:
   - retrieval time
   known_limits:
   - forecast and measurement uncertainty
+- id: AWG-DATA-011
+  name: MVP 1 synthetic reference district bundle
+  role: bounded offline correctness fixture for spatial, movement, replay, and projection tests
+  provider: AWG project generated fixture
+  licence: repository licence; contains no externally sourced geography
+  status: generated_test_fixture
+  provenance_fields:
+  - bundle schema version
+  - generator identity
+  - generated-data classification
+  - asset checksums
+  - spatial extent
+  - target population
+  known_limits:
+  - not calibrated to a real district or population
+  - PostGIS schema is structurally checked but no database daemon is exercised
+  - PMTiles archive contains one presentation-only tile
+  - route graph is intentionally small and supports walking and wheelchair profiles only

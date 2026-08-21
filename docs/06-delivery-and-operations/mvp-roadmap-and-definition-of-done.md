@@ -114,6 +114,25 @@ Local work record for Linear issue [ELE-147](https://linear.app/elenta/issue/ELE
 - scenario operates with required services offline;
 - 24-hour simulated run completes without state-integrity failures under target test population.
 
+### MVP 1 phase gate (ELE-147)
+
+This gate closes the bounded correctness reference for MVP 1. It does not approve candidate third-party components, claim empirical realism, or establish production capacity.
+
+| Gate field | MVP 1 record |
+| --- | --- |
+| Objectives | Prove one generated district can execute scheduled movement, occupancy, immutable event history, replay, and read-only map/inspector projections without AI or network access. |
+| In-scope | Checksummed synthetic OSM XML; PostGIS spatial migration; local gazetteer and mode-aware route graph; PMTiles v3 presentation archive; 100 S2 agents; simulation clock; valid entrances; smart-object/building occupancy; snapshot/replay; semantic clusters; occupancy inspector. |
+| Non-goals | Real-world OSM calibration; redistribution or production deployment of candidate PostgreSQL/PostGIS/Nominatim/Protomaps/Valhalla implementations; interactive map UI; distributed execution; empirical human-behaviour claims. |
+| Dependencies | AWG-GOV-001, AWG-DOM-002, AWG-DOM-008, AWG-DOM-010, AWG-PLAT-002, AWG-PLAT-004, AWG-PLAT-006, AWG-PLAT-007, AWG-UX-002, AWG-UX-009, AWG-OPS-002, AWG-OPS-003. |
+| Acceptance tests | AWG-TEST-MVP1-001 through AWG-TEST-MVP1-007; existing AWG-TEST-COV-004, 005, 010, 014-016, 031, 034, 037, 038; AWG-TEST-TIME-001; AWG-TEST-OBJ-001; AWG-TEST-KER-001. |
+| Performance target | The 100-agent, 200-journey, 1,400-event, 24-hour profile completes in less than 5 seconds on documentation-pack CI with zero state-integrity errors. |
+| Security/offline target | Runtime has zero external network dependencies, imports no AI provider, validates asset checksums, and uses generated geography only. |
+| Validation evidence | `tests/test_mvp1_district.py`; `make mvp1`; `make validate`; `make test`; generated validation and traceability reports. |
+| Documentation complete | Spatial authority, kernel behavior, reference performance budget, generated data provenance, risks, requirements, test mappings, and known limits are recorded. |
+| Known limitations | Local graph is the executable routing authority for this fixture; the PostGIS migration is structurally checked but no production database, gazetteer daemon, renderer, or routing daemon is exercised. PMTiles contains one bounded presentation tile. |
+| Unresolved risks | External-component legal/security approval; real OSM and indoor-data quality; production spatial/service integration; UI accessibility and frame-rate evidence; larger population and event-volume baselines. |
+| Release decision | The MVP 1 bounded reference MAY proceed to MVP 2 classical NPC work. Production or external-data deployment MUST remain blocked until component approvals and integration gates are complete. |
+
 ## MVP 2 - Classical NPC and social systems
 
 ### Scope
