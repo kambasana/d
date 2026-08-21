@@ -46,6 +46,19 @@ Before changing any file, read:
 6. Rebuild generated reports and release artefacts.
 7. Record breaking changes and migrations.
 
+## Roadmap stage workflow
+
+For MVP roadmap work:
+
+1. Run `make workflow-check`.
+2. Run `make workflow-next` and perform only the returned unblocked role/step.
+3. Produce every declared output.
+4. Complete the step with `python3 scripts/stage_workflow.py complete <stage> <step>`; this runs its validation before updating workflow state.
+5. Repeat through `scope`, `traceability`, `implementation`, `contracts`, `verification`, and `closeout`.
+6. The closeout role must set the gate record to `ready`; completing closeout reruns gate evidence, closes the stage, and activates the next prerequisite-safe stage.
+
+Never edit a stage to `closed` merely to bypass the coordinator. Follow AWG-OPS-012 and stop at its human decision boundaries.
+
 ## Terminology
 
 Use canonical terms from `registers/glossary.yaml`. Do not treat `agent`, `LLM`, `user`, `actor`, `cohort`, `entity`, and `account` as interchangeable. Do not introduce a new core noun without a glossary entry and ontology review.

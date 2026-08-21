@@ -205,11 +205,11 @@ risks:
 - id: AWG-RISK-020
   description: Documentation, schemas, examples, and Linear drift apart
   severity: high
-  mitigation: Manifest validation, generated indexes, traceability, CI gates, and
-    canonical source rule.
+  mitigation: Manifest validation, generated indexes, traceability, staged contributor
+    workflow, closeout evidence, CI gates, and canonical source rule.
   affected_documents:
   - AWG-OPS-009
   - AWG-OPS-010
   owner: AWG project
   status: open
-  residual_risk: requires implementation evidence
+  residual_risk: workflow configuration is executable; external issue status and human approvals can still drift

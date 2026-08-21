@@ -1325,3 +1325,15 @@ requirements:
   verified_by:
   - AWG-TEST-MVP2-004
   status: draft
+- id: AWG-REQ-WFL-001
+  title: 'Roadmap stages use ordered validation and fail-closed closeout'
+  statement: 'Every roadmap stage MUST execute scope, traceability, implementation, contracts, verification, and closeout in order, and MUST NOT advance while required outputs, acceptance tests, evidence, or validation are incomplete.'
+  source_documents:
+  - AWG-OPS-012
+  implemented_by:
+  - AWG-OPS-012
+  - AWG-OPS-006
+  - AWG-OPS-009
+  verified_by:
+  - AWG-TEST-WFL-001
+  status: draft

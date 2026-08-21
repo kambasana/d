@@ -1,0 +1,16 @@
+stage: mvp4
+status: blocked
+issue: ELE-147
+objectives: Implement claims, evidence, beliefs, communication, social exposure, deception, corrections, and provenance.
+in_scope: Information world and virtual social platform from the roadmap.
+non_goals: Treating reactions as belief, global agent knowledge, or deleting corrected history.
+dependencies: [mvp3, AWG-GOV-001, AWG-DOM-004, AWG-DOM-013]
+acceptance_tests: []
+performance_target: Must be defined from an information-flow baseline before closeout.
+security_offline_target: Untrusted content remains typed and cannot bypass access or provenance.
+validation_evidence: []
+documentation_complete: false
+known_limitations: Blocked until MVP 3 closes.
+unresolved_risks: Belief inference, deception misuse, content safety, and information event volume.
+release_decision: Blocked by MVP 3.
+evidence_files: []

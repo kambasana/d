@@ -87,6 +87,16 @@ make mvp2
 
 Agents use needs, utility scoring, action channels, households/organizations, resource conservation, and perception gating. No LLM is imported or required.
 
+## Run the staged contributor workflow
+
+```bash
+make workflow-check
+make workflow-status
+make workflow-next
+```
+
+The workflow emits the next role packet and blocks stage advancement until ordered outputs, validation, closeout evidence, limitations, and risks are complete. See [`AWG-OPS-012`](docs/06-delivery-and-operations/automated-contributor-stage-workflow.md).
+
 ## Completeness model
 
 The pack is considered structurally complete only when the manifest, authored files, YAML registers, generated indexes, schemas, examples, tests, checksums, and release archives agree. A passed build does not mean that every draft normative decision has received human approval; document status is tracked separately from structural completeness.

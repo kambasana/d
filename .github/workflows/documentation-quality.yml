@@ -12,6 +12,9 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r requirements-dev.txt
+      - run: python scripts/stage_workflow.py validate
+        env:
+          PYTHONPATH: scripts
       - run: python scripts/validate_all.py
         env:
           PYTHONPATH: scripts

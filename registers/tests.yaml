@@ -913,3 +913,10 @@ tests:
   - AWG-REQ-MVP2-004
   automation: tests/test_mvp2_npc.py::test_perception_does_not_leak_global_state
   status: automated
+- id: AWG-TEST-WFL-001
+  type: workflow
+  description: Stage order, roles, outputs, closeout fields, evidence, prerequisites, and fail-closed advancement are executable and validated.
+  requirements:
+  - AWG-REQ-WFL-001
+  automation: tests/test_stage_workflow.py and python3 scripts/stage_workflow.py validate
+  status: automated

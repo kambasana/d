@@ -957,6 +957,36 @@ documents:
   - Performance and scale considerations
   - Acceptance criteria
   - Related documents
+- document_id: AWG-OPS-012
+  path: docs/06-delivery-and-operations/automated-contributor-stage-workflow.md
+  title: Automated Contributor Stage Workflow
+  summary: Define ordered automated-contributor roles, stage validation, fail-closed advancement, evidence, and closeout for MVP 0 through MVP 5.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-003
+  - AWG-OPS-001
+  - AWG-OPS-002
+  - AWG-OPS-006
+  - AWG-OPS-009
+  linear_issue: ELE-147
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
 - document_id: AWG-PLAT-001
   path: docs/03-platform-architecture/system-architecture.md
   title: System Architecture

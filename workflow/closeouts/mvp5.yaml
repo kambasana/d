@@ -1,0 +1,16 @@
+stage: mvp5
+status: blocked
+issue: ELE-147
+objectives: Add multi-resolution scale, promotion/demotion, branching, sensitivity analysis, and cost/performance evidence.
+in_scope: S0-S4 fidelity, distributed execution where required, comparison, validation, and dashboards.
+non_goals: Scale claims without measured profiles or sacrificing causality and conservation.
+dependencies: [mvp4, AWG-GOV-001, AWG-PLAT-005, AWG-SCN-002]
+acceptance_tests: []
+performance_target: Must separate population records from active cognition and define measured profiles before closeout.
+security_offline_target: Scale and partitioning cannot weaken access, provenance, or offline declarations.
+validation_evidence: []
+documentation_complete: false
+known_limitations: Blocked until MVP 4 closes.
+unresolved_risks: Partition consistency, promotion conservation, experiment confounding, and infrastructure cost.
+release_decision: Blocked by MVP 4.
+evidence_files: []

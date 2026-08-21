@@ -1,0 +1,16 @@
+stage: mvp3
+status: open
+issue: ELE-147
+objectives: Add bounded, replaceable AI adapters while preserving deterministic kernel authority.
+in_scope: AIProviderAdapter, Ollama, OpenRouter, typed intent proposals, dialogue, extraction, summaries, ranking, provenance, and fallback.
+non_goals: Direct model state mutation, provider-specific domain schemas, and unrecorded live-model replay.
+dependencies: [mvp2, AWG-GOV-001, AWG-PLAT-003]
+acceptance_tests: []
+performance_target: Must be defined from a measured bounded-adapter baseline before closeout.
+security_offline_target: Malformed output, timeout, and unavailable providers fail closed without state corruption.
+validation_evidence: []
+documentation_complete: false
+known_limitations: Scope and adapter budgets require implementation evidence.
+unresolved_risks: Provider licensing, remote-data boundaries, prompt injection, nondeterminism, and model drift.
+release_decision: Not decided; gate is open.
+evidence_files: []

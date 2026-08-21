@@ -1,0 +1,23 @@
+stage: mvp2
+status: closed
+issue: ELE-147
+objectives: Prove coherent classical daily activity, action exclusion, conservation, and gated perception without LLM calls.
+in_scope: Needs, utility, GOAP-style eat plans, action channels, reservations, households, organizations, resources, and perception.
+non_goals: AI provider adapters, dialogue, information-space social media, and empirically validated human behavior.
+dependencies: [AWG-GOV-001, AWG-DOM-003, AWG-DOM-006, AWG-DOM-009, AWG-DOM-010, AWG-PLAT-007]
+acceptance_tests: [AWG-TEST-MVP2-001, AWG-TEST-MVP2-002, AWG-TEST-MVP2-003, AWG-TEST-MVP2-004]
+performance_target: The 100-agent 24-hour classical profile completes on pack CI with replay equality.
+security_offline_target: No AI provider import; generated society data; kernel-authoritative transfers and observations.
+validation_evidence:
+  - {command: make mvp2, result: passed}
+  - {command: make validate, result: passed}
+  - {command: make test, result: passed}
+documentation_complete: true
+documentation_summary: Runtime, economy, perception, organization, requirements, tests, and limitations are recorded.
+known_limitations: Hourly utility ticks, one exclusive counter, co-location-only perception, and generated paired households.
+unresolved_risks: Observation event volume, richer indoor perception, planner adapters, and human normative review.
+release_decision: MVP 2 classical reference may proceed to MVP 3.
+evidence_files:
+  - tests/test_mvp2_npc.py
+  - examples/mvp2-npc/society.json
+  - generated/validation-report.md

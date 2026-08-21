@@ -10,6 +10,7 @@
 - Recorded MVP 1 requirements, automated tests, generated-data provenance, performance target, limitations, and phase-gate decision.
 - Added the executable MVP 2 classical NPC kernel with needs, utility, action channels, conserved resources, gated perception, and no LLM dependency.
 - Recorded MVP 2 requirements, automated tests, and phase-gate decision.
+- Added an executable automated-contributor workflow with ordered roles, MVP prerequisites, validation commands, closeout records, fail-closed advancement, and CI enforcement.
 
 ## 0.2.0 — 2026-08-20
 

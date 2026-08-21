@@ -1,4 +1,4 @@
-.PHONY: generate validate test mvp1 mvp2 release clean
+.PHONY: generate validate test workflow-check workflow-status workflow-next mvp1 mvp2 release clean
 
 PYTHON ?= python3
 
@@ -10,6 +10,15 @@ validate:
 
 test:
 	PYTHONPATH=scripts $(PYTHON) -m pytest -q
+
+workflow-check:
+	PYTHONPATH=scripts $(PYTHON) scripts/stage_workflow.py validate
+
+workflow-status:
+	PYTHONPATH=scripts $(PYTHON) scripts/stage_workflow.py status
+
+workflow-next:
+	PYTHONPATH=scripts $(PYTHON) scripts/stage_workflow.py next
 
 mvp1:
 	PYTHONPATH=scripts $(PYTHON) scripts/run_mvp1.py
