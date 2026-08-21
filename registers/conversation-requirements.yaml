@@ -1,0 +1,341 @@
+version: 0.2.0
+requirements:
+- id: AWG-CONV-001
+  request: Build complete worlds and scenarios, not isolated chat agents.
+  normative_requirement: AWG-REQ-VIS-001
+  covered_by:
+  - AWG-VIS-001
+  - AWG-SCN-001
+  status: covered
+- id: AWG-CONV-002
+  request: Ground real worlds in OpenStreetMap geography and topology.
+  normative_requirement: AWG-REQ-GEO-001
+  covered_by:
+  - AWG-DOM-002
+  status: covered
+- id: AWG-CONV-003
+  request: Support planet and regional tile views while keeping tiles separate from
+    authoritative world state.
+  normative_requirement: AWG-REQ-GEO-002
+  covered_by:
+  - AWG-DOM-002
+  - AWG-UX-003
+  status: covered
+- id: AWG-CONV-004
+  request: Use Nominatim-compatible gazetteer semantics for places, streets, and addresses.
+  normative_requirement: AWG-REQ-GEO-003
+  covered_by:
+  - AWG-DOM-002
+  status: covered
+- id: AWG-CONV-005
+  request: Use Protomaps and PMTiles for offline map presentation.
+  normative_requirement: AWG-REQ-GEO-004
+  covered_by:
+  - AWG-DOM-002
+  - AWG-PLAT-006
+  status: covered
+- id: AWG-CONV-006
+  request: Support Ollama as a local AI provider.
+  normative_requirement: AWG-REQ-PLG-001
+  covered_by:
+  - AWG-PLAT-003
+  - AWG-PLAT-006
+  status: covered
+- id: AWG-CONV-007
+  request: Support OpenRouter as a remote AI provider.
+  normative_requirement: AWG-REQ-PLG-002
+  covered_by:
+  - AWG-PLAT-003
+  status: covered
+- id: AWG-CONV-008
+  request: Use modular plugin and adapter architecture so components can be swapped
+    without breaking core functionality.
+  normative_requirement: AWG-REQ-PLG-003
+  covered_by:
+  - AWG-PLAT-003
+  status: covered
+- id: AWG-CONV-009
+  request: Treat the system as a serious simulation platform rather than a toy agent
+    demo.
+  normative_requirement: AWG-REQ-GOV-001
+  covered_by:
+  - AWG-GOV-001
+  - AWG-VIS-002
+  status: covered
+- id: AWG-CONV-010
+  request: Expose a structured firehose for each agent and world.
+  normative_requirement: AWG-REQ-EVT-001
+  covered_by:
+  - AWG-PLAT-002
+  status: covered
+- id: AWG-CONV-011
+  request: Allow scenarios and live changes so agents and groups react and communicate.
+  normative_requirement: AWG-REQ-SCN-001
+  covered_by:
+  - AWG-SCN-001
+  - AWG-DOM-003
+  - AWG-DOM-013
+  status: covered
+- id: AWG-CONV-012
+  request: Build humanistic systems from established NPC, ABM, cognitive, social,
+    and behavioural patterns rather than unconstrained invention.
+  normative_requirement: AWG-REQ-AGT-001
+  covered_by:
+  - AWG-DOM-003
+  - AWG-DOM-011
+  - AWG-VIS-006
+  status: covered
+- id: AWG-CONV-013
+  request: Agents must understand the space they occupy.
+  normative_requirement: AWG-REQ-GEO-005
+  covered_by:
+  - AWG-DOM-002
+  - AWG-DOM-009
+  status: covered
+- id: AWG-CONV-014
+  request: Synthetic worlds must use coherent OSM-like places, geometry, access, and
+    traversal.
+  normative_requirement: AWG-REQ-GEO-006
+  covered_by:
+  - AWG-DOM-002
+  status: covered
+- id: AWG-CONV-015
+  request: Movement must consume plausible time and obey route, mode, and speed constraints.
+  normative_requirement: AWG-REQ-GEO-007
+  covered_by:
+  - AWG-DOM-002
+  - AWG-DOM-008
+  status: covered
+- id: AWG-CONV-016
+  request: Agents cannot randomly spawn at destinations or teleport.
+  normative_requirement: AWG-REQ-GEO-008
+  covered_by:
+  - AWG-GOV-001
+  - AWG-DOM-002
+  status: covered
+- id: AWG-CONV-017
+  request: Knowledge learned from another agent must retain source provenance.
+  normative_requirement: AWG-REQ-EPI-001
+  covered_by:
+  - AWG-DOM-004
+  status: covered
+- id: AWG-CONV-018
+  request: Information sources may be reliable, mistaken, deceptive, malicious, or
+    coordinated.
+  normative_requirement: AWG-REQ-EPI-002
+  covered_by:
+  - AWG-DOM-004
+  status: covered
+- id: AWG-CONV-019
+  request: Relationship history and domain context affect trust.
+  normative_requirement: AWG-REQ-EPI-003
+  covered_by:
+  - AWG-DOM-004
+  status: covered
+- id: AWG-CONV-020
+  request: Model witness, second-hand report, post, repost, comment, message, and
+    fact-checking chains.
+  normative_requirement: AWG-REQ-EPI-004
+  covered_by:
+  - AWG-DOM-004
+  - AWG-DOM-013
+  status: covered
+- id: AWG-CONV-021
+  request: A contacted witness may reply, clarify, contradict, ignore, block, or remain
+    uncertain.
+  normative_requirement: AWG-REQ-EPI-005
+  covered_by:
+  - AWG-DOM-004
+  - AWG-DOM-013
+  status: covered
+- id: AWG-CONV-022
+  request: Provide a virtual social-media site where agents can post, react, comment,
+    repost, and message.
+  normative_requirement: AWG-REQ-SOC-001
+  covered_by:
+  - AWG-DOM-013
+  - AWG-UX-010
+  status: covered
+- id: AWG-CONV-023
+  request: Support information-space actors that may not be fully embodied in the
+    physical world.
+  normative_requirement: AWG-REQ-SOC-002
+  covered_by:
+  - AWG-DOM-013
+  status: covered
+- id: AWG-CONV-024
+  request: Capture social and information actions in the firehose.
+  normative_requirement: AWG-REQ-EVT-002
+  covered_by:
+  - AWG-PLAT-002
+  - AWG-DOM-004
+  status: covered
+- id: AWG-CONV-025
+  request: Research papers, GitHub projects, systems, and proven game AI before designing
+    replacements.
+  normative_requirement: AWG-REQ-RES-001
+  covered_by:
+  - AWG-VIS-004
+  - AWG-VIS-005
+  status: covered
+- id: AWG-CONV-026
+  request: Record useful reusable mechanisms and unsuitable mechanisms.
+  normative_requirement: AWG-REQ-RES-002
+  covered_by:
+  - AWG-VIS-004
+  - AWG-VIS-006
+  status: covered
+- id: AWG-CONV-027
+  request: Maintain a never-do list for fake, invalid, or misleading simulation shortcuts.
+  normative_requirement: AWG-REQ-GOV-002
+  covered_by:
+  - AWG-GOV-001
+  - AWG-VIS-002
+  status: covered
+- id: AWG-CONV-028
+  request: Prefer established game NPC architecture over prompt-only reinvention.
+  normative_requirement: AWG-REQ-AGT-002
+  covered_by:
+  - AWG-DOM-003
+  - AWG-VIS-006
+  status: covered
+- id: AWG-CONV-029
+  request: Balance agent markers with aggregate world views.
+  normative_requirement: AWG-REQ-UX-001
+  covered_by:
+  - AWG-UX-007
+  - AWG-UX-002
+  status: covered
+- id: AWG-CONV-030
+  request: Allow thousands of raw dots as an optional debug view without making it
+    the only representation.
+  normative_requirement: AWG-REQ-UX-002
+  covered_by:
+  - AWG-UX-007
+  status: covered
+- id: AWG-CONV-031
+  request: Provide detailed building and interior world views.
+  normative_requirement: AWG-REQ-UX-003
+  covered_by:
+  - AWG-UX-009
+  status: covered
+- id: AWG-CONV-032
+  request: Use controlled randomness for variation, not arbitrary activity.
+  normative_requirement: AWG-REQ-RND-001
+  covered_by:
+  - AWG-DOM-007
+  status: covered
+- id: AWG-CONV-033
+  request: Keep simulation level of detail independent from visualization level of
+    detail.
+  normative_requirement: AWG-REQ-SCL-001
+  covered_by:
+  - AWG-PLAT-005
+  - AWG-UX-002
+  status: covered
+- id: AWG-CONV-034
+  request: Use semantic zoom where cluster totals progressively split into smaller
+    clusters and individuals.
+  normative_requirement: AWG-REQ-UX-004
+  covered_by:
+  - AWG-UX-002
+  status: covered
+- id: AWG-CONV-035
+  request: Clicking a geographic cluster should normally zoom to member bounds.
+  normative_requirement: AWG-REQ-UX-005
+  covered_by:
+  - AWG-UX-002
+  status: covered
+- id: AWG-CONV-036
+  request: Use a radial circle of clickable agents for small true co-location overlaps.
+  normative_requirement: AWG-REQ-UX-006
+  covered_by:
+  - AWG-UX-002
+  status: covered
+- id: AWG-CONV-037
+  request: Use building, floor, room, or occupant browsers for large co-located populations.
+  normative_requirement: AWG-REQ-UX-007
+  covered_by:
+  - AWG-UX-002
+  - AWG-UX-009
+  status: covered
+- id: AWG-CONV-038
+  request: Distinguish geographic, co-location, and analytical clusters.
+  normative_requirement: AWG-REQ-UX-008
+  covered_by:
+  - AWG-UX-002
+  status: covered
+- id: AWG-CONV-039
+  request: Base UI/UX on research and proven visual analytics patterns.
+  normative_requirement: AWG-REQ-UX-009
+  covered_by:
+  - AWG-UX-008
+  - AWG-UX-001
+  status: covered
+- id: AWG-CONV-040
+  request: Provide a design system and frontend architecture.
+  normative_requirement: AWG-REQ-UX-010
+  covered_by:
+  - AWG-UX-001
+  - AWG-UX-013
+  status: covered
+- id: AWG-CONV-041
+  request: Create a structured master Markdown documentation pack.
+  normative_requirement: AWG-REQ-DOC-001
+  covered_by:
+  - AWG-OPS-009
+  - AWG-APP-003
+  status: covered
+- id: AWG-CONV-042
+  request: Put structure and AI-agent instructions first so future agents know how
+    to work.
+  normative_requirement: AWG-REQ-DOC-002
+  covered_by:
+  - AWG-OPS-009
+  status: covered
+- id: AWG-CONV-043
+  request: Map the work to the AWG Linear project while retaining a separate canonical
+    source.
+  normative_requirement: AWG-REQ-OPS-001
+  covered_by:
+  - AWG-OPS-010
+  status: covered
+- id: AWG-CONV-044
+  request: Generate the full pack on disk with CLI validation.
+  normative_requirement: AWG-REQ-OPS-002
+  covered_by:
+  - AWG-OPS-006
+  - AWG-OPS-009
+  status: covered
+- id: AWG-CONV-045
+  request: Provide a complete archive and downloadable logical parts.
+  normative_requirement: AWG-REQ-OPS-003
+  covered_by:
+  - AWG-OPS-005
+  - AWG-APP-003
+  status: covered
+- id: AWG-CONV-046
+  request: Preserve all prior conversation-derived specifications and research.
+  normative_requirement: AWG-REQ-DOC-003
+  covered_by:
+  - AWG-VIS-004
+  - AWG-UX-008
+  - AWG-APP-003
+  status: covered
+- id: AWG-CONV-047
+  request: Validate that no declared document, requirement, schema, example, register,
+    or release file is missing.
+  normative_requirement: AWG-REQ-DOC-004
+  covered_by:
+  - AWG-OPS-009
+  - AWG-APP-003
+  status: covered
+- id: AWG-CONV-048
+  request: Record risks, assumptions, data provenance, model versions, and open-source
+    licensing.
+  normative_requirement: AWG-REQ-GOV-003
+  covered_by:
+  - AWG-GOV-003
+  - AWG-GOV-007
+  - AWG-OPS-011
+  status: covered

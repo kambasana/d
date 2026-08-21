@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.2.0",
+  "event_id": "event:journey-started:001",
+  "event_type": "JourneyStarted",
+  "world_id": "world:london-demo",
+  "scenario_id": "scenario:bridge-closure",
+  "branch_id": "branch:baseline",
+  "simulation_time": "2042-05-04T08:10:01Z",
+  "sequence": 1204,
+  "recorded_at": "2026-08-20T20:00:00Z",
+  "actor_id": "agent:a-10482",
+  "target_ids": [
+    "place:work-220"
+  ],
+  "command_id": "cmd:travel:001",
+  "parent_event_ids": [],
+  "caused_by_event_ids": [],
+  "location": {
+    "place_id": "place:home-10482",
+    "precision": "building"
+  },
+  "payload": {
+    "journey_id": "journey:001",
+    "origin": {
+      "place_id": "place:home-10482"
+    },
+    "destination": {
+      "place_id": "place:work-220"
+    },
+    "transport_mode": "bus",
+    "route_id": "route:bus:55",
+    "expected_arrival": "2042-05-04T08:46:00Z"
+  },
+  "plugin": {
+    "plugin_id": "mobility:reference",
+    "version": "0.2.0"
+  }
+}

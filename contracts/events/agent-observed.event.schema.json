@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/events/agent-observed.event.schema.json",
+  "title": "Agent Observed Event",
+  "allOf": [
+    {
+      "$ref": "https://awg.local/contracts/events/domain-event.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "event_type": {
+          "const": "AgentObserved"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "observer_id": {
+              "type": "string"
+            },
+            "observed_event_id": {
+              "type": "string"
+            },
+            "observation_id": {
+              "type": "string"
+            },
+            "channel": {
+              "enum": [
+                "vision",
+                "hearing",
+                "device",
+                "message",
+                "media",
+                "record",
+                "institutional"
+              ]
+            },
+            "fidelity": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "uncertainty": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "content": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "observer_id",
+            "observed_event_id",
+            "observation_id",
+            "channel",
+            "fidelity",
+            "uncertainty",
+            "content"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "event_type",
+        "payload"
+      ]
+    }
+  ]
+}

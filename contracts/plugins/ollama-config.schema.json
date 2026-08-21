@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/plugins/ollama-config.schema.json",
+  "title": "Ollama Adapter Configuration",
+  "type": "object",
+  "properties": {
+    "base_url": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "timeout_seconds": {
+      "type": "number",
+      "minimum": 0.1
+    },
+    "structured_output": {
+      "type": "boolean"
+    },
+    "network_policy": {
+      "enum": [
+        "loopback_only",
+        "local_network"
+      ]
+    }
+  },
+  "required": [
+    "base_url",
+    "model",
+    "timeout_seconds",
+    "structured_output",
+    "network_policy"
+  ],
+  "additionalProperties": false
+}

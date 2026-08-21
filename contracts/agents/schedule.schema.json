@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/agents/schedule.schema.json",
+  "title": "Agent Schedule",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "schedule_id": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "time_zone": {
+      "type": "string"
+    },
+    "activities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "activity_id": {
+            "type": "string"
+          },
+          "activity_type": {
+            "type": "string"
+          },
+          "place_id": {
+            "type": "string"
+          },
+          "earliest_start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "latest_end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "priority": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "activity_id",
+          "activity_type",
+          "place_id",
+          "earliest_start",
+          "latest_end",
+          "duration_seconds",
+          "priority"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "schedule_id",
+    "agent_id",
+    "time_zone",
+    "activities"
+  ],
+  "additionalProperties": false
+}

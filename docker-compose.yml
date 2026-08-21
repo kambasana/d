@@ -1,0 +1,8 @@
+services:
+  docs:
+    build: .
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    network_mode: none
+    command: validate

@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/social-platform/social-action.schema.json",
+  "title": "Social Platform Action",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "action_id": {
+      "type": "string"
+    },
+    "actor_id": {
+      "type": "string"
+    },
+    "platform_id": {
+      "type": "string"
+    },
+    "account_id": {
+      "type": "string"
+    },
+    "action_type": {
+      "enum": [
+        "view",
+        "create_post",
+        "reply",
+        "comment",
+        "like",
+        "dislike",
+        "repost",
+        "quote_post",
+        "follow",
+        "unfollow",
+        "mute",
+        "block",
+        "report",
+        "direct_message",
+        "join_group",
+        "leave_group",
+        "fact_check_request"
+      ]
+    },
+    "object_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "target_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "content": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "claim_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "visibility": {
+      "enum": [
+        "private",
+        "group",
+        "followers",
+        "public"
+      ]
+    },
+    "simulation_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "inferred_motive": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "motive_confidence": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "action_id",
+    "actor_id",
+    "platform_id",
+    "account_id",
+    "action_type",
+    "target_refs",
+    "claim_refs",
+    "visibility",
+    "simulation_time"
+  ],
+  "additionalProperties": false
+}

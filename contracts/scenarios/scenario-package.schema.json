@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/scenarios/scenario-package.schema.json",
+  "title": "Scenario Package",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "scenario_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "base_world": {
+      "type": "object"
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "time_zone": {
+      "type": "string"
+    },
+    "geographic_extent": {
+      "type": "object"
+    },
+    "data_source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "population": {
+      "type": "object"
+    },
+    "organizations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "plugins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "plugin_id": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "configuration_digest": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "plugin_id",
+          "version",
+          "configuration_digest"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "random_streams": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "stream_id": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "seed": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "stream_id",
+          "owner",
+          "seed"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "initial_conditions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "scheduled_events": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "interventions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "intervention_id": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "string"
+          },
+          "target_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "parameters": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "intervention_id",
+          "time",
+          "type",
+          "target_refs",
+          "parameters"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "measurements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stop_conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object"
+      }
+    },
+    "assumption_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validation_profile": {
+      "type": "string"
+    },
+    "created_by": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "scenario_id",
+    "name",
+    "version",
+    "purpose",
+    "base_world",
+    "start_time",
+    "time_zone",
+    "geographic_extent",
+    "data_source_ids",
+    "population",
+    "organizations",
+    "plugins",
+    "models",
+    "random_streams",
+    "initial_conditions",
+    "scheduled_events",
+    "interventions",
+    "measurements",
+    "stop_conditions",
+    "assumption_ids",
+    "risk_ids",
+    "validation_profile",
+    "created_by",
+    "created_at"
+  ],
+  "additionalProperties": false
+}

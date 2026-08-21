@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.2.0",
+  "command_id": "cmd:travel:001",
+  "command_type": "TravelToPlace",
+  "world_id": "world:london-demo",
+  "scenario_id": "scenario:bridge-closure",
+  "branch_id": "branch:baseline",
+  "issued_by": "agent:a-10482",
+  "requested_simulation_time": "2042-05-04T08:10:00Z",
+  "correlation_id": "corr:journey:001",
+  "reason": "Travel to work",
+  "origin": {
+    "place_id": "place:home-10482"
+  },
+  "transport_mode": "teleport"
+}

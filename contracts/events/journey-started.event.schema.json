@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/events/journey-started.event.schema.json",
+  "title": "Journey Started Event",
+  "allOf": [
+    {
+      "$ref": "https://awg.local/contracts/events/domain-event.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "event_type": {
+          "const": "JourneyStarted"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "journey_id": {
+              "type": "string"
+            },
+            "origin": {
+              "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/locationRef"
+            },
+            "destination": {
+              "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/locationRef"
+            },
+            "transport_mode": {
+              "type": "string"
+            },
+            "route_id": {
+              "type": "string"
+            },
+            "expected_arrival": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "journey_id",
+            "origin",
+            "destination",
+            "transport_mode",
+            "route_id",
+            "expected_arrival"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "event_type",
+        "payload"
+      ]
+    }
+  ]
+}

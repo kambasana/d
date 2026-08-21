@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/events/command-rejected.event.schema.json",
+  "title": "Command Rejected Event",
+  "allOf": [
+    {
+      "$ref": "https://awg.local/contracts/events/domain-event.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "event_type": {
+          "const": "CommandRejected"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "command_id": {
+              "type": "string"
+            },
+            "reason_code": {
+              "type": "string"
+            },
+            "violated_requirement_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "details": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "command_id",
+            "reason_code",
+            "violated_requirement_ids",
+            "details"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "event_type",
+        "payload"
+      ]
+    }
+  ]
+}

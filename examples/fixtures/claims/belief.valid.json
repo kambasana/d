@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.2.0",
+  "belief_id": "belief:a-0099:claim-001",
+  "agent_id": "agent:a-0099",
+  "claim_id": "claim:transformer:001",
+  "disposition": "uncertain",
+  "confidence": 0.62,
+  "source_trust": [
+    {
+      "source_id": "agent:a-0001",
+      "domain": "local_incident_observation",
+      "score": 0.75
+    }
+  ],
+  "evidence_refs": [
+    "message:0042"
+  ],
+  "contradiction_claim_ids": [],
+  "updated_at": "2042-05-04T14:32:10Z"
+}

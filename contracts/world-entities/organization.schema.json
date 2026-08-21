@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/world-entities/organization.schema.json",
+  "title": "Organization",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "organization_id": {
+      "type": "string"
+    },
+    "organization_type": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "member_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "leader_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "asset_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "place_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "policies": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "goals": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/provenanceRef"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "organization_id",
+    "organization_type",
+    "name",
+    "member_ids",
+    "leader_ids",
+    "asset_ids",
+    "place_ids",
+    "policies",
+    "goals",
+    "provenance"
+  ],
+  "additionalProperties": false
+}

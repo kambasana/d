@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/commands/create-social-post.command.schema.json",
+  "title": "Create Social Post Command",
+  "allOf": [
+    {
+      "$ref": "https://awg.local/contracts/commands/base-command.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "command_type": {
+          "const": "CreateSocialPost"
+        },
+        "actor_id": {
+          "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+        },
+        "platform_id": {
+          "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+        },
+        "account_id": {
+          "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20000
+        },
+        "claim_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+          }
+        },
+        "audience": {
+          "type": "object",
+          "properties": {
+            "visibility": {
+              "enum": [
+                "private",
+                "followers",
+                "group",
+                "public"
+              ]
+            },
+            "group_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "visibility"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "command_type",
+        "actor_id",
+        "platform_id",
+        "account_id",
+        "content",
+        "audience"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

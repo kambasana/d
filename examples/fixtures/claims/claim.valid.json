@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.2.0",
+  "claim_id": "claim:transformer:001",
+  "proposition": "A loud bang and smoke were observed near the substation.",
+  "subject_refs": [
+    "event:transformer-failure:001"
+  ],
+  "asserted_by": "agent:a-0001",
+  "original_source": "agent:a-0001",
+  "source_chain": [
+    "agent:a-0001"
+  ],
+  "evidence_refs": [
+    "observation:0001"
+  ],
+  "acquired_at": "2042-05-04T14:30:04Z",
+  "location_context": {
+    "place_id": "place:substation-01",
+    "precision": "place"
+  },
+  "confidence": 0.78,
+  "disputed": false,
+  "parent_claim_id": null,
+  "provenance": [
+    {
+      "source_id": "observation:0001",
+      "source_type": "observed",
+      "recorded_at": "2042-05-04T14:30:04Z"
+    }
+  ]
+}

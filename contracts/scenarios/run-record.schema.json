@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/scenarios/run-record.schema.json",
+  "title": "Run Record",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "scenario_id": {
+      "type": "string"
+    },
+    "scenario_digest": {
+      "type": "string"
+    },
+    "branch_id": {
+      "type": "string"
+    },
+    "core_version": {
+      "type": "string"
+    },
+    "configuration_digest": {
+      "type": "string"
+    },
+    "data_source_versions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "plugin_versions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "model_records": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "random_streams": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "final_event_sequence": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "snapshot_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "event_archive_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "environment": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "scenario_id",
+    "scenario_digest",
+    "branch_id",
+    "core_version",
+    "configuration_digest",
+    "data_source_versions",
+    "plugin_versions",
+    "model_records",
+    "random_streams",
+    "started_at",
+    "snapshot_refs",
+    "environment"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/events/belief-updated.event.schema.json",
+  "title": "Belief Updated Event",
+  "allOf": [
+    {
+      "$ref": "https://awg.local/contracts/events/domain-event.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "event_type": {
+          "const": "BeliefUpdated"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "belief_id": {
+              "type": "string"
+            },
+            "agent_id": {
+              "type": "string"
+            },
+            "claim_id": {
+              "type": "string"
+            },
+            "previous_disposition": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "new_disposition": {
+              "enum": [
+                "unknown",
+                "considering",
+                "believed",
+                "disbelieved",
+                "uncertain",
+                "suspended"
+              ]
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "reason_code": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "belief_id",
+            "agent_id",
+            "claim_id",
+            "new_disposition",
+            "confidence",
+            "evidence_refs",
+            "reason_code"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "event_type",
+        "payload"
+      ]
+    }
+  ]
+}

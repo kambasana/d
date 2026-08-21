@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/events/claim-shared.event.schema.json",
+  "title": "Claim Shared Event",
+  "allOf": [
+    {
+      "$ref": "https://awg.local/contracts/events/domain-event.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "event_type": {
+          "const": "ClaimShared"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "claim_id": {
+              "type": "string"
+            },
+            "source_agent_id": {
+              "type": "string"
+            },
+            "recipient_ids": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
+            "channel_id": {
+              "type": "string"
+            },
+            "message_id": {
+              "type": "string"
+            },
+            "parent_transmission_event_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "claim_id",
+            "source_agent_id",
+            "recipient_ids",
+            "channel_id",
+            "message_id"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "event_type",
+        "payload"
+      ]
+    }
+  ]
+}

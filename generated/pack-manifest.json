@@ -1,0 +1,1157 @@
+{
+  "pack": {
+    "id": "AWG",
+    "name": "Agentic World Graph",
+    "version": "0.2.0",
+    "status": "baseline",
+    "generated": "2026-08-20",
+    "canonical_root": ".",
+    "source_of_truth": "Authored files and canonical YAML registers in this repository."
+  },
+  "documents_registry": "registers/documents.yaml",
+  "requirements_registry": "registers/requirements.yaml",
+  "tests_registry": "registers/tests.yaml",
+  "conversation_requirements_registry": "registers/conversation-requirements.yaml",
+  "required_root_files": [
+    "README.md",
+    "AGENTS.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "GOVERNANCE.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE.md",
+    "pack-manifest.yaml",
+    "pyproject.toml",
+    "Dockerfile",
+    "docker-compose.yml",
+    "Makefile",
+    "mkdocs.yml"
+  ],
+  "required_registers": [
+    "registers/documents.yaml",
+    "registers/requirements.yaml",
+    "registers/tests.yaml",
+    "registers/conversation-requirements.yaml",
+    "registers/glossary.yaml",
+    "registers/risks.yaml",
+    "registers/assumptions.yaml",
+    "registers/data-sources.yaml",
+    "registers/open-source-components.yaml",
+    "registers/models-and-prompts.yaml",
+    "registers/evidence.yaml",
+    "registers/linear-mapping.yaml"
+  ],
+  "required_contract_groups": [
+    "contracts/common",
+    "contracts/commands",
+    "contracts/events",
+    "contracts/agents",
+    "contracts/world-entities",
+    "contracts/claims-and-provenance",
+    "contracts/social-platform",
+    "contracts/plugins",
+    "contracts/scenarios",
+    "contracts/firehose"
+  ],
+  "required_generated_reports": [
+    "generated/document-map.md",
+    "generated/document-status-matrix.md",
+    "generated/requirements-traceability-matrix.md",
+    "generated/conversation-requirements-coverage.md",
+    "generated/glossary-and-controlled-vocabulary.md",
+    "generated/risk-and-assumption-register.md",
+    "generated/data-source-and-provenance-register.md",
+    "generated/open-source-reuse-and-licensing-register.md",
+    "generated/model-and-prompt-version-register.md",
+    "generated/evidence-register.md",
+    "generated/completeness-report.md",
+    "generated/validation-report.md",
+    "generated/pack-manifest.json"
+  ],
+  "required_scripts": [
+    "scripts/build_generated.py",
+    "scripts/validate_pack.py",
+    "scripts/validate_traceability.py",
+    "scripts/validate_contracts.py",
+    "scripts/validate_links.py",
+    "scripts/validate_all.py",
+    "scripts/build_release.py",
+    "scripts/entrypoint.py"
+  ],
+  "required_tests": [
+    "tests/test_pack.py",
+    "tests/test_contracts.py",
+    "tests/test_traceability.py"
+  ],
+  "documents": [
+    {
+      "document_id": "AWG-VIS-001",
+      "path": "docs/00-vision-and-research/product-vision.md",
+      "required_sections": []
+    },
+    {
+      "document_id": "AWG-VIS-002",
+      "path": "docs/00-vision-and-research/product-scope-and-non-goals.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-VIS-003",
+      "path": "docs/00-vision-and-research/design-principles.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-VIS-004",
+      "path": "docs/00-vision-and-research/research-and-prior-art.md",
+      "required_sections": []
+    },
+    {
+      "document_id": "AWG-GOV-001",
+      "path": "docs/01-governance-and-safety/simulation-constitution-and-invariants.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-GOV-002",
+      "path": "docs/01-governance-and-safety/security-safety-privacy-and-misuse-model.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-001",
+      "path": "docs/02-domain-model/canonical-world-model-and-ontology.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-002",
+      "path": "docs/02-domain-model/spatial-world-mobility-and-building-specification.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-003",
+      "path": "docs/02-domain-model/agent-runtime-cognition-and-action-model.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-004",
+      "path": "docs/02-domain-model/information-trust-and-provenance-model.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-005",
+      "path": "docs/02-domain-model/organization-group-and-institution-model.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-006",
+      "path": "docs/02-domain-model/economy-resource-and-ownership-model.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-PLAT-001",
+      "path": "docs/03-platform-architecture/system-architecture.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-PLAT-002",
+      "path": "docs/03-platform-architecture/command-event-firehose-and-replay-specification.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-PLAT-003",
+      "path": "docs/03-platform-architecture/plugin-adapter-sdk-and-compatibility-contracts.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-PLAT-004",
+      "path": "docs/03-platform-architecture/storage-indexing-and-projection-architecture.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-PLAT-005",
+      "path": "docs/03-platform-architecture/multi-resolution-simulation-and-scaling-architecture.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-PLAT-006",
+      "path": "docs/03-platform-architecture/deployment-topologies-and-offline-operation.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-SCN-001",
+      "path": "docs/04-scenarios-and-validation/scenario-definition-and-experiment-protocol.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-SCN-002",
+      "path": "docs/04-scenarios-and-validation/validation-calibration-and-benchmark-framework.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-SCN-003",
+      "path": "docs/04-scenarios-and-validation/uncertainty-and-sensitivity-analysis.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-SCN-004",
+      "path": "docs/04-scenarios-and-validation/scenario-comparison-and-counterfactual-analysis.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-SCN-005",
+      "path": "docs/04-scenarios-and-validation/example-scenario-package.md",
+      "required_sections": []
+    },
+    {
+      "document_id": "AWG-UX-001",
+      "path": "docs/05-ui-ux/ui-application-architecture-and-design-system.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-002",
+      "path": "docs/05-ui-ux/agent-map-clustering-and-semantic-zoom.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-003",
+      "path": "docs/05-ui-ux/map-layer-and-visualization-semantics.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-004",
+      "path": "docs/05-ui-ux/agent-place-and-organization-inspectors.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-005",
+      "path": "docs/05-ui-ux/timeline-replay-and-branch-comparison-ux.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-006",
+      "path": "docs/05-ui-ux/accessibility-and-inclusive-design.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-OPS-001",
+      "path": "docs/06-delivery-and-operations/mvp-roadmap-and-definition-of-done.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-OPS-002",
+      "path": "docs/06-delivery-and-operations/software-testing-and-quality-strategy.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-OPS-003",
+      "path": "docs/06-delivery-and-operations/performance-budget-and-capacity-plan.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-OPS-004",
+      "path": "docs/06-delivery-and-operations/observability-reliability-and-recovery.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-OPS-005",
+      "path": "docs/06-delivery-and-operations/release-and-versioning-strategy.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-007",
+      "path": "docs/02-domain-model/stochasticity-noise-and-randomness-model.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-007",
+      "path": "docs/05-ui-ux/map-world-and-agent-visualization-strategy.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-008",
+      "path": "docs/05-ui-ux/ui-ux-research-and-patterns.md",
+      "required_sections": []
+    },
+    {
+      "document_id": "AWG-VIS-005",
+      "path": "docs/00-vision-and-research/research-method-and-evidence-quality.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-VIS-006",
+      "path": "docs/00-vision-and-research/architecture-pattern-reuse-policy.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-GOV-003",
+      "path": "docs/01-governance-and-safety/governance-change-control-and-approvals.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-GOV-004",
+      "path": "docs/01-governance-and-safety/data-classification-retention-and-deletion.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-GOV-005",
+      "path": "docs/01-governance-and-safety/human-subjects-and-real-person-policy.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-GOV-006",
+      "path": "docs/01-governance-and-safety/claims-communication-and-responsible-use-policy.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-GOV-007",
+      "path": "docs/01-governance-and-safety/compliance-audit-and-evidence-retention.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-008",
+      "path": "docs/02-domain-model/temporal-model-and-simulation-clock.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-009",
+      "path": "docs/02-domain-model/perception-sensing-and-observation-model.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-010",
+      "path": "docs/02-domain-model/object-affordance-reservation-and-smart-object-model.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-011",
+      "path": "docs/02-domain-model/human-state-needs-health-and-life-model.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-012",
+      "path": "docs/02-domain-model/population-synthesis-cohorts-and-instantiation.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-DOM-013",
+      "path": "docs/02-domain-model/communication-and-virtual-social-platform-model.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-PLAT-007",
+      "path": "docs/03-platform-architecture/simulation-kernel-scheduler-and-action-execution.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-PLAT-008",
+      "path": "docs/03-platform-architecture/api-service-and-boundary-contracts.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-PLAT-009",
+      "path": "docs/03-platform-architecture/configuration-secrets-and-feature-flags.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-PLAT-010",
+      "path": "docs/03-platform-architecture/identity-access-tenancy-and-authorization.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-PLAT-011",
+      "path": "docs/03-platform-architecture/world-partitioning-region-ownership-and-handoff.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-SCN-006",
+      "path": "docs/04-scenarios-and-validation/experiment-reproducibility-and-run-record.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-SCN-007",
+      "path": "docs/04-scenarios-and-validation/metrics-measurements-and-outcome-catalog.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-SCN-008",
+      "path": "docs/04-scenarios-and-validation/scenario-cards-model-cards-and-limitations.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-SCN-009",
+      "path": "docs/04-scenarios-and-validation/data-calibration-and-parameter-estimation-protocol.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-009",
+      "path": "docs/05-ui-ux/building-interior-and-local-world-ux.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-010",
+      "path": "docs/05-ui-ux/information-space-and-social-platform-ux.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-011",
+      "path": "docs/05-ui-ux/scenario-studio-ux.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-012",
+      "path": "docs/05-ui-ux/firehose-causal-explorer-ux.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-013",
+      "path": "docs/05-ui-ux/design-tokens-components-and-domain-visual-language.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-UX-014",
+      "path": "docs/05-ui-ux/workspaces-navigation-selection-and-context.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-OPS-006",
+      "path": "docs/06-delivery-and-operations/developer-environment-and-contributor-workflow.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-OPS-007",
+      "path": "docs/06-delivery-and-operations/data-migration-and-backward-compatibility.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-OPS-008",
+      "path": "docs/06-delivery-and-operations/backup-restore-and-disaster-recovery.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-OPS-009",
+      "path": "docs/06-delivery-and-operations/documentation-quality-gates.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-OPS-010",
+      "path": "docs/06-delivery-and-operations/linear-project-and-execution-mapping.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-OPS-011",
+      "path": "docs/06-delivery-and-operations/software-supply-chain-and-dependency-assurance.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-APP-001",
+      "path": "docs/10-appendices/standards-conventions-and-identifiers.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-APP-002",
+      "path": "docs/10-appendices/open-decisions-and-research-backlog.md",
+      "required_sections": []
+    },
+    {
+      "document_id": "AWG-APP-003",
+      "path": "docs/10-appendices/pack-completeness-criteria.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    }
+  ],
+  "archive_policy": "Archive is retained for traceability and excluded from normative completeness checks.",
+  "release_outputs": [
+    "agentic-world-graph-v0.2.0.zip",
+    "agentic-world-graph-v0.2.0-part-1-foundation-domain.zip",
+    "agentic-world-graph-v0.2.0-part-2-platform-scenarios.zip",
+    "agentic-world-graph-v0.2.0-part-3-ui-delivery.zip",
+    "agentic-world-graph-v0.2.0-part-4-contracts-tools-archive.zip"
+  ]
+}

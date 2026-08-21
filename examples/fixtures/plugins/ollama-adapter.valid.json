@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.2.0",
+  "plugin_id": "ai-provider:ollama",
+  "name": "Ollama AI Provider Adapter",
+  "version": "0.2.0",
+  "api_version": "1.0.0",
+  "capabilities": [
+    "structured_generation",
+    "dialogue_realization",
+    "summarization"
+  ],
+  "entrypoint": "awg_plugins.ollama:Plugin",
+  "permissions": {
+    "network": "restricted",
+    "filesystem": "none",
+    "secrets": [],
+    "world_commands": []
+  },
+  "offline_support": "required",
+  "determinism": "record_and_replay",
+  "configuration_schema": "contracts/plugins/ollama-config.schema.json",
+  "health_check": {
+    "type": "model_list"
+  },
+  "compatibility": {
+    "core_min": "0.2.0",
+    "core_max_exclusive": null
+  },
+  "licence_record_id": "AWG-COMP-011"
+}

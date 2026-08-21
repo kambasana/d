@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/claims-and-provenance/belief.schema.json",
+  "title": "Belief",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "belief_id": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "claim_id": {
+      "type": "string"
+    },
+    "disposition": {
+      "enum": [
+        "unknown",
+        "considering",
+        "believed",
+        "disbelieved",
+        "uncertain",
+        "suspended"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "source_trust": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "source_id",
+          "domain",
+          "score"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contradiction_claim_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "belief_id",
+    "agent_id",
+    "claim_id",
+    "disposition",
+    "confidence",
+    "source_trust",
+    "evidence_refs",
+    "contradiction_claim_ids",
+    "updated_at"
+  ],
+  "additionalProperties": false
+}

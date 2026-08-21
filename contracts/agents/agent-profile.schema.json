@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/agents/agent-profile.schema.json",
+  "title": "Agent Profile",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/version"
+    },
+    "agent_id": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+    },
+    "identity": {
+      "type": "object",
+      "properties": {
+        "display_name": {
+          "type": "string"
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "provenance": {
+          "type": "array",
+          "items": {
+            "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/provenanceRef"
+          }
+        }
+      },
+      "required": [
+        "display_name",
+        "synthetic",
+        "provenance"
+      ],
+      "additionalProperties": true
+    },
+    "home": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/locationRef"
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "simulation_fidelity": {
+      "enum": [
+        "S1_cohort",
+        "S2_scheduled",
+        "S3_cognitive",
+        "S4_embodied"
+      ]
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "routine_policy": {
+          "type": "string"
+        },
+        "planner": {
+          "type": "string"
+        },
+        "llm_policy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "routine_policy",
+        "planner"
+      ],
+      "additionalProperties": false
+    },
+    "initial_state": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "agent_id",
+    "identity",
+    "roles",
+    "capabilities",
+    "simulation_fidelity",
+    "policy",
+    "initial_state"
+  ],
+  "additionalProperties": false
+}

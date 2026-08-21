@@ -1,0 +1,107 @@
+{
+  "schema_version": "0.2.0",
+  "scenario_id": "scenario:bridge-closure",
+  "name": "Bridge closure and information diffusion",
+  "version": "0.2.0",
+  "purpose": "Test mobility replanning and information diffusion after a declared bridge closure.",
+  "base_world": {
+    "world_id": "world:london-demo",
+    "world_version": "0.2.0"
+  },
+  "start_time": "2042-05-04T08:00:00Z",
+  "time_zone": "Europe/London",
+  "geographic_extent": {
+    "place_id": "place:district-01"
+  },
+  "data_source_ids": [
+    "AWG-DATA-001",
+    "AWG-DATA-003",
+    "AWG-DATA-004",
+    "AWG-DATA-005"
+  ],
+  "population": {
+    "cohorts": 3,
+    "scheduled_agents": 5000,
+    "cognitive_agents": 25,
+    "embodied_agents_max": 200
+  },
+  "organizations": [
+    {
+      "organization_id": "org:transport-authority"
+    }
+  ],
+  "plugins": [
+    {
+      "plugin_id": "mobility:reference",
+      "version": "0.2.0",
+      "configuration_digest": "sha256:demo"
+    },
+    {
+      "plugin_id": "ai-provider:ollama",
+      "version": "0.2.0",
+      "configuration_digest": "sha256:demo2"
+    }
+  ],
+  "models": [
+    {
+      "record_id": "AWG-AI-001",
+      "model": "scenario-assigned-local-model"
+    }
+  ],
+  "random_streams": [
+    {
+      "stream_id": "random:mobility",
+      "owner": "mobility",
+      "seed": 1001
+    },
+    {
+      "stream_id": "random:information",
+      "owner": "information",
+      "seed": 2001
+    }
+  ],
+  "initial_conditions": [
+    {
+      "type": "bridge_state",
+      "bridge_id": "bridge:001",
+      "open": true
+    }
+  ],
+  "scheduled_events": [],
+  "interventions": [
+    {
+      "intervention_id": "intervention:bridge-close",
+      "time": "2042-05-04T08:20:00Z",
+      "type": "CloseInfrastructure",
+      "target_refs": [
+        "bridge:001"
+      ],
+      "parameters": {
+        "reason": "structural_damage"
+      }
+    }
+  ],
+  "measurements": [
+    "metric:journey-delay",
+    "metric:claim-reach",
+    "metric:belief-change"
+  ],
+  "stop_conditions": [
+    {
+      "type": "simulation_time",
+      "at": "2042-05-04T12:00:00Z"
+    }
+  ],
+  "assumption_ids": [
+    "AWG-ASM-001",
+    "AWG-ASM-002"
+  ],
+  "risk_ids": [
+    "AWG-RISK-002",
+    "AWG-RISK-003",
+    "AWG-RISK-014"
+  ],
+  "validation_profile": "validation:district-mobility-information-v1",
+  "created_by": "user:scenario-author",
+  "created_at": "2026-08-20T20:00:00Z"
+}

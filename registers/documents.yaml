@@ -1,0 +1,2070 @@
+version: 0.2.0
+documents:
+- document_id: AWG-APP-001
+  path: docs/10-appendices/standards-conventions-and-identifiers.md
+  title: Standards, Conventions, and Identifiers
+  summary: Define document IDs, requirement IDs, test IDs, event names, schema versions,
+    timestamps, units, coordinates, naming, and normative language.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-DOM-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-APP-002
+  path: docs/10-appendices/open-decisions-and-research-backlog.md
+  title: Open Decisions and Research Backlog
+  summary: Record unresolved choices and research questions without leaving hidden
+    gaps inside normative specifications.
+  normative: false
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-003
+  linear_issue: null
+  required_sections: []
+- document_id: AWG-APP-003
+  path: docs/10-appendices/pack-completeness-criteria.md
+  title: Pack Completeness Criteria
+  summary: Define what it means for the documentation and executable-contract pack
+    to be structurally complete, reviewable, releasable, and implementation-ready.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-OPS-009
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-001
+  path: docs/02-domain-model/canonical-world-model-and-ontology.md
+  title: Canonical World Model and Ontology
+  summary: Define stable identities, entities, relationships, lifecycles, temporal
+    semantics, spatial semantics, and provenance classes.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  linear_issue: ELE-137
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-002
+  path: docs/02-domain-model/spatial-world-mobility-and-building-specification.md
+  title: Spatial World, Mobility, and Building Specification
+  summary: Define authoritative geography, OSM-derived topology, gazetteer semantics,
+    routing, journeys, buildings, interiors, occupancy, and synthetic-world spatial
+    rules.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-DOM-001
+  linear_issue: ELE-138
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-003
+  path: docs/02-domain-model/agent-runtime-cognition-and-action-model.md
+  title: Agent Runtime, Cognition, and Action Model
+  summary: Define a proven NPC-style agent stack using perception, blackboards, needs,
+    schedules, utility systems, planners, action executors, and bounded language models.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-DOM-001
+  - AWG-DOM-002
+  linear_issue: ELE-139
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-004
+  path: docs/02-domain-model/information-trust-and-provenance-model.md
+  title: Information, Trust, Provenance, and Social Diffusion Model
+  summary: Define claims, observations, beliefs, evidence, contextual trust, information
+    mutation, bad actors, fact-checking, and virtual social-media diffusion.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-DOM-001
+  - AWG-DOM-003
+  linear_issue: ELE-140
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-005
+  path: docs/02-domain-model/organization-group-and-institution-model.md
+  title: Organization, Group, and Institution Model
+  summary: Define persistent households, teams, communities, factions, organizations,
+    institutions, governments, membership, authority, and collective action.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-001
+  - AWG-DOM-003
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-006
+  path: docs/02-domain-model/economy-resource-and-ownership-model.md
+  title: Economy, Resource, and Ownership Model
+  summary: Define resources, inventories, transactions, assets, ownership, scarcity,
+    markets, obligations, and economic event provenance.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-001
+  - AWG-DOM-003
+  - AWG-DOM-005
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-007
+  path: docs/02-domain-model/stochasticity-noise-and-randomness-model.md
+  title: Stochasticity, Noise, and Randomness Model
+  summary: Define bounded variation, typed uncertainty, random streams, reproducible
+    seeds, perception noise, memory noise, travel variation, and ensemble analysis
+    without using randomness to disguise missing mechanisms.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-DOM-003
+  - AWG-SCN-003
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-008
+  path: docs/02-domain-model/temporal-model-and-simulation-clock.md
+  title: Temporal Model and Simulation Clock
+  summary: Define simulation time, wall-clock time, event time, valid time, processing
+    time, schedules, durations, recurrence, causality, and time-zone handling.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-DOM-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-009
+  path: docs/02-domain-model/perception-sensing-and-observation-model.md
+  title: Perception, Sensing, and Observation Model
+  summary: Define how physical, digital, institutional, and communication channels
+    create bounded observations for agents.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-002
+  - AWG-DOM-003
+  - AWG-DOM-004
+  - AWG-DOM-008
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-010
+  path: docs/02-domain-model/object-affordance-reservation-and-smart-object-model.md
+  title: Object Affordance, Reservation, and Smart Object Model
+  summary: Define objects and places as stateful providers of typed interactions,
+    capacity, ownership, reservations, slots, durations, and observable consequences.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-001
+  - AWG-DOM-002
+  - AWG-DOM-003
+  - AWG-DOM-006
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-011
+  path: docs/02-domain-model/human-state-needs-health-and-life-model.md
+  title: Human State, Needs, Health, and Life Model
+  summary: Define bounded humanistic state for needs, fatigue, health, emotion, roles,
+    obligations, habits, preferences, skills, and life events.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-003
+  - AWG-DOM-008
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-012
+  path: docs/02-domain-model/population-synthesis-cohorts-and-instantiation.md
+  title: Population Synthesis, Cohorts, and Individual Instantiation
+  summary: Define creation of aggregate populations, calibrated cohorts, scheduled
+    individuals, cognitive agents, and promotion or demotion between fidelity levels.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-001
+  - AWG-DOM-003
+  - AWG-PLAT-005
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-DOM-013
+  path: docs/02-domain-model/communication-and-virtual-social-platform-model.md
+  title: Communication and Virtual Social Platform Model
+  summary: Define face-to-face, phone, message, group, email, broadcast, news, forum,
+    and social-platform channels plus feed, ranking, privacy, moderation, and interaction
+    actions.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-004
+  - AWG-DOM-005
+  - AWG-DOM-008
+  - AWG-DOM-009
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-GOV-001
+  path: docs/01-governance-and-safety/simulation-constitution-and-invariants.md
+  title: Simulation Constitution and Invariants
+  summary: Define the non-negotiable laws that no model, plugin, scenario, operator,
+    projection, or user interface may bypass.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on: []
+  linear_issue: ELE-136
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-GOV-002
+  path: docs/01-governance-and-safety/security-safety-privacy-and-misuse-model.md
+  title: Security, Safety, Privacy, and Misuse Model
+  summary: Define threat boundaries, privacy controls, misuse protections, access
+    rules, and high-consequence scenario restrictions.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-GOV-003
+  path: docs/01-governance-and-safety/governance-change-control-and-approvals.md
+  title: Governance, Change Control, and Approvals
+  summary: Define document authority, decision ownership, change classes, reviews,
+    approvals, emergency changes, and audit records.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-GOV-004
+  path: docs/01-governance-and-safety/data-classification-retention-and-deletion.md
+  title: Data Classification, Retention, and Deletion
+  summary: Define data classes, retention rules, deletion semantics, archival boundaries,
+    backups, and treatment of immutable simulation history.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-GOV-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-GOV-005
+  path: docs/01-governance-and-safety/human-subjects-and-real-person-policy.md
+  title: Human Subjects and Real-Person Representation Policy
+  summary: Define protections for simulations derived from interviews, personal records,
+    identifiable individuals, or sensitive population data.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-002
+  - AWG-GOV-004
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-GOV-006
+  path: docs/01-governance-and-safety/claims-communication-and-responsible-use-policy.md
+  title: Claims, Communication, and Responsible Use Policy
+  summary: Control how simulation results, uncertainty, forecasts, synthetic populations,
+    and causal findings are described to users and stakeholders.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-SCN-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-GOV-007
+  path: docs/01-governance-and-safety/compliance-audit-and-evidence-retention.md
+  title: Compliance, Audit, and Evidence Retention
+  summary: Define audit events, evidence packages, access reviews, approval records,
+    reproducibility bundles, and compliance reporting.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-003
+  - AWG-GOV-004
+  - AWG-PLAT-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-OPS-001
+  path: docs/06-delivery-and-operations/mvp-roadmap-and-definition-of-done.md
+  title: MVP Roadmap and Definition of Done
+  summary: Define a phased path from one offline district and deterministic movement
+    through bounded AI, information space, validation, and multi-resolution scale.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-PLAT-001
+  - AWG-SCN-002
+  linear_issue: ELE-147
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-OPS-002
+  path: docs/06-delivery-and-operations/software-testing-and-quality-strategy.md
+  title: Software Testing and Quality Strategy
+  summary: Define unit, property, invariant, contract, integration, replay, performance,
+    security, offline, migration, and accessibility testing.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-PLAT-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-OPS-003
+  path: docs/06-delivery-and-operations/performance-budget-and-capacity-plan.md
+  title: Performance Budget and Capacity Plan
+  summary: Define measurable budgets for agents, events, AI calls, map rendering,
+    storage, replay, snapshots, recovery, and offline hardware profiles.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-PLAT-005
+  - AWG-UX-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-OPS-004
+  path: docs/06-delivery-and-operations/observability-reliability-and-recovery.md
+  title: Observability, Reliability, and Recovery
+  summary: Define service telemetry separately from simulation events, health indicators,
+    failure isolation, degraded modes, recovery, and auditability.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-PLAT-001
+  - AWG-PLAT-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-OPS-005
+  path: docs/06-delivery-and-operations/release-and-versioning-strategy.md
+  title: Release and Versioning Strategy
+  summary: Define document, schema, plugin, scenario, data, and model versioning plus
+    release manifests, checksums, migrations, and deprecation.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-PLAT-003
+  - AWG-PLAT-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-OPS-006
+  path: docs/06-delivery-and-operations/developer-environment-and-contributor-workflow.md
+  title: Developer Environment and Contributor Workflow
+  summary: Define local, Docker, offline, branch, pull-request, review, formatting,
+    validation, and release workflows.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-OPS-002
+  - AWG-OPS-005
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-OPS-007
+  path: docs/06-delivery-and-operations/data-migration-and-backward-compatibility.md
+  title: Data Migration and Backward Compatibility
+  summary: Define migrations for schemas, events, snapshots, scenarios, plugins, projections,
+    datasets, and model records.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-PLAT-002
+  - AWG-PLAT-003
+  - AWG-PLAT-004
+  - AWG-OPS-005
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-OPS-008
+  path: docs/06-delivery-and-operations/backup-restore-and-disaster-recovery.md
+  title: Backup, Restore, and Disaster Recovery
+  summary: Define backup scopes, recovery point and time objectives, snapshot consistency,
+    restore testing, offline media, and corruption recovery.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-004
+  - AWG-PLAT-004
+  - AWG-OPS-004
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-OPS-009
+  path: docs/06-delivery-and-operations/documentation-quality-gates.md
+  title: Documentation Quality Gates
+  summary: Define structural, semantic, traceability, link, schema, example, licensing,
+    provenance, and release validation for the pack.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-003
+  - AWG-OPS-002
+  - AWG-OPS-005
+  linear_issue: ELE-148
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-OPS-010
+  path: docs/06-delivery-and-operations/linear-project-and-execution-mapping.md
+  title: Linear Project and Execution Mapping
+  summary: Define how the canonical disk or Git repository maps to the existing AWG
+    Linear project, milestones, issues, branches, reviews, and delivery status.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-003
+  - AWG-OPS-006
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-OPS-011
+  path: docs/06-delivery-and-operations/software-supply-chain-and-dependency-assurance.md
+  title: Software Supply Chain and Dependency Assurance
+  summary: Define dependency intake, SBOMs, signatures, vulnerability review, licence
+    review, pinning, reproducible builds, and plugin provenance.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-002
+  - AWG-PLAT-003
+  - AWG-OPS-005
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-PLAT-001
+  path: docs/03-platform-architecture/system-architecture.md
+  title: System Architecture
+  summary: Define the service boundaries and data planes for the world kernel, geospatial
+    systems, agents, information space, scenarios, event history, AI adapters, and
+    projections.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-DOM-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-PLAT-002
+  path: docs/03-platform-architecture/command-event-firehose-and-replay-specification.md
+  title: Command, Event, Firehose, and Replay Specification
+  summary: Define typed intentions and commands, validation, immutable domain events,
+    causal links, snapshots, replay, branches, subscriptions, and model-call provenance.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-DOM-001
+  - AWG-PLAT-001
+  linear_issue: ELE-141
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-PLAT-003
+  path: docs/03-platform-architecture/plugin-adapter-sdk-and-compatibility-contracts.md
+  title: Plugin and Adapter SDK Compatibility Contracts
+  summary: Define swappable adapters for AI providers, embeddings, maps, gazetteers,
+    routing, mobility, physics, storage, social platforms, analytics, and visualization.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-PLAT-001
+  - AWG-PLAT-002
+  linear_issue: ELE-142
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-PLAT-004
+  path: docs/03-platform-architecture/storage-indexing-and-projection-architecture.md
+  title: Storage, Indexing, and Projection Architecture
+  summary: Define fit-for-purpose persistence for authoritative state, spatial data,
+    events, analytics, graph projections, search, embeddings, media, and caches.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-001
+  - AWG-PLAT-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-PLAT-005
+  path: docs/03-platform-architecture/multi-resolution-simulation-and-scaling-architecture.md
+  title: Multi-Resolution Simulation and Scaling Architecture
+  summary: Define aggregate, cohort, scheduled, cognitive, and embodied simulation
+    levels independently from visualization levels.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-PLAT-001
+  - AWG-PLAT-004
+  linear_issue: ELE-143
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-PLAT-006
+  path: docs/03-platform-architecture/deployment-topologies-and-offline-operation.md
+  title: Deployment Topologies and Offline Operation
+  summary: Define developer, single-machine offline, LAN, air-gapped, hybrid, distributed,
+    and read-only analyst deployment modes.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-PLAT-001
+  - AWG-PLAT-003
+  - AWG-PLAT-004
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-PLAT-007
+  path: docs/03-platform-architecture/simulation-kernel-scheduler-and-action-execution.md
+  title: Simulation Kernel, Scheduler, and Action Execution
+  summary: Define the deterministic world loop, event calendar, activation rules,
+    command validation, action channels, interruption, completion, and failure semantics.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-DOM-003
+  - AWG-DOM-008
+  - AWG-PLAT-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-PLAT-008
+  path: docs/03-platform-architecture/api-service-and-boundary-contracts.md
+  title: API, Service, and Boundary Contracts
+  summary: Define public, internal, streaming, administrative, plugin, and data-import
+    interfaces without leaking storage implementation into domain contracts.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-PLAT-001
+  - AWG-PLAT-002
+  - AWG-PLAT-003
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-PLAT-009
+  path: docs/03-platform-architecture/configuration-secrets-and-feature-flags.md
+  title: Configuration, Secrets, and Feature Flags
+  summary: Define configuration layering, secrets isolation, scenario parameters,
+    plugin settings, model routing, feature flags, and reproducible run capture.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-002
+  - AWG-PLAT-003
+  - AWG-SCN-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-PLAT-010
+  path: docs/03-platform-architecture/identity-access-tenancy-and-authorization.md
+  title: Identity, Access, Tenancy, and Authorization
+  summary: Define users, service identities, agents, simulation actors, operators,
+    tenants, roles, permissions, and delegation boundaries.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-002
+  - AWG-GOV-007
+  - AWG-PLAT-008
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-PLAT-011
+  path: docs/03-platform-architecture/world-partitioning-region-ownership-and-handoff.md
+  title: World Partitioning, Region Ownership, and Handoff
+  summary: Define spatial partitions, authoritative region ownership, border events,
+    journeys across partitions, rebalance, recovery, and consistency guarantees.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-002
+  - AWG-PLAT-002
+  - AWG-PLAT-005
+  - AWG-PLAT-007
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-SCN-001
+  path: docs/04-scenarios-and-validation/scenario-definition-and-experiment-protocol.md
+  title: Scenario Definition and Experiment Protocol
+  summary: Define versioned scenario packages, initial state, seeds, interventions,
+    measurements, stop conditions, run records, and reproducible branches.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-DOM-001
+  - AWG-PLAT-002
+  linear_issue: ELE-144
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-SCN-002
+  path: docs/04-scenarios-and-validation/validation-calibration-and-benchmark-framework.md
+  title: Validation, Calibration, and Benchmark Framework
+  summary: Separate software verification, model validation, empirical calibration,
+    human comparison, uncertainty analysis, and use-specific accreditation.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-SCN-001
+  linear_issue: ELE-145
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-SCN-003
+  path: docs/04-scenarios-and-validation/uncertainty-and-sensitivity-analysis.md
+  title: Uncertainty and Sensitivity Analysis
+  summary: Define ensembles, seed variation, parameter sensitivity, model-provider
+    sensitivity, confidence intervals, and reporting of unstable outcomes.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-SCN-001
+  - AWG-SCN-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-SCN-004
+  path: docs/04-scenarios-and-validation/scenario-comparison-and-counterfactual-analysis.md
+  title: Scenario Comparison and Counterfactual Analysis
+  summary: Define baseline alignment, branch inheritance, divergence analysis, causal
+    comparison, and safeguards against false counterfactual claims.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-SCN-001
+  - AWG-SCN-002
+  - AWG-SCN-003
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-SCN-005
+  path: docs/04-scenarios-and-validation/example-scenario-package.md
+  title: Example Scenario Package
+  summary: Provide an informative example showing how a bounded, reproducible scenario
+    package should be assembled.
+  normative: false
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-SCN-001
+  linear_issue: null
+  required_sections: []
+- document_id: AWG-SCN-006
+  path: docs/04-scenarios-and-validation/experiment-reproducibility-and-run-record.md
+  title: Experiment Reproducibility and Run Record
+  summary: Define the immutable record needed to reconstruct a run, including inputs,
+    versions, seeds, plugins, models, datasets, interventions, snapshots, and outputs.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-SCN-001
+  - AWG-PLAT-002
+  - AWG-OPS-005
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-SCN-007
+  path: docs/04-scenarios-and-validation/metrics-measurements-and-outcome-catalog.md
+  title: Metrics, Measurements, and Outcome Catalog
+  summary: Define measurement semantics, units, windows, populations, denominators,
+    uncertainty, provenance, and branch-comparison compatibility.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-SCN-001
+  - AWG-SCN-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-SCN-008
+  path: docs/04-scenarios-and-validation/scenario-cards-model-cards-and-limitations.md
+  title: Scenario Cards, Model Cards, and Limitations
+  summary: Define concise disclosure artifacts for scenarios, agent policies, AI models,
+    datasets, validation scope, risks, and prohibited interpretations.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-006
+  - AWG-SCN-001
+  - AWG-SCN-002
+  - AWG-SCN-006
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-SCN-009
+  path: docs/04-scenarios-and-validation/data-calibration-and-parameter-estimation-protocol.md
+  title: Data Calibration and Parameter Estimation Protocol
+  summary: Define calibration datasets, train/validation separation, parameter fitting,
+    objective functions, identifiability, overfitting controls, and recalibration.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-SCN-002
+  - AWG-SCN-003
+  - AWG-GOV-004
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-001
+  path: docs/05-ui-ux/ui-application-architecture-and-design-system.md
+  title: UI Application Architecture and Design System
+  summary: Define the World Explorer, Scenario Studio, inspectors, information space,
+    timeline, firehose, design system, offline client state, and rendering boundaries.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-GOV-001
+  - AWG-PLAT-001
+  linear_issue: ELE-146
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-002
+  path: docs/05-ui-ux/agent-map-clustering-and-semantic-zoom.md
+  title: Agent Map Clustering, Semantic Zoom, and Co-Location Interaction
+  summary: Define count clusters, geographic versus co-location versus analytical
+    clusters, zoom-to-bounds, radial expansion, building drill-down, and selected-agent
+    persistence.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-002
+  - AWG-PLAT-005
+  - AWG-UX-001
+  linear_issue: ELE-146
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-003
+  path: docs/05-ui-ux/map-layer-and-visualization-semantics.md
+  title: Map Layer and Visualization Semantics
+  summary: Define the meaning, precedence, legends, uncertainty encoding, and truth-versus-projection
+    boundaries of map layers.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-002
+  - AWG-UX-001
+  - AWG-UX-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-004
+  path: docs/05-ui-ux/agent-place-and-organization-inspectors.md
+  title: Agent, Place, and Organization Inspectors
+  summary: Define structured inspection of current state, history, beliefs, provenance,
+    relationships, occupancy, ownership, and causal explanations.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-001
+  - AWG-DOM-003
+  - AWG-DOM-005
+  - AWG-UX-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-005
+  path: docs/05-ui-ux/timeline-replay-and-branch-comparison-ux.md
+  title: Timeline, Replay, and Branch Comparison UX
+  summary: Define time navigation, causal event inspection, replay controls, branch
+    creation, synchronized comparison, and investigation history.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-PLAT-002
+  - AWG-SCN-004
+  - AWG-UX-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-006
+  path: docs/05-ui-ux/accessibility-and-inclusive-design.md
+  title: Accessibility and Inclusive Design
+  summary: Ensure maps, graphs, timelines, clusters, alerts, and controls remain operable
+    without relying only on colour, motion, pointer input, or visual maps.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-UX-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-007
+  path: docs/05-ui-ux/map-world-and-agent-visualization-strategy.md
+  title: Map, World, and Agent Visualization Strategy
+  summary: Define the balance between aggregate world views, thousands of agent dots,
+    clusters, flows, building occupancy, local embodied views, and selected-agent
+    continuity.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-002
+  - AWG-PLAT-005
+  - AWG-UX-001
+  - AWG-UX-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-008
+  path: docs/05-ui-ux/ui-ux-research-and-patterns.md
+  title: UI/UX Research and Proven Interaction Patterns
+  summary: Preserve the detailed UI/UX research covering visual analytics, semantic
+    zoom, coordinated views, scenario authoring, causal investigation, information-space
+    analysis, design tokens, accessibility, and performance.
+  normative: false
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG design research
+  audience:
+  - design
+  - research
+  - engineering
+  depends_on: []
+  linear_issue: null
+  required_sections: []
+- document_id: AWG-UX-009
+  path: docs/05-ui-ux/building-interior-and-local-world-ux.md
+  title: Building, Interior, and Local World UX
+  summary: Define entry from map to building, floors, rooms, entrances, corridors,
+    lifts, stairs, objects, occupants, activities, and local routes.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-002
+  - AWG-DOM-010
+  - AWG-UX-001
+  - AWG-UX-002
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-010
+  path: docs/05-ui-ux/information-space-and-social-platform-ux.md
+  title: Information Space and Social Platform UX
+  summary: Define participant-style social interfaces and analyst views for claims,
+    exposure, posts, messages, feeds, diffusion, provenance, trust, and moderation.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-DOM-004
+  - AWG-DOM-013
+  - AWG-UX-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-011
+  path: docs/05-ui-ux/scenario-studio-ux.md
+  title: Scenario Studio UX
+  summary: Define world/scenario creation, data selection, population setup, interventions,
+    seeds, validation, branching, run controls, assumptions, and export.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-SCN-001
+  - AWG-SCN-007
+  - AWG-UX-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-012
+  path: docs/05-ui-ux/firehose-causal-explorer-ux.md
+  title: Firehose and Causal Explorer UX
+  summary: Define scalable event browsing, filters, event details, parent and cause
+    links, raw payloads, human summaries, and why-chain navigation.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-PLAT-002
+  - AWG-UX-001
+  - AWG-UX-005
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-013
+  path: docs/05-ui-ux/design-tokens-components-and-domain-visual-language.md
+  title: Design Tokens, Components, and Domain Visual Language
+  summary: Define design tokens, component states, domain symbols, uncertainty encodings,
+    density modes, motion, themes, and reusable visual primitives.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-UX-001
+  - AWG-UX-006
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-UX-014
+  path: docs/05-ui-ux/workspaces-navigation-selection-and-context.md
+  title: Workspaces, Navigation, Selection, and Context
+  summary: Define global context, workspace switching, selection persistence, breadcrumbs,
+    coordinated views, saved investigations, and deep links.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-UX-001
+  - AWG-UX-002
+  - AWG-UX-004
+  - AWG-UX-005
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-VIS-001
+  path: docs/00-vision-and-research/product-vision.md
+  title: Product Vision
+  summary: Define the product vision for a geographically grounded, persistent, modular
+    agentic world operating system.
+  normative: false
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on: []
+  linear_issue: null
+  required_sections: []
+- document_id: AWG-VIS-002
+  path: docs/00-vision-and-research/product-scope-and-non-goals.md
+  title: Product Scope and Non-Goals
+  summary: Bound the platform so that it is not mistaken for a chatbot village, omniscient
+    digital twin, or guaranteed prediction engine.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-VIS-001
+  - AWG-GOV-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-VIS-003
+  path: docs/00-vision-and-research/design-principles.md
+  title: Design Principles
+  summary: Set the cross-cutting design principles used by architecture, product,
+    simulation, research, and UI work.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-VIS-001
+  - AWG-GOV-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-VIS-004
+  path: docs/00-vision-and-research/research-and-prior-art.md
+  title: Research and Prior Art
+  summary: Preserve the research review of agent simulations, game AI, agent-based
+    modelling, geospatial systems, and reusable open-source components.
+  normative: false
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG research
+  audience:
+  - research
+  - architecture
+  - engineering
+  depends_on: []
+  linear_issue: null
+  required_sections: []
+- document_id: AWG-VIS-005
+  path: docs/00-vision-and-research/research-method-and-evidence-quality.md
+  title: Research Method and Evidence Quality
+  summary: Define how papers, repositories, game-AI patterns, standards, datasets,
+    and empirical claims are collected, graded, cited, and revisited.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-VIS-004
+  - AWG-GOV-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents
+- document_id: AWG-VIS-006
+  path: docs/00-vision-and-research/architecture-pattern-reuse-policy.md
+  title: Architecture Pattern Reuse Policy
+  summary: Define how established game, simulation, geospatial, distributed-systems,
+    and AI patterns are adopted without copying unsuitable implementations.
+  normative: true
+  status: draft
+  version: 0.2.0
+  owners:
+  - AWG architecture
+  audience:
+  - engineering
+  - research
+  - product
+  depends_on:
+  - AWG-VIS-004
+  - AWG-GOV-001
+  linear_issue: null
+  required_sections:
+  - Purpose
+  - Scope
+  - Non-goals
+  - Normative requirements
+  - Failure modes
+  - Security and privacy considerations
+  - Performance and scale considerations
+  - Acceptance criteria
+  - Related documents

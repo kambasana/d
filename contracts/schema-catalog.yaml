@@ -1,0 +1,126 @@
+version: 0.2.0
+schemas:
+- path: contracts/agents/agent-profile.schema.json
+  id: https://awg.local/contracts/agents/agent-profile.schema.json
+  title: Agent Profile
+  version: 0.2.0
+- path: contracts/agents/observation.schema.json
+  id: https://awg.local/contracts/agents/observation.schema.json
+  title: Observation
+  version: 0.2.0
+- path: contracts/agents/schedule.schema.json
+  id: https://awg.local/contracts/agents/schedule.schema.json
+  title: Agent Schedule
+  version: 0.2.0
+- path: contracts/claims-and-provenance/belief.schema.json
+  id: https://awg.local/contracts/claims-and-provenance/belief.schema.json
+  title: Belief
+  version: 0.2.0
+- path: contracts/claims-and-provenance/claim.schema.json
+  id: https://awg.local/contracts/claims-and-provenance/claim.schema.json
+  title: Claim
+  version: 0.2.0
+- path: contracts/commands/base-command.schema.json
+  id: https://awg.local/contracts/commands/base-command.schema.json
+  title: Base Command
+  version: 0.2.0
+- path: contracts/commands/create-social-post.command.schema.json
+  id: https://awg.local/contracts/commands/create-social-post.command.schema.json
+  title: Create Social Post Command
+  version: 0.2.0
+- path: contracts/commands/send-message.command.schema.json
+  id: https://awg.local/contracts/commands/send-message.command.schema.json
+  title: Send Message Command
+  version: 0.2.0
+- path: contracts/commands/travel-to-place.command.schema.json
+  id: https://awg.local/contracts/commands/travel-to-place.command.schema.json
+  title: Travel To Place Command
+  version: 0.2.0
+- path: contracts/common/common.schema.json
+  id: https://awg.local/contracts/common/common.schema.json
+  title: AWG Common Definitions
+  version: 0.2.0
+- path: contracts/events/agent-observed.event.schema.json
+  id: https://awg.local/contracts/events/agent-observed.event.schema.json
+  title: Agent Observed Event
+  version: 0.2.0
+- path: contracts/events/belief-updated.event.schema.json
+  id: https://awg.local/contracts/events/belief-updated.event.schema.json
+  title: Belief Updated Event
+  version: 0.2.0
+- path: contracts/events/claim-shared.event.schema.json
+  id: https://awg.local/contracts/events/claim-shared.event.schema.json
+  title: Claim Shared Event
+  version: 0.2.0
+- path: contracts/events/command-rejected.event.schema.json
+  id: https://awg.local/contracts/events/command-rejected.event.schema.json
+  title: Command Rejected Event
+  version: 0.2.0
+- path: contracts/events/domain-event.schema.json
+  id: https://awg.local/contracts/events/domain-event.schema.json
+  title: Domain Event
+  version: 0.2.0
+- path: contracts/events/journey-completed.event.schema.json
+  id: https://awg.local/contracts/events/journey-completed.event.schema.json
+  title: Journey Completed Event
+  version: 0.2.0
+- path: contracts/events/journey-started.event.schema.json
+  id: https://awg.local/contracts/events/journey-started.event.schema.json
+  title: Journey Started Event
+  version: 0.2.0
+- path: contracts/firehose/subscription.schema.json
+  id: https://awg.local/contracts/firehose/subscription.schema.json
+  title: Firehose Subscription
+  version: 0.2.0
+- path: contracts/plugins/ollama-config.schema.json
+  id: https://awg.local/contracts/plugins/ollama-config.schema.json
+  title: Ollama Adapter Configuration
+  version: 0.2.0
+- path: contracts/plugins/openrouter-config.schema.json
+  id: https://awg.local/contracts/plugins/openrouter-config.schema.json
+  title: OpenRouter Adapter Configuration
+  version: 0.2.0
+- path: contracts/plugins/plugin-manifest.schema.json
+  id: https://awg.local/contracts/plugins/plugin-manifest.schema.json
+  title: Plugin Manifest
+  version: 0.2.0
+- path: contracts/scenarios/intervention.schema.json
+  id: https://awg.local/contracts/scenarios/intervention.schema.json
+  title: Scenario Intervention
+  version: 0.2.0
+- path: contracts/scenarios/run-record.schema.json
+  id: https://awg.local/contracts/scenarios/run-record.schema.json
+  title: Run Record
+  version: 0.2.0
+- path: contracts/scenarios/scenario-package.schema.json
+  id: https://awg.local/contracts/scenarios/scenario-package.schema.json
+  title: Scenario Package
+  version: 0.2.0
+- path: contracts/social-platform/social-action.schema.json
+  id: https://awg.local/contracts/social-platform/social-action.schema.json
+  title: Social Platform Action
+  version: 0.2.0
+- path: contracts/world-entities/building.schema.json
+  id: https://awg.local/contracts/world-entities/building.schema.json
+  title: Building
+  version: 0.2.0
+- path: contracts/world-entities/journey.schema.json
+  id: https://awg.local/contracts/world-entities/journey.schema.json
+  title: Journey
+  version: 0.2.0
+- path: contracts/world-entities/organization.schema.json
+  id: https://awg.local/contracts/world-entities/organization.schema.json
+  title: Organization
+  version: 0.2.0
+- path: contracts/world-entities/place.schema.json
+  id: https://awg.local/contracts/world-entities/place.schema.json
+  title: Place
+  version: 0.2.0
+- path: contracts/world-entities/smart-object.schema.json
+  id: https://awg.local/contracts/world-entities/smart-object.schema.json
+  title: Smart Object
+  version: 0.2.0
+- path: contracts/world-entities/world.schema.json
+  id: https://awg.local/contracts/world-entities/world.schema.json
+  title: World
+  version: 0.2.0

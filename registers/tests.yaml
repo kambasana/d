@@ -1,0 +1,697 @@
+version: 0.2.0
+tests:
+- id: AWG-TEST-COV-001
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Build complete worlds
+    and scenarios, not isolated chat agents.'
+  requirements:
+  - AWG-REQ-VIS-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-002
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Ground real worlds
+    in OpenStreetMap geography and topology.'
+  requirements:
+  - AWG-REQ-GEO-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-003
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Support planet and
+    regional tile views while keeping tiles separate from authoritative world state.'
+  requirements:
+  - AWG-REQ-GEO-002
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-004
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Use Nominatim-compatible
+    gazetteer semantics for places, streets, and addresses.'
+  requirements:
+  - AWG-REQ-GEO-003
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-005
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Use Protomaps and
+    PMTiles for offline map presentation.'
+  requirements:
+  - AWG-REQ-GEO-004
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-006
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Support Ollama as
+    a local AI provider.'
+  requirements:
+  - AWG-REQ-PLG-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-007
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Support OpenRouter
+    as a remote AI provider.'
+  requirements:
+  - AWG-REQ-PLG-002
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-008
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Use modular plugin
+    and adapter architecture so components can be swapped without breaking core functionality.'
+  requirements:
+  - AWG-REQ-PLG-003
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-009
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Treat the system
+    as a serious simulation platform rather than a toy agent demo.'
+  requirements:
+  - AWG-REQ-GOV-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-010
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Expose a structured
+    firehose for each agent and world.'
+  requirements:
+  - AWG-REQ-EVT-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-011
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Allow scenarios and
+    live changes so agents and groups react and communicate.'
+  requirements:
+  - AWG-REQ-SCN-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-012
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Build humanistic
+    systems from established NPC, ABM, cognitive, social, and behavioural patterns
+    rather than unconstrained invention.'
+  requirements:
+  - AWG-REQ-AGT-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-013
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Agents must understand
+    the space they occupy.'
+  requirements:
+  - AWG-REQ-GEO-005
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-014
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Synthetic worlds
+    must use coherent OSM-like places, geometry, access, and traversal.'
+  requirements:
+  - AWG-REQ-GEO-006
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-015
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Movement must consume
+    plausible time and obey route, mode, and speed constraints.'
+  requirements:
+  - AWG-REQ-GEO-007
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-016
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Agents cannot randomly
+    spawn at destinations or teleport.'
+  requirements:
+  - AWG-REQ-GEO-008
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-017
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Knowledge learned
+    from another agent must retain source provenance.'
+  requirements:
+  - AWG-REQ-EPI-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-018
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Information sources
+    may be reliable, mistaken, deceptive, malicious, or coordinated.'
+  requirements:
+  - AWG-REQ-EPI-002
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-019
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Relationship history
+    and domain context affect trust.'
+  requirements:
+  - AWG-REQ-EPI-003
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-020
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Model witness, second-hand
+    report, post, repost, comment, message, and fact-checking chains.'
+  requirements:
+  - AWG-REQ-EPI-004
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-021
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: A contacted witness
+    may reply, clarify, contradict, ignore, block, or remain uncertain.'
+  requirements:
+  - AWG-REQ-EPI-005
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-022
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Provide a virtual
+    social-media site where agents can post, react, comment, repost, and message.'
+  requirements:
+  - AWG-REQ-SOC-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-023
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Support information-space
+    actors that may not be fully embodied in the physical world.'
+  requirements:
+  - AWG-REQ-SOC-002
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-024
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Capture social and
+    information actions in the firehose.'
+  requirements:
+  - AWG-REQ-EVT-002
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-025
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Research papers,
+    GitHub projects, systems, and proven game AI before designing replacements.'
+  requirements:
+  - AWG-REQ-RES-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-026
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Record useful reusable
+    mechanisms and unsuitable mechanisms.'
+  requirements:
+  - AWG-REQ-RES-002
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-027
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Maintain a never-do
+    list for fake, invalid, or misleading simulation shortcuts.'
+  requirements:
+  - AWG-REQ-GOV-002
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-028
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Prefer established
+    game NPC architecture over prompt-only reinvention.'
+  requirements:
+  - AWG-REQ-AGT-002
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-029
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Balance agent markers
+    with aggregate world views.'
+  requirements:
+  - AWG-REQ-UX-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-030
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Allow thousands of
+    raw dots as an optional debug view without making it the only representation.'
+  requirements:
+  - AWG-REQ-UX-002
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-031
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Provide detailed
+    building and interior world views.'
+  requirements:
+  - AWG-REQ-UX-003
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-032
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Use controlled randomness
+    for variation, not arbitrary activity.'
+  requirements:
+  - AWG-REQ-RND-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-033
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Keep simulation level
+    of detail independent from visualization level of detail.'
+  requirements:
+  - AWG-REQ-SCL-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-034
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Use semantic zoom
+    where cluster totals progressively split into smaller clusters and individuals.'
+  requirements:
+  - AWG-REQ-UX-004
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-035
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Clicking a geographic
+    cluster should normally zoom to member bounds.'
+  requirements:
+  - AWG-REQ-UX-005
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-036
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Use a radial circle
+    of clickable agents for small true co-location overlaps.'
+  requirements:
+  - AWG-REQ-UX-006
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-037
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Use building, floor,
+    room, or occupant browsers for large co-located populations.'
+  requirements:
+  - AWG-REQ-UX-007
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-038
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Distinguish geographic,
+    co-location, and analytical clusters.'
+  requirements:
+  - AWG-REQ-UX-008
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-039
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Base UI/UX on research
+    and proven visual analytics patterns.'
+  requirements:
+  - AWG-REQ-UX-009
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-040
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Provide a design
+    system and frontend architecture.'
+  requirements:
+  - AWG-REQ-UX-010
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-041
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Create a structured
+    master Markdown documentation pack.'
+  requirements:
+  - AWG-REQ-DOC-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-042
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Put structure and
+    AI-agent instructions first so future agents know how to work.'
+  requirements:
+  - AWG-REQ-DOC-002
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-043
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Map the work to the
+    AWG Linear project while retaining a separate canonical source.'
+  requirements:
+  - AWG-REQ-OPS-001
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-044
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Generate the full
+    pack on disk with CLI validation.'
+  requirements:
+  - AWG-REQ-OPS-002
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-045
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Provide a complete
+    archive and downloadable logical parts.'
+  requirements:
+  - AWG-REQ-OPS-003
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-046
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Preserve all prior
+    conversation-derived specifications and research.'
+  requirements:
+  - AWG-REQ-DOC-003
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-047
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Validate that no
+    declared document, requirement, schema, example, register, or release file is
+    missing.'
+  requirements:
+  - AWG-REQ-DOC-004
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-COV-048
+  type: acceptance
+  description: 'Verify coverage and implementation evidence for: Record risks, assumptions,
+    data provenance, model versions, and open-source licensing.'
+  requirements:
+  - AWG-REQ-GOV-003
+  automation: catalogue; implementation test required before feature acceptance
+  status: defined
+- id: AWG-TEST-TIME-001
+  type: acceptance
+  description: Simulation time is separate from wall-clock time and is authoritative
+    for causality.
+  requirements:
+  - AWG-REQ-TIME-001
+  automation: specified in implementation test plan
+  status: defined
+- id: AWG-TEST-PER-001
+  type: acceptance
+  description: Agents receive only observations available through valid sensing or
+    communication paths.
+  requirements:
+  - AWG-REQ-PER-001
+  automation: specified in implementation test plan
+  status: defined
+- id: AWG-TEST-OBJ-001
+  type: acceptance
+  description: Object interactions enforce affordances, reservations, capacity, and
+    concurrent-action constraints.
+  requirements:
+  - AWG-REQ-OBJ-001
+  automation: specified in implementation test plan
+  status: defined
+- id: AWG-TEST-KER-001
+  type: acceptance
+  description: The deterministic kernel is the sole authority for accepted state transitions.
+  requirements:
+  - AWG-REQ-KER-001
+  automation: specified in implementation test plan
+  status: defined
+- id: AWG-TEST-REP-001
+  type: acceptance
+  description: Recorded model outputs support replay without external model calls.
+  requirements:
+  - AWG-REQ-REP-001
+  automation: specified in implementation test plan
+  status: defined
+- id: AWG-TEST-SEC-001
+  type: acceptance
+  description: Untrusted plugins and model output cannot access secrets or bypass
+    typed interfaces.
+  requirements:
+  - AWG-REQ-SEC-001
+  automation: specified in implementation test plan
+  status: defined
+- id: AWG-TEST-DATA-001
+  type: acceptance
+  description: Every external dataset records source, licence, coverage, version,
+    transformations, uncertainty, and permitted use.
+  requirements:
+  - AWG-REQ-DATA-001
+  automation: specified in implementation test plan
+  status: defined
+- id: AWG-TEST-CMP-001
+  type: acceptance
+  description: Counterfactual branches remain identical before their declared divergence
+    point.
+  requirements:
+  - AWG-REQ-CMP-001
+  automation: specified in implementation test plan
+  status: defined
+- id: AWG-TEST-A11Y-001
+  type: acceptance
+  description: Every map workflow has a keyboard-operable and non-map alternative.
+  requirements:
+  - AWG-REQ-A11Y-001
+  automation: specified in implementation test plan
+  status: defined
+- id: AWG-TEST-MIG-001
+  type: acceptance
+  description: Breaking schema changes preserve historical readability and provide
+    migration or explicit rejection.
+  requirements:
+  - AWG-REQ-MIG-001
+  automation: specified in implementation test plan
+  status: defined
+- id: AWG-TEST-REL-001
+  type: acceptance
+  description: Every release includes a file manifest, checksums, validation report,
+    and integrity-tested archives.
+  requirements:
+  - AWG-REQ-REL-001
+  automation: specified in implementation test plan
+  status: defined
+- id: AWG-TEST-DOC-001
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-VIS-003.
+  requirements:
+  - AWG-REQ-COV-001
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-002
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-DOM-001.
+  requirements:
+  - AWG-REQ-COV-002
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-003
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-DOM-005.
+  requirements:
+  - AWG-REQ-COV-003
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-004
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-DOM-006.
+  requirements:
+  - AWG-REQ-COV-004
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-005
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-PLAT-001.
+  requirements:
+  - AWG-REQ-COV-005
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-006
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-PLAT-004.
+  requirements:
+  - AWG-REQ-COV-006
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-007
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-SCN-002.
+  requirements:
+  - AWG-REQ-COV-007
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-008
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-SCN-003.
+  requirements:
+  - AWG-REQ-COV-008
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-009
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-UX-004.
+  requirements:
+  - AWG-REQ-COV-009
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-010
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-UX-005.
+  requirements:
+  - AWG-REQ-COV-010
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-011
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-OPS-001.
+  requirements:
+  - AWG-REQ-COV-011
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-012
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-OPS-002.
+  requirements:
+  - AWG-REQ-COV-012
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-013
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-OPS-003.
+  requirements:
+  - AWG-REQ-COV-013
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-014
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-OPS-004.
+  requirements:
+  - AWG-REQ-COV-014
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-015
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-GOV-004.
+  requirements:
+  - AWG-REQ-COV-015
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-016
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-GOV-005.
+  requirements:
+  - AWG-REQ-COV-016
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-017
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-GOV-006.
+  requirements:
+  - AWG-REQ-COV-017
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-018
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-DOM-012.
+  requirements:
+  - AWG-REQ-COV-018
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-019
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-PLAT-008.
+  requirements:
+  - AWG-REQ-COV-019
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-020
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-PLAT-009.
+  requirements:
+  - AWG-REQ-COV-020
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-021
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-PLAT-010.
+  requirements:
+  - AWG-REQ-COV-021
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-022
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-PLAT-011.
+  requirements:
+  - AWG-REQ-COV-022
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-023
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-SCN-007.
+  requirements:
+  - AWG-REQ-COV-023
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-024
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-SCN-008.
+  requirements:
+  - AWG-REQ-COV-024
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-025
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-UX-011.
+  requirements:
+  - AWG-REQ-COV-025
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-026
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-UX-012.
+  requirements:
+  - AWG-REQ-COV-026
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-027
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-OPS-008.
+  requirements:
+  - AWG-REQ-COV-027
+  automation: pack validation plus domain review
+  status: defined
+- id: AWG-TEST-DOC-028
+  type: document_acceptance
+  description: Verify required sections, traceability, examples, and acceptance criteria
+    for AWG-APP-001.
+  requirements:
+  - AWG-REQ-COV-028
+  automation: pack validation plus domain review
+  status: defined

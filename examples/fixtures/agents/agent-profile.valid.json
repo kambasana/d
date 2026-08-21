@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.2.0",
+  "agent_id": "agent:a-10482",
+  "identity": {
+    "display_name": "A-10482",
+    "synthetic": true,
+    "provenance": [
+      {
+        "source_id": "scenario:bridge-closure",
+        "source_type": "generated",
+        "version": "0.2.0",
+        "recorded_at": "2042-05-04T00:00:00Z"
+      }
+    ]
+  },
+  "home": {
+    "place_id": "place:home-10482",
+    "precision": "building"
+  },
+  "roles": [
+    "resident",
+    "employee"
+  ],
+  "capabilities": [
+    "walk",
+    "use_bus",
+    "speak",
+    "message",
+    "post"
+  ],
+  "simulation_fidelity": "S3_cognitive",
+  "policy": {
+    "routine_policy": "schedule-utility-v1",
+    "planner": "goap-v1",
+    "llm_policy": "bounded-dialogue-v1"
+  },
+  "initial_state": {
+    "fatigue": 0.2,
+    "money": 42.0,
+    "current_place_id": "place:home-10482"
+  }
+}

@@ -1,0 +1,94 @@
+site_name: Agentic World Graph
+site_description: Grounded agentic world simulation architecture and contracts
+docs_dir: docs
+site_dir: site
+theme:
+  name: material
+nav:
+- Home: README.md
+- Vision and Research:
+  - AWG-VIS-001 — Product Vision: 00-vision-and-research/product-vision.md
+  - AWG-VIS-002 — Product Scope and Non-Goals: 00-vision-and-research/product-scope-and-non-goals.md
+  - AWG-VIS-003 — Design Principles: 00-vision-and-research/design-principles.md
+  - AWG-VIS-004 — Research and Prior Art: 00-vision-and-research/research-and-prior-art.md
+  - AWG-VIS-005 — Research Method and Evidence Quality: 00-vision-and-research/research-method-and-evidence-quality.md
+  - AWG-VIS-006 — Architecture Pattern Reuse Policy: 00-vision-and-research/architecture-pattern-reuse-policy.md
+- Governance and Safety:
+  - AWG-GOV-001 — Simulation Constitution and Invariants: 01-governance-and-safety/simulation-constitution-and-invariants.md
+  - AWG-GOV-002 — Security, Safety, Privacy, and Misuse Model: 01-governance-and-safety/security-safety-privacy-and-misuse-model.md
+  - AWG-GOV-003 — Governance, Change Control, and Approvals: 01-governance-and-safety/governance-change-control-and-approvals.md
+  - AWG-GOV-004 — Data Classification, Retention, and Deletion: 01-governance-and-safety/data-classification-retention-and-deletion.md
+  - AWG-GOV-005 — Human Subjects and Real-Person Representation Policy: 01-governance-and-safety/human-subjects-and-real-person-policy.md
+  - AWG-GOV-006 — Claims, Communication, and Responsible Use Policy: 01-governance-and-safety/claims-communication-and-responsible-use-policy.md
+  - AWG-GOV-007 — Compliance, Audit, and Evidence Retention: 01-governance-and-safety/compliance-audit-and-evidence-retention.md
+- Domain Model:
+  - AWG-DOM-001 — Canonical World Model and Ontology: 02-domain-model/canonical-world-model-and-ontology.md
+  - AWG-DOM-002 — Spatial World, Mobility, and Building Specification: 02-domain-model/spatial-world-mobility-and-building-specification.md
+  - AWG-DOM-003 — Agent Runtime, Cognition, and Action Model: 02-domain-model/agent-runtime-cognition-and-action-model.md
+  - AWG-DOM-004 — Information, Trust, Provenance, and Social Diffusion Model: 02-domain-model/information-trust-and-provenance-model.md
+  - AWG-DOM-005 — Organization, Group, and Institution Model: 02-domain-model/organization-group-and-institution-model.md
+  - AWG-DOM-006 — Economy, Resource, and Ownership Model: 02-domain-model/economy-resource-and-ownership-model.md
+  - AWG-DOM-007 — Stochasticity, Noise, and Randomness Model: 02-domain-model/stochasticity-noise-and-randomness-model.md
+  - AWG-DOM-008 — Temporal Model and Simulation Clock: 02-domain-model/temporal-model-and-simulation-clock.md
+  - AWG-DOM-009 — Perception, Sensing, and Observation Model: 02-domain-model/perception-sensing-and-observation-model.md
+  - AWG-DOM-010 — Object Affordance, Reservation, and Smart Object Model: 02-domain-model/object-affordance-reservation-and-smart-object-model.md
+  - AWG-DOM-011 — Human State, Needs, Health, and Life Model: 02-domain-model/human-state-needs-health-and-life-model.md
+  - AWG-DOM-012 — Population Synthesis, Cohorts, and Individual Instantiation: 02-domain-model/population-synthesis-cohorts-and-instantiation.md
+  - AWG-DOM-013 — Communication and Virtual Social Platform Model: 02-domain-model/communication-and-virtual-social-platform-model.md
+- Platform Architecture:
+  - AWG-PLAT-001 — System Architecture: 03-platform-architecture/system-architecture.md
+  - AWG-PLAT-002 — Command, Event, Firehose, and Replay Specification: 03-platform-architecture/command-event-firehose-and-replay-specification.md
+  - AWG-PLAT-003 — Plugin and Adapter SDK Compatibility Contracts: 03-platform-architecture/plugin-adapter-sdk-and-compatibility-contracts.md
+  - AWG-PLAT-004 — Storage, Indexing, and Projection Architecture: 03-platform-architecture/storage-indexing-and-projection-architecture.md
+  - AWG-PLAT-005 — Multi-Resolution Simulation and Scaling Architecture: 03-platform-architecture/multi-resolution-simulation-and-scaling-architecture.md
+  - AWG-PLAT-006 — Deployment Topologies and Offline Operation: 03-platform-architecture/deployment-topologies-and-offline-operation.md
+  - AWG-PLAT-007 — Simulation Kernel, Scheduler, and Action Execution: 03-platform-architecture/simulation-kernel-scheduler-and-action-execution.md
+  - AWG-PLAT-008 — API, Service, and Boundary Contracts: 03-platform-architecture/api-service-and-boundary-contracts.md
+  - AWG-PLAT-009 — Configuration, Secrets, and Feature Flags: 03-platform-architecture/configuration-secrets-and-feature-flags.md
+  - AWG-PLAT-010 — Identity, Access, Tenancy, and Authorization: 03-platform-architecture/identity-access-tenancy-and-authorization.md
+  - AWG-PLAT-011 — World Partitioning, Region Ownership, and Handoff: 03-platform-architecture/world-partitioning-region-ownership-and-handoff.md
+- Scenarios and Validation:
+  - AWG-SCN-001 — Scenario Definition and Experiment Protocol: 04-scenarios-and-validation/scenario-definition-and-experiment-protocol.md
+  - AWG-SCN-002 — Validation, Calibration, and Benchmark Framework: 04-scenarios-and-validation/validation-calibration-and-benchmark-framework.md
+  - AWG-SCN-003 — Uncertainty and Sensitivity Analysis: 04-scenarios-and-validation/uncertainty-and-sensitivity-analysis.md
+  - AWG-SCN-004 — Scenario Comparison and Counterfactual Analysis: 04-scenarios-and-validation/scenario-comparison-and-counterfactual-analysis.md
+  - AWG-SCN-005 — Example Scenario Package: 04-scenarios-and-validation/example-scenario-package.md
+  - AWG-SCN-006 — Experiment Reproducibility and Run Record: 04-scenarios-and-validation/experiment-reproducibility-and-run-record.md
+  - AWG-SCN-007 — Metrics, Measurements, and Outcome Catalog: 04-scenarios-and-validation/metrics-measurements-and-outcome-catalog.md
+  - AWG-SCN-008 — Scenario Cards, Model Cards, and Limitations: 04-scenarios-and-validation/scenario-cards-model-cards-and-limitations.md
+  - AWG-SCN-009 — Data Calibration and Parameter Estimation Protocol: 04-scenarios-and-validation/data-calibration-and-parameter-estimation-protocol.md
+- UI/UX:
+  - AWG-UX-001 — UI Application Architecture and Design System: 05-ui-ux/ui-application-architecture-and-design-system.md
+  - AWG-UX-002 — Agent Map Clustering, Semantic Zoom, and Co-Location Interaction: 05-ui-ux/agent-map-clustering-and-semantic-zoom.md
+  - AWG-UX-003 — Map Layer and Visualization Semantics: 05-ui-ux/map-layer-and-visualization-semantics.md
+  - AWG-UX-004 — Agent, Place, and Organization Inspectors: 05-ui-ux/agent-place-and-organization-inspectors.md
+  - AWG-UX-005 — Timeline, Replay, and Branch Comparison UX: 05-ui-ux/timeline-replay-and-branch-comparison-ux.md
+  - AWG-UX-006 — Accessibility and Inclusive Design: 05-ui-ux/accessibility-and-inclusive-design.md
+  - AWG-UX-007 — Map, World, and Agent Visualization Strategy: 05-ui-ux/map-world-and-agent-visualization-strategy.md
+  - AWG-UX-008 — UI/UX Research and Proven Interaction Patterns: 05-ui-ux/ui-ux-research-and-patterns.md
+  - AWG-UX-009 — Building, Interior, and Local World UX: 05-ui-ux/building-interior-and-local-world-ux.md
+  - AWG-UX-010 — Information Space and Social Platform UX: 05-ui-ux/information-space-and-social-platform-ux.md
+  - AWG-UX-011 — Scenario Studio UX: 05-ui-ux/scenario-studio-ux.md
+  - AWG-UX-012 — Firehose and Causal Explorer UX: 05-ui-ux/firehose-causal-explorer-ux.md
+  - AWG-UX-013 — Design Tokens, Components, and Domain Visual Language: 05-ui-ux/design-tokens-components-and-domain-visual-language.md
+  - AWG-UX-014 — Workspaces, Navigation, Selection, and Context: 05-ui-ux/workspaces-navigation-selection-and-context.md
+- Delivery and Operations:
+  - AWG-OPS-001 — MVP Roadmap and Definition of Done: 06-delivery-and-operations/mvp-roadmap-and-definition-of-done.md
+  - AWG-OPS-002 — Software Testing and Quality Strategy: 06-delivery-and-operations/software-testing-and-quality-strategy.md
+  - AWG-OPS-003 — Performance Budget and Capacity Plan: 06-delivery-and-operations/performance-budget-and-capacity-plan.md
+  - AWG-OPS-004 — Observability, Reliability, and Recovery: 06-delivery-and-operations/observability-reliability-and-recovery.md
+  - AWG-OPS-005 — Release and Versioning Strategy: 06-delivery-and-operations/release-and-versioning-strategy.md
+  - AWG-OPS-006 — Developer Environment and Contributor Workflow: 06-delivery-and-operations/developer-environment-and-contributor-workflow.md
+  - AWG-OPS-007 — Data Migration and Backward Compatibility: 06-delivery-and-operations/data-migration-and-backward-compatibility.md
+  - AWG-OPS-008 — Backup, Restore, and Disaster Recovery: 06-delivery-and-operations/backup-restore-and-disaster-recovery.md
+  - AWG-OPS-009 — Documentation Quality Gates: 06-delivery-and-operations/documentation-quality-gates.md
+  - AWG-OPS-010 — Linear Project and Execution Mapping: 06-delivery-and-operations/linear-project-and-execution-mapping.md
+  - AWG-OPS-011 — Software Supply Chain and Dependency Assurance: 06-delivery-and-operations/software-supply-chain-and-dependency-assurance.md
+- Appendices:
+  - AWG-APP-001 — Standards, Conventions, and Identifiers: 10-appendices/standards-conventions-and-identifiers.md
+  - AWG-APP-002 — Open Decisions and Research Backlog: 10-appendices/open-decisions-and-research-backlog.md
+  - AWG-APP-003 — Pack Completeness Criteria: 10-appendices/pack-completeness-criteria.md
+markdown_extensions:
+- tables
+- fenced_code
+- toc

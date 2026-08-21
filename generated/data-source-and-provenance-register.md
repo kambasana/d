@@ -1,0 +1,14 @@
+# Data Source and Provenance Register
+
+| ID | Name | Role | Provider | Licence | Status | Known limits |
+| --- | --- | --- | --- | --- | --- | --- |
+| AWG-DATA-001 | OpenStreetMap regional PBF extract | authoritative base geography input | OpenStreetMap contributors or approved extract provider | ODbL-1.0; verify attribution and produced-work obligations | required_per_world | coverage and tagging vary; indoor and entrance data may be incomplete |
+| AWG-DATA-002 | PostGIS spatial world database | derived authoritative geometry and relationships | local transformation pipeline | inherits source-data obligations | derived | derived classifications depend on transformation rules |
+| AWG-DATA-003 | Nominatim gazetteer index | place and address resolution | local build from selected OSM source | inherits source-data obligations | derived | reverse geocoding selects nearest suitable indexed object |
+| AWG-DATA-004 | PMTiles vector-tile archive | offline presentation projection | local tile build or licensed provider | source and style specific | derived | generalized for display; not authoritative topology |
+| AWG-DATA-005 | Routing graph or tiles | walking, cycling, driving, and multimodal routing | local Valhalla or selected adapter build | source-data and engine specific | derived | route quality follows source access tags and profile assumptions |
+| AWG-DATA-006 | GTFS transit feed | optional public-transport schedules and stops | scenario-selected transport authority | provider specific | optional | planned schedules may differ from operations |
+| AWG-DATA-007 | Population and census distributions | optional population synthesis and calibration | scenario-selected official or licensed source | source specific | optional_sensitive | aggregation, suppression, sampling error, outdated values |
+| AWG-DATA-008 | Time-use and mobility observations | optional activity and travel calibration | scenario-selected research or official source | source specific | optional_sensitive | selection bias and context mismatch |
+| AWG-DATA-009 | Building interior geometry | optional floor, room, entrance, and local navigation detail | scenario author, BIM, indoor mapping, or synthetic generator | source specific | optional_restricted | security sensitivity and frequent incompleteness |
+| AWG-DATA-010 | Weather and environmental inputs | optional scenario conditions | local dataset, synthetic generator, or approved adapter | source specific | optional | forecast and measurement uncertainty |

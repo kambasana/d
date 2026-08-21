@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.2.0",
+  "world_id": "world:london-demo",
+  "name": "London District Demonstrator",
+  "world_version": "0.2.0",
+  "world_type": "hypothetical",
+  "coordinate_reference_system": "EPSG:4326",
+  "root_place_ids": [
+    "place:district-01"
+  ],
+  "simulation_ruleset": "ruleset:awg-reference-0.2.0",
+  "data_source_ids": [
+    "AWG-DATA-001",
+    "AWG-DATA-003",
+    "AWG-DATA-004",
+    "AWG-DATA-005"
+  ],
+  "created_at": "2026-08-20T20:00:00Z"
+}

@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/plugins/plugin-manifest.schema.json",
+  "title": "Plugin Manifest",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "plugin_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "api_version": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "entrypoint": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "network": {
+          "enum": [
+            "none",
+            "restricted",
+            "full"
+          ]
+        },
+        "filesystem": {
+          "enum": [
+            "none",
+            "read",
+            "read_write"
+          ]
+        },
+        "secrets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "world_commands": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "network",
+        "filesystem",
+        "secrets",
+        "world_commands"
+      ],
+      "additionalProperties": false
+    },
+    "offline_support": {
+      "enum": [
+        "required",
+        "supported",
+        "not_supported"
+      ]
+    },
+    "determinism": {
+      "enum": [
+        "deterministic",
+        "seeded",
+        "record_and_replay",
+        "nondeterministic_external"
+      ]
+    },
+    "configuration_schema": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "health_check": {
+      "type": "object"
+    },
+    "compatibility": {
+      "type": "object",
+      "properties": {
+        "core_min": {
+          "type": "string"
+        },
+        "core_max_exclusive": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "core_min"
+      ],
+      "additionalProperties": false
+    },
+    "licence_record_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "plugin_id",
+    "name",
+    "version",
+    "api_version",
+    "capabilities",
+    "entrypoint",
+    "permissions",
+    "offline_support",
+    "determinism",
+    "health_check",
+    "compatibility",
+    "licence_record_id"
+  ],
+  "additionalProperties": false
+}

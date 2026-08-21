@@ -1,0 +1,1158 @@
+{
+  "pack": "Agentic World Graph",
+  "version": "0.2.0",
+  "created_at": "2026-08-20T22:08:20.815705+00:00",
+  "scope": "All source files except generated/file-manifest.json and dist release artefacts.",
+  "excluded_paths": [
+    "generated/file-manifest.json",
+    "dist/**"
+  ],
+  "file_count": 229,
+  "files": [
+    {
+      "path": ".editorconfig",
+      "size": 196,
+      "sha256": "19259ce28d207a60acea96f3b78af63e328558e8ef6e8f140e73d3409adc7263"
+    },
+    {
+      "path": ".github/CODEOWNERS.template",
+      "size": 276,
+      "sha256": "81a356d5a5593399ecd40c29561e7321dfdf5b89dc148b23edeb13de319a1ea9"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/specification-change.md",
+      "size": 297,
+      "sha256": "51d5fa98a765ca0b9d55a4d99304e7db0c49c7d82d91501f8d7a87405b03312b"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "size": 465,
+      "sha256": "8189b2df0533bbb77a2013a3b37a5ed2207ea4030b6dd11c49f21be662f8c62e"
+    },
+    {
+      "path": ".github/workflows/documentation-quality.yml",
+      "size": 368,
+      "sha256": "932e56451054fbee6ca031d743814fcf97fab7772c96c7d265da51ad3c05ce01"
+    },
+    {
+      "path": ".github/workflows/release-pack.yml",
+      "size": 459,
+      "sha256": "0040e128bc02304594ba178a0551fd5ab0a9d68ce695f531f2920196fd392b20"
+    },
+    {
+      "path": ".gitignore",
+      "size": 79,
+      "sha256": "6564b24b2e121f5bcd4bc61b024ff5cb2f4a69cef3a78e923067c305a3c24254"
+    },
+    {
+      "path": "AGENTS.md",
+      "size": 3140,
+      "sha256": "302d094eab8c192e6890d1862fc40a673fb70240c2f76fade74bdae52fb643a8"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size": 604,
+      "sha256": "4855e79b3ac52ed43ee5f633cba99137516674acf59782d39b87abad50ffe275"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "size": 624,
+      "sha256": "eed79d099dee2b0fdc75489f41de836f102aa51d011535d8c6014c05e3ce6207"
+    },
+    {
+      "path": "Dockerfile",
+      "size": 213,
+      "sha256": "090ba00a20c6d5f3d5434b6842b4df082a688e7e0c728673dad3f1d961429039"
+    },
+    {
+      "path": "GOVERNANCE.md",
+      "size": 465,
+      "sha256": "cdbbf9bfec2080f1ef5b2e386a9047d7f5161342f75c60ed634216f1f3c8380d"
+    },
+    {
+      "path": "LICENSE",
+      "size": 306,
+      "sha256": "7d581c732491201d7607236d0ef962092f470d05e8996ee2755cbba72080f082"
+    },
+    {
+      "path": "Makefile",
+      "size": 312,
+      "sha256": "b6275dd2d5e52b558b0f1aa5e31dd134f3c459ee3bf2d3aa4acff824502caff6"
+    },
+    {
+      "path": "NOTICE.md",
+      "size": 495,
+      "sha256": "b93f12ddcb37b9920acdf15cc72d39b8e07c5f72eb6674c19ef8da121b18d26c"
+    },
+    {
+      "path": "README.md",
+      "size": 4153,
+      "sha256": "2fdc28e37c800018e839eb633e682bf38a669a0321b2ba6a39958d07c53aed64"
+    },
+    {
+      "path": "SECURITY.md",
+      "size": 642,
+      "sha256": "9de18be2aa8be294d99cddb7254464bd7d2142dd5e9c02d4baf242cc2ae83694"
+    },
+    {
+      "path": "archive/README.md",
+      "size": 193,
+      "sha256": "27813ccd78eee0d29b2dcc20a8ce0ae7de6dc72e6eb0c0e0bb5aee7f1c4be598"
+    },
+    {
+      "path": "archive/build-scripts/README.md",
+      "size": 438,
+      "sha256": "31961ac5a14e7e6396e70549ff7fed6ff1a21114f820e898be8aef54884fcb18"
+    },
+    {
+      "path": "archive/build-scripts/initial-v0.2.0-generator.py",
+      "size": 227990,
+      "sha256": "a67dc9df1fe8e9cdc46bca5cee0839ad268ec48b652c4bb00ffc70c78c52d9c8"
+    },
+    {
+      "path": "archive/conversation-derived/agent-map-clustering-and-semantic-zoom.md",
+      "size": 23705,
+      "sha256": "1b234fc91f7409d9d62e5ed5e59321458735b47ddcc8b61538bdbdba1b5f4687"
+    },
+    {
+      "path": "archive/conversation-derived/agentic-world-graph-documentation-sense-check.md",
+      "size": 19868,
+      "sha256": "d2b5a4d53d7add2472129225f5f838b091120ef5947cff3f072b4d627f8e6151"
+    },
+    {
+      "path": "archive/conversation-derived/agentic-world-graph-research-ui-ux.md",
+      "size": 107296,
+      "sha256": "08b4a72f48b18330cb6efa919c7811f5340ae641df0fbe45f567cc51f2ca00f2"
+    },
+    {
+      "path": "archive/conversation-derived/agentic-world-graph-research.md",
+      "size": 46488,
+      "sha256": "dbca47aac27843fdb873e0ace3f8274fb699fd69b0cca6bd739905f1072cb1c1"
+    },
+    {
+      "path": "archive/releases/agentic-world-graph-master-pack-v0.1.0.zip",
+      "size": 151454,
+      "sha256": "d1a65f1d13be96c0d249a630eedc64e8823edaa4f7ee04d4d643f692bdce46b0"
+    },
+    {
+      "path": "contracts/README.md",
+      "size": 525,
+      "sha256": "dec3342bab979204bc1475921216548eb0decd23d4f1082873df1e61c9c57167"
+    },
+    {
+      "path": "contracts/agents/agent-profile.schema.json",
+      "size": 2149,
+      "sha256": "8e20b9405fe1846239db09a4d94e67cd5c2a8db037c40063329bd90a11823ff6"
+    },
+    {
+      "path": "contracts/agents/observation.schema.json",
+      "size": 1259,
+      "sha256": "04c06751a0c88d9be115d5770a00642c28333480771ceee2a38379fad90e8bc1"
+    },
+    {
+      "path": "contracts/agents/schedule.schema.json",
+      "size": 1515,
+      "sha256": "224b0a8f783e97f600deb0675a558bd1784ed529effccf3e134d41b37a1d78c9"
+    },
+    {
+      "path": "contracts/claims-and-provenance/belief.schema.json",
+      "size": 1736,
+      "sha256": "eeefe0650d3369f538e63958b27d5ef82ca852b23dda75ac7bb932bfcba56e66"
+    },
+    {
+      "path": "contracts/claims-and-provenance/claim.schema.json",
+      "size": 1718,
+      "sha256": "3e84c7e780daa73f9bdf5a0e4abce06d02b4d335626537cf5d4e0da58ca53b51"
+    },
+    {
+      "path": "contracts/commands/base-command.schema.json",
+      "size": 1566,
+      "sha256": "7f17cbf41bbad601276600ffe01dc613f5d2e466e61e5740a4613bb40bca9d61"
+    },
+    {
+      "path": "contracts/commands/create-social-post.command.schema.json",
+      "size": 1884,
+      "sha256": "849315d36a28136618e34f9bea9b16e4c9b58bdde698c955dca91a699a7338e3"
+    },
+    {
+      "path": "contracts/commands/send-message.command.schema.json",
+      "size": 1614,
+      "sha256": "d6702eff8a7d2e6e25c606d937e3956d17b6bcb6fadced1bb822dbbddde64281"
+    },
+    {
+      "path": "contracts/commands/travel-to-place.command.schema.json",
+      "size": 1530,
+      "sha256": "d8c7a25dab4cd62d65f2730f9e833b4ad5565e9d624de0dce87aa5285810285c"
+    },
+    {
+      "path": "contracts/common/common.schema.json",
+      "size": 3404,
+      "sha256": "799ff5267544a040e19847c9b658f54b463e37ade72e210c5dffaee0a36f69c5"
+    },
+    {
+      "path": "contracts/events/agent-observed.event.schema.json",
+      "size": 1684,
+      "sha256": "30051ab9e50eb9903f839aba803225cd507d5a630e55f2c92895e885415946b4"
+    },
+    {
+      "path": "contracts/events/belief-updated.event.schema.json",
+      "size": 1827,
+      "sha256": "175c37a95db4e1eff928f88ab933847e272cfab635bc45876b3963d9f5e07c6d"
+    },
+    {
+      "path": "contracts/events/claim-shared.event.schema.json",
+      "size": 1423,
+      "sha256": "429654e5b0b85fff762bea3a4c3baac1a6f7705950bf66bfe4bc49e7cfbef5b7"
+    },
+    {
+      "path": "contracts/events/command-rejected.event.schema.json",
+      "size": 1168,
+      "sha256": "c4e58aef55b2c339dc2974db95691da829f48a2c78c48f4a35552b15afb9624a"
+    },
+    {
+      "path": "contracts/events/domain-event.schema.json",
+      "size": 2484,
+      "sha256": "26e0b8434edc9bb792335fc6b855c9cf40a036d9cefa6cf85a6c16de48c1ddb0"
+    },
+    {
+      "path": "contracts/events/journey-completed.event.schema.json",
+      "size": 1218,
+      "sha256": "b91cd08f9ad32743fab2d6e77006a3363ac8864bc441af32aa67baf23944f6b0"
+    },
+    {
+      "path": "contracts/events/journey-started.event.schema.json",
+      "size": 1446,
+      "sha256": "21a63ff91ffe32eda95a2f2ed1d608a2edc2d49ffbec9ffd2cd3269c5ee2fbed"
+    },
+    {
+      "path": "contracts/firehose/subscription.schema.json",
+      "size": 1515,
+      "sha256": "5b98a9d4dd318662d081619e06e0faf21decbc67afb4cba2a20a1e3116e161e3"
+    },
+    {
+      "path": "contracts/plugins/ollama-config.schema.json",
+      "size": 707,
+      "sha256": "0b1f6863873d58d1526097fbb6917ea2a2f206e19d996980e015778263c2d1b5"
+    },
+    {
+      "path": "contracts/plugins/openrouter-config.schema.json",
+      "size": 815,
+      "sha256": "07880a9b1633b032c1b64652d069b828aa8bf66212129d0a9ca9d7629e436ae8"
+    },
+    {
+      "path": "contracts/plugins/plugin-manifest.schema.json",
+      "size": 2530,
+      "sha256": "2886d13f1a87c240d86fcc77f63852883dc35e5098d963c6a1b1d4d36720962d"
+    },
+    {
+      "path": "contracts/scenarios/intervention.schema.json",
+      "size": 1280,
+      "sha256": "72b576fd6b942c71258190164bf49c206ae3b6adcb738ef3b97126c883700302"
+    },
+    {
+      "path": "contracts/scenarios/run-record.schema.json",
+      "size": 1895,
+      "sha256": "28ab5c7fd75b09b0080dc330ce7b9435deb81cb30da07a9d502f67c22b07c3d0"
+    },
+    {
+      "path": "contracts/scenarios/scenario-package.schema.json",
+      "size": 4152,
+      "sha256": "8ef57262eaf7a97ee56e2acb4c2d5e8d49134f0c0b4535b9bce80c45515ec1ce"
+    },
+    {
+      "path": "contracts/schema-catalog.yaml",
+      "size": 5279,
+      "sha256": "22bb6e4ff532b994046c63efb918d52490b9169fe35b8340179921481c2c2cb0"
+    },
+    {
+      "path": "contracts/social-platform/social-action.schema.json",
+      "size": 1905,
+      "sha256": "d133b368979aad0d3643953ed7955e7a1def7477c8214d283961185dc7dddc64"
+    },
+    {
+      "path": "contracts/world-entities/building.schema.json",
+      "size": 2706,
+      "sha256": "2376792649e8bb7a34b5d1ecd16272ad49433cfbb47e3e68e9f07f19718e75d6"
+    },
+    {
+      "path": "contracts/world-entities/journey.schema.json",
+      "size": 1542,
+      "sha256": "941dac23c3ef2aa0bb67f01487419349ef53c56e9aa4e1c7ffc5d76d3dd1a455"
+    },
+    {
+      "path": "contracts/world-entities/organization.schema.json",
+      "size": 1434,
+      "sha256": "572c26e0e5c381de2ae3003674dd00d3686e8e11ef82fa8b0cbb472d459400cb"
+    },
+    {
+      "path": "contracts/world-entities/place.schema.json",
+      "size": 1603,
+      "sha256": "403b9f03387146f133ffefb764b96757e7c153250190b0bad542b10630669a5f"
+    },
+    {
+      "path": "contracts/world-entities/smart-object.schema.json",
+      "size": 1926,
+      "sha256": "c8c64076819818a151b1d1b7be46885d2344f21bccb66a70264a0d964d68ff61"
+    },
+    {
+      "path": "contracts/world-entities/world.schema.json",
+      "size": 1228,
+      "sha256": "2be17fd7ac1813cfe6d62111b335b06ccedac87c9335b6dc5d4f4a1d34df804a"
+    },
+    {
+      "path": "decisions/ADR-0001-canonical-source-and-linear-separation.md",
+      "size": 649,
+      "sha256": "69d6937720334069c803393bd1eedfe70e179650cd97f051ecffc1278a7c2145"
+    },
+    {
+      "path": "decisions/ADR-0002-deterministic-kernel-authority.md",
+      "size": 480,
+      "sha256": "746d9b2d7e22c8e03078039818a48a959241c6e0e94ff787c09a92b636b57c68"
+    },
+    {
+      "path": "decisions/ADR-0003-semantic-world-graph-over-multiple-stores.md",
+      "size": 483,
+      "sha256": "c6a31ef67c41c06b5a10f230e5f124b8c32efe30e51dc231c6a14f3a17267d19"
+    },
+    {
+      "path": "decisions/README.md",
+      "size": 286,
+      "sha256": "248411261db071b8336598365934c082d2bca02cef8e2dd9d39c54c97fcefa96"
+    },
+    {
+      "path": "decisions/template.md",
+      "size": 318,
+      "sha256": "a8690152236d26e12b2fa9602eb035dbd68c100c3148681c123b4892fc7c22f8"
+    },
+    {
+      "path": "docker-compose.yml",
+      "size": 138,
+      "sha256": "56b1c6c28d2f8c7833650ad064da78cda3316b491b7be87a38aeb49fded75802"
+    },
+    {
+      "path": "docs/00-vision-and-research/README.md",
+      "size": 1572,
+      "sha256": "1357763507629db19ed0a020b843a447ede3830fcf95504775fcc75570562309"
+    },
+    {
+      "path": "docs/00-vision-and-research/architecture-pattern-reuse-policy.md",
+      "size": 3182,
+      "sha256": "66469603f6a9c24540751ccba9ef556bb038676eb6930462dc22c24b4d0046f3"
+    },
+    {
+      "path": "docs/00-vision-and-research/design-principles.md",
+      "size": 4578,
+      "sha256": "824aa5ee34a89d04536ebc23f550c95fff91026ea3b995e19027654dc66309f9"
+    },
+    {
+      "path": "docs/00-vision-and-research/product-scope-and-non-goals.md",
+      "size": 4287,
+      "sha256": "5eebb382e95b9a908b6d986029e8da0574db2d9a52c331da587eda78164e2dbc"
+    },
+    {
+      "path": "docs/00-vision-and-research/product-vision.md",
+      "size": 3303,
+      "sha256": "73333d850e10591c4b05f28cea998919c60ba2cf26e769824a4a3983e229072b"
+    },
+    {
+      "path": "docs/00-vision-and-research/research-and-prior-art.md",
+      "size": 46692,
+      "sha256": "29edff38bc95f908cbec6c036c56f79ad60ec3a7bd552a8ab6b818765d7d46e7"
+    },
+    {
+      "path": "docs/00-vision-and-research/research-method-and-evidence-quality.md",
+      "size": 3113,
+      "sha256": "36c54121501c5589792d8b13e697500e9d1b14a451b7400c3ace3c84bcb29f47"
+    },
+    {
+      "path": "docs/01-governance-and-safety/README.md",
+      "size": 2039,
+      "sha256": "e3787c4c4af50fd9744f4ffffb1d14e878b2a8d883fa12b9f41c3deb6d97972f"
+    },
+    {
+      "path": "docs/01-governance-and-safety/claims-communication-and-responsible-use-policy.md",
+      "size": 3026,
+      "sha256": "08289d369fe3a3c94e09bd9e8b15bf6b67ccef9f5905e7b7e3e39d0e4ebf0dc1"
+    },
+    {
+      "path": "docs/01-governance-and-safety/compliance-audit-and-evidence-retention.md",
+      "size": 3029,
+      "sha256": "76ea83187f50ac5746f71b980c7e4870e7bb09f957d7350120e742fe4464406b"
+    },
+    {
+      "path": "docs/01-governance-and-safety/data-classification-retention-and-deletion.md",
+      "size": 3100,
+      "sha256": "e3a15b14dfd4b3491ad8e0b0695496e7fd8984b4e19b84fc6b883cad44611a7f"
+    },
+    {
+      "path": "docs/01-governance-and-safety/governance-change-control-and-approvals.md",
+      "size": 3024,
+      "sha256": "ed4982a0b87bedc64dcd5dd08141ded6f4d2e553688eae698a93896727870dff"
+    },
+    {
+      "path": "docs/01-governance-and-safety/human-subjects-and-real-person-policy.md",
+      "size": 3140,
+      "sha256": "5052f725eae94c20f521e71e547f2ebf16cc20d2a400e2598c80047bf4a330da"
+    },
+    {
+      "path": "docs/01-governance-and-safety/security-safety-privacy-and-misuse-model.md",
+      "size": 4630,
+      "sha256": "65a2fa6dc29d86d29bd9e582e9a9f6c81cc9276fb25d0f8eb4c9200b854792dd"
+    },
+    {
+      "path": "docs/01-governance-and-safety/simulation-constitution-and-invariants.md",
+      "size": 6985,
+      "sha256": "f6d416ca383fc08ae069e7d47ce48012a484379fbfd4bb95219aef055894b98f"
+    },
+    {
+      "path": "docs/02-domain-model/README.md",
+      "size": 3887,
+      "sha256": "c770f407310ab99e33857ccca566f440925a9ce7b8fa22dda65bd16ccde82e10"
+    },
+    {
+      "path": "docs/02-domain-model/agent-runtime-cognition-and-action-model.md",
+      "size": 7201,
+      "sha256": "291fff9df08219a672a6b8dd0ed40db6fda9c3266240d2f7878cd562724b0ae6"
+    },
+    {
+      "path": "docs/02-domain-model/canonical-world-model-and-ontology.md",
+      "size": 7617,
+      "sha256": "90968bcb355b975a7d2bd21fe023ccc10632d399a09efb5e66147b95b6aa5fff"
+    },
+    {
+      "path": "docs/02-domain-model/communication-and-virtual-social-platform-model.md",
+      "size": 3267,
+      "sha256": "ac247826b1ecfe90ed0bd8296a78fe6ecc8696dd3cef50d11361e19bb5a1c26a"
+    },
+    {
+      "path": "docs/02-domain-model/economy-resource-and-ownership-model.md",
+      "size": 4384,
+      "sha256": "15cd79cb8bb1a0d00dc3eae60bfabf28a18b87b4bb162e13f0c8077163c9b6a2"
+    },
+    {
+      "path": "docs/02-domain-model/human-state-needs-health-and-life-model.md",
+      "size": 3116,
+      "sha256": "643ed07d3153645cb530acd9a55e481578758d0f416a0e9d0a0b0f0f42e9b9c2"
+    },
+    {
+      "path": "docs/02-domain-model/information-trust-and-provenance-model.md",
+      "size": 8051,
+      "sha256": "9386a889f718296388ca0cfe7bf442b43c96c482749eef66174255c2a5be71e5"
+    },
+    {
+      "path": "docs/02-domain-model/object-affordance-reservation-and-smart-object-model.md",
+      "size": 3217,
+      "sha256": "5aa778807760ad0708b5628e0a1f5671877eff2d7bdec038ca1ee1b162bee88c"
+    },
+    {
+      "path": "docs/02-domain-model/organization-group-and-institution-model.md",
+      "size": 4475,
+      "sha256": "ed7242faddb0d73d4fe1f5331575ca421d505bac1047cd757d0ae83c0127a5b7"
+    },
+    {
+      "path": "docs/02-domain-model/perception-sensing-and-observation-model.md",
+      "size": 3140,
+      "sha256": "d7cd0a8ca127c67440d8518b0a8a4d3978efd5bd3caa58dd05d3a2ec143bb241"
+    },
+    {
+      "path": "docs/02-domain-model/population-synthesis-cohorts-and-instantiation.md",
+      "size": 3210,
+      "sha256": "360291729cfb6d9e69009115a8a1f17303f83c7c73d704663bda9d2ecaa4d0cb"
+    },
+    {
+      "path": "docs/02-domain-model/spatial-world-mobility-and-building-specification.md",
+      "size": 6939,
+      "sha256": "1ed3fdb3f19a9eae16b29e4ab2bdf25610e6b855b261a2a7796e2d93179f051a"
+    },
+    {
+      "path": "docs/02-domain-model/stochasticity-noise-and-randomness-model.md",
+      "size": 8386,
+      "sha256": "d2059676cfe8e94a5d14a3f27c1a95f67246cf42a3f718b4bc214b2534a0e922"
+    },
+    {
+      "path": "docs/02-domain-model/temporal-model-and-simulation-clock.md",
+      "size": 3152,
+      "sha256": "ccaaf731f23f03d1c39c20b042c3662c15d8c9d7031b3ac952b6856c7f6203db"
+    },
+    {
+      "path": "docs/03-platform-architecture/README.md",
+      "size": 3280,
+      "sha256": "d7610ee02e61cecb4909bc54aa67a5b0b65c3b0d3c1b6d0e8b725afaec2d1761"
+    },
+    {
+      "path": "docs/03-platform-architecture/api-service-and-boundary-contracts.md",
+      "size": 3088,
+      "sha256": "484ccb3ef7895186f9669a40cda132fd2340ddbdd9970530488d4f48181acc18"
+    },
+    {
+      "path": "docs/03-platform-architecture/command-event-firehose-and-replay-specification.md",
+      "size": 6970,
+      "sha256": "ea9a1c3a61f29966995002bf4faa64830cbc41b7f495c3a006dff2e41df3ed5a"
+    },
+    {
+      "path": "docs/03-platform-architecture/configuration-secrets-and-feature-flags.md",
+      "size": 3135,
+      "sha256": "65e48cb06935f1656396c2ce6daf88fbb785efaf2be078042ae0c60c75107c36"
+    },
+    {
+      "path": "docs/03-platform-architecture/deployment-topologies-and-offline-operation.md",
+      "size": 4964,
+      "sha256": "7c94cf1cd30c44e4e765176044465057eebc1ebd31da71124ba45cbde6248efb"
+    },
+    {
+      "path": "docs/03-platform-architecture/identity-access-tenancy-and-authorization.md",
+      "size": 3119,
+      "sha256": "27d2e8ab3963b9ba59fad54a53e1004b367ff47a61afa07e22a8a656033bde96"
+    },
+    {
+      "path": "docs/03-platform-architecture/multi-resolution-simulation-and-scaling-architecture.md",
+      "size": 6389,
+      "sha256": "bffb9a27fe1cfe4e344905e2225bc533ae6c346d4df0384f0cf927842f58b966"
+    },
+    {
+      "path": "docs/03-platform-architecture/plugin-adapter-sdk-and-compatibility-contracts.md",
+      "size": 5889,
+      "sha256": "732e65411b2a55ff1d225077777c96399dfc565cb10ef608f434aa721c9e10c2"
+    },
+    {
+      "path": "docs/03-platform-architecture/simulation-kernel-scheduler-and-action-execution.md",
+      "size": 3224,
+      "sha256": "527f1c5f1e0e129e27f0055f029c77eae27e2c47a255c38a1720f2b0e558d158"
+    },
+    {
+      "path": "docs/03-platform-architecture/storage-indexing-and-projection-architecture.md",
+      "size": 4731,
+      "sha256": "4ccb38eefe0649ac269ab4a97e5e677972215992c61d5d3421dd0fe20df7571c"
+    },
+    {
+      "path": "docs/03-platform-architecture/system-architecture.md",
+      "size": 6412,
+      "sha256": "0e96ba075a69173e770f79883e1a04603a850fd5b318e19bf9033e1589fd6d81"
+    },
+    {
+      "path": "docs/03-platform-architecture/world-partitioning-region-ownership-and-handoff.md",
+      "size": 3192,
+      "sha256": "61444750ee6a4f7dfc9b416c90bce7761c8a2bc763e48ef43e15ba422e4b3cc5"
+    },
+    {
+      "path": "docs/04-scenarios-and-validation/README.md",
+      "size": 2658,
+      "sha256": "a41c9a444ea415558736ebb250fd69034333f96c566900709d507d4b9212fcb5"
+    },
+    {
+      "path": "docs/04-scenarios-and-validation/data-calibration-and-parameter-estimation-protocol.md",
+      "size": 3116,
+      "sha256": "9605221cce7cd0de974069ac2ccae096a232cd3c74bc26977222ca056e537c99"
+    },
+    {
+      "path": "docs/04-scenarios-and-validation/example-scenario-package.md",
+      "size": 1590,
+      "sha256": "94405cd72a2fb816ecf7641c9c72d2571e5848e760e1ba6a685c700f90314ae0"
+    },
+    {
+      "path": "docs/04-scenarios-and-validation/experiment-reproducibility-and-run-record.md",
+      "size": 3169,
+      "sha256": "daef6a78e0a9ded2fce89687d1829a36a93ec36d83f0c70b2c4a00d2d59e1b96"
+    },
+    {
+      "path": "docs/04-scenarios-and-validation/metrics-measurements-and-outcome-catalog.md",
+      "size": 3082,
+      "sha256": "3582d494ea6d7affd4512aa89cc8ba547e82b3c29ad79d42c93f4cb4108f0873"
+    },
+    {
+      "path": "docs/04-scenarios-and-validation/scenario-cards-model-cards-and-limitations.md",
+      "size": 3130,
+      "sha256": "931e328f5947751ed45f3c7bacb3a2fe0a3f39d526419a29f53b0e0c6d76dbed"
+    },
+    {
+      "path": "docs/04-scenarios-and-validation/scenario-comparison-and-counterfactual-analysis.md",
+      "size": 4104,
+      "sha256": "846d3f11adcee5d5c8965c254a24abc6ca8c953783129c5de466ee6a62f2bf14"
+    },
+    {
+      "path": "docs/04-scenarios-and-validation/scenario-definition-and-experiment-protocol.md",
+      "size": 5389,
+      "sha256": "e765ffc66fc6a5aef02a78145fdd90004ebce1869e06014f9a0a383965de52fe"
+    },
+    {
+      "path": "docs/04-scenarios-and-validation/uncertainty-and-sensitivity-analysis.md",
+      "size": 4644,
+      "sha256": "4bd1cd9548266716c9065ed481af96b036318eaf128ced2c2082c3d9da08d9f2"
+    },
+    {
+      "path": "docs/04-scenarios-and-validation/validation-calibration-and-benchmark-framework.md",
+      "size": 5907,
+      "sha256": "90f8ba92de514a000a861aa4b60e58283bddc24c8b165cdb6b65da12a7963eb2"
+    },
+    {
+      "path": "docs/05-ui-ux/README.md",
+      "size": 4032,
+      "sha256": "c3e3c64b9470461302f82b42a3942e20de5def7b73a875b6aaf1975861699094"
+    },
+    {
+      "path": "docs/05-ui-ux/accessibility-and-inclusive-design.md",
+      "size": 4172,
+      "sha256": "c6eb0ad8bee8424f3de3d4de8ad46cb4ff1d958ee1dc25bc1aaa68fe00723012"
+    },
+    {
+      "path": "docs/05-ui-ux/agent-map-clustering-and-semantic-zoom.md",
+      "size": 27010,
+      "sha256": "34174a0366240451af90ce3799c507bde16410c99daae795fa0ab342c4ec5bd8"
+    },
+    {
+      "path": "docs/05-ui-ux/agent-place-and-organization-inspectors.md",
+      "size": 4673,
+      "sha256": "1b3b93c65a97dfc8f2c93ae48f36457679eb821ec2d24b8daca280b72df6aff9"
+    },
+    {
+      "path": "docs/05-ui-ux/building-interior-and-local-world-ux.md",
+      "size": 3122,
+      "sha256": "b1da9236b07568fa2e11127009af5cbb73c4faa885b937e5f7e1399c273431a9"
+    },
+    {
+      "path": "docs/05-ui-ux/design-tokens-components-and-domain-visual-language.md",
+      "size": 3177,
+      "sha256": "3ff119ab8fd0c4a605a41dcf291293eb73b77eade96d0de959c1aecc620f4bcb"
+    },
+    {
+      "path": "docs/05-ui-ux/firehose-causal-explorer-ux.md",
+      "size": 3115,
+      "sha256": "d68890cf38a0bb60ab99d4a5ab9ded9928f9825ee33576e8ffe031c76fb4dd7b"
+    },
+    {
+      "path": "docs/05-ui-ux/information-space-and-social-platform-ux.md",
+      "size": 3130,
+      "sha256": "4ce9d5008f04756f94c29b0252edc4d44659c460d322169fb43dd64b7512aeb3"
+    },
+    {
+      "path": "docs/05-ui-ux/map-layer-and-visualization-semantics.md",
+      "size": 4967,
+      "sha256": "a7b4acf57aaa54879ff8ead8005b8d61847011c2c01845b05b4220434a9efbf7"
+    },
+    {
+      "path": "docs/05-ui-ux/map-world-and-agent-visualization-strategy.md",
+      "size": 8369,
+      "sha256": "4a2be1278a636c46e5300cf6f909ec5168093faef046a00fbaf217f1aabea1ad"
+    },
+    {
+      "path": "docs/05-ui-ux/scenario-studio-ux.md",
+      "size": 3096,
+      "sha256": "abdea3021586d132ef91b192e389b0db801938b34a299fe8467d54ae1b299d0d"
+    },
+    {
+      "path": "docs/05-ui-ux/timeline-replay-and-branch-comparison-ux.md",
+      "size": 4185,
+      "sha256": "4160d657327621a5d1403a768c464bd80b07c65adecc48ceb80809f16d241d50"
+    },
+    {
+      "path": "docs/05-ui-ux/ui-application-architecture-and-design-system.md",
+      "size": 7676,
+      "sha256": "637310a813401cf2b7df7cda5681b8a5dc87a50529078ec571c93c7277d517a6"
+    },
+    {
+      "path": "docs/05-ui-ux/ui-ux-research-and-patterns.md",
+      "size": 52391,
+      "sha256": "d7381594605977d798cd4e1c7ab60411be9736c46b10548a1c382ef1ff02c361"
+    },
+    {
+      "path": "docs/05-ui-ux/workspaces-navigation-selection-and-context.md",
+      "size": 3077,
+      "sha256": "186633604ca76eb4fd22226707d70f4739e3e1356fcd2a384126f526affc0f2e"
+    },
+    {
+      "path": "docs/06-delivery-and-operations/README.md",
+      "size": 3018,
+      "sha256": "48dab8964225c7cd343ce1af0e1af0eee779ee48d27a3c7d017a4199b778da34"
+    },
+    {
+      "path": "docs/06-delivery-and-operations/backup-restore-and-disaster-recovery.md",
+      "size": 3082,
+      "sha256": "b2f6bbed22b93929a06afe8a43384b294253757e61c1fcb19359b36b9d72e551"
+    },
+    {
+      "path": "docs/06-delivery-and-operations/data-migration-and-backward-compatibility.md",
+      "size": 3041,
+      "sha256": "47406b4ade1605a08345292cbef30103d7b66e6a53eff09a286ea4aa1fa56d27"
+    },
+    {
+      "path": "docs/06-delivery-and-operations/developer-environment-and-contributor-workflow.md",
+      "size": 2999,
+      "sha256": "67d3c7858c3457415a1b05f4b9f79ee6ba163bdcd838c93c557da3a36024857b"
+    },
+    {
+      "path": "docs/06-delivery-and-operations/documentation-quality-gates.md",
+      "size": 3061,
+      "sha256": "6efa865638c68348a083b90c43a9e6a08f393e7da55973df383cbd1803be0b2a"
+    },
+    {
+      "path": "docs/06-delivery-and-operations/linear-project-and-execution-mapping.md",
+      "size": 3007,
+      "sha256": "0a8d5e26b074bd86ac6b330bddaa98dc15fae8b62aa6c18e187eeb32b0765dba"
+    },
+    {
+      "path": "docs/06-delivery-and-operations/mvp-roadmap-and-definition-of-done.md",
+      "size": 7373,
+      "sha256": "81b183b1774295b1dd8454587231712231b01604cc6b94db22463421d7796b68"
+    },
+    {
+      "path": "docs/06-delivery-and-operations/observability-reliability-and-recovery.md",
+      "size": 4402,
+      "sha256": "1804017ffb2d0f1d0e23f89acaf03b00a5935470c3d80bc63dff29bc4a1a2c67"
+    },
+    {
+      "path": "docs/06-delivery-and-operations/performance-budget-and-capacity-plan.md",
+      "size": 4435,
+      "sha256": "ad563c985d04b8a63a261ab0b5ef04c78f2948e02fc432d2257cccf1d8d9e44d"
+    },
+    {
+      "path": "docs/06-delivery-and-operations/release-and-versioning-strategy.md",
+      "size": 3871,
+      "sha256": "281a32fa3822856c258e231aecf9eb3c0f68df440888507a9f9a361fafa0bb55"
+    },
+    {
+      "path": "docs/06-delivery-and-operations/software-supply-chain-and-dependency-assurance.md",
+      "size": 3118,
+      "sha256": "a920d151c11574297cebf056a7d221abc00de3c6b2ab0d839cd00e301db66881"
+    },
+    {
+      "path": "docs/06-delivery-and-operations/software-testing-and-quality-strategy.md",
+      "size": 4923,
+      "sha256": "578a08102719749d498ce5a63feb791135e2e5b0a147bed703ae9002cc97dc22"
+    },
+    {
+      "path": "docs/10-appendices/README.md",
+      "size": 970,
+      "sha256": "fcda80a03d48d7c56d431dad58a2026b85a8825dc0d9676bbca269adf0c7371a"
+    },
+    {
+      "path": "docs/10-appendices/open-decisions-and-research-backlog.md",
+      "size": 3087,
+      "sha256": "e58ca82b2c1dda1b0cb567fd24840e5d72fddcb26038bcd48c70612c4f243315"
+    },
+    {
+      "path": "docs/10-appendices/pack-completeness-criteria.md",
+      "size": 3053,
+      "sha256": "5e9a82d860e8cf1137c2dd7c8140c2b6c6627794abf38f73d751df8b98d864cb"
+    },
+    {
+      "path": "docs/10-appendices/standards-conventions-and-identifiers.md",
+      "size": 2995,
+      "sha256": "7d395f448fc036b72381288ddd00ea907409a3c5881acc6af5229861ee3f7e8c"
+    },
+    {
+      "path": "docs/README.md",
+      "size": 654,
+      "sha256": "49ee1e692c26ee6325229aa36addb361b3dcc958f8b90ad2a85e5e6cdf8aa56e"
+    },
+    {
+      "path": "examples/README.md",
+      "size": 341,
+      "sha256": "704a3958b8eeb1c348f018fd7eaab7ca09f70fff6f4c35ad9b2f41059bd6f66d"
+    },
+    {
+      "path": "examples/fixtures/agents/agent-profile.invalid.json",
+      "size": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": "examples/fixtures/agents/agent-profile.valid.json",
+      "size": 838,
+      "sha256": "533e3f7ee6599669a292b1d6fcc49fa4b511fc4b07dd30a22244a6c36eb20d61"
+    },
+    {
+      "path": "examples/fixtures/claims/belief.valid.json",
+      "size": 451,
+      "sha256": "20883ce9ce088be1fa56625557ff7359609aa69cb941d653f4bcd3d9cc15b20c"
+    },
+    {
+      "path": "examples/fixtures/claims/claim.invalid.json",
+      "size": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": "examples/fixtures/claims/claim.valid.json",
+      "size": 727,
+      "sha256": "27d7108fada738cef8a777f81debf096ab265e73036a002eea03a18a12738967"
+    },
+    {
+      "path": "examples/fixtures/commands/travel-to-place.invalid.json",
+      "size": 457,
+      "sha256": "99149017c05697efd499accc4a123570016fc91a0f2b49b5604c4ebf668d0582"
+    },
+    {
+      "path": "examples/fixtures/commands/travel-to-place.valid.json",
+      "size": 780,
+      "sha256": "5b07d1bd9edeb2f1bee2824031580f71192b2055854b3d00dfc618278c3f0c79"
+    },
+    {
+      "path": "examples/fixtures/events/domain-event.invalid.json",
+      "size": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": "examples/fixtures/events/journey-started.valid.json",
+      "size": 942,
+      "sha256": "cb1f631781dc7b94c97128044daf38d6d24c2d8a289dfd59a9a0433205cd848b"
+    },
+    {
+      "path": "examples/fixtures/firehose/subscription.invalid.json",
+      "size": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": "examples/fixtures/firehose/subscription.valid.json",
+      "size": 458,
+      "sha256": "81fe4037194d54866b7280ad3fab79484a8973983e8160fe2fe0cca70c2ca1cd"
+    },
+    {
+      "path": "examples/fixtures/index.yaml",
+      "size": 5105,
+      "sha256": "7303379964896e63f9905352950747487af1f7fb72a0a825d2ed1e346678b524"
+    },
+    {
+      "path": "examples/fixtures/plugins/ollama-adapter.valid.json",
+      "size": 742,
+      "sha256": "4c46f28d8b965ceebf866b795273976cc85a0a6b5719b98289f400ce826fa809"
+    },
+    {
+      "path": "examples/fixtures/plugins/plugin-manifest.invalid.json",
+      "size": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": "examples/fixtures/scenarios/bridge-closure.valid.json",
+      "size": 2358,
+      "sha256": "d113cf652c7765c89df8987d51d486b13873f64526fc2da72ca5fd17f0b783c6"
+    },
+    {
+      "path": "examples/fixtures/scenarios/run-record.valid.json",
+      "size": 922,
+      "sha256": "26b474fadb630000b0ce8ca0a531b2c04032eb3bc24c5021fd9881d02f6ac53c"
+    },
+    {
+      "path": "examples/fixtures/scenarios/scenario-package.invalid.json",
+      "size": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": "examples/fixtures/social/social-action.invalid.json",
+      "size": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": "examples/fixtures/social/social-action.valid.json",
+      "size": 484,
+      "sha256": "9be0caff9e2e1c33e5f3fd62d1319064f8d1b9ea6f901031d3b1f6cba920d945"
+    },
+    {
+      "path": "examples/fixtures/world/building.valid.json",
+      "size": 927,
+      "sha256": "ea7d3cbed35ed4fab1c88eb6daddac04f23a26a923d35a5c9c65814f4e45ef77"
+    },
+    {
+      "path": "examples/fixtures/world/place.invalid.json",
+      "size": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": "examples/fixtures/world/place.valid.json",
+      "size": 555,
+      "sha256": "d8af1ab485a29da7d199aff5231e08fb7cd76a57acce5af61ef9cb4ae546f5b0"
+    },
+    {
+      "path": "examples/fixtures/world/world.valid.json",
+      "size": 468,
+      "sha256": "5922f0ab320fa6f1c7acfd38c74d5d474a425b352a7df9f28cb60b29cd793f30"
+    },
+    {
+      "path": "examples/walkthroughs/agent-journey-example.md",
+      "size": 586,
+      "sha256": "a2c0b4c90ce6e42c032bf755e307f224f641d97c1939b37efd7f0a4c95d2e768"
+    },
+    {
+      "path": "examples/walkthroughs/building-occupancy-example.md",
+      "size": 510,
+      "sha256": "fbe366100da5a41f388d1edb48ee5f4fbb418e2756bba560e1fdfce35b2dcbd9"
+    },
+    {
+      "path": "examples/walkthroughs/information-diffusion-example.md",
+      "size": 814,
+      "sha256": "61291733216bb6cb63bdc92c0811c7d852d057eef52613fef3c5caa29717534b"
+    },
+    {
+      "path": "examples/walkthroughs/replay-and-counterfactual-branch-example.md",
+      "size": 478,
+      "sha256": "e3ad9b694d27b8b7311edbf68162aad7a870a30e97c8d13d98a3b97460baa327"
+    },
+    {
+      "path": "examples/walkthroughs/scenario-intervention-example.md",
+      "size": 368,
+      "sha256": "bd74949e24ef782c5a99b67baa1cfc43d3ca102a7fcd01621873709e67d4c90d"
+    },
+    {
+      "path": "examples/walkthroughs/social-platform-example.md",
+      "size": 518,
+      "sha256": "0d4afdab6a6c7fc0ddb325ae7d8e6a57e2fae4de2f397d199fc07cc5f15b65d1"
+    },
+    {
+      "path": "generated/README.md",
+      "size": 110,
+      "sha256": "5a07dc306879298020373942641cc176f42ea0629af1cb725f9e07327cfd5a1a"
+    },
+    {
+      "path": "generated/completeness-report.md",
+      "size": 695,
+      "sha256": "6ce8ba6b6272ad7226281a29a7dea410ffedfd8f050468c8cd804d333db803b5"
+    },
+    {
+      "path": "generated/conversation-requirements-coverage.md",
+      "size": 7120,
+      "sha256": "f32937d28123c85e5f38636ab912f14318b69230627e611a5de2ac47ff1d792f"
+    },
+    {
+      "path": "generated/data-source-and-provenance-register.md",
+      "size": 2514,
+      "sha256": "e4bcd51550ba574e45b1ecc307022ff98013e0e06be0307286dc7e5a07b602d7"
+    },
+    {
+      "path": "generated/document-map.md",
+      "size": 11660,
+      "sha256": "4051f5d4007104b9a06deeb96a03505f578c7cf36ee72acafd2fde20bb8b5636"
+    },
+    {
+      "path": "generated/document-status-matrix.md",
+      "size": 12068,
+      "sha256": "d84de95363f9c020476f18d83284349f376caf584afa6e4a26e1b3823de98af9"
+    },
+    {
+      "path": "generated/evidence-register.md",
+      "size": 5058,
+      "sha256": "bc670e8e2d96c8b043a11bc5309cc5d0652ecedbcf371a0a4ab70a9ba4fe163e"
+    },
+    {
+      "path": "generated/glossary-and-controlled-vocabulary.md",
+      "size": 7034,
+      "sha256": "27bc30f66f114a393492e4676842de46d4e5fb08d9f605b82f1a3c9e3cc79621"
+    },
+    {
+      "path": "generated/linear-project-mapping.md",
+      "size": 871,
+      "sha256": "3a85021cb48ee1d0082c42e8c39f7f563214194bca0858a8df6823e266842963"
+    },
+    {
+      "path": "generated/model-and-prompt-version-register.md",
+      "size": 917,
+      "sha256": "9e350c6f7b4568ec679fdb7ebc45cc5c0b0b170bb9d75161d90856bd207ecdfa"
+    },
+    {
+      "path": "generated/open-source-reuse-and-licensing-register.md",
+      "size": 3205,
+      "sha256": "6d02fc9bd4980c200fb9d6d55c55ed7799739183f8ab909463a3d194ae14c4e0"
+    },
+    {
+      "path": "generated/pack-manifest.json",
+      "size": 34306,
+      "sha256": "32d63de92a40e6b28f19c76da123bd922d7d51460f89a22061ce04ae32684aae"
+    },
+    {
+      "path": "generated/requirements-traceability-matrix.md",
+      "size": 15396,
+      "sha256": "c7c2a744cd0cf5ebf32ddda07bc06d9f7ee1b63e5d895c9c8c2e388b880e90a7"
+    },
+    {
+      "path": "generated/risk-and-assumption-register.md",
+      "size": 6040,
+      "sha256": "49f3c92ddfa5cb6224273cf9731d4e7552ad7a56f57940ed289ed1ebb528d88d"
+    },
+    {
+      "path": "generated/validation-report.md",
+      "size": 885,
+      "sha256": "3d317c99cbde8222e76f95762f91ad6449509880117bb934b10df0660dacf13f"
+    },
+    {
+      "path": "mkdocs.yml",
+      "size": 9642,
+      "sha256": "1ad11b4d1bb795915ba4f9f014f09a2a68bb1a79e05815af31ec68eb3daf968d"
+    },
+    {
+      "path": "pack-manifest.yaml",
+      "size": 26102,
+      "sha256": "3569fe5b6686829eb7093ce843a16e50833bd9a5f98c9026a6dddf2dfc244635"
+    },
+    {
+      "path": "pyproject.toml",
+      "size": 532,
+      "sha256": "a038a5c3c426a68f7cba0b10e6141eab22b91db791bc0568ebb138a684b4cf36"
+    },
+    {
+      "path": "registers/assumptions.yaml",
+      "size": 2713,
+      "sha256": "939cfe5caaeb70d94a283923d3ca7a1e11397f314339907a968a600baa6a3f21"
+    },
+    {
+      "path": "registers/conversation-requirements.yaml",
+      "size": 9858,
+      "sha256": "b56af36cefc00a1207b3acae5caa9abe11692e1a12eac905e4e78e79093aca38"
+    },
+    {
+      "path": "registers/data-sources.yaml",
+      "size": 4052,
+      "sha256": "7067a34ebf68d96ee92fd08fd6c0d9e7a35019134fb0112d3622205b09c740f6"
+    },
+    {
+      "path": "registers/documents.yaml",
+      "size": 54448,
+      "sha256": "9dcb52bfd66ef1fb5d6f1193e3abbc22a586393bb500a646ef3ff37e8c244c83"
+    },
+    {
+      "path": "registers/evidence.yaml",
+      "size": 9387,
+      "sha256": "c1dcb664edd770d908b18f2e73a8210b5da7fac7eb5f6019a922cf3d288acfd2"
+    },
+    {
+      "path": "registers/glossary.yaml",
+      "size": 9834,
+      "sha256": "641979a98ec9caec246c9c37369c2cafb8645ff653fbb2abf0a41155839371a8"
+    },
+    {
+      "path": "registers/linear-mapping.yaml",
+      "size": 770,
+      "sha256": "4d1de1405a79cabc1a67e3d4153cab702ea04a89bf9df5015408b20f842ceb4f"
+    },
+    {
+      "path": "registers/models-and-prompts.yaml",
+      "size": 1057,
+      "sha256": "d16c6723d06f38ba2402f1b37053e99df606213e18bf3fdefb5aa7f2d82c05b8"
+    },
+    {
+      "path": "registers/open-source-components.yaml",
+      "size": 7368,
+      "sha256": "e15bf1a7bdcc56e826c6acc7e04a83d5dfa5c1b759951f1102ef175886cb08fe"
+    },
+    {
+      "path": "registers/requirements.yaml",
+      "size": 31079,
+      "sha256": "5bcc992b3d6d717e4ee796e4511903b3868a007035b896028af95b0442adcb76"
+    },
+    {
+      "path": "registers/risks.yaml",
+      "size": 6895,
+      "sha256": "5752caa92a365da7d9525c54207e18247baa5b7753084d2c1b225733c36bf43f"
+    },
+    {
+      "path": "registers/tests.yaml",
+      "size": 25563,
+      "sha256": "cad39bd6633492d66d2d648b86e989181d6b015e227e715d91566a241855c444"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "size": 92,
+      "sha256": "bb5300f3010360ae05d1f6ff9180b374a7be75320811f8fbc2d242c741a96ec4"
+    },
+    {
+      "path": "scripts/_common.py",
+      "size": 2108,
+      "sha256": "2e7d2d0d20e84024d13be6a1028bbebdcd891dd2c79b87dcf908b3d215b1844d"
+    },
+    {
+      "path": "scripts/build_generated.py",
+      "size": 8041,
+      "sha256": "24e3f036788b61ad92cc49f6de7cfe4b259d692b834fab8a54495ed9d66c2d25"
+    },
+    {
+      "path": "scripts/build_release.py",
+      "size": 9239,
+      "sha256": "4fa12e2903b8a9edb4843c5fbaca00999e05ce91b3636c4a5e3fd92d4f033a1f"
+    },
+    {
+      "path": "scripts/entrypoint.py",
+      "size": 636,
+      "sha256": "c2c0417ba4e0170be19c5171c2b1e655d478c9a4b8e03d220a75e88cb469f2f6"
+    },
+    {
+      "path": "scripts/validate_all.py",
+      "size": 1752,
+      "sha256": "f88ff731a5217aba65c0a6ca0ca9ac3a1936b88687633b3d7c9c9b66073b8da0"
+    },
+    {
+      "path": "scripts/validate_contracts.py",
+      "size": 6521,
+      "sha256": "1823d5a334bd46628babefe521067ec5ed4803da84ecfdd2f678c83a7b918baa"
+    },
+    {
+      "path": "scripts/validate_links.py",
+      "size": 1495,
+      "sha256": "478107347e53dd1140f7249b55a5b2a82ef1180d6ac6f78a0b513894402526e2"
+    },
+    {
+      "path": "scripts/validate_pack.py",
+      "size": 5298,
+      "sha256": "67b034c073cea6ec7cd6af5cf1e5085620f42bb33db4de7cdb1e64917769b00a"
+    },
+    {
+      "path": "scripts/validate_traceability.py",
+      "size": 4040,
+      "sha256": "3f4c7c0f7d67a11369da4739ca3cdf47d3b88f495d0b19bdc8d536ab25bd2b2a"
+    },
+    {
+      "path": "templates/architecture-decision-record-template.md",
+      "size": 318,
+      "sha256": "a8690152236d26e12b2fa9602eb035dbd68c100c3148681c123b4892fc7c22f8"
+    },
+    {
+      "path": "templates/data-source-entry-template.yaml",
+      "size": 109,
+      "sha256": "f3016825ec2f7f9322919e1f8e1bb2c2f11e4fb4eecef8b3c2448a1e6a7dc979"
+    },
+    {
+      "path": "templates/model-card-template.md",
+      "size": 300,
+      "sha256": "5a1c77fd2d1fde9ed3621080dc013072d71ae2ad1132c8ef6d8e230b9d09e079"
+    },
+    {
+      "path": "templates/plugin-specification-template.md",
+      "size": 331,
+      "sha256": "131e646099d255ed78154d7f36a12f0149ecc331df0fd907ffe21e13e8a4d9cc"
+    },
+    {
+      "path": "templates/research-evidence-entry-template.yaml",
+      "size": 90,
+      "sha256": "8d545f3b32793b136cabc3b659acbbda8d92a2cf6270fb2d148985bbcebba39b"
+    },
+    {
+      "path": "templates/risk-entry-template.yaml",
+      "size": 120,
+      "sha256": "d47f700f652f354b09bb0f7b16c8a307bf92b0a7f301a07dc2490b422e21bf46"
+    },
+    {
+      "path": "templates/scenario-card-template.md",
+      "size": 280,
+      "sha256": "a200ae4cff70a567e624c868eb45c0e6488379ea1c4f5f6cd0e07c810e7df710"
+    },
+    {
+      "path": "templates/scenario-template.md",
+      "size": 424,
+      "sha256": "edbbd7b6d714da4e7746c6e2b178661bb50c927625df6afcf2f9fbaed37b9754"
+    },
+    {
+      "path": "templates/validation-report-template.md",
+      "size": 308,
+      "sha256": "8473688f879d807771a9fd55266087fa043f967572b2ae9fc25b0baf07328c16"
+    },
+    {
+      "path": "tests/test_contracts.py",
+      "size": 272,
+      "sha256": "3cd893200184b5f97ef08a9de9fa6fa1659facf2bad4743b46452ed3838887ea"
+    },
+    {
+      "path": "tests/test_pack.py",
+      "size": 443,
+      "sha256": "7ceff40f0d044194fffa86d7bebe70b11ebc25b8800fb06f1b82a2aac5330ead"
+    },
+    {
+      "path": "tests/test_traceability.py",
+      "size": 265,
+      "sha256": "405de89a4444d3b9e71601c683f77e1c80ccfdd693528855c71c1e1889b834b6"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.2.0",
+  "run_id": "run:bridge-closure:baseline:001",
+  "scenario_id": "scenario:bridge-closure",
+  "scenario_digest": "sha256:scenario-demo",
+  "branch_id": "branch:baseline",
+  "core_version": "0.2.0",
+  "configuration_digest": "sha256:config-demo",
+  "data_source_versions": [
+    {
+      "id": "AWG-DATA-001",
+      "version": "2026-08-01"
+    }
+  ],
+  "plugin_versions": [
+    {
+      "plugin_id": "mobility:reference",
+      "version": "0.2.0"
+    }
+  ],
+  "model_records": [
+    {
+      "record_id": "AWG-AI-001",
+      "model": "scenario-assigned-local-model"
+    }
+  ],
+  "random_streams": [
+    {
+      "stream_id": "random:mobility",
+      "seed": 1001
+    }
+  ],
+  "started_at": "2026-08-20T20:00:00Z",
+  "completed_at": null,
+  "final_event_sequence": null,
+  "snapshot_refs": [],
+  "event_archive_ref": null,
+  "environment": {
+    "python": "3.13",
+    "platform": "container"
+  }
+}
