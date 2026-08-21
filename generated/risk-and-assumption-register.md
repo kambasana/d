@@ -23,7 +23,7 @@
 | AWG-RISK-017 | Licensing obligations block commercial distribution | high | Provisional register, legal review, architecture-pattern-only alternatives, and SBOM. | AWG-OPS-011 | open |
 | AWG-RISK-018 | Sensitive real-person or geospatial data is exposed | critical | Classification, least privilege, de-identification, retention, redaction, and audit. | AWG-GOV-002, AWG-GOV-004, AWG-GOV-005 | open |
 | AWG-RISK-019 | A single graph database becomes a performance and coupling bottleneck | medium | Semantic graph model over fit-for-purpose stores and projections. | AWG-PLAT-004 | open |
-| AWG-RISK-020 | Documentation, schemas, examples, and Linear drift apart | high | Manifest validation, generated indexes, traceability, CI gates, and canonical source rule. | AWG-OPS-009, AWG-OPS-010 | open |
+| AWG-RISK-020 | Documentation, schemas, examples, and Linear drift apart | high | Manifest validation, generated indexes, traceability, staged contributor workflow, closeout evidence, CI gates, and canonical source rule. | AWG-OPS-009, AWG-OPS-010 | open |
 
 ## Assumptions
 

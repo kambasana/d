@@ -36,6 +36,7 @@
 | AWG-OPS-009 | Documentation Quality Gates | Normative | draft | 0.2.0 | ELE-148 | docs/06-delivery-and-operations/documentation-quality-gates.md |
 | AWG-OPS-010 | Linear Project and Execution Mapping | Normative | draft | 0.2.0 |  | docs/06-delivery-and-operations/linear-project-and-execution-mapping.md |
 | AWG-OPS-011 | Software Supply Chain and Dependency Assurance | Normative | draft | 0.2.0 |  | docs/06-delivery-and-operations/software-supply-chain-and-dependency-assurance.md |
+| AWG-OPS-012 | Automated Contributor Stage Workflow | Normative | draft | 0.2.0 | ELE-147 | docs/06-delivery-and-operations/automated-contributor-stage-workflow.md |
 | AWG-PLAT-001 | System Architecture | Normative | draft | 0.2.0 |  | docs/03-platform-architecture/system-architecture.md |
 | AWG-PLAT-002 | Command, Event, Firehose, and Replay Specification | Normative | draft | 0.2.0 | ELE-141 | docs/03-platform-architecture/command-event-firehose-and-replay-specification.md |
 | AWG-PLAT-003 | Plugin and Adapter SDK Compatibility Contracts | Normative | draft | 0.2.0 | ELE-142 | docs/03-platform-architecture/plugin-adapter-sdk-and-compatibility-contracts.md |

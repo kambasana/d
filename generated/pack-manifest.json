@@ -80,7 +80,8 @@
     "scripts/entrypoint.py",
     "scripts/build_mvp1_pmtiles.py",
     "scripts/run_mvp1.py",
-    "scripts/run_mvp2.py"
+    "scripts/run_mvp2.py",
+    "scripts/stage_workflow.py"
   ],
   "required_tests": [
     "tests/test_pack.py",
@@ -88,7 +89,8 @@
     "tests/test_traceability.py",
     "tests/test_mvp0_invariants.py",
     "tests/test_mvp1_district.py",
-    "tests/test_mvp2_npc.py"
+    "tests/test_mvp2_npc.py",
+    "tests/test_stage_workflow.py"
   ],
   "documents": [
     {
@@ -1104,6 +1106,21 @@
     {
       "document_id": "AWG-OPS-011",
       "path": "docs/06-delivery-and-operations/software-supply-chain-and-dependency-assurance.md",
+      "required_sections": [
+        "Purpose",
+        "Scope",
+        "Non-goals",
+        "Normative requirements",
+        "Failure modes",
+        "Security and privacy considerations",
+        "Performance and scale considerations",
+        "Acceptance criteria",
+        "Related documents"
+      ]
+    },
+    {
+      "document_id": "AWG-OPS-012",
+      "path": "docs/06-delivery-and-operations/automated-contributor-stage-workflow.md",
       "required_sections": [
         "Purpose",
         "Scope",

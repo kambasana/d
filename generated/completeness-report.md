@@ -4,12 +4,12 @@ This report is generated before the final validation report.
 
 | Measure | Count |
 |---|---:|
-| Registered documents | 74 |
-| Normative documents | 69 |
+| Registered documents | 75 |
+| Normative documents | 70 |
 | Informative documents | 5 |
 | Conversation requirements | 48 |
-| Normative requirements | 118 |
-| Acceptance-test records | 118 |
+| Normative requirements | 119 |
+| Acceptance-test records | 119 |
 | JSON Schemas | 32 |
 | Indexed valid/invalid fixtures | 31 |
 | Risks | 20 |

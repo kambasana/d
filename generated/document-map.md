@@ -93,6 +93,7 @@ Generated from `registers/documents.yaml`.
 - [AWG-OPS-009 — Documentation Quality Gates](../docs/06-delivery-and-operations/documentation-quality-gates.md) — Normative, draft
 - [AWG-OPS-010 — Linear Project and Execution Mapping](../docs/06-delivery-and-operations/linear-project-and-execution-mapping.md) — Normative, draft
 - [AWG-OPS-011 — Software Supply Chain and Dependency Assurance](../docs/06-delivery-and-operations/software-supply-chain-and-dependency-assurance.md) — Normative, draft
+- [AWG-OPS-012 — Automated Contributor Stage Workflow](../docs/06-delivery-and-operations/automated-contributor-stage-workflow.md) — Normative, draft
 
 ## 10-appendices
 
