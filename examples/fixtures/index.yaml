@@ -46,6 +46,10 @@ fixtures:
   schema_id: https://awg.local/contracts/scenarios/scenario-package.schema.json
   expected_valid: true
   note: Valid bounded scenario with declared intervention and seeded random streams.
+- path: examples/fixtures/scenarios/mvp1-reference-district.valid.json
+  schema_id: https://awg.local/contracts/scenarios/scenario-package.schema.json
+  expected_valid: true
+  note: Valid fully offline MVP 1 scenario with 100 deterministic scheduled agents.
 - path: examples/fixtures/firehose/subscription.valid.json
   schema_id: https://awg.local/contracts/firehose/subscription.schema.json
   expected_valid: true

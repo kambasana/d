@@ -1,0 +1,61 @@
+{
+  "nodes": [
+    {"node_id": "1001", "longitude": -2.2450, "latitude": 53.4800, "place_id": "place:home-a", "entrance_id": "entrance:home-a"},
+    {"node_id": "1002", "longitude": -2.2350, "latitude": 53.4800, "place_id": "place:home-b", "entrance_id": "entrance:home-b"},
+    {"node_id": "1003", "longitude": -2.2400, "latitude": 53.4820},
+    {"node_id": "1004", "longitude": -2.2400, "latitude": 53.4870, "place_id": "place:office", "entrance_id": "entrance:office"},
+    {"node_id": "1005", "longitude": -2.2340, "latitude": 53.4840, "place_id": "place:cafe", "entrance_id": "entrance:cafe"},
+    {"node_id": "1006", "longitude": -2.2470, "latitude": 53.4850, "place_id": "place:park"}
+  ],
+  "edges": [
+    {"edge_id": "edge:home-a-square", "source": "1001", "target": "1003", "distance_m": 390.0, "modes": ["walk", "wheelchair"]},
+    {"edge_id": "edge:home-b-square", "source": "1002", "target": "1003", "distance_m": 430.0, "modes": ["walk", "wheelchair"]},
+    {"edge_id": "edge:square-office", "source": "1003", "target": "1004", "distance_m": 560.0, "modes": ["walk", "wheelchair"]},
+    {"edge_id": "edge:square-cafe", "source": "1003", "target": "1005", "distance_m": 470.0, "modes": ["walk"]},
+    {"edge_id": "edge:square-park", "source": "1003", "target": "1006", "distance_m": 650.0, "modes": ["walk", "wheelchair"]},
+    {"edge_id": "edge:closed-shortcut", "source": "1001", "target": "1004", "distance_m": 100.0, "modes": ["walk", "wheelchair"], "accessible": false}
+  ],
+  "places": [
+    {"place_id": "place:home-a", "name": "Aster House", "route_node_id": "1001", "building_id": "building:home-a", "room_id": "room:home-a"},
+    {"place_id": "place:home-b", "name": "Birch House", "route_node_id": "1002", "building_id": "building:home-b", "room_id": "room:home-b"},
+    {"place_id": "place:office", "name": "Civic Office", "route_node_id": "1004", "building_id": "building:office", "room_id": "room:office-main"},
+    {"place_id": "place:cafe", "name": "District Cafe", "route_node_id": "1005", "building_id": "building:cafe", "room_id": "room:cafe-main"},
+    {"place_id": "place:park", "name": "Foundry Park", "route_node_id": "1006"}
+  ],
+  "buildings": [
+    {
+      "building_id": "building:home-a",
+      "name": "Aster House",
+      "capacity": 60,
+      "entrances": [{"entrance_id": "entrance:home-a", "route_node_id": "1001", "modes": ["walk", "wheelchair"]}],
+      "floors": [{"floor_id": "floor:home-a-ground", "level": 0, "room_ids": ["room:home-a"]}]
+    },
+    {
+      "building_id": "building:home-b",
+      "name": "Birch House",
+      "capacity": 60,
+      "entrances": [{"entrance_id": "entrance:home-b", "route_node_id": "1002", "modes": ["walk", "wheelchair"]}],
+      "floors": [{"floor_id": "floor:home-b-ground", "level": 0, "room_ids": ["room:home-b"]}]
+    },
+    {
+      "building_id": "building:office",
+      "name": "Civic Office",
+      "capacity": 60,
+      "entrances": [{"entrance_id": "entrance:office", "route_node_id": "1004", "modes": ["walk", "wheelchair"]}],
+      "floors": [{"floor_id": "floor:office-ground", "level": 0, "room_ids": ["room:office-main"]}]
+    },
+    {
+      "building_id": "building:cafe",
+      "name": "District Cafe",
+      "capacity": 60,
+      "entrances": [{"entrance_id": "entrance:cafe", "route_node_id": "1005", "modes": ["walk"]}],
+      "floors": [{"floor_id": "floor:cafe-ground", "level": 0, "room_ids": ["room:cafe-main"]}]
+    }
+  ],
+  "smart_objects": [
+    {"object_id": "object:home-a-seating", "object_type": "shared_seating", "place_id": "place:home-a", "capacity": 60},
+    {"object_id": "object:home-b-seating", "object_type": "shared_seating", "place_id": "place:home-b", "capacity": 60},
+    {"object_id": "object:office-desks", "object_type": "desk_bank", "place_id": "place:office", "capacity": 60},
+    {"object_id": "object:cafe-seating", "object_type": "shared_seating", "place_id": "place:cafe", "capacity": 60}
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "0.2.0",
+  "scenario_id": "scenario:mvp1-24-hour",
+  "name": "MVP 1 synthetic reference district",
+  "version": "0.2.0",
+  "purpose": "Prove deterministic movement, occupancy, replay, projections, and offline operation for one bounded district.",
+  "base_world": {
+    "world_id": "world:mvp1-reference-district",
+    "world_version": "0.2.0"
+  },
+  "start_time": "2042-05-04T00:00:00Z",
+  "time_zone": "UTC",
+  "geographic_extent": {
+    "place_id": "district:reference"
+  },
+  "data_source_ids": [
+    "AWG-DATA-011"
+  ],
+  "population": {
+    "scheduled_agents": 100,
+    "cognitive_agents": 0,
+    "embodied_agents_max": 100
+  },
+  "organizations": [],
+  "plugins": [],
+  "models": [],
+  "random_streams": [
+    {
+      "stream_id": "random:mvp1-schedule",
+      "owner": "scheduler",
+      "seed": 1001
+    }
+  ],
+  "initial_conditions": [
+    {
+      "type": "load_offline_bundle",
+      "bundle": "examples/mvp1-district/bundle.json"
+    }
+  ],
+  "scheduled_events": [],
+  "interventions": [],
+  "measurements": [
+    "metric:state-integrity-errors",
+    "metric:events",
+    "metric:replay-checksum"
+  ],
+  "stop_conditions": [
+    {
+      "type": "simulation_time",
+      "at": "2042-05-05T00:00:00Z"
+    }
+  ],
+  "assumption_ids": [
+    "AWG-ASM-009"
+  ],
+  "risk_ids": [
+    "AWG-RISK-002",
+    "AWG-RISK-010",
+    "AWG-RISK-013",
+    "AWG-RISK-015",
+    "AWG-RISK-016"
+  ],
+  "validation_profile": "validation:mvp1-reference-district-v1",
+  "created_by": "system:awg-reference-fixture",
+  "created_at": "2026-08-21T00:00:00Z"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.2.0",
+  "world_id": "world:mvp1-reference-district",
+  "scenario_id": "scenario:mvp1-24-hour",
+  "branch_id": "branch:baseline",
+  "district_id": "district:reference",
+  "start_time": "2042-05-04T00:00:00Z",
+  "duration_hours": 24,
+  "target_population": 100,
+  "home_place_ids": ["place:home-a", "place:home-b"],
+  "work_place_ids": ["place:office", "place:cafe"],
+  "transport_speeds_mps": {
+    "walk": 1.4,
+    "wheelchair": 1.1
+  },
+  "district_file": "district.json",
+  "osm_file": "reference-district.osm",
+  "postgis_migration": "001_spatial.sql",
+  "gazetteer_file": "gazetteer.json",
+  "routing_file": "district.json",
+  "pmtiles_file": "reference-district.pmtiles",
+  "source_classification": "generated",
+  "source_record": "AWG-DATA-011",
+  "offline_required": true,
+  "external_network_dependencies": [],
+  "checksums": {
+    "district.json": "010003ef3525ed14a134b18c1b4b76082f0754f9f9b3b4f20083040f02b6de11",
+    "gazetteer.json": "c12b329a883231c193da4b68358f0619635276628283c714cdc15482590c5bd7",
+    "reference-district.osm": "d02d8289d09be2c7c646fa08bed810b63749a67504ee1e7fa643435024d10212",
+    "001_spatial.sql": "5fbb7056ba19de6b0bbfe64e5034547c3f18877e258be2688a07e4633f7caa87",
+    "reference-district.pmtiles": "272ea6b4b5fa7f34fe3367649c5cdde77e5b4d06a88d2f75f438765bf7f98cf7"
+  }
+}

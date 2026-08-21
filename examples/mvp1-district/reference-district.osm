@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="awg-mvp1-reference" upload="false">
+  <bounds minlat="53.4790" minlon="-2.2480" maxlat="53.4880" maxlon="-2.2330"/>
+  <node id="1001" lat="53.4800" lon="-2.2450" version="1">
+    <tag k="entrance" v="yes"/>
+    <tag k="name" v="Aster House entrance"/>
+  </node>
+  <node id="1002" lat="53.4800" lon="-2.2350" version="1">
+    <tag k="entrance" v="yes"/>
+    <tag k="name" v="Birch House entrance"/>
+  </node>
+  <node id="1003" lat="53.4820" lon="-2.2400" version="1"/>
+  <node id="1004" lat="53.4870" lon="-2.2400" version="1">
+    <tag k="entrance" v="yes"/>
+    <tag k="name" v="Civic Office entrance"/>
+  </node>
+  <node id="1005" lat="53.4840" lon="-2.2340" version="1">
+    <tag k="entrance" v="yes"/>
+    <tag k="name" v="District Cafe entrance"/>
+  </node>
+  <node id="1006" lat="53.4850" lon="-2.2470" version="1">
+    <tag k="leisure" v="park"/>
+    <tag k="name" v="Foundry Park"/>
+  </node>
+  <way id="2001" version="1">
+    <nd ref="1001"/>
+    <nd ref="1003"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Aster Street"/>
+  </way>
+  <way id="2002" version="1">
+    <nd ref="1002"/>
+    <nd ref="1003"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Birch Street"/>
+  </way>
+  <way id="2003" version="1">
+    <nd ref="1003"/>
+    <nd ref="1004"/>
+    <tag k="highway" v="footway"/>
+    <tag k="wheelchair" v="yes"/>
+  </way>
+  <way id="2004" version="1">
+    <nd ref="1003"/>
+    <nd ref="1005"/>
+    <tag k="highway" v="steps"/>
+    <tag k="wheelchair" v="no"/>
+  </way>
+  <way id="2005" version="1">
+    <nd ref="1003"/>
+    <nd ref="1006"/>
+    <tag k="highway" v="path"/>
+    <tag k="wheelchair" v="yes"/>
+  </way>
+  <way id="2099" version="1">
+    <nd ref="1001"/>
+    <nd ref="1004"/>
+    <tag k="highway" v="construction"/>
+    <tag k="access" v="no"/>
+  </way>
+</osm>
