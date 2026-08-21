@@ -29,10 +29,13 @@ def test_workflow_configuration_and_closed_evidence_are_valid() -> None:
 def test_next_packet_dispatches_first_pending_step_of_active_stage() -> None:
     packet = next_packet()
     assert packet["stage"] == "mvp3"
-    assert packet["step"] == "scope"
-    assert packet["role"] == "scope"
-    assert packet["required_outputs"] == ["workflow/closeouts/mvp3.yaml"]
-    assert "Do not implement code" in packet["instructions"]
+    assert packet["step"] == "traceability"
+    assert packet["role"] == "traceability"
+    assert packet["required_outputs"] == [
+        "registers/requirements.yaml",
+        "registers/tests.yaml",
+    ]
+    assert "Do not mark the step complete" in packet["instructions"]
 
 
 def test_each_role_has_readable_instructions() -> None:

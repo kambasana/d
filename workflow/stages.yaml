@@ -55,7 +55,7 @@ stages:
     runner: make mvp3
     closeout: workflow/closeouts/mvp3.yaml
     steps:
-      - {id: scope, role: scope, status: pending, outputs: [workflow/closeouts/mvp3.yaml], validations: [python3 scripts/stage_workflow.py check mvp3]}
+      - {id: scope, role: scope, status: completed, outputs: [workflow/closeouts/mvp3.yaml], validations: [python3 scripts/stage_workflow.py check mvp3]}
       - {id: traceability, role: traceability, status: pending, outputs: [registers/requirements.yaml, registers/tests.yaml], validations: [python3 scripts/validate_traceability.py]}
       - {id: implementation, role: implementation, status: pending, outputs: [awg_mvp3], validations: [make mvp3]}
       - {id: contracts, role: contracts, status: pending, outputs: [contracts/plugins], validations: [python3 scripts/validate_contracts.py]}
