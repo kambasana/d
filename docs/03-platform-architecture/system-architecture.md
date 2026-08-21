@@ -3,7 +3,7 @@ title: System Architecture
 document_id: AWG-PLAT-001
 status: draft
 version: 0.2.0
-last_updated: '2026-08-20'
+last_updated: '2026-08-21'
 normative: true
 owners:
 - AWG architecture
@@ -142,6 +142,31 @@ A failed adapter call cannot partially mutate authoritative state. Commands eith
 ## Offline posture
 
 Core dependencies have local deployment paths. Remote AI providers and external data feeds are optional adapters, not mandatory assumptions.
+
+## Subsystem to owned contracts
+
+MVP 0 requires every planned core engine to map to an owned contract group. Schema validity is structural only; reachability, elapsed time, ownership, and knowledge access remain kernel invariants.
+
+| Core engine | Owned contract group | Representative schemas |
+| --- | --- | --- |
+| World Graph / Domain State | `contracts/world-entities` | world, place, building, organization, journey, smart-object |
+| Time and Scheduling Engine | `contracts/agents`, `contracts/scenarios` | schedule, scenario-package, run-record |
+| Geospatial Engine | `contracts/world-entities` | place, building |
+| Navigation and Mobility Engine | `contracts/commands`, `contracts/events`, `contracts/world-entities` | travel-to-place, journey-started, journey-completed, journey |
+| Simulation / Constraint Engine | `contracts/commands`, `contracts/events` | base-command, command-rejected, domain-event |
+| Agent Runtime | `contracts/agents` | agent-profile, observation, schedule |
+| Human Systems Engine | `contracts/agents` | agent-profile, schedule |
+| Information / Epistemic Engine | `contracts/claims-and-provenance` | claim, belief |
+| Trust and Reputation Engine | `contracts/claims-and-provenance` | belief |
+| Social / Information Platform Engine | `contracts/social-platform` | social-action |
+| Organization / Institution Engine | `contracts/world-entities` | organization |
+| Economy / Resource Engine | `contracts/world-entities` | smart-object |
+| Scenario / Intervention Engine | `contracts/scenarios` | scenario-package, intervention, run-record |
+| Event Firehose / Replay Engine | `contracts/events`, `contracts/firehose` | domain-event, subscription |
+| Projection / Query Engine | `contracts/firehose` | subscription |
+| Adapter boundary | `contracts/plugins` | plugin-manifest, ollama-config, openrouter-config |
+
+AI provider schemas configure optional adapters. They MUST NOT be required to admit or reject a domain command.
 
 ## Failure modes
 

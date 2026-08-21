@@ -980,3 +980,204 @@ requirements:
   verified_by:
   - AWG-TEST-DOC-028
   status: draft
+
+- id: AWG-REQ-INV-001
+  title: 'No direct LLM state mutation'
+  statement: 'An LLM MUST NOT directly write authoritative positions, ownership, resources, event truth, physical state, or completed actions.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-001
+  status: draft
+- id: AWG-REQ-INV-002
+  title: 'No unexplained physical relocation'
+  statement: 'After scenario initialization, every position change MUST require valid movement, transport, or an explicit logged intervention with authority and reason.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-002
+  status: draft
+- id: AWG-REQ-INV-003
+  title: 'Time is causal'
+  statement: 'Travel, actions, queues, communication, work, sleep, and other processes MUST consume simulation time according to their rules.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-003
+  status: draft
+- id: AWG-REQ-INV-004
+  title: 'Geography constrains behavior'
+  statement: 'Routes, barriers, entrances, access rights, modes, capacities, and topology MUST constrain movement.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-004
+  status: draft
+- id: AWG-REQ-INV-005
+  title: 'Information requires a path'
+  statement: 'An agent MUST only know information through direct perception, communication, accessible records or media, prior memory, or explicit inference from available evidence.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-005
+  status: draft
+- id: AWG-REQ-INV-006
+  title: 'Truth and belief are separate'
+  statement: 'World truth and agent belief MUST remain separate data. Agents MAY hold uncertain, incorrect, manipulated, or contradictory beliefs.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-006
+  status: draft
+- id: AWG-REQ-INV-007
+  title: 'Social actions do not imply belief'
+  statement: 'Viewing, understanding, believing, endorsing, liking, commenting, reposting, and forwarding MUST be distinct states or actions.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-007
+  status: draft
+- id: AWG-REQ-INV-008
+  title: 'History is append-preserving'
+  statement: 'Corrections, retractions, reversals, and updated beliefs MUST create new records or events. Causal history MUST NOT be silently erased.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-008
+  status: draft
+- id: AWG-REQ-INV-009
+  title: 'State transitions are observable'
+  statement: 'Important accepted commands and domain transitions MUST emit versioned machine-readable events to the world firehose.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-009
+  status: draft
+- id: AWG-REQ-INV-010
+  title: 'Randomness is reproducible'
+  statement: 'Stochastic behaviour MUST use named random streams or seeds and MUST be recorded sufficiently for experiment comparison and replay.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-010
+  status: draft
+- id: AWG-REQ-INV-011
+  title: 'Simulation and visualization fidelity are independent'
+  statement: 'Rendering an individual marker MUST NOT imply full cognition. Aggregating an individual into a map cluster MUST NOT remove their authoritative state.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-011
+  status: draft
+- id: AWG-REQ-INV-012
+  title: 'Aggregates are not fake individuals'
+  statement: 'When promoting cohorts to individuals, generated detail MUST be marked synthetic or instantiated and constrained by aggregate history; it MUST NOT be presented as previously observed personal history.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-012
+  status: draft
+- id: AWG-REQ-INV-013
+  title: 'Scenario controllers cannot secretly force conclusions'
+  statement: 'Interventions MUST change declared world conditions. Agents MUST react according to their own state, information, constraints, and decision systems.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-013
+  status: draft
+- id: AWG-REQ-INV-014
+  title: 'Plugins cannot bypass the constitution'
+  statement: 'Every adapter MUST preserve validation, provenance, eventing, access, and safety boundaries.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-014
+  status: draft
+- id: AWG-REQ-INV-015
+  title: 'Provider changes are experiment-visible'
+  statement: 'Model, provider, version, prompt-policy, and fallback changes MUST be recorded and MUST NOT silently alter a controlled run.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-015
+  status: draft
+- id: AWG-REQ-INV-016
+  title: 'Authoritative geography is not reconstructed from display tiles'
+  statement: 'PMTiles or Protomaps MAY present offline maps but MUST NOT replace OSM, PostGIS, or routing topology as simulation authority.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-016
+  status: draft
+- id: AWG-REQ-INV-017
+  title: 'Human realism claims require evidence'
+  statement: 'Believable output, LLM judge scores, or visual plausibility alone MUST NOT be treated as sufficient validation.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-017
+  status: draft
+- id: AWG-REQ-INV-018
+  title: 'Data provenance is explicit'
+  statement: 'Observed, imported, inferred, statistically sampled, scenario-assumed, and AI-generated data MUST be distinguishable.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-018
+  status: draft
+- id: AWG-REQ-INV-019
+  title: 'Trust is contextual'
+  statement: 'Trust MUST be evaluated in context such as source, domain, channel, situation, and history rather than a universal number alone.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-019
+  status: draft
+- id: AWG-REQ-INV-020
+  title: 'Core operation can degrade safely without AI'
+  statement: 'Loss or failure of an AI provider MUST NOT corrupt authoritative simulation state. Systems MUST fail closed, use deterministic fallback where specified, or leave agents inactive or deferred.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-020
+  status: draft

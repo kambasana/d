@@ -13,4 +13,8 @@ jobs:
           python-version: '3.12'
       - run: pip install -r requirements-dev.txt
       - run: python scripts/validate_all.py
+        env:
+          PYTHONPATH: scripts
       - run: pytest -q
+        env:
+          PYTHONPATH: scripts

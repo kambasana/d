@@ -1,16 +1,18 @@
 .PHONY: generate validate test release clean
 
+PYTHON ?= python3
+
 generate:
-	python scripts/build_generated.py
+	PYTHONPATH=scripts $(PYTHON) scripts/build_generated.py
 
 validate:
-	python scripts/validate_all.py
+	PYTHONPATH=scripts $(PYTHON) scripts/validate_all.py
 
 test:
-	pytest -q
+	PYTHONPATH=scripts $(PYTHON) -m pytest -q
 
 release:
-	python scripts/build_release.py
+	PYTHONPATH=scripts $(PYTHON) scripts/build_release.py
 
 clean:
 	rm -rf site .pytest_cache scripts/__pycache__ tests/__pycache__

@@ -3,7 +3,7 @@ title: MVP Roadmap and Definition of Done
 document_id: AWG-OPS-001
 status: draft
 version: 0.2.0
-last_updated: '2026-08-20'
+last_updated: '2026-08-21'
 normative: true
 owners:
 - AWG architecture
@@ -67,6 +67,25 @@ Do not start at planet scale. Prove invariants, replay, offline operation, and s
 - no core domain component requires an LLM to execute basic world state transitions;
 - every planned subsystem maps to owned contracts;
 - invariants have acceptance-test IDs.
+
+### MVP 0 phase gate (ELE-147)
+
+Local work record for Linear issue [ELE-147](https://linear.app/elenta/issue/ELE-147/awg-review-mvp-roadmap-testing-and-performance-gates). This gate closes only the documentation-and-contract slice of MVP 0. It MUST NOT be read as MVP 1 completion or as human acceptance of the Constitution.
+
+| Gate field | MVP 0 record |
+| --- | --- |
+| Objectives | Make the constitution, glossary, command/event envelopes, scenario package, plugin interface, traceability matrix, and CI skeleton executable and reviewable. |
+| In-scope | Authored specs, YAML registers, JSON Schemas, fixtures, pack validators, pytest, GitHub documentation-quality workflow. |
+| Non-goals | OSM/PostGIS/routing/PMTiles runtime, live agents, LLM adapters, planetary scale, claiming the Constitution is accepted. |
+| Dependencies | AWG-GOV-001, AWG-DOM-001, AWG-PLAT-001, AWG-PLAT-002, AWG-PLAT-003, AWG-SCN-001, AWG-OPS-002, AWG-OPS-006, AWG-OPS-009, AWG-APP-003. |
+| Acceptance tests | AWG-TEST-INV-001 through AWG-TEST-INV-020; AWG-TEST-COV-044; pack `validate_all` and pytest. |
+| Performance target | Pack validation and pytest complete on a clean Python 3.12 environment without GPU or model calls. |
+| Security/offline target | Validation MUST run offline. Pack Python MUST NOT import an AI provider to validate commands, events, or fixtures. |
+| Validation evidence | `generated/validation-report.md` after `python scripts/validate_all.py`; pytest results; INV requirement/test IDs in registers. |
+| Documentation complete | Constitution remains **draft**. INV rules MUST have requirement IDs. Core engines MUST map to contract groups in AWG-PLAT-001. |
+| Known limitations | No deterministic kernel runtime yet. INV tests at this gate prove traceability and contract rejection of invalid typed input, not a 24-hour district simulation. |
+| Unresolved risks | Human approval of draft normative documents; future kernel implementers may ignore catalogue tests unless CI keeps them failing-closed. |
+| Release decision | MVP 0 pack-slice MAY proceed. MVP 1 MUST NOT start from planet scale and MUST NOT introduce an LLM into the state-transition path. |
 
 ## MVP 1 - One district, no AI dependency
 

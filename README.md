@@ -51,8 +51,15 @@ agentic-world-graph/
 ## Validate
 
 ```bash
-python scripts/validate_all.py
-pytest -q
+make validate
+make test
+```
+
+Equivalent:
+
+```bash
+PYTHONPATH=scripts python3 scripts/validate_all.py
+PYTHONPATH=scripts python3 -m pytest -q
 ```
 
 Or with Docker:
