@@ -87,6 +87,17 @@ make mvp2
 
 Agents use needs, utility scoring, action channels, households/organizations, resource conservation, and perception gating. No LLM is imported or required.
 
+## Run the MVP 3 bounded adapter profile
+
+```bash
+make mvp3
+```
+
+The offline reference replays 20 recorded calls across intent proposal,
+option ranking, dialogue realization, memory summarization, and claim
+extraction. Ollama and OpenRouter remain unapproved candidate integrations;
+model outputs are proposals and cannot mutate authoritative state.
+
 ## Run the staged contributor workflow
 
 ```bash

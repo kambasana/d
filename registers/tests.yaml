@@ -913,6 +913,34 @@ tests:
   - AWG-REQ-MVP2-004
   automation: tests/test_mvp2_npc.py::test_perception_does_not_leak_global_state
   status: automated
+- id: AWG-TEST-MVP3-001
+  type: compatibility
+  description: Ollama and OpenRouter recorded transports implement the same adapter methods and produce identical provider-neutral proposal shapes.
+  requirements:
+  - AWG-REQ-MVP3-001
+  automation: tests/test_mvp3_adapters.py::test_provider_swap_preserves_domain_schema
+  status: automated
+- id: AWG-TEST-MVP3-002
+  type: invariant
+  description: Timeout, provider error, malformed JSON, and schema-invalid output fail closed without changing authoritative kernel state.
+  requirements:
+  - AWG-REQ-MVP3-002
+  automation: tests/test_mvp3_adapters.py::test_invalid_or_timed_out_output_cannot_mutate_world
+  status: automated
+- id: AWG-TEST-MVP3-003
+  type: replay
+  description: At least 20 recorded calls replay deterministically without invoking a live provider.
+  requirements:
+  - AWG-REQ-MVP3-003
+  automation: tests/test_mvp3_adapters.py::test_recorded_outputs_replay_without_provider_calls
+  status: automated
+- id: AWG-TEST-MVP3-004
+  type: provenance
+  description: Every successful and failed adapter output records complete model, provider, prompt-policy, interface, schema, correlation, and outcome provenance.
+  requirements:
+  - AWG-REQ-MVP3-004
+  automation: tests/test_mvp3_adapters.py::test_model_output_provenance_is_complete
+  status: automated
 - id: AWG-TEST-WFL-001
   type: workflow
   description: Stage order, roles, outputs, closeout fields, evidence, prerequisites, and fail-closed advancement are executable and validated.

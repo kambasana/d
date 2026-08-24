@@ -76,6 +76,10 @@ schemas:
   id: https://awg.local/contracts/firehose/subscription.schema.json
   title: Firehose Subscription
   version: 0.2.0
+- path: contracts/plugins/model-output-artifact.schema.json
+  id: https://awg.local/contracts/plugins/model-output-artifact.schema.json
+  title: Model Output Artifact
+  version: 0.2.0
 - path: contracts/plugins/ollama-config.schema.json
   id: https://awg.local/contracts/plugins/ollama-config.schema.json
   title: Ollama Adapter Configuration

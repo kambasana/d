@@ -150,6 +150,27 @@ Changing a plugin during a controlled experiment creates explicit configuration/
 
 Each adapter family should ship contract tests that can be run against every implementation. Provider swap is a first-class acceptance test.
 
+## MVP 3 bounded reference
+
+The `awg_mvp3` reference implements the provider-neutral methods above for
+Ollama and OpenRouter candidate adapters using an injected transport. The
+default runner uses recorded outputs only and performs no network call.
+
+- Model output is an immutable proposal artifact, never a domain event or
+  WorldState update.
+- Every artifact records adapter, provider, model, prompt-policy, interface,
+  output-schema, request, and outcome provenance.
+- Timeout, provider error, malformed JSON, schema mismatch, capability
+  mismatch, and invalid proposal shape return an explicit rejected result.
+- Recorded transports key outputs by request ID and support deterministic
+  offline replay.
+- The executable contract is
+  `contracts/plugins/model-output-artifact.schema.json`.
+
+This reference demonstrates boundary isolation and schema compatibility. It
+does not approve either candidate dependency, validate model quality, or
+authorize a production provider endpoint.
+
 ## Failure modes
 
 - Silent divergence between authoritative state and projections.

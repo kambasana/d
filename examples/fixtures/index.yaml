@@ -70,6 +70,14 @@ fixtures:
   schema_id: https://awg.local/contracts/plugins/plugin-manifest.schema.json
   expected_valid: true
   note: Valid provider adapter with no direct world-command permissions.
+- path: examples/fixtures/plugins/model-output-artifact.valid.json
+  schema_id: https://awg.local/contracts/plugins/model-output-artifact.schema.json
+  expected_valid: true
+  note: Valid accepted intent proposal with complete provider and policy provenance.
+- path: examples/fixtures/plugins/model-output-artifact.invalid.json
+  schema_id: https://awg.local/contracts/plugins/model-output-artifact.schema.json
+  expected_valid: false
+  note: Invalid accepted output with an error and missing version provenance.
 - path: examples/fixtures/scenarios/bridge-closure.valid.json
   schema_id: https://awg.local/contracts/scenarios/scenario-package.schema.json
   expected_valid: true

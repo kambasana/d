@@ -11,6 +11,7 @@
 - Added the executable MVP 2 classical NPC kernel with needs, utility, action channels, conserved resources, gated perception, and no LLM dependency.
 - Recorded MVP 2 requirements, automated tests, and phase-gate decision.
 - Added an executable automated-contributor workflow with ordered roles, MVP prerequisites, validation commands, closeout records, fail-closed advancement, and CI enforcement.
+- Added the offline MVP 3 provider-neutral adapter reference, recorded-output replay, model-output artifact contract, complete provenance, and fail-closed malformed/timeout behavior.
 
 ## 0.2.0 — 2026-08-20
 

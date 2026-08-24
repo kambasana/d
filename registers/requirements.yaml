@@ -1325,6 +1325,54 @@ requirements:
   verified_by:
   - AWG-TEST-MVP2-004
   status: draft
+- id: AWG-REQ-MVP3-001
+  title: 'AI provider adapters preserve domain schemas'
+  statement: 'Ollama and OpenRouter candidates MUST implement one provider-neutral AIProviderAdapter boundary, and switching provider MUST NOT change domain proposal schemas.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-003
+  implemented_by:
+  - AWG-PLAT-003
+  verified_by:
+  - AWG-TEST-MVP3-001
+  status: draft
+- id: AWG-REQ-MVP3-002
+  title: 'Invalid model output fails closed'
+  statement: 'Malformed, timed-out, schema-invalid, or provider-error model output MUST NOT mutate WorldState, EventLog, occupancy, claims, or live memory.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-003
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-PLAT-003
+  - AWG-PLAT-002
+  verified_by:
+  - AWG-TEST-MVP3-002
+  status: draft
+- id: AWG-REQ-MVP3-003
+  title: 'Recorded model output replays offline'
+  statement: 'Every accepted adapter output MUST be recordable and replayable into the same typed proposal without a provider call.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-003
+  - AWG-PLAT-002
+  implemented_by:
+  - AWG-PLAT-003
+  - AWG-PLAT-002
+  verified_by:
+  - AWG-TEST-MVP3-003
+  status: draft
+- id: AWG-REQ-MVP3-004
+  title: 'Model output provenance is complete'
+  statement: 'Every adapter output artifact MUST record adapter, provider, model, prompt-policy, interface, and output-schema versions plus request correlation and outcome.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-003
+  implemented_by:
+  - AWG-PLAT-003
+  verified_by:
+  - AWG-TEST-MVP3-004
+  status: draft
 - id: AWG-REQ-WFL-001
   title: 'Roadmap stages use ordered validation and fail-closed closeout'
   statement: 'Every roadmap stage MUST execute scope, traceability, implementation, contracts, verification, and closeout in order, and MUST NOT advance while required outputs, acceptance tests, evidence, or validation are incomplete.'
