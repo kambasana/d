@@ -29,13 +29,13 @@ def test_workflow_configuration_and_closed_evidence_are_valid() -> None:
 def test_next_packet_dispatches_first_pending_step_of_active_stage() -> None:
     packet = next_packet()
     assert packet["stage"] == "mvp3"
-    assert packet["step"] == "traceability"
-    assert packet["role"] == "traceability"
+    assert packet["step"] == "verification"
+    assert packet["role"] == "verification"
     assert packet["required_outputs"] == [
-        "registers/requirements.yaml",
-        "registers/tests.yaml",
+        "tests/test_mvp3_adapters.py",
+        "generated/validation-report.md",
     ]
-    assert "Do not mark the step complete" in packet["instructions"]
+    assert "Regenerate reports through scripts" in packet["instructions"]
 
 
 def test_each_role_has_readable_instructions() -> None:

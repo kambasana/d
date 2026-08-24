@@ -1,5 +1,5 @@
 stage: mvp3
-status: open
+status: ready
 issue: ELE-147
 objectives: >
   Bound AI provider adapters so Ollama and OpenRouter candidates can propose
@@ -46,7 +46,11 @@ dependencies:
   - Closed MVP 0 invariant tests
   - Closed MVP 1 SimulationKernel._dispatch
   - Closed MVP 2 classical NPC society without LLM
-acceptance_tests: []
+acceptance_tests:
+  - AWG-TEST-MVP3-001
+  - AWG-TEST-MVP3-002
+  - AWG-TEST-MVP3-003
+  - AWG-TEST-MVP3-004
 performance_target: >
   Recorded-output replay of at least 20 adapter calls covering intent, rank,
   dialogue, summarize, and extract completes in under 5 seconds on the CI
@@ -57,11 +61,15 @@ security_offline_target: >
   be committed. Example provider configs MUST use placeholders. Adapters MUST
   NOT execute tool or function calls that mutate the world. Prompt and
   completion text are artifacts, not geography and not accepted facts.
-validation_evidence: []
-documentation_complete: false
+validation_evidence:
+  - {command: make mvp3, result: passed}
+  - {command: make validate, result: passed}
+  - {command: make test, result: passed}
+documentation_complete: true
 documentation_summary: >
-  Scope packet only. Traceability, implementation, contracts, and verification
-  MUST fill requirement IDs, tests, and evidence before closeout.
+  AWG-PLAT-003 records the provider-neutral boundary, offline replay,
+  provenance, failure behavior, executable artifact contract, and bounded
+  limitations. README and the changelog record how to run the reference.
 known_limitations:
   - Ollama and OpenRouter remain licence-unapproved candidates (AWG-COMP-011, AWG-COMP-012)
   - Recorded replay proves isolation and schema stability, not model quality
@@ -73,8 +81,16 @@ unresolved_risks:
   - Schema drift between provider JSON and IntentProposed
   - Accidental live network in CI if recorded-output mode is not the default
   - Prompt or completion logs may contain secrets if operators paste keys; fixtures MUST stay synthetic
-release_decision: MVP 3 remains open; adapters MUST NOT ship until later steps close the gate.
-evidence_files: []
+release_decision: >
+  The offline MVP 3 reference MAY proceed to MVP 4 information-space work.
+  This does not approve Ollama or OpenRouter licensing, live endpoints,
+  production release, model quality, or empirical validity.
+evidence_files:
+  - tests/test_mvp3_adapters.py
+  - contracts/plugins/model-output-artifact.schema.json
+  - examples/fixtures/plugins/model-output-artifact.valid.json
+  - examples/fixtures/plugins/model-output-artifact.invalid.json
+  - generated/validation-report.md
 human_stop_conditions:
   - Constitution or invariant change (INV-001, INV-014, INV-015, INV-020)
   - Licence approval of Ollama, OpenRouter, or a hosted model
@@ -84,5 +100,4 @@ human_stop_conditions:
   - Production OpenRouter or Ollama endpoint as default CI
   - Undeclared production release
 notes: >
-  Scope packet for MVP 3. Do not implement adapters in this packet. Next
-  unblocked role is traceability.
+  The default runner executes 20 recorded calls with no live provider.

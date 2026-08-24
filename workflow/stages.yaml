@@ -209,7 +209,7 @@ stages:
     - python3 scripts/validate_contracts.py
   - id: verification
     role: verification
-    status: pending
+    status: completed
     outputs:
     - tests/test_mvp3_adapters.py
     - generated/validation-report.md
