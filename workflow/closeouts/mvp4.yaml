@@ -1,10 +1,14 @@
 stage: mvp4
-status: blocked
+status: open
 issue: ELE-147
 objectives: Implement claims, evidence, beliefs, communication, social exposure, deception, corrections, and provenance.
 in_scope: Information world and virtual social platform from the roadmap.
 non_goals: Treating reactions as belief, global agent knowledge, or deleting corrected history.
-dependencies: [mvp3, AWG-GOV-001, AWG-DOM-004, AWG-DOM-013]
+dependencies:
+- mvp3
+- AWG-GOV-001
+- AWG-DOM-004
+- AWG-DOM-013
 acceptance_tests: []
 performance_target: Must be defined from an information-flow baseline before closeout.
 security_offline_target: Untrusted content remains typed and cannot bypass access or provenance.

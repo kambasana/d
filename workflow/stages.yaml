@@ -172,7 +172,7 @@ stages:
     - python3 scripts/stage_workflow.py check mvp2
 - id: mvp3
   title: Bounded AI adapters
-  state: active
+  state: closed
   prerequisites:
   - mvp2
   runner: make mvp3
@@ -219,14 +219,14 @@ stages:
     - make test
   - id: closeout
     role: closeout
-    status: pending
+    status: completed
     outputs:
     - workflow/closeouts/mvp3.yaml
     validations:
     - python3 scripts/stage_workflow.py gate mvp3
 - id: mvp4
   title: Information world and virtual social platform
-  state: blocked
+  state: active
   prerequisites:
   - mvp3
   runner: make mvp4

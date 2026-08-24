@@ -1,103 +1,105 @@
 stage: mvp3
-status: ready
+status: closed
 issue: ELE-147
-objectives: >
-  Bound AI provider adapters so Ollama and OpenRouter candidates can propose
-  typed intents, rank options, realize dialogue, summarize memories, and
-  extract claims without mutating WorldState. Provider swap MUST NOT change
-  domain schemas. Malformed, timed-out, or schema-invalid model output MUST
-  fail closed. Recorded model output MUST replay without a live provider.
-  Model, provider, prompt-policy, and schema versions MUST be traceable on
-  every model-output artifact.
+objectives: 'Bound AI provider adapters so Ollama and OpenRouter candidates can propose typed intents, rank options, realize
+  dialogue, summarize memories, and extract claims without mutating WorldState. Provider swap MUST NOT change domain schemas.
+  Malformed, timed-out, or schema-invalid model output MUST fail closed. Recorded model output MUST replay without a live
+  provider. Model, provider, prompt-policy, and schema versions MUST be traceable on every model-output artifact.
+
+  '
 in_scope:
-  - AIProviderAdapter matching AWG-PLAT-003 for Ollama and OpenRouter candidates
-  - Adapter methods propose_intent, rank_options, realize_dialogue, summarize_memories, extract_claims
-  - Structured intent proposal into typed IntentProposed or CommandProposed payloads that KernelDispatchGate may accept or reject
-  - Dialogue realization that returns presentation-layer text only
-  - Claim extraction into ClaimDraft records that cannot become accepted facts without evidence and KernelDispatchGate
-  - Memory summarization that writes MemorySummaryDraft, never a live MemoryEntry
-  - Bounded option ranking that returns ranked ids plus scores and MUST NOT emit teleport or other illegal commands
-  - Model, provider, prompt-policy, and schema versions on every model-output artifact
-  - Deterministic recorded-output replay that reconstructs the same domain proposals without calling a live provider
-  - Fail-closed timeout, malformed JSON, schema mismatch, and provider error paths that MUST NOT mutate WorldState
-  - Adapter isolation: adapters MUST NOT import or write WorldState, EventLog, or object occupancy
+- AIProviderAdapter matching AWG-PLAT-003 for Ollama and OpenRouter candidates
+- Adapter methods propose_intent, rank_options, realize_dialogue, summarize_memories, extract_claims
+- Structured intent proposal into typed IntentProposed or CommandProposed payloads that KernelDispatchGate may accept or reject
+- Dialogue realization that returns presentation-layer text only
+- Claim extraction into ClaimDraft records that cannot become accepted facts without evidence and KernelDispatchGate
+- Memory summarization that writes MemorySummaryDraft, never a live MemoryEntry
+- Bounded option ranking that returns ranked ids plus scores and MUST NOT emit teleport or other illegal commands
+- Model, provider, prompt-policy, and schema versions on every model-output artifact
+- Deterministic recorded-output replay that reconstructs the same domain proposals without calling a live provider
+- Fail-closed timeout, malformed JSON, schema mismatch, and provider error paths that MUST NOT mutate WorldState
+- Adapter isolation: adapters MUST NOT import or write WorldState, EventLog, or object occupancy
 non_goals:
-  - Licence approval or redistribution of Ollama or OpenRouter as runtime dependencies
-  - Live network calls in default CI or default make mvp3
-  - LLM inside Kernel, EventLog, or WorldState mutation
-  - Teleport, global knowledge, or unscoped query from model output
-  - Treating model output as accepted fact, accepted claim, or live memory
-  - Information-space graph, feeds, or social platform beyond claim drafts (MVP 4)
-  - Real-person data, production API keys in the repository, or empirical human-realism claims
-  - Changing the MVP 1 24-hour 1400-event schedule or the MVP 2 classical NPC kernel
+- Licence approval or redistribution of Ollama or OpenRouter as runtime dependencies
+- Live network calls in default CI or default make mvp3
+- LLM inside Kernel, EventLog, or WorldState mutation
+- Teleport, global knowledge, or unscoped query from model output
+- Treating model output as accepted fact, accepted claim, or live memory
+- Information-space graph, feeds, or social platform beyond claim drafts (MVP 4)
+- Real-person data, production API keys in the repository, or empirical human-realism claims
+- Changing the MVP 1 24-hour 1400-event schedule or the MVP 2 classical NPC kernel
 dependencies:
-  - AWG-GOV-001
-  - AWG-PLAT-003
-  - AWG-COMP-011
-  - AWG-COMP-012
-  - INV-001
-  - INV-014
-  - INV-015
-  - INV-020
-  - contracts/plugins/plugin-manifest.schema.json
-  - contracts/plugins/ollama-config.schema.json
-  - contracts/plugins/openrouter-config.schema.json
-  - registers/models-and-prompts.yaml
-  - Closed MVP 0 invariant tests
-  - Closed MVP 1 SimulationKernel._dispatch
-  - Closed MVP 2 classical NPC society without LLM
+- AWG-GOV-001
+- AWG-PLAT-003
+- AWG-COMP-011
+- AWG-COMP-012
+- INV-001
+- INV-014
+- INV-015
+- INV-020
+- contracts/plugins/plugin-manifest.schema.json
+- contracts/plugins/ollama-config.schema.json
+- contracts/plugins/openrouter-config.schema.json
+- registers/models-and-prompts.yaml
+- Closed MVP 0 invariant tests
+- Closed MVP 1 SimulationKernel._dispatch
+- Closed MVP 2 classical NPC society without LLM
 acceptance_tests:
-  - AWG-TEST-MVP3-001
-  - AWG-TEST-MVP3-002
-  - AWG-TEST-MVP3-003
-  - AWG-TEST-MVP3-004
-performance_target: >
-  Recorded-output replay of at least 20 adapter calls covering intent, rank,
-  dialogue, summarize, and extract completes in under 5 seconds on the CI
-  runner with no live provider. An optionally enabled live provider MUST time
-  out and fail closed within the adapter timeout without mutating WorldState.
-security_offline_target: >
-  Default verification is offline using recorded fixtures. API keys MUST NOT
-  be committed. Example provider configs MUST use placeholders. Adapters MUST
-  NOT execute tool or function calls that mutate the world. Prompt and
+- AWG-TEST-MVP3-001
+- AWG-TEST-MVP3-002
+- AWG-TEST-MVP3-003
+- AWG-TEST-MVP3-004
+performance_target: 'Recorded-output replay of at least 20 adapter calls covering intent, rank, dialogue, summarize, and extract
+  completes in under 5 seconds on the CI runner with no live provider. An optionally enabled live provider MUST time out and
+  fail closed within the adapter timeout without mutating WorldState.
+
+  '
+security_offline_target: 'Default verification is offline using recorded fixtures. API keys MUST NOT be committed. Example
+  provider configs MUST use placeholders. Adapters MUST NOT execute tool or function calls that mutate the world. Prompt and
   completion text are artifacts, not geography and not accepted facts.
+
+  '
 validation_evidence:
-  - {command: make mvp3, result: passed}
-  - {command: make validate, result: passed}
-  - {command: make test, result: passed}
+- command: make mvp3
+  result: passed
+- command: make validate
+  result: passed
+- command: make test
+  result: passed
 documentation_complete: true
-documentation_summary: >
-  AWG-PLAT-003 records the provider-neutral boundary, offline replay,
-  provenance, failure behavior, executable artifact contract, and bounded
-  limitations. README and the changelog record how to run the reference.
+documentation_summary: 'AWG-PLAT-003 records the provider-neutral boundary, offline replay, provenance, failure behavior,
+  executable artifact contract, and bounded limitations. README and the changelog record how to run the reference.
+
+  '
 known_limitations:
-  - Ollama and OpenRouter remain licence-unapproved candidates (AWG-COMP-011, AWG-COMP-012)
-  - Recorded replay proves isolation and schema stability, not model quality
-  - Dialogue text is presentation, not a WorldState field
-  - Claim and memory drafts are not publication and not live memory
-  - Constitution and AWG-PLAT-003 remain draft
+- Ollama and OpenRouter remain licence-unapproved candidates (AWG-COMP-011, AWG-COMP-012)
+- Recorded replay proves isolation and schema stability, not model quality
+- Dialogue text is presentation, not a WorldState field
+- Claim and memory drafts are not publication and not live memory
+- Constitution and AWG-PLAT-003 remain draft
 unresolved_risks:
-  - Adapter authors may apply intents directly instead of routing through KernelDispatchGate
-  - Schema drift between provider JSON and IntentProposed
-  - Accidental live network in CI if recorded-output mode is not the default
-  - Prompt or completion logs may contain secrets if operators paste keys; fixtures MUST stay synthetic
-release_decision: >
-  The offline MVP 3 reference MAY proceed to MVP 4 information-space work.
-  This does not approve Ollama or OpenRouter licensing, live endpoints,
-  production release, model quality, or empirical validity.
+- Adapter authors may apply intents directly instead of routing through KernelDispatchGate
+- Schema drift between provider JSON and IntentProposed
+- Accidental live network in CI if recorded-output mode is not the default
+- Prompt or completion logs may contain secrets if operators paste keys; fixtures MUST stay synthetic
+release_decision: 'The offline MVP 3 reference MAY proceed to MVP 4 information-space work. This does not approve Ollama or
+  OpenRouter licensing, live endpoints, production release, model quality, or empirical validity.
+
+  '
 evidence_files:
-  - tests/test_mvp3_adapters.py
-  - contracts/plugins/model-output-artifact.schema.json
-  - examples/fixtures/plugins/model-output-artifact.valid.json
-  - examples/fixtures/plugins/model-output-artifact.invalid.json
-  - generated/validation-report.md
+- tests/test_mvp3_adapters.py
+- contracts/plugins/model-output-artifact.schema.json
+- examples/fixtures/plugins/model-output-artifact.valid.json
+- examples/fixtures/plugins/model-output-artifact.invalid.json
+- generated/validation-report.md
 human_stop_conditions:
-  - Constitution or invariant change (INV-001, INV-014, INV-015, INV-020)
-  - Licence approval of Ollama, OpenRouter, or a hosted model
-  - Real-person dialogue or biometric data in fixtures
-  - Security exception to send WorldState wholesale to a provider
-  - Empirical claim that generated dialogue is human-valid
-  - Production OpenRouter or Ollama endpoint as default CI
-  - Undeclared production release
-notes: >
-  The default runner executes 20 recorded calls with no live provider.
+- Constitution or invariant change (INV-001, INV-014, INV-015, INV-020)
+- Licence approval of Ollama, OpenRouter, or a hosted model
+- Real-person dialogue or biometric data in fixtures
+- Security exception to send WorldState wholesale to a provider
+- Empirical claim that generated dialogue is human-valid
+- Production OpenRouter or Ollama endpoint as default CI
+- Undeclared production release
+notes: 'The default runner executes 20 recorded calls with no live provider.
+
+  '
