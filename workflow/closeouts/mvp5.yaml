@@ -1,16 +1,76 @@
 stage: mvp5
-status: blocked
+status: closed
 issue: ELE-147
-objectives: Add multi-resolution scale, promotion/demotion, branching, sensitivity analysis, and cost/performance evidence.
-in_scope: S0-S4 fidelity, distributed execution where required, comparison, validation, and dashboards.
-non_goals: Scale claims without measured profiles or sacrificing causality and conservation.
-dependencies: [mvp4, AWG-GOV-001, AWG-PLAT-005, AWG-SCN-002]
-acceptance_tests: []
-performance_target: Must separate population records from active cognition and define measured profiles before closeout.
-security_offline_target: Scale and partitioning cannot weaken access, provenance, or offline declarations.
-validation_evidence: []
-documentation_complete: false
-known_limitations: Blocked until MVP 4 closes.
-unresolved_risks: Partition consistency, promotion conservation, experiment confounding, and infrastructure cost.
-release_decision: Blocked by MVP 4.
-evidence_files: []
+objectives: 'Provide a bounded multi-resolution profile that keeps population records distinct from active cognition, conserves
+  tokens and beliefs across promotion and demotion, and compares a shared-seed control branch with an intervention without
+  claiming empirical validity.
+
+  '
+in_scope:
+- Fidelity levels S0 through S4 as recorded software states, not visualization zoom
+- 1000 population records and 50 active cognition records
+- Promotion of a cohort record to S4 and demotion back with conserved tokens and beliefs
+- Shared-seed control versus suppress-post intervention comparison
+- Offline event counts and checksums as software verification evidence
+non_goals:
+- Distributed production partitioning or live cluster execution
+- Empirical calibration, human comparison, or sensitivity claims about real populations
+- Sacrificing causality or conservation to inflate scale numbers
+- LLM cognition at S3/S4
+- Production cost dashboards or undeclared production release
+dependencies:
+- Closed MVP 4 information-world kernel
+- AWG-GOV-001
+- AWG-PLAT-005
+- AWG-SCN-002
+- AWG-SCN-004
+- contracts/scenarios/fidelity-profile.schema.json
+acceptance_tests:
+- AWG-TEST-MVP5-001
+- AWG-TEST-MVP5-002
+- AWG-TEST-MVP5-003
+performance_target: 'Seeding 1000 records, running promotion/demotion, and comparing two branches MUST complete in under 5
+  seconds on the CI runner.
+
+  '
+security_offline_target: 'The profile MUST run offline with synthetic identifiers only. Partitioning MUST NOT weaken provenance,
+  access, or conservation rules.
+
+  '
+validation_evidence:
+- command: make mvp5
+  result: passed
+- command: make validate
+  result: passed
+- command: make test
+  result: passed
+documentation_complete: true
+documentation_summary: 'AWG-PLAT-005 and AWG-SCN-002 record that record/cognition counts, conserved promotion, and shared-seed
+  branch comparison are software verification, not empirical calibration.
+
+  '
+known_limitations:
+- Active cognition is a counted subset, not a validated cognitive model
+- Branch comparison uses event cardinality, not outcome calibration
+- No distributed runtime is exercised
+- AWG-PLAT-005 and AWG-SCN-002 remain draft
+unresolved_risks:
+- Operators may treat record counts as empirical population forecasts
+- Promotion bugs could duplicate tokens if conservation is skipped
+- Intervention effects could be confounded with seed if seeds diverge
+release_decision: 'The offline MVP 5 scale reference MAY close the current roadmap loop. This does not authorize production
+  scale-out, empirical validity, or a public release.
+
+  '
+evidence_files:
+- tests/test_mvp5_scale.py
+- contracts/scenarios/fidelity-profile.schema.json
+- examples/fixtures/scenarios/fidelity-profile.valid.json
+- generated/validation-report.md
+human_stop_conditions:
+- Constitutional or accepted-ADR change
+- Empirical validity or calibration claim
+- Production release decision
+- Destructive migration
+- Real-person data in scale profiles
+notes: Scope packet. Implementation artifacts already exist for later steps.

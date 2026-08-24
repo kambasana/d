@@ -226,7 +226,7 @@ stages:
     - python3 scripts/stage_workflow.py gate mvp3
 - id: mvp4
   title: Information world and virtual social platform
-  state: active
+  state: closed
   prerequisites:
   - mvp3
   runner: make mvp4
@@ -274,14 +274,14 @@ stages:
     - make test
   - id: closeout
     role: closeout
-    status: pending
+    status: completed
     outputs:
     - workflow/closeouts/mvp4.yaml
     validations:
     - python3 scripts/stage_workflow.py gate mvp4
 - id: mvp5
   title: Multi-resolution scale and experimentation
-  state: blocked
+  state: closed
   prerequisites:
   - mvp4
   runner: make mvp5
@@ -289,14 +289,14 @@ stages:
   steps:
   - id: scope
     role: scope
-    status: pending
+    status: completed
     outputs:
     - workflow/closeouts/mvp5.yaml
     validations:
     - python3 scripts/stage_workflow.py check mvp5
   - id: traceability
     role: traceability
-    status: pending
+    status: completed
     outputs:
     - registers/requirements.yaml
     - registers/tests.yaml
@@ -304,21 +304,21 @@ stages:
     - python3 scripts/validate_traceability.py
   - id: implementation
     role: implementation
-    status: pending
+    status: completed
     outputs:
     - awg_mvp5
     validations:
     - make mvp5
   - id: contracts
     role: contracts
-    status: pending
+    status: completed
     outputs:
     - contracts/scenarios
     validations:
     - python3 scripts/validate_contracts.py
   - id: verification
     role: verification
-    status: pending
+    status: completed
     outputs:
     - tests/test_mvp5_scale.py
     - generated/validation-report.md
@@ -328,7 +328,7 @@ stages:
     - make test
   - id: closeout
     role: closeout
-    status: pending
+    status: completed
     outputs:
     - workflow/closeouts/mvp5.yaml
     validations:

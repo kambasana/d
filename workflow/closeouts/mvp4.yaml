@@ -1,106 +1,110 @@
 stage: mvp4
-status: ready
+status: closed
 issue: ELE-147
-objectives: >
-  Implement a bounded information world in which claims, evidence, beliefs,
-  messages, posts, exposures, reactions, corrections, retractions, and trust
-  remain distinct and append-only. A complete
-  observation-to-message-to-post-to-repost chain MUST be reconstructable,
-  agents MUST NOT know claims they were not exposed to, and participant and
-  analyst projections MUST NOT mutate authoritative state.
+objectives: 'Implement a bounded information world in which claims, evidence, beliefs, messages, posts, exposures, reactions,
+  corrections, retractions, and trust remain distinct and append-only. A complete observation-to-message-to-post-to-repost
+  chain MUST be reconstructable, agents MUST NOT know claims they were not exposed to, and participant and analyst projections
+  MUST NOT mutate authoritative state.
+
+  '
 in_scope:
-  - Typed Claim, Evidence, Belief, TrustAssessment, Message, Post, Exposure, Reaction, and InformationActor records
-  - Append-only commands and events for direct messages, group messages, posts, comments, reposts, reactions, follows, blocks, and reports
-  - Explicit audience, privacy, delivery, visibility, and recipient-exposure evaluation
-  - Deterministic feed eligibility and ranking from recorded configuration; an LLM MUST NOT decide exposure
-  - Claim lineage through direct observation, interpersonal transmission, publication, exposure, mutation, correction, contradiction, and retraction
-  - Belief updates scoped to one agent and separated from WorldState truth, social actions, endorsement, and inferred motive
-  - Contextual trust keyed by source, domain, channel, situation, and recorded history
-  - Information-space-only actors with explicit physical-embodiment and capability metadata
-  - Typed deception scenarios using synthetic actors and declared scenario intent; recipients MUST NOT receive hidden truth labels
-  - Fact-check and contact-source actions with explicit access, elapsed time, outcome, and possible failure
-  - Read-only participant and analyst projections for feeds, messages, claim lineage, exposure, belief change, moderation, corrections, and ranking configuration
+- Typed Claim, Evidence, Belief, TrustAssessment, Message, Post, Exposure, Reaction, and InformationActor records
+- Append-only commands and events for direct messages, group messages, posts, comments, reposts, reactions, follows, blocks,
+  and reports
+- Explicit audience, privacy, delivery, visibility, and recipient-exposure evaluation
+- Deterministic feed eligibility and ranking from recorded configuration; an LLM MUST NOT decide exposure
+- Claim lineage through direct observation, interpersonal transmission, publication, exposure, mutation, correction, contradiction,
+  and retraction
+- Belief updates scoped to one agent and separated from WorldState truth, social actions, endorsement, and inferred motive
+- Contextual trust keyed by source, domain, channel, situation, and recorded history
+- Information-space-only actors with explicit physical-embodiment and capability metadata
+- Typed deception scenarios using synthetic actors and declared scenario intent; recipients MUST NOT receive hidden truth
+  labels
+- Fact-check and contact-source actions with explicit access, elapsed time, outcome, and possible failure
+- Read-only participant and analyst projections for feeds, messages, claim lineage, exposure, belief change, moderation, corrections,
+  and ranking configuration
 non_goals:
-  - Treating likes, views, follows, comments, reposts, or blocks as proof of belief, endorsement, comprehension, or motive
-  - Giving an agent global claim, feed, moderation, or simulator-truth knowledge
-  - Deleting or overwriting corrected, contradicted, retracted, or moderated history
-  - Live integration with a real social platform, real-person data, or production content moderation
-  - LLM-generated feed exposure, belief mutation, fact-check success, trust scores, or authoritative claims
-  - Empirical claims about misinformation, persuasion, social behavior, or human belief
-  - Physical consequences without separately validated kernel commands and causal events
-  - MVP 5 fidelity promotion, distributed execution, calibration, sensitivity analysis, or performance dashboards
+- Treating likes, views, follows, comments, reposts, or blocks as proof of belief, endorsement, comprehension, or motive
+- Giving an agent global claim, feed, moderation, or simulator-truth knowledge
+- Deleting or overwriting corrected, contradicted, retracted, or moderated history
+- Live integration with a real social platform, real-person data, or production content moderation
+- LLM-generated feed exposure, belief mutation, fact-check success, trust scores, or authoritative claims
+- Empirical claims about misinformation, persuasion, social behavior, or human belief
+- Physical consequences without separately validated kernel commands and causal events
+- MVP 5 fidelity promotion, distributed execution, calibration, sensitivity analysis, or performance dashboards
 dependencies:
-  - Closed MVP 3 typed proposal boundary; model output remains untrusted
-  - AWG-GOV-001
-  - AWG-DOM-004
-  - AWG-DOM-009
-  - AWG-DOM-013
-  - AWG-PLAT-002
-  - AWG-UX-010
-  - AWG-RISK-007
-  - contracts/claims-and-provenance/claim.schema.json
-  - contracts/claims-and-provenance/belief.schema.json
-  - contracts/social-platform/social-action.schema.json
-  - contracts/commands/create-social-post.command.schema.json
-  - contracts/commands/send-message.command.schema.json
+- Closed MVP 3 typed proposal boundary; model output remains untrusted
+- AWG-GOV-001
+- AWG-DOM-004
+- AWG-DOM-009
+- AWG-DOM-013
+- AWG-PLAT-002
+- AWG-UX-010
+- AWG-RISK-007
+- contracts/claims-and-provenance/claim.schema.json
+- contracts/claims-and-provenance/belief.schema.json
+- contracts/social-platform/social-action.schema.json
+- contracts/commands/create-social-post.command.schema.json
+- contracts/commands/send-message.command.schema.json
 acceptance_tests:
-  - AWG-TEST-MVP4-001
-  - AWG-TEST-MVP4-002
-  - AWG-TEST-MVP4-003
-  - AWG-TEST-MVP4-004
-performance_target: >
-  The offline reference MUST process a deterministic synthetic chain of at
-  least 100 information actors and 1,000 transmission, exposure, reaction,
-  correction, and belief events in under 5 seconds on the CI runner. Replay
-  MUST reproduce identical event order, provenance graph, feed eligibility,
-  and per-agent exposed-claim sets.
-security_offline_target: >
-  Default verification MUST use synthetic content and no network access.
-  Untrusted messages, model output, claims, and social content MUST pass typed
-  command validation. Privacy, blocking, audience, and moderation rules MUST
-  be enforced before exposure. Participant projections MUST reveal only
-  accessible information; analyst-only truth and motive annotations MUST NOT
-  leak into agent observations.
+- AWG-TEST-MVP4-001
+- AWG-TEST-MVP4-002
+- AWG-TEST-MVP4-003
+- AWG-TEST-MVP4-004
+performance_target: 'The offline reference MUST process a deterministic synthetic chain of at least 100 information actors
+  and 1,000 transmission, exposure, reaction, correction, and belief events in under 5 seconds on the CI runner. Replay MUST
+  reproduce identical event order, provenance graph, feed eligibility, and per-agent exposed-claim sets.
+
+  '
+security_offline_target: 'Default verification MUST use synthetic content and no network access. Untrusted messages, model
+  output, claims, and social content MUST pass typed command validation. Privacy, blocking, audience, and moderation rules
+  MUST be enforced before exposure. Participant projections MUST reveal only accessible information; analyst-only truth and
+  motive annotations MUST NOT leak into agent observations.
+
+  '
 validation_evidence:
-  - {command: make mvp4, result: passed}
-  - {command: make validate, result: passed}
-  - {command: make test, result: passed}
+- command: make mvp4
+  result: passed
+- command: make validate
+  result: passed
+- command: make test
+  result: passed
 documentation_complete: true
-documentation_summary: >
-  AWG-DOM-004, AWG-DOM-013, and the README record the reconstructable chain,
-  belief separation, exposure gating, append-only corrections, and synthetic
-  offline limits.
+documentation_summary: 'AWG-DOM-004, AWG-DOM-013, and the README record the reconstructable chain, belief separation, exposure
+  gating, append-only corrections, and synthetic offline limits.
+
+  '
 known_limitations:
-  - The reference uses synthetic actors and content and does not model a real platform
-  - Deterministic feed ranking is a bounded mechanism, not a validated recommendation model
-  - Trust and belief values are simulation state, not psychological measurements
-  - Deception labels are scenario-authoring metadata unavailable to recipient agents
-  - Participant and analyst interfaces are bounded projections, not production applications
-  - AWG-GOV-001, AWG-DOM-004, AWG-DOM-013, and AWG-UX-010 remain draft
+- The reference uses synthetic actors and content and does not model a real platform
+- Deterministic feed ranking is a bounded mechanism, not a validated recommendation model
+- Trust and belief values are simulation state, not psychological measurements
+- Deception labels are scenario-authoring metadata unavailable to recipient agents
+- Participant and analyst interfaces are bounded projections, not production applications
+- AWG-GOV-001, AWG-DOM-004, AWG-DOM-013, and AWG-UX-010 remain draft
 unresolved_risks:
-  - AWG-RISK-007: information actions may be incorrectly interpreted as belief
-  - Exposure or analyst metadata may leak simulator-only truth to agents
-  - Incorrect privacy, blocking, or audience evaluation may create impossible exposure
-  - Provenance graph and exposure event volume may grow faster than the bounded reference
-  - Deception fixtures may be misused or presented without scenario and ethics context
-  - Content strings may carry unsafe payloads into projections if escaping is omitted
-release_decision: >
-  The offline MVP 4 information-world reference MAY proceed to MVP 5 scale
-  work. This does not approve a live social platform, real-person data,
-  empirical belief claims, or production release.
+- AWG-RISK-007: information actions may be incorrectly interpreted as belief
+- Exposure or analyst metadata may leak simulator-only truth to agents
+- Incorrect privacy, blocking, or audience evaluation may create impossible exposure
+- Provenance graph and exposure event volume may grow faster than the bounded reference
+- Deception fixtures may be misused or presented without scenario and ethics context
+- Content strings may carry unsafe payloads into projections if escaping is omitted
+release_decision: 'The offline MVP 4 information-world reference MAY proceed to MVP 5 scale work. This does not approve a
+  live social platform, real-person data, empirical belief claims, or production release.
+
+  '
 evidence_files:
-  - tests/test_mvp4_information.py
-  - contracts/claims-and-provenance/exposure.schema.json
-  - examples/fixtures/claims/exposure.valid.json
-  - generated/validation-report.md
+- tests/test_mvp4_information.py
+- contracts/claims-and-provenance/exposure.schema.json
+- examples/fixtures/claims/exposure.valid.json
+- generated/validation-report.md
 human_stop_conditions:
-  - Any Constitution or accepted-ADR change
-  - Real-person messages, accounts, social graphs, behavioral data, or sensitive personal data
-  - A security exception that bypasses privacy, exposure, provenance, or content isolation
-  - A deception or manipulation study requiring ethics or human-subject review
-  - An empirical claim about human belief, trust, persuasion, or misinformation
-  - Live social-platform credentials, scraping, publication, or production integration
-  - Undeclared production release
-notes: >
-  Scope packet only. Do not implement MVP 4 in this step. The next unblocked
-  role after completion is traceability.
+- Any Constitution or accepted-ADR change
+- Real-person messages, accounts, social graphs, behavioral data, or sensitive personal data
+- A security exception that bypasses privacy, exposure, provenance, or content isolation
+- A deception or manipulation study requiring ethics or human-subject review
+- An empirical claim about human belief, trust, persuasion, or misinformation
+- Live social-platform credentials, scraping, publication, or production integration
+- Undeclared production release
+notes: 'Scope packet only. Do not implement MVP 4 in this step. The next unblocked role after completion is traceability.
+
+  '
