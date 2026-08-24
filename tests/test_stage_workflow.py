@@ -17,6 +17,7 @@ from stage_workflow import (  # noqa: E402
     load_yaml,
     next_packet,
     validate_workflow,
+    workflow_graph,
 )
 
 
@@ -53,6 +54,23 @@ def test_every_stage_has_ordered_validated_steps_and_closeout_fields() -> None:
         assert all(step["validations"] for step in stage["steps"])
         closeout = load_yaml(ROOT / stage["closeout"])
         assert REQUIRED_GATE_FIELDS <= set(closeout)
+
+
+def test_workflow_graph_encodes_sequence_and_prerequisites() -> None:
+    graph = workflow_graph()
+    step_nodes = [node for node in graph["nodes"] if node["kind"] == "step"]
+    assert [node["id"] for node in step_nodes] == [
+        f"mvp{stage}/{step}"
+        for stage in range(6)
+        for step in ("scope", "traceability", "implementation", "contracts", "verification", "closeout")
+    ]
+    assert {"from": "mvp3/closeout", "to": "mvp4/scope", "kind": "prerequisite"} in graph["edges"]
+    assert {"from": "mvp4/closeout", "to": "mvp5/scope", "kind": "prerequisite"} in graph["edges"]
+    assert graph["stop_conditions"]
+    if graph["plan_complete"]:
+        assert graph["next"] is None
+    else:
+        assert graph["next"]["stage"] in {"mvp4", "mvp5"}
 
 
 def test_active_stage_gate_matches_its_recorded_readiness() -> None:

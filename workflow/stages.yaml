@@ -241,7 +241,7 @@ stages:
     - python3 scripts/stage_workflow.py check mvp4
   - id: traceability
     role: traceability
-    status: pending
+    status: completed
     outputs:
     - registers/requirements.yaml
     - registers/tests.yaml
@@ -249,14 +249,14 @@ stages:
     - python3 scripts/validate_traceability.py
   - id: implementation
     role: implementation
-    status: pending
+    status: completed
     outputs:
     - awg_mvp4
     validations:
     - make mvp4
   - id: contracts
     role: contracts
-    status: pending
+    status: completed
     outputs:
     - contracts/claims-and-provenance
     - contracts/social-platform
@@ -264,7 +264,7 @@ stages:
     - python3 scripts/validate_contracts.py
   - id: verification
     role: verification
-    status: pending
+    status: completed
     outputs:
     - tests/test_mvp4_information.py
     - generated/validation-report.md

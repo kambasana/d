@@ -1,0 +1,10 @@
+{
+  "schema_version": "0.2.0",
+  "exposure_id": "exposure:info-003:001",
+  "agent_id": "agent:info-003",
+  "claim_id": "claim:transformer:001",
+  "channel_id": "platform:town-square",
+  "event_id": "event:mvp4-00000010",
+  "visibility": "followers",
+  "acquired_at": "2042-05-04T14:30:05Z"
+}

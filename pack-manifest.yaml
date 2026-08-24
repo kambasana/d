@@ -75,6 +75,9 @@ required_scripts:
 - scripts/build_mvp1_pmtiles.py
 - scripts/run_mvp1.py
 - scripts/run_mvp2.py
+- scripts/run_mvp3.py
+- scripts/run_mvp4.py
+- scripts/run_mvp5.py
 - scripts/stage_workflow.py
 required_tests:
 - tests/test_pack.py
@@ -83,6 +86,9 @@ required_tests:
 - tests/test_mvp0_invariants.py
 - tests/test_mvp1_district.py
 - tests/test_mvp2_npc.py
+- tests/test_mvp3_adapters.py
+- tests/test_mvp4_information.py
+- tests/test_mvp5_scale.py
 - tests/test_stage_workflow.py
 documents:
 - document_id: AWG-VIS-001

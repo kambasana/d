@@ -62,6 +62,12 @@ S3 - Cognitive individual
 S4 - Fully embodied local agent
 ```
 
+The `awg_mvp5` reference keeps 1000 population records distinct from 50
+active cognition records, conserves tokens and beliefs across promotion and
+demotion, and compares a shared-seed control branch with a suppress-post
+intervention. Counts are software evidence, not calibrated human behavior.
+
+
 ### S0 - Aggregate
 Counts/flows/distributions for demographics, migration, employment, demand, exposure, disease/risk states, or other macro variables.
 

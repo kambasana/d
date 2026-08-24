@@ -20,6 +20,10 @@ schemas:
   id: https://awg.local/contracts/claims-and-provenance/claim.schema.json
   title: Claim
   version: 0.2.0
+- path: contracts/claims-and-provenance/exposure.schema.json
+  id: https://awg.local/contracts/claims-and-provenance/exposure.schema.json
+  title: Claim Exposure
+  version: 0.2.0
 - path: contracts/commands/base-command.schema.json
   id: https://awg.local/contracts/commands/base-command.schema.json
   title: Base Command
@@ -103,6 +107,10 @@ schemas:
 - path: contracts/scenarios/scenario-package.schema.json
   id: https://awg.local/contracts/scenarios/scenario-package.schema.json
   title: Scenario Package
+  version: 0.2.0
+- path: contracts/scenarios/fidelity-profile.schema.json
+  id: https://awg.local/contracts/scenarios/fidelity-profile.schema.json
+  title: Fidelity Profile
   version: 0.2.0
 - path: contracts/social-platform/social-action.schema.json
   id: https://awg.local/contracts/social-platform/social-action.schema.json

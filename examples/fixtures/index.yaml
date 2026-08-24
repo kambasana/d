@@ -58,6 +58,14 @@ fixtures:
   schema_id: https://awg.local/contracts/claims-and-provenance/claim.schema.json
   expected_valid: true
   note: Valid first-hand claim with lineage.
+- path: examples/fixtures/claims/exposure.valid.json
+  schema_id: https://awg.local/contracts/claims-and-provenance/exposure.schema.json
+  expected_valid: true
+  note: Valid recipient exposure that is not belief.
+- path: examples/fixtures/claims/exposure.invalid.json
+  schema_id: https://awg.local/contracts/claims-and-provenance/exposure.schema.json
+  expected_valid: false
+  note: Invalid because agent, channel, event, and visibility are absent.
 - path: examples/fixtures/claims/belief.valid.json
   schema_id: https://awg.local/contracts/claims-and-provenance/belief.schema.json
   expected_valid: true
@@ -102,6 +110,14 @@ fixtures:
   schema_id: https://awg.local/contracts/scenarios/run-record.schema.json
   expected_valid: true
   note: Valid immutable run record.
+- path: examples/fixtures/scenarios/fidelity-profile.valid.json
+  schema_id: https://awg.local/contracts/scenarios/fidelity-profile.schema.json
+  expected_valid: true
+  note: Valid S0-S4 profile separating population records from active cognition.
+- path: examples/fixtures/scenarios/fidelity-profile.invalid.json
+  schema_id: https://awg.local/contracts/scenarios/fidelity-profile.schema.json
+  expected_valid: false
+  note: Invalid because population size, active cognition, and levels are out of range.
 - path: examples/fixtures/events/domain-event.invalid.json
   schema_id: https://awg.local/contracts/events/domain-event.schema.json
   expected_valid: false

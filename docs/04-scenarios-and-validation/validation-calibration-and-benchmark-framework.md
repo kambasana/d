@@ -56,6 +56,10 @@ AWG must distinguish software correctness from model validity. A coherent story 
 ### 1. Software verification
 Does the implementation obey its declared rules, schemas, invariants, and deterministic transitions?
 
+The MVP 5 shared-seed branch comparison is software verification: it shows
+an intervention changed event counts. It is not empirical calibration.
+
+
 ### 2. Structural/model validation
 Are the mechanisms appropriate for the phenomenon and correctly connected?
 

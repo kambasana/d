@@ -295,12 +295,112 @@ def print_status() -> None:
         print(f"{stage['id']}: {stage['state']} ({completed}/{len(stage['steps'])} steps)")
 
 
+def workflow_graph() -> dict[str, Any]:
+    require_valid()
+    workflow, _ = load_workflow()
+    nodes: list[dict[str, Any]] = []
+    edges: list[dict[str, str]] = []
+    for stage in workflow["stages"]:
+        nodes.append(
+            {
+                "id": stage["id"],
+                "kind": "stage",
+                "title": stage["title"],
+                "state": stage["state"],
+            }
+        )
+        previous = None
+        for step in stage["steps"]:
+            node_id = f"{stage['id']}/{step['id']}"
+            nodes.append(
+                {
+                    "id": node_id,
+                    "kind": "step",
+                    "stage": stage["id"],
+                    "step": step["id"],
+                    "role": step["role"],
+                    "status": step["status"],
+                    "outputs": list(step["outputs"]),
+                }
+            )
+            if previous:
+                edges.append({"from": previous, "to": node_id, "kind": "sequence"})
+            previous = node_id
+        for prerequisite in stage.get("prerequisites", []):
+            edges.append(
+                {
+                    "from": f"{prerequisite}/closeout",
+                    "to": f"{stage['id']}/scope",
+                    "kind": "prerequisite",
+                }
+            )
+    packet = next_packet()
+    return {
+        "nodes": nodes,
+        "edges": edges,
+        "active": next((stage["id"] for stage in workflow["stages"] if stage["state"] == "active"), None),
+        "next": None if packet.get("status") == "plan_complete" else {
+            "stage": packet["stage"],
+            "step": packet["step"],
+            "role": packet["role"],
+        },
+        "plan_complete": packet.get("status") == "plan_complete",
+        "stop_conditions": [
+            "constitutional or accepted-ADR change",
+            "licence or redistribution approval",
+            "handling of sensitive real-person data",
+            "destructive or irreversible migration",
+            "security exception or secret exposure",
+            "empirical validation claim",
+            "production release decision not already delegated",
+        ],
+    }
+
+
+def mermaid_graph(graph: dict[str, Any]) -> str:
+    lines = ["flowchart LR"]
+    for node in graph["nodes"]:
+        if node["kind"] != "step":
+            continue
+        label = f"{node['stage']}/{node['step']}\\n{node['status']}"
+        lines.append(f'  {node["id"].replace("/", "_")}["{label}"]')
+    for edge in graph["edges"]:
+        src = edge["from"].replace("/", "_")
+        dst = edge["to"].replace("/", "_")
+        arrow = "-->" if edge["kind"] == "sequence" else "-.->"
+        lines.append(f"  {src} {arrow} {dst}")
+    return "\n".join(lines)
+
+
+def print_graph() -> None:
+    graph = workflow_graph()
+    print(json.dumps(graph, indent=2))
+    print(mermaid_graph(graph))
+
+
+def run_until_blocked() -> None:
+    """Print graph status and the next packet. Contributors keep invoking this until plan_complete."""
+    require_valid()
+    print_status()
+    print()
+    graph = workflow_graph()
+    print(mermaid_graph(graph))
+    print()
+    packet = next_packet()
+    print(json.dumps(packet, indent=2))
+    if packet.get("status") == "plan_complete":
+        return
+    raise SystemExit(2)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="AWG staged automated-contributor workflow")
     subparsers = parser.add_subparsers(dest="command", required=True)
     subparsers.add_parser("validate")
     subparsers.add_parser("status")
     subparsers.add_parser("next")
+    subparsers.add_parser("graph")
+    subparsers.add_parser("run")
     check = subparsers.add_parser("check")
     check.add_argument("stage")
     gate = subparsers.add_parser("gate")
@@ -318,6 +418,10 @@ def main() -> None:
             print_status()
         elif args.command == "next":
             print(json.dumps(next_packet(), indent=2))
+        elif args.command == "graph":
+            print_graph()
+        elif args.command == "run":
+            run_until_blocked()
         elif args.command == "check":
             errors = check_stage(args.stage)
             if errors:

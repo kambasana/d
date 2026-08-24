@@ -941,6 +941,55 @@ tests:
   - AWG-REQ-MVP3-004
   automation: tests/test_mvp3_adapters.py::test_model_output_provenance_is_complete
   status: automated
+- id: AWG-TEST-MVP4-001
+  type: acceptance
+  description: Observation, claim, message, post, and repost events reconstruct as one parent-linked chain.
+  requirements:
+  - AWG-REQ-MVP4-001
+  automation: tests/test_mvp4_information.py::test_observation_to_repost_chain_is_reconstructable
+  status: automated
+- id: AWG-TEST-MVP4-002
+  type: invariant
+  description: A like does not create belief, and participant projections omit simulator world truth.
+  requirements:
+  - AWG-REQ-MVP4-002
+  automation: tests/test_mvp4_information.py::test_belief_is_separate_from_truth_and_likes
+  status: automated
+- id: AWG-TEST-MVP4-003
+  type: invariant
+  description: An actor outside audience and follow graph cannot know the unpublished claim or see the followers-only post.
+  requirements:
+  - AWG-REQ-MVP4-003
+  automation: tests/test_mvp4_information.py::test_unexposed_agent_cannot_know_claim
+  status: automated
+- id: AWG-TEST-MVP4-004
+  type: invariant
+  description: Correction and retraction events leave the original post content and claim history intact.
+  requirements:
+  - AWG-REQ-MVP4-004
+  automation: tests/test_mvp4_information.py::test_correction_preserves_original_history
+  status: automated
+- id: AWG-TEST-MVP5-001
+  type: acceptance
+  description: The scale profile reports 1000 population records and 50 active cognition records.
+  requirements:
+  - AWG-REQ-MVP5-001
+  automation: tests/test_mvp5_scale.py::test_population_records_are_separate_from_active_cognition
+  status: automated
+- id: AWG-TEST-MVP5-002
+  type: invariant
+  description: Promotion to S4 and demotion back to a cohort fidelity conserve tokens and beliefs.
+  requirements:
+  - AWG-REQ-MVP5-002
+  automation: tests/test_mvp5_scale.py::test_promotion_and_demotion_conserve_tokens_and_beliefs
+  status: automated
+- id: AWG-TEST-MVP5-003
+  type: acceptance
+  description: Shared-seed control and suppress-post branches differ in event counts while conserving tokens.
+  requirements:
+  - AWG-REQ-MVP5-003
+  automation: tests/test_mvp5_scale.py::test_branch_comparison_separates_intervention_from_seed
+  status: automated
 - id: AWG-TEST-WFL-001
   type: workflow
   description: Stage order, roles, outputs, closeout fields, evidence, prerequisites, and fail-closed advancement are executable and validated.

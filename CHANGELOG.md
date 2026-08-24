@@ -12,6 +12,9 @@
 - Recorded MVP 2 requirements, automated tests, and phase-gate decision.
 - Added an executable automated-contributor workflow with ordered roles, MVP prerequisites, validation commands, closeout records, fail-closed advancement, and CI enforcement.
 - Added the offline MVP 3 provider-neutral adapter reference, recorded-output replay, model-output artifact contract, complete provenance, and fail-closed malformed/timeout behavior.
+- Added a keep-going workflow graph (`make workflow-graph` / `make workflow-run`) that sequences MVP 0-5 until plan completion or a human stop.
+- Added the offline MVP 4 information-world reference with reconstructable provenance, exposure gating, and append-only corrections.
+- Added the offline MVP 5 multi-resolution scale reference with conserved promotion and shared-seed branch comparison.
 
 ## 0.2.0 — 2026-08-20
 

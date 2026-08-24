@@ -1373,6 +1373,92 @@ requirements:
   verified_by:
   - AWG-TEST-MVP3-004
   status: draft
+- id: AWG-REQ-MVP4-001
+  title: 'Provenance chains are reconstructable'
+  statement: 'An observation-to-message-to-post-to-repost chain MUST be reconstructable from parent event identifiers without deleting prior transmissions.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-004
+  - AWG-DOM-013
+  implemented_by:
+  - AWG-DOM-004
+  - AWG-PLAT-002
+  verified_by:
+  - AWG-TEST-MVP4-001
+  status: draft
+- id: AWG-REQ-MVP4-002
+  title: 'Belief is not world truth or social action'
+  statement: 'Belief MUST remain agent-specific and MUST NOT be implied by likes, views, follows, comments, or reposts, and MUST NOT equal simulator world truth.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-004
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-DOM-004
+  - AWG-DOM-013
+  verified_by:
+  - AWG-TEST-MVP4-002
+  status: draft
+- id: AWG-REQ-MVP4-003
+  title: 'Unexposed claims remain unknown'
+  statement: 'An agent MUST NOT know a claim, and a participant feed MUST NOT include a post, unless an explicit exposure or audience rule granted access.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-004
+  - AWG-DOM-009
+  implemented_by:
+  - AWG-DOM-004
+  - AWG-DOM-013
+  verified_by:
+  - AWG-TEST-MVP4-003
+  status: draft
+- id: AWG-REQ-MVP4-004
+  title: 'Corrections preserve original history'
+  statement: 'Corrections and retractions MUST be append-only events and MUST NOT overwrite or delete the original post, claim, or transmission.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-004
+  implemented_by:
+  - AWG-DOM-004
+  - AWG-PLAT-002
+  verified_by:
+  - AWG-TEST-MVP4-004
+  status: draft
+- id: AWG-REQ-MVP5-001
+  title: 'Scale profiles separate records from active cognition'
+  statement: 'Scale benchmarks MUST report population records and active cognition as separate counts across fidelity levels S0 through S4.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-005
+  implemented_by:
+  - AWG-PLAT-005
+  verified_by:
+  - AWG-TEST-MVP5-001
+  status: draft
+- id: AWG-REQ-MVP5-002
+  title: 'Promotion and demotion conserve key state'
+  statement: 'Promotion and demotion MUST conserve tokens and beliefs for the affected record.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-005
+  implemented_by:
+  - AWG-PLAT-005
+  verified_by:
+  - AWG-TEST-MVP5-002
+  status: draft
+- id: AWG-REQ-MVP5-003
+  title: 'Branch comparison isolates intervention effects'
+  statement: 'Branch comparison with a shared seed MUST distinguish an intervention effect from seed-only variance.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-SCN-002
+  - AWG-SCN-004
+  implemented_by:
+  - AWG-SCN-002
+  - AWG-SCN-004
+  verified_by:
+  - AWG-TEST-MVP5-003
+  status: draft
 - id: AWG-REQ-WFL-001
   title: 'Roadmap stages use ordered validation and fail-closed closeout'
   statement: 'Every roadmap stage MUST execute scope, traceability, implementation, contracts, verification, and closeout in order, and MUST NOT advance while required outputs, acceptance tests, evidence, or validation are incomplete.'

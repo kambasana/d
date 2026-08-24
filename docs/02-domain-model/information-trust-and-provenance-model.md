@@ -182,7 +182,15 @@ PHYSICAL WORLD
 
 Information can produce physical feedback loops such as panic buying, travel changes, crowd formation, or organizational response.
 
-## Virtual social media
+## MVP 4 bounded reference
+
+The `awg_mvp4` reference records an observation-to-message-to-post-to-repost
+chain, keeps likes distinct from belief, preserves original posts under
+correction, and withholds unexposed claims from participant projections.
+Feed eligibility uses recorded ranking configuration. Information-only
+actors declare `embodiment: none`. This is synthetic offline evidence, not
+an empirically validated social model.
+
 
 The platform supports simulated social systems with typed actions such as:
 

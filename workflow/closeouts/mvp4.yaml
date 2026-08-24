@@ -1,5 +1,5 @@
 stage: mvp4
-status: open
+status: ready
 issue: ELE-147
 objectives: >
   Implement a bounded information world in which claims, evidence, beliefs,
@@ -43,7 +43,11 @@ dependencies:
   - contracts/social-platform/social-action.schema.json
   - contracts/commands/create-social-post.command.schema.json
   - contracts/commands/send-message.command.schema.json
-acceptance_tests: []
+acceptance_tests:
+  - AWG-TEST-MVP4-001
+  - AWG-TEST-MVP4-002
+  - AWG-TEST-MVP4-003
+  - AWG-TEST-MVP4-004
 performance_target: >
   The offline reference MUST process a deterministic synthetic chain of at
   least 100 information actors and 1,000 transmission, exposure, reaction,
@@ -57,11 +61,15 @@ security_offline_target: >
   be enforced before exposure. Participant projections MUST reveal only
   accessible information; analyst-only truth and motive annotations MUST NOT
   leak into agent observations.
-validation_evidence: []
-documentation_complete: false
+validation_evidence:
+  - {command: make mvp4, result: passed}
+  - {command: make validate, result: passed}
+  - {command: make test, result: passed}
+documentation_complete: true
 documentation_summary: >
-  Scope packet only. Traceability, implementation, contracts, verification,
-  and closeout evidence remain pending.
+  AWG-DOM-004, AWG-DOM-013, and the README record the reconstructable chain,
+  belief separation, exposure gating, append-only corrections, and synthetic
+  offline limits.
 known_limitations:
   - The reference uses synthetic actors and content and does not model a real platform
   - Deterministic feed ranking is a bounded mechanism, not a validated recommendation model
@@ -77,9 +85,14 @@ unresolved_risks:
   - Deception fixtures may be misused or presented without scenario and ethics context
   - Content strings may carry unsafe payloads into projections if escaping is omitted
 release_decision: >
-  MVP 4 remains open. No information-world reference, provider integration,
-  social-platform release, or empirical claim is authorized by this scope.
-evidence_files: []
+  The offline MVP 4 information-world reference MAY proceed to MVP 5 scale
+  work. This does not approve a live social platform, real-person data,
+  empirical belief claims, or production release.
+evidence_files:
+  - tests/test_mvp4_information.py
+  - contracts/claims-and-provenance/exposure.schema.json
+  - examples/fixtures/claims/exposure.valid.json
+  - generated/validation-report.md
 human_stop_conditions:
   - Any Constitution or accepted-ADR change
   - Real-person messages, accounts, social graphs, behavioral data, or sensitive personal data

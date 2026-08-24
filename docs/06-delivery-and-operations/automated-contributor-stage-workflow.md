@@ -3,7 +3,7 @@ title: Automated Contributor Stage Workflow
 document_id: AWG-OPS-012
 status: draft
 version: 0.2.0
-last_updated: '2026-08-21'
+last_updated: '2026-08-24'
 normative: true
 owners:
 - AWG architecture
@@ -91,6 +91,13 @@ python3 scripts/stage_workflow.py gate mvp3
 ```
 
 `workflow-next` emits a machine-readable task packet containing the active stage, first pending step, role instructions, required outputs, validation commands, and closeout path.
+
+`workflow-graph` emits the directed stage/step graph: sequential edges inside a stage and prerequisite edges from one closeout to the next scope. `workflow-run` prints status, the graph, and the next packet, then exits 2 while work remains so contributors can keep looping until `plan_complete`.
+
+```text
+mvpN/scope -> traceability -> implementation -> contracts -> verification -> closeout
+mvpN/closeout -.prerequisite.-> mvpN+1/scope
+```
 
 `complete` runs the step validation before changing stage state. Completing `closeout` additionally runs all gate evidence commands, closes the stage, and activates only the next stage whose prerequisites are closed.
 

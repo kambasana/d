@@ -98,12 +98,32 @@ option ranking, dialogue realization, memory summarization, and claim
 extraction. Ollama and OpenRouter remain unapproved candidate integrations;
 model outputs are proposals and cannot mutate authoritative state.
 
+## Run the MVP 4 information-world profile
+
+```bash
+make mvp4
+```
+
+Synthetic actors exchange a reconstructable claim chain. Likes are not
+belief, unexposed claims stay unknown, and corrections keep original posts.
+
+## Run the MVP 5 scale profile
+
+```bash
+make mvp5
+```
+
+Population records stay separate from active cognition. Promotion conserves
+tokens and beliefs. Shared-seed branch comparison isolates an intervention.
+
 ## Run the staged contributor workflow
 
 ```bash
 make workflow-check
 make workflow-status
+make workflow-graph
 make workflow-next
+make workflow-run
 ```
 
 The workflow emits the next role packet and blocks stage advancement until ordered outputs, validation, closeout evidence, limitations, and risks are complete. See [`AWG-OPS-012`](docs/06-delivery-and-operations/automated-contributor-stage-workflow.md).

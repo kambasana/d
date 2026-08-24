@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/scenarios/fidelity-profile.schema.json",
+  "title": "Fidelity Profile",
+  "type": "object",
+  "properties": {
+    "schema_version": {"type": "string"},
+    "profile_id": {"type": "string"},
+    "population_records": {"type": "integer", "minimum": 1},
+    "active_cognition": {"type": "integer", "minimum": 0},
+    "levels": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {"enum": ["S0", "S1", "S2", "S3", "S4"]}
+    },
+    "seed": {"type": "integer"},
+    "intervention": {
+      "type": ["string", "null"]
+    }
+  },
+  "required": [
+    "schema_version",
+    "profile_id",
+    "population_records",
+    "active_cognition",
+    "levels",
+    "seed"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "properties": {
+        "active_cognition": {"type": "integer"}
+      }
+    }
+  ]
+}

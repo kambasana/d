@@ -47,6 +47,13 @@ This document is normative. Its current status is **draft**. Where this document
 - Platform ranking and recommendation systems are swappable adapters with recorded configuration.
 - Information-space-only actors such as news organizations, bots, and external analysts are explicitly typed.
 
+## MVP 4 bounded reference
+
+The reference kernel enforces audience, follow, and block rules before
+exposure, stores inferred motive as null on social actions, and keeps
+analyst world-truth out of participant projections.
+
+
 ## Failure modes
 
 - Silent divergence between authoritative state and projections.
