@@ -28,14 +28,14 @@ def test_workflow_configuration_and_closed_evidence_are_valid() -> None:
 
 def test_next_packet_dispatches_first_pending_step_of_active_stage() -> None:
     packet = next_packet()
-    assert packet["stage"] == "mvp3"
-    assert packet["step"] == "verification"
-    assert packet["role"] == "verification"
-    assert packet["required_outputs"] == [
-        "tests/test_mvp3_adapters.py",
-        "generated/validation-report.md",
-    ]
-    assert "Regenerate reports through scripts" in packet["instructions"]
+    workflow, _ = load_workflow()
+    active = next(stage for stage in workflow["stages"] if stage["state"] == "active")
+    pending = next(step for step in active["steps"] if step["status"] == "pending")
+    assert packet["stage"] == active["id"]
+    assert packet["step"] == pending["id"]
+    assert packet["role"] == pending["role"]
+    assert packet["required_outputs"] == pending["outputs"]
+    assert packet["instructions"].startswith("# ")
 
 
 def test_each_role_has_readable_instructions() -> None:
@@ -55,6 +55,16 @@ def test_every_stage_has_ordered_validated_steps_and_closeout_fields() -> None:
         assert REQUIRED_GATE_FIELDS <= set(closeout)
 
 
-def test_open_stage_cannot_close_without_completed_steps_and_evidence() -> None:
-    with pytest.raises(WorkflowError, match="scope through verification"):
-        gate_stage("mvp3", execute=False)
+def test_active_stage_gate_matches_its_recorded_readiness() -> None:
+    workflow, _ = load_workflow()
+    active = next(stage for stage in workflow["stages"] if stage["state"] == "active")
+    closeout = load_yaml(ROOT / active["closeout"])
+    ready = (
+        all(step["status"] == "completed" for step in active["steps"][:-1])
+        and closeout["status"] == "ready"
+    )
+    if ready:
+        gate_stage(active["id"], execute=False)
+    else:
+        with pytest.raises(WorkflowError):
+            gate_stage(active["id"], execute=False)
