@@ -234,7 +234,7 @@ stages:
   steps:
   - id: scope
     role: scope
-    status: pending
+    status: completed
     outputs:
     - workflow/closeouts/mvp4.yaml
     validations:
