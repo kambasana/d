@@ -10,7 +10,7 @@ from typing import Any
 from urllib.parse import parse_qs, urlparse
 
 from .bundle import ReviewBundle, load_review_bundle
-from .projections import world_projection
+from .projections import ui_review_bundle, world_projection
 
 ROOT = Path(__file__).resolve().parents[1]
 STATIC_ROOT = ROOT / "apps" / "world-explorer" / "dist"
@@ -28,6 +28,8 @@ def _json_response(handler: BaseHTTPRequestHandler, status: int, payload: dict[s
     handler.send_header("Content-Length", str(len(body)))
     handler.send_header("Cache-Control", "no-store")
     handler.send_header("X-AWG-Read-Only", "true")
+    handler.send_header("Access-Control-Allow-Origin", "*")
+    handler.send_header("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS")
     handler.end_headers()
     handler.wfile.write(body)
 
@@ -58,6 +60,8 @@ class WorldExplorerHandler(BaseHTTPRequestHandler):
     def do_OPTIONS(self) -> None:
         self.send_response(HTTPStatus.NO_CONTENT)
         self.send_header("Allow", "GET, HEAD, OPTIONS")
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS")
         self.end_headers()
 
     def do_HEAD(self) -> None:
@@ -88,6 +92,10 @@ class WorldExplorerHandler(BaseHTTPRequestHandler):
                 HTTPStatus.OK,
                 {"status": "ok", "read_only": True, "service": "world-explorer"},
             )
+            return
+
+        if route == "/api/review-bundle":
+            _json_response(self, HTTPStatus.OK, ui_review_bundle(self.review_bundle))
             return
 
         if route == "/api/v1/context":

@@ -1471,3 +1471,27 @@ requirements:
   verified_by:
   - AWG-TEST-WFL-001
   status: draft
+- id: AWG-REQ-UX-APP-001
+  title: World Explorer remains a read-only projection
+  statement: 'The World Explorer review application MUST serve GET-only projections, MUST NOT mutate authoritative world state, and MUST label PMTiles and display clusters as projection-only.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-UX-001
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-UX-001
+  verified_by:
+  - AWG-TEST-UX-APP-001
+  - AWG-TEST-UX-APP-002
+  status: draft
+- id: AWG-REQ-WFL-002
+  title: Workflow loop stops for human application review
+  statement: 'After the review application stage, the workflow loop MUST stop with awaiting_human_review and MUST NOT auto-complete the human_review stage or report plan_complete as human approval.'
+  source_documents:
+  - AWG-OPS-012
+  - AWG-OPS-001
+  implemented_by:
+  - AWG-OPS-012
+  verified_by:
+  - AWG-TEST-WFL-002
+  status: draft

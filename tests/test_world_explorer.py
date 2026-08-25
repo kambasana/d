@@ -12,7 +12,7 @@ from datetime import timedelta
 import pytest
 
 from awg_mvp1.kernel import _format_time, _parse_time
-from awg_world_explorer import load_review_bundle
+from awg_world_explorer import load_review_bundle, ui_review_bundle
 from awg_world_explorer.projections import world_projection
 from awg_world_explorer.server import WorldExplorerHandler, _BundleHolder
 from http.server import ThreadingHTTPServer
@@ -135,9 +135,27 @@ def test_world_firehose_timeline_information_scale_endpoints(server_url, review_
     assert scale["totals"]["population_records"] == 1000
 
 
+def test_review_bundle_endpoint_matches_ui_contract(server_url, review_bundle) -> None:
+    status, payload = _get(f"{server_url}/api/review-bundle")
+    local = ui_review_bundle(review_bundle)
+    assert status == HTTPStatus.OK
+    assert payload["bundle_id"] == review_bundle.bundle_id
+    assert payload["read_only"] is True
+    assert payload["mutation_allowed"] is False
+    assert payload["map_projection"]["authority"] == "projection_only"
+    assert payload["agents"]
+    assert payload["clusters"]
+    assert payload["firehose"]
+    assert payload["timeline"]["ticks"]
+    assert payload["world"]["agent_count"] == len(payload["agents"])
+    assert payload["scale_summary"]["population_total"] == 1000
+    assert local["bundle_id"] == payload["bundle_id"]
+
+
 def test_mutating_methods_return_405(server_url) -> None:
     for method in ("POST", "PUT", "PATCH", "DELETE"):
         assert _request(method, f"{server_url}/api/v1/context") == HTTPStatus.METHOD_NOT_ALLOWED
+        assert _request(method, f"{server_url}/api/review-bundle") == HTTPStatus.METHOD_NOT_ALLOWED
 
 
 def test_offline_bundle_build_rejects_network(monkeypatch: pytest.MonkeyPatch) -> None:

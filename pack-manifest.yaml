@@ -49,6 +49,7 @@ required_contract_groups:
 - contracts/plugins
 - contracts/scenarios
 - contracts/firehose
+- contracts/projections
 required_generated_reports:
 - generated/document-map.md
 - generated/document-status-matrix.md
@@ -78,6 +79,7 @@ required_scripts:
 - scripts/run_mvp3.py
 - scripts/run_mvp4.py
 - scripts/run_mvp5.py
+- scripts/run_world_explorer.py
 - scripts/stage_workflow.py
 required_tests:
 - tests/test_pack.py
@@ -89,6 +91,7 @@ required_tests:
 - tests/test_mvp3_adapters.py
 - tests/test_mvp4_information.py
 - tests/test_mvp5_scale.py
+- tests/test_world_explorer.py
 - tests/test_stage_workflow.py
 documents:
 - document_id: AWG-VIS-001

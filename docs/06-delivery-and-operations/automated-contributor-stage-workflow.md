@@ -34,7 +34,7 @@ This document is normative and **draft**. The Simulation Constitution, accepted 
 ## Scope
 
 - Role separation for coordination, scope, traceability, implementation, contracts, verification, and closeout.
-- Ordered steps for MVP 0 through MVP 5.
+- Ordered steps for MVP 0 through MVP 5, then the review application, then a hard human-review stop.
 - Machine-readable stage state, prerequisites, required outputs, validation commands, and closeout records.
 - Fail-closed stage advancement.
 
@@ -98,11 +98,12 @@ python3 scripts/stage_workflow.py loop --limit 64
 `workflow-loop` drives the graph without further prompting. It repeatedly takes the next unblocked packet and completes it, which runs that step's declared validation commands, until one of the following happens:
 
 - every stage is closed and the loop reports `plan_complete`;
+- the active stage has `stop_for_human: true` and the loop reports `awaiting_human_review`;
 - a step's outputs, evidence, or validation commands fail and the loop reports `blocked` with the failing stage, step, and reason;
 - a step returns without advancing the graph, which the loop reports as blocked rather than spinning;
 - the step limit is reached.
 
-The loop MUST NOT skip a step, edit stage state directly, or continue past a failed gate. Because step validation runs `make test`, the loop refuses to start a nested run that would execute repository steps recursively.
+The loop MUST NOT skip a step, edit stage state directly, continue past a failed gate, or auto-complete a human-review stage. Because step validation runs `make test`, the loop refuses to start a nested run that would execute repository steps recursively.
 
 ```text
 mvpN/scope -> traceability -> implementation -> contracts -> verification -> closeout
@@ -136,7 +137,8 @@ Automation MUST stop and request an explicit decision for:
 - destructive or irreversible migration;
 - security exception or secret exposure;
 - empirical validation claim;
-- production release decision not already delegated.
+- production release decision not already delegated;
+- human review of the World Explorer application.
 
 ## Failure modes
 

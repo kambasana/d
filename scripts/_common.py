@@ -66,5 +66,7 @@ def all_files(exclude_dist: bool = True) -> list[Path]:
             continue
         if '__pycache__' in rel.parts or '.pytest_cache' in rel.parts or '.git' in rel.parts:
             continue
+        if 'node_modules' in rel.parts:
+            continue
         result.append(p)
     return sorted(result)

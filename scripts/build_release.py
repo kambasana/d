@@ -35,7 +35,15 @@ def expand(prefixes: list[str], include_root: bool = True) -> list[Path]:
         if p.is_file():
             paths.append(p)
         elif p.is_dir():
-            paths += [x for x in p.rglob('*') if x.is_file() and not ({'dist', '__pycache__', '.pytest_cache', '.git'} & set(x.relative_to(ROOT).parts))]
+            paths += [
+                x
+                for x in p.rglob('*')
+                if x.is_file()
+                and not (
+                    {'dist', '__pycache__', '.pytest_cache', '.git', 'node_modules'}
+                    & set(x.relative_to(ROOT).parts)
+                )
+            ]
     return paths
 
 
@@ -93,8 +101,8 @@ def main() -> None:
     parts = [
         (f'agentic-world-graph-v{VERSION}-part-1-foundation-domain.zip', shared + ['docs/00-vision-and-research', 'docs/01-governance-and-safety', 'docs/02-domain-model']),
         (f'agentic-world-graph-v{VERSION}-part-2-platform-scenarios.zip', shared + ['docs/03-platform-architecture', 'docs/04-scenarios-and-validation', 'contracts']),
-        (f'agentic-world-graph-v{VERSION}-part-3-ui-delivery.zip', shared + ['docs/05-ui-ux', 'docs/06-delivery-and-operations', 'decisions', '.github']),
-        (f'agentic-world-graph-v{VERSION}-part-4-contracts-tools-archive.zip', shared + ['docs/10-appendices', 'contracts', 'examples', 'scripts', 'tests', 'templates', 'archive', 'pyproject.toml', 'requirements-dev.txt', 'Dockerfile', 'docker-compose.yml', 'Makefile', 'mkdocs.yml']),
+        (f'agentic-world-graph-v{VERSION}-part-3-ui-delivery.zip', shared + ['docs/05-ui-ux', 'docs/06-delivery-and-operations', 'decisions', '.github', 'apps']),
+        (f'agentic-world-graph-v{VERSION}-part-4-contracts-tools-archive.zip', shared + ['docs/10-appendices', 'contracts', 'examples', 'scripts', 'tests', 'templates', 'archive', 'workflow', 'awg_mvp1', 'awg_mvp2', 'awg_mvp3', 'awg_mvp4', 'awg_mvp5', 'awg_world_explorer', 'pyproject.toml', 'requirements-dev.txt', 'Dockerfile', 'docker-compose.yml', 'Makefile', 'mkdocs.yml']),
     ]
     archives = [full]
     for name, prefixes in parts:

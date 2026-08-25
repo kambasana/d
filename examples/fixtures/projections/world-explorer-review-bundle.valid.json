@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.2.0",
+  "bundle_id": "bundle:world-explorer-review",
+  "projection_notice": "Read-only review projection. Clusters and PMTiles are not world authority.",
+  "read_only": true,
+  "mutation_allowed": false,
+  "world": {
+    "world_id": "world:mvp1-reference-district",
+    "scenario_id": "scenario:mvp1-24-hour",
+    "branch_id": "branch:baseline",
+    "district_id": "district:reference",
+    "simulation_time": "2042-05-05T00:00:00Z",
+    "run_state": "completed",
+    "agent_count": 100
+  },
+  "map_projection": {
+    "kind": "synthetic_svg",
+    "authority": "projection_only",
+    "pmtiles_available": true,
+    "notice": "Basemap tiles are visualization projections."
+  },
+  "semantic_zoom": { "default_level": "district", "levels": [] },
+  "district": { "bounds": {}, "nodes": [], "edges": [], "places": [], "buildings": [] },
+  "clusters": [],
+  "agents": [],
+  "agent_details": {},
+  "firehose": [],
+  "timeline": { "ticks": [], "default_tick_index": 0 },
+  "information_space": { "channels": [], "notice": "Likes are not belief." },
+  "scale_summary": { "population_total": 1000, "population_visible": 100 }
+}

@@ -275,6 +275,23 @@ Every MVP gate must list:
 - Offline and degraded-mode behaviour is explicit.
 - No LLM or visualization component can override authoritative state.
 
+## Read-only World Explorer review application
+
+Provide a GET-only World Explorer over the closed MVP 1, MVP 4, and MVP 5 reference kernels so a human can inspect projections without mutating world state.
+
+### Done when
+- `/health` and `/api/review-bundle` are served from offline kernels;
+- POST, PUT, PATCH, and DELETE are rejected;
+- the UI labels PMTiles and clusters as projection-only;
+- likes and views are not treated as belief;
+- automated tests cover the read-only contract.
+
+This stage does **not** authorize production release or empirical validity.
+
+## Human review of the World Explorer application
+
+A human MUST inspect the running World Explorer. Automated contributors MUST stop here. `plan_complete` MUST NOT be reported as human approval.
+
 ## Related documents
 
 - AWG-GOV-001

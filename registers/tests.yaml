@@ -997,3 +997,24 @@ tests:
   - AWG-REQ-WFL-001
   automation: tests/test_stage_workflow.py and python3 scripts/stage_workflow.py validate
   status: automated
+- id: AWG-TEST-UX-APP-001
+  type: acceptance
+  description: World Explorer review bundle is read-only, mutation methods return 405, and kernel checksums are unchanged.
+  requirements:
+  - AWG-REQ-UX-APP-001
+  automation: tests/test_world_explorer.py
+  status: automated
+- id: AWG-TEST-UX-APP-002
+  type: acceptance
+  description: GET /api/review-bundle returns the UI review projection with projection-only map authority.
+  requirements:
+  - AWG-REQ-UX-APP-001
+  automation: tests/test_world_explorer.py::test_review_bundle_endpoint_matches_ui_contract
+  status: automated
+- id: AWG-TEST-WFL-002
+  type: workflow
+  description: The workflow loop stops at human_review and cannot auto-complete that stage.
+  requirements:
+  - AWG-REQ-WFL-002
+  automation: tests/test_stage_workflow.py
+  status: automated

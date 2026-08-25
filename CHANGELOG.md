@@ -16,6 +16,8 @@
 - Added `make workflow-loop`, which drives every unblocked step to closure, stops at the first failed gate, refuses to spin on a non-advancing step, and refuses nested runs.
 - Added the offline MVP 4 information-world reference with reconstructable provenance, exposure gating, and append-only corrections.
 - Added the offline MVP 5 multi-resolution scale reference with conserved promotion and shared-seed branch comparison.
+- Added a GET-only World Explorer review application over the MVP kernels.
+- Added a post-MVP `review_app` stage and a hard `human_review` stop that the workflow loop cannot auto-complete.
 
 ## 0.2.0 — 2026-08-20
 

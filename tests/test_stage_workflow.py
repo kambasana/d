@@ -98,6 +98,9 @@ def test_loop_reads_the_real_graph_without_executing_repository_steps() -> None:
     if all(stage["state"] == "closed" for stage in workflow["stages"]):
         assert report["status"] == "plan_complete"
         assert attempted == []
+    elif report["status"] == "awaiting_human_review":
+        assert attempted == []
+        assert report["blocked"]["stage"] == "human_review"
     else:
         assert report["status"] == "blocked"
         assert len(attempted) == 1
@@ -125,6 +128,10 @@ def test_next_packet_dispatches_first_pending_step_of_active_stage() -> None:
     active = next((stage for stage in workflow["stages"] if stage["state"] == "active"), None)
     if active is None:
         assert packet["status"] == "plan_complete"
+        return
+    if active.get("stop_for_human"):
+        assert packet["status"] == "awaiting_human_review"
+        assert packet["stage"] == active["id"]
         return
     pending = next(step for step in active["steps"] if step["status"] == "pending")
     assert packet["stage"] == active["id"]
@@ -154,18 +161,24 @@ def test_every_stage_has_ordered_validated_steps_and_closeout_fields() -> None:
 def test_workflow_graph_encodes_sequence_and_prerequisites() -> None:
     graph = workflow_graph()
     step_nodes = [node for node in graph["nodes"] if node["kind"] == "step"]
-    assert [node["id"] for node in step_nodes] == [
+    assert [node["id"] for node in step_nodes[:36]] == [
         f"mvp{stage}/{step}"
         for stage in range(6)
         for step in ("scope", "traceability", "implementation", "contracts", "verification", "closeout")
     ]
+    assert any(node["id"] == "review_app/scope" for node in step_nodes)
+    assert any(node["id"] == "human_review/closeout" for node in step_nodes)
     assert {"from": "mvp3/closeout", "to": "mvp4/scope", "kind": "prerequisite"} in graph["edges"]
     assert {"from": "mvp4/closeout", "to": "mvp5/scope", "kind": "prerequisite"} in graph["edges"]
-    assert graph["stop_conditions"]
-    if graph["plan_complete"]:
+    assert {"from": "review_app/closeout", "to": "human_review/scope", "kind": "prerequisite"} in graph["edges"]
+    assert "human review of the World Explorer application" in graph["stop_conditions"]
+    if graph["awaiting_human_review"]:
+        assert graph["next"] is None
+        assert graph["plan_complete"] is False
+    elif graph["plan_complete"]:
         assert graph["next"] is None
     else:
-        assert graph["next"]["stage"] in {"mvp4", "mvp5"}
+        assert graph["next"]["stage"] in {"review_app", "human_review"}
 
 
 def test_active_stage_gate_matches_its_recorded_readiness() -> None:

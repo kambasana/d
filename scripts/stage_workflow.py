@@ -62,10 +62,12 @@ def validate_workflow() -> list[str]:
     roles = {role["id"]: role for role in roles_doc.get("roles", [])}
     stages = workflow.get("stages", [])
     stages_by_id = stage_map(workflow)
-    expected_ids = [f"mvp{number}" for number in range(6)]
+    expected_prefix = [f"mvp{number}" for number in range(6)]
     actual_ids = [stage.get("id") for stage in stages]
-    if actual_ids != expected_ids:
-        errors.append(f"stages must be ordered exactly as {expected_ids}")
+    if actual_ids[:6] != expected_prefix:
+        errors.append(f"stages must begin with {expected_prefix}")
+    if len(actual_ids) < 6:
+        errors.append("stages must include mvp0 through mvp5")
     if len(roles) != len(roles_doc.get("roles", [])):
         errors.append("workflow role IDs must be unique")
     active = [stage["id"] for stage in stages if stage.get("state") == "active"]
@@ -89,7 +91,7 @@ def validate_workflow() -> list[str]:
         for prerequisite in stage.get("prerequisites", []):
             if prerequisite not in stages_by_id:
                 errors.append(f"{stage_id} has unknown prerequisite {prerequisite}")
-            elif expected_ids.index(prerequisite) >= index:
+            elif actual_ids.index(prerequisite) >= index:
                 errors.append(f"{stage_id} prerequisite {prerequisite} is not earlier")
         steps = stage.get("steps", [])
         if [step.get("id") for step in steps] != workflow.get("step_order"):
@@ -182,6 +184,17 @@ def next_packet() -> dict[str, Any]:
             continue
         if not all(stages[item]["state"] == "closed" for item in stage["prerequisites"]):
             raise WorkflowError(f"{stage['id']} has an open prerequisite")
+        if stage.get("stop_for_human"):
+            return {
+                "status": "awaiting_human_review",
+                "stage": stage["id"],
+                "stage_title": stage["title"],
+                "closeout_record": stage["closeout"],
+                "message": (
+                    "Human review is required. The workflow loop MUST NOT auto-complete this stage, "
+                    "treat the application as empirically valid, or authorize production release."
+                ),
+            }
         for step in stage["steps"]:
             if step["status"] == "pending":
                 role = roles[step["role"]]
@@ -246,6 +259,10 @@ def complete_step(stage_id: str, step_id: str) -> None:
     stage = stages.get(stage_id)
     if stage is None or stage["state"] != "active":
         raise WorkflowError(f"{stage_id} is not the active stage")
+    if stage.get("stop_for_human"):
+        raise WorkflowError(
+            f"{stage_id} requires human review; automated contributors MUST NOT complete this stage"
+        )
     step_ids = [item["id"] for item in stage["steps"]]
     if step_id not in step_ids:
         raise WorkflowError(f"unknown step {stage_id}/{step_id}")
@@ -341,12 +358,13 @@ def workflow_graph() -> dict[str, Any]:
         "nodes": nodes,
         "edges": edges,
         "active": next((stage["id"] for stage in workflow["stages"] if stage["state"] == "active"), None),
-        "next": None if packet.get("status") == "plan_complete" else {
+        "next": None if packet.get("status") in {"plan_complete", "awaiting_human_review"} else {
             "stage": packet["stage"],
             "step": packet["step"],
             "role": packet["role"],
         },
         "plan_complete": packet.get("status") == "plan_complete",
+        "awaiting_human_review": packet.get("status") == "awaiting_human_review",
         "stop_conditions": [
             "constitutional or accepted-ADR change",
             "licence or redistribution approval",
@@ -355,6 +373,7 @@ def workflow_graph() -> dict[str, Any]:
             "security exception or secret exposure",
             "empirical validation claim",
             "production release decision not already delegated",
+            "human review of the World Explorer application",
         ],
     }
 
@@ -422,6 +441,15 @@ def loop_workflow(
             packet = packet_fn()
             if packet.get("status") == "plan_complete":
                 return {"status": "plan_complete", "executed": executed, "blocked": None}
+            if packet.get("status") == "awaiting_human_review":
+                return {
+                    "status": "awaiting_human_review",
+                    "executed": executed,
+                    "blocked": {
+                        "stage": packet.get("stage"),
+                        "reason": packet.get("message", "human review required"),
+                    },
+                }
             current = {
                 "stage": packet["stage"],
                 "step": packet["step"],

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/projections/world-explorer-review-bundle.schema.json",
+  "title": "World Explorer Review Bundle",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "bundle_id",
+    "projection_notice",
+    "world",
+    "map_projection",
+    "semantic_zoom",
+    "district",
+    "clusters",
+    "agents",
+    "agent_details",
+    "firehose",
+    "timeline",
+    "information_space",
+    "scale_summary",
+    "read_only",
+    "mutation_allowed"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": { "type": "string" },
+    "bundle_id": { "type": "string" },
+    "projection_notice": { "type": "string", "minLength": 1 },
+    "read_only": { "const": true },
+    "mutation_allowed": { "const": false },
+    "world": {
+      "type": "object",
+      "required": ["world_id", "scenario_id", "branch_id", "district_id", "simulation_time", "run_state", "agent_count"],
+      "additionalProperties": true
+    },
+    "map_projection": {
+      "type": "object",
+      "required": ["kind", "authority", "pmtiles_available", "notice"],
+      "additionalProperties": true,
+      "properties": {
+        "authority": { "const": "projection_only" }
+      }
+    },
+    "semantic_zoom": { "type": "object" },
+    "district": { "type": "object" },
+    "clusters": { "type": "array" },
+    "agents": { "type": "array" },
+    "agent_details": { "type": "object" },
+    "firehose": { "type": "array" },
+    "timeline": { "type": "object" },
+    "information_space": { "type": "object" },
+    "scale_summary": { "type": "object" }
+  }
+}

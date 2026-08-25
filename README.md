@@ -123,8 +123,13 @@ make world-explorer
 ```
 
 Serves read-only JSON projections from the MVP 1, MVP 4, and MVP 5 reference
-kernels. Mutating HTTP methods are rejected. See
+kernels. Mutating HTTP methods are rejected. The UI is a review projection,
+not production software and not empirical validation. See
 [`apps/world-explorer/README.md`](apps/world-explorer/README.md).
+
+`make world-explorer-ui` runs the frontend unit tests and production build
+when Node.js is available. The Python service serves `apps/world-explorer/dist`
+if that build exists, plus `GET /api/review-bundle`.
 
 ## Run the staged contributor workflow
 

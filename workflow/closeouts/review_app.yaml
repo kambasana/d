@@ -1,0 +1,55 @@
+stage: review_app
+status: ready
+issue: ELE-147
+objectives: Provide a GET-only World Explorer so a human can review the MVP 1 district, information, and scale projections without mutating kernel state.
+in_scope:
+- Read-only HTTP projection service
+- Synthetic SVG World Explorer UI
+- Review-bundle contract and fixtures
+- Offline operation with no UI mutation controls
+non_goals:
+- Authoritative geography from PMTiles or display clusters
+- Live LLM, command submission, or kernel mutation from the UI
+- Empirical validation or production release
+- Claiming draft normative documents are accepted
+dependencies:
+- Closed MVP 0 through MVP 5 reference kernels
+- AWG-GOV-001
+- AWG-OPS-001
+- AWG-OPS-012
+- AWG-UX-001
+acceptance_tests:
+- AWG-TEST-UX-APP-001
+- AWG-TEST-UX-APP-002
+- AWG-TEST-WFL-002
+performance_target: Building the review bundle and serving health plus review-bundle GET MUST complete without GPU or model calls.
+security_offline_target: The service MUST reject POST, PUT, PATCH, and DELETE, MUST run offline, and MUST NOT expose a mutation path.
+validation_evidence:
+- command: python3 -m pytest -q tests/test_world_explorer.py
+  result: passed
+- command: make validate
+  result: passed
+- command: make test
+  result: passed
+documentation_complete: true
+documentation_summary: World Explorer is a read-only projection for human review. PMTiles and clusters remain presentation-only.
+known_limitations:
+- The UI is a review slice, not a production simulator
+- Map geometry is a synthetic SVG projection
+- Fixture fallback is used when the API is unavailable
+- Normative documents remain draft
+unresolved_risks:
+- Reviewers may treat the map as world authority
+- Reviewers may treat likes or fluent dialogue as belief
+- Closing the review_app gate could be mistaken for human approval
+release_decision: The review application MAY be shown to a human reviewer. It MUST NOT be treated as production release or empirical validation.
+evidence_files:
+- tests/test_world_explorer.py
+- contracts/projections/world-explorer-review-bundle.schema.json
+- apps/world-explorer/src/App.tsx
+- generated/validation-report.md
+human_stop_conditions:
+- Human review of the World Explorer application
+- Empirical validity or calibration claim
+- Production release decision
+notes: Automated closeout still requires a later human_review stage that the loop cannot complete.

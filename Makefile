@@ -1,4 +1,4 @@
-.PHONY: generate validate test workflow-check workflow-status workflow-next workflow-graph workflow-run workflow-loop mvp1 mvp2 mvp3 mvp4 mvp5 world-explorer release clean
+.PHONY: generate validate test workflow-check workflow-status workflow-next workflow-graph workflow-run workflow-loop mvp1 mvp2 mvp3 mvp4 mvp5 world-explorer world-explorer-ui release clean
 
 PYTHON ?= python3
 
@@ -46,6 +46,9 @@ mvp5:
 
 world-explorer:
 	PYTHONPATH=. $(PYTHON) scripts/run_world_explorer.py
+
+world-explorer-ui:
+	cd apps/world-explorer && npm ci && npm test && npm run build
 
 release:
 	PYTHONPATH=scripts $(PYTHON) scripts/build_release.py

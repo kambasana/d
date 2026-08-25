@@ -333,3 +333,110 @@ stages:
     - workflow/closeouts/mvp5.yaml
     validations:
     - python3 scripts/stage_workflow.py gate mvp5
+- id: review_app
+  title: Read-only World Explorer review application
+  state: active
+  prerequisites:
+  - mvp5
+  runner: make world-explorer
+  closeout: workflow/closeouts/review_app.yaml
+  steps:
+  - id: scope
+    role: scope
+    status: pending
+    outputs:
+    - docs/06-delivery-and-operations/mvp-roadmap-and-definition-of-done.md
+    validations:
+    - python3 scripts/stage_workflow.py check review_app
+  - id: traceability
+    role: traceability
+    status: pending
+    outputs:
+    - registers/requirements.yaml
+    - registers/tests.yaml
+    validations:
+    - python3 scripts/validate_traceability.py
+  - id: implementation
+    role: implementation
+    status: pending
+    outputs:
+    - awg_world_explorer
+    - apps/world-explorer
+    - scripts/run_world_explorer.py
+    validations:
+    - python3 -m pytest -q tests/test_world_explorer.py
+  - id: contracts
+    role: contracts
+    status: pending
+    outputs:
+    - contracts/projections
+    validations:
+    - python3 scripts/validate_contracts.py
+  - id: verification
+    role: verification
+    status: pending
+    outputs:
+    - tests/test_world_explorer.py
+    - generated/validation-report.md
+    validations:
+    - make validate
+    - make test
+  - id: closeout
+    role: closeout
+    status: pending
+    outputs:
+    - workflow/closeouts/review_app.yaml
+    validations:
+    - python3 scripts/stage_workflow.py gate review_app
+- id: human_review
+  title: Human review of the World Explorer application
+  state: blocked
+  stop_for_human: true
+  prerequisites:
+  - review_app
+  runner: null
+  closeout: workflow/closeouts/human_review.yaml
+  steps:
+  - id: scope
+    role: scope
+    status: pending
+    outputs:
+    - workflow/closeouts/human_review.yaml
+    validations:
+    - python3 scripts/stage_workflow.py check human_review
+  - id: traceability
+    role: traceability
+    status: pending
+    outputs:
+    - registers/tests.yaml
+    validations:
+    - python3 scripts/validate_traceability.py
+  - id: implementation
+    role: implementation
+    status: pending
+    outputs:
+    - apps/world-explorer
+    validations:
+    - python3 scripts/stage_workflow.py check human_review
+  - id: contracts
+    role: contracts
+    status: pending
+    outputs:
+    - contracts/projections
+    validations:
+    - python3 scripts/validate_contracts.py
+  - id: verification
+    role: verification
+    status: pending
+    outputs:
+    - tests/test_world_explorer.py
+    validations:
+    - python3 -m pytest -q tests/test_world_explorer.py
+  - id: closeout
+    role: closeout
+    status: pending
+    outputs:
+    - workflow/closeouts/human_review.yaml
+    validations:
+    - python3 scripts/stage_workflow.py check human_review
+

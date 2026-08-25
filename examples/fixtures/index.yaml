@@ -169,3 +169,11 @@ fixtures:
   schema_id: https://awg.local/contracts/projections/world-explorer-world-projection.schema.json
   expected_valid: true
   note: Valid deterministic world projection with separate cluster authority.
+- path: examples/fixtures/projections/world-explorer-review-bundle.valid.json
+  schema_id: https://awg.local/contracts/projections/world-explorer-review-bundle.schema.json
+  expected_valid: true
+  note: Valid GET /api/review-bundle payload; projection-only and mutation forbidden.
+- path: examples/fixtures/projections/world-explorer-review-bundle.invalid.json
+  schema_id: https://awg.local/contracts/projections/world-explorer-review-bundle.schema.json
+  expected_valid: false
+  note: Invalid because read_only is false and mutation_allowed is true.
