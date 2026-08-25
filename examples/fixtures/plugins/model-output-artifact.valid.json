@@ -1,0 +1,24 @@
+{
+  "artifact_version": "0.2.0",
+  "capability": "propose_intent",
+  "accepted": true,
+  "proposal": {
+    "proposal_type": "IntentProposed",
+    "intent_kind": "wait",
+    "parameters": {
+      "duration_seconds": 60
+    }
+  },
+  "error_code": null,
+  "provenance": {
+    "adapter_id": "ollama",
+    "adapter_version": "0.2.0",
+    "provider_id": "ollama",
+    "model_version": "recorded-model-v1",
+    "prompt_policy_version": "mvp3-policy-v1",
+    "interface_version": "0.2.0",
+    "output_schema_version": "0.2.0",
+    "request_id": "recorded-00",
+    "outcome": "accepted"
+  }
+}

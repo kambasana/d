@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/world-entities/world.schema.json",
+  "title": "World",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "world_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "world_version": {
+      "type": "string"
+    },
+    "world_type": {
+      "enum": [
+        "real",
+        "historical",
+        "hypothetical",
+        "synthetic",
+        "hybrid"
+      ]
+    },
+    "coordinate_reference_system": {
+      "type": "string"
+    },
+    "root_place_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "simulation_ruleset": {
+      "type": "string"
+    },
+    "data_source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "world_id",
+    "name",
+    "world_version",
+    "world_type",
+    "coordinate_reference_system",
+    "root_place_ids",
+    "simulation_ruleset",
+    "data_source_ids",
+    "created_at"
+  ],
+  "additionalProperties": false
+}

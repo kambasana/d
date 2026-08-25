@@ -1,0 +1,441 @@
+version: 0.2.0
+roadmap: docs/06-delivery-and-operations/mvp-roadmap-and-definition-of-done.md
+issue: ELE-147
+step_order:
+- scope
+- traceability
+- implementation
+- contracts
+- verification
+- closeout
+stages:
+- id: mvp0
+  title: Constitution and executable contracts
+  state: closed
+  prerequisites: []
+  runner: null
+  closeout: workflow/closeouts/mvp0.yaml
+  steps:
+  - id: scope
+    role: scope
+    status: completed
+    outputs:
+    - docs/06-delivery-and-operations/mvp-roadmap-and-definition-of-done.md
+    validations:
+    - python3 scripts/stage_workflow.py check mvp0
+  - id: traceability
+    role: traceability
+    status: completed
+    outputs:
+    - registers/requirements.yaml
+    - registers/tests.yaml
+    validations:
+    - python3 scripts/validate_traceability.py
+  - id: implementation
+    role: implementation
+    status: completed
+    outputs:
+    - tests/test_mvp0_invariants.py
+    validations:
+    - python3 -m pytest -q tests/test_mvp0_invariants.py
+  - id: contracts
+    role: contracts
+    status: completed
+    outputs:
+    - contracts/README.md
+    validations:
+    - python3 scripts/validate_contracts.py
+  - id: verification
+    role: verification
+    status: completed
+    outputs:
+    - generated/validation-report.md
+    validations:
+    - make validate
+    - make test
+  - id: closeout
+    role: closeout
+    status: completed
+    outputs:
+    - workflow/closeouts/mvp0.yaml
+    validations:
+    - python3 scripts/stage_workflow.py check mvp0
+- id: mvp1
+  title: One district, no AI dependency
+  state: closed
+  prerequisites:
+  - mvp0
+  runner: make mvp1
+  closeout: workflow/closeouts/mvp1.yaml
+  steps:
+  - id: scope
+    role: scope
+    status: completed
+    outputs:
+    - docs/06-delivery-and-operations/mvp-roadmap-and-definition-of-done.md
+    validations:
+    - python3 scripts/stage_workflow.py check mvp1
+  - id: traceability
+    role: traceability
+    status: completed
+    outputs:
+    - registers/requirements.yaml
+    - registers/tests.yaml
+    validations:
+    - python3 scripts/validate_traceability.py
+  - id: implementation
+    role: implementation
+    status: completed
+    outputs:
+    - awg_mvp1/kernel.py
+    - examples/mvp1-district/bundle.json
+    validations:
+    - make mvp1
+  - id: contracts
+    role: contracts
+    status: completed
+    outputs:
+    - examples/fixtures/scenarios/mvp1-reference-district.valid.json
+    validations:
+    - python3 scripts/validate_contracts.py
+  - id: verification
+    role: verification
+    status: completed
+    outputs:
+    - tests/test_mvp1_district.py
+    - generated/validation-report.md
+    validations:
+    - make mvp1
+    - make validate
+    - make test
+  - id: closeout
+    role: closeout
+    status: completed
+    outputs:
+    - workflow/closeouts/mvp1.yaml
+    validations:
+    - python3 scripts/stage_workflow.py check mvp1
+- id: mvp2
+  title: Classical NPC and social systems
+  state: closed
+  prerequisites:
+  - mvp1
+  runner: make mvp2
+  closeout: workflow/closeouts/mvp2.yaml
+  steps:
+  - id: scope
+    role: scope
+    status: completed
+    outputs:
+    - docs/06-delivery-and-operations/mvp-roadmap-and-definition-of-done.md
+    validations:
+    - python3 scripts/stage_workflow.py check mvp2
+  - id: traceability
+    role: traceability
+    status: completed
+    outputs:
+    - registers/requirements.yaml
+    - registers/tests.yaml
+    validations:
+    - python3 scripts/validate_traceability.py
+  - id: implementation
+    role: implementation
+    status: completed
+    outputs:
+    - awg_mvp2/npc.py
+    - examples/mvp2-npc/society.json
+    validations:
+    - make mvp2
+  - id: contracts
+    role: contracts
+    status: completed
+    outputs:
+    - contracts/commands/transfer-resource.command.schema.json
+    validations:
+    - python3 scripts/validate_contracts.py
+  - id: verification
+    role: verification
+    status: completed
+    outputs:
+    - tests/test_mvp2_npc.py
+    - generated/validation-report.md
+    validations:
+    - make mvp2
+    - make validate
+    - make test
+  - id: closeout
+    role: closeout
+    status: completed
+    outputs:
+    - workflow/closeouts/mvp2.yaml
+    validations:
+    - python3 scripts/stage_workflow.py check mvp2
+- id: mvp3
+  title: Bounded AI adapters
+  state: closed
+  prerequisites:
+  - mvp2
+  runner: make mvp3
+  closeout: workflow/closeouts/mvp3.yaml
+  steps:
+  - id: scope
+    role: scope
+    status: completed
+    outputs:
+    - workflow/closeouts/mvp3.yaml
+    validations:
+    - python3 scripts/stage_workflow.py check mvp3
+  - id: traceability
+    role: traceability
+    status: completed
+    outputs:
+    - registers/requirements.yaml
+    - registers/tests.yaml
+    validations:
+    - python3 scripts/validate_traceability.py
+  - id: implementation
+    role: implementation
+    status: completed
+    outputs:
+    - awg_mvp3
+    validations:
+    - make mvp3
+  - id: contracts
+    role: contracts
+    status: completed
+    outputs:
+    - contracts/plugins
+    validations:
+    - python3 scripts/validate_contracts.py
+  - id: verification
+    role: verification
+    status: completed
+    outputs:
+    - tests/test_mvp3_adapters.py
+    - generated/validation-report.md
+    validations:
+    - make mvp3
+    - make validate
+    - make test
+  - id: closeout
+    role: closeout
+    status: completed
+    outputs:
+    - workflow/closeouts/mvp3.yaml
+    validations:
+    - python3 scripts/stage_workflow.py gate mvp3
+- id: mvp4
+  title: Information world and virtual social platform
+  state: closed
+  prerequisites:
+  - mvp3
+  runner: make mvp4
+  closeout: workflow/closeouts/mvp4.yaml
+  steps:
+  - id: scope
+    role: scope
+    status: completed
+    outputs:
+    - workflow/closeouts/mvp4.yaml
+    validations:
+    - python3 scripts/stage_workflow.py check mvp4
+  - id: traceability
+    role: traceability
+    status: completed
+    outputs:
+    - registers/requirements.yaml
+    - registers/tests.yaml
+    validations:
+    - python3 scripts/validate_traceability.py
+  - id: implementation
+    role: implementation
+    status: completed
+    outputs:
+    - awg_mvp4
+    validations:
+    - make mvp4
+  - id: contracts
+    role: contracts
+    status: completed
+    outputs:
+    - contracts/claims-and-provenance
+    - contracts/social-platform
+    validations:
+    - python3 scripts/validate_contracts.py
+  - id: verification
+    role: verification
+    status: completed
+    outputs:
+    - tests/test_mvp4_information.py
+    - generated/validation-report.md
+    validations:
+    - make mvp4
+    - make validate
+    - make test
+  - id: closeout
+    role: closeout
+    status: completed
+    outputs:
+    - workflow/closeouts/mvp4.yaml
+    validations:
+    - python3 scripts/stage_workflow.py gate mvp4
+- id: mvp5
+  title: Multi-resolution scale and experimentation
+  state: closed
+  prerequisites:
+  - mvp4
+  runner: make mvp5
+  closeout: workflow/closeouts/mvp5.yaml
+  steps:
+  - id: scope
+    role: scope
+    status: completed
+    outputs:
+    - workflow/closeouts/mvp5.yaml
+    validations:
+    - python3 scripts/stage_workflow.py check mvp5
+  - id: traceability
+    role: traceability
+    status: completed
+    outputs:
+    - registers/requirements.yaml
+    - registers/tests.yaml
+    validations:
+    - python3 scripts/validate_traceability.py
+  - id: implementation
+    role: implementation
+    status: completed
+    outputs:
+    - awg_mvp5
+    validations:
+    - make mvp5
+  - id: contracts
+    role: contracts
+    status: completed
+    outputs:
+    - contracts/scenarios
+    validations:
+    - python3 scripts/validate_contracts.py
+  - id: verification
+    role: verification
+    status: completed
+    outputs:
+    - tests/test_mvp5_scale.py
+    - generated/validation-report.md
+    validations:
+    - make mvp5
+    - make validate
+    - make test
+  - id: closeout
+    role: closeout
+    status: completed
+    outputs:
+    - workflow/closeouts/mvp5.yaml
+    validations:
+    - python3 scripts/stage_workflow.py gate mvp5
+- id: review_app
+  title: Read-only World Explorer review application
+  state: closed
+  prerequisites:
+  - mvp5
+  runner: make world-explorer
+  closeout: workflow/closeouts/review_app.yaml
+  steps:
+  - id: scope
+    role: scope
+    status: completed
+    outputs:
+    - docs/06-delivery-and-operations/mvp-roadmap-and-definition-of-done.md
+    validations:
+    - python3 scripts/stage_workflow.py check review_app
+  - id: traceability
+    role: traceability
+    status: completed
+    outputs:
+    - registers/requirements.yaml
+    - registers/tests.yaml
+    validations:
+    - python3 scripts/validate_traceability.py
+  - id: implementation
+    role: implementation
+    status: completed
+    outputs:
+    - awg_world_explorer
+    - apps/world-explorer
+    - scripts/run_world_explorer.py
+    validations:
+    - python3 -m pytest -q tests/test_world_explorer.py
+  - id: contracts
+    role: contracts
+    status: completed
+    outputs:
+    - contracts/projections
+    validations:
+    - python3 scripts/validate_contracts.py
+  - id: verification
+    role: verification
+    status: completed
+    outputs:
+    - tests/test_world_explorer.py
+    - generated/validation-report.md
+    validations:
+    - make validate
+    - make test
+  - id: closeout
+    role: closeout
+    status: completed
+    outputs:
+    - workflow/closeouts/review_app.yaml
+    validations:
+    - python3 scripts/stage_workflow.py gate review_app
+- id: human_review
+  title: Human review of the World Explorer application
+  state: active
+  stop_for_human: true
+  prerequisites:
+  - review_app
+  runner: null
+  closeout: workflow/closeouts/human_review.yaml
+  steps:
+  - id: scope
+    role: scope
+    status: pending
+    outputs:
+    - workflow/closeouts/human_review.yaml
+    validations:
+    - python3 scripts/stage_workflow.py check human_review
+  - id: traceability
+    role: traceability
+    status: pending
+    outputs:
+    - registers/tests.yaml
+    validations:
+    - python3 scripts/validate_traceability.py
+  - id: implementation
+    role: implementation
+    status: pending
+    outputs:
+    - apps/world-explorer
+    validations:
+    - python3 scripts/stage_workflow.py check human_review
+  - id: contracts
+    role: contracts
+    status: pending
+    outputs:
+    - contracts/projections
+    validations:
+    - python3 scripts/validate_contracts.py
+  - id: verification
+    role: verification
+    status: pending
+    outputs:
+    - tests/test_world_explorer.py
+    validations:
+    - python3 -m pytest -q tests/test_world_explorer.py
+  - id: closeout
+    role: closeout
+    status: pending
+    outputs:
+    - workflow/closeouts/human_review.yaml
+    validations:
+    - python3 scripts/stage_workflow.py check human_review

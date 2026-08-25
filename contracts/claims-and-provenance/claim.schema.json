@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/claims-and-provenance/claim.schema.json",
+  "title": "Claim",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "claim_id": {
+      "type": "string"
+    },
+    "proposition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "asserted_by": {
+      "type": "string"
+    },
+    "original_source": {
+      "type": "string"
+    },
+    "source_chain": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acquired_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "location_context": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/locationRef"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "disputed": {
+      "type": "boolean"
+    },
+    "parent_claim_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/provenanceRef"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "claim_id",
+    "proposition",
+    "subject_refs",
+    "asserted_by",
+    "original_source",
+    "source_chain",
+    "evidence_refs",
+    "acquired_at",
+    "confidence",
+    "disputed",
+    "provenance"
+  ],
+  "additionalProperties": false
+}

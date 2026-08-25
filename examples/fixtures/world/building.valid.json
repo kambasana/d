@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.2.0",
+  "building_id": "building:cafe-orion",
+  "place_id": "place:cafe-orion",
+  "footprint_geometry_id": "geom:cafe-orion",
+  "entrances": [
+    {
+      "entrance_id": "entrance:cafe-orion:main",
+      "location": {
+        "place_id": "place:cafe-orion",
+        "geometry_id": "geom:entrance-main",
+        "precision": "exact"
+      },
+      "accessibility": [
+        "step_free"
+      ],
+      "access_rules": []
+    }
+  ],
+  "floors": [
+    {
+      "floor_id": "floor:cafe-orion:ground",
+      "level": 0,
+      "room_ids": [
+        "room:cafe-orion:main"
+      ]
+    }
+  ],
+  "occupancy_zones": [
+    {
+      "zone_id": "room:cafe-orion:main",
+      "capacity": 42
+    }
+  ],
+  "position_precision": "exact",
+  "provenance": [
+    {
+      "source_id": "scenario:authoring:001",
+      "source_type": "derived",
+      "version": "0.2.0",
+      "recorded_at": "2026-08-20T00:00:00Z"
+    }
+  ]
+}

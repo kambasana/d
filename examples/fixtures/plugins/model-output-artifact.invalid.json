@@ -1,0 +1,15 @@
+{
+  "artifact_version": "0.2.0",
+  "capability": "propose_intent",
+  "accepted": true,
+  "proposal": {
+    "proposal_type": "IntentProposed",
+    "intent_kind": "wait",
+    "parameters": {}
+  },
+  "error_code": "provider_error",
+  "provenance": {
+    "provider_id": "unversioned-provider",
+    "request_id": "missing-version-provenance"
+  }
+}

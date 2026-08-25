@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.2.0",
+  "place_id": "place:cafe-orion",
+  "place_type": "cafe",
+  "names": [
+    {
+      "value": "Café Orion",
+      "language": "en",
+      "primary": true
+    }
+  ],
+  "geometry_refs": [
+    "geom:cafe-orion"
+  ],
+  "parent_place_ids": [
+    "place:district-01"
+  ],
+  "access_rules": [
+    {
+      "rule": "public_during_open_hours"
+    }
+  ],
+  "provenance": [
+    {
+      "source_id": "osm:node:12345",
+      "source_type": "imported",
+      "version": "2026-08-01",
+      "recorded_at": "2026-08-20T00:00:00Z"
+    }
+  ]
+}

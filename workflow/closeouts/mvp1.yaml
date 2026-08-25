@@ -1,0 +1,23 @@
+stage: mvp1
+status: closed
+issue: ELE-147
+objectives: Prove deterministic movement, occupancy, replay, and read-only projections in one offline district.
+in_scope: Generated OSM, PostGIS model, gazetteer, routing, PMTiles, 100 agents, firehose, replay, and projections.
+non_goals: Production spatial services, real-world calibration, interactive UI, and empirical human-behaviour claims.
+dependencies: [AWG-GOV-001, AWG-DOM-002, AWG-PLAT-002, AWG-PLAT-007, AWG-UX-002]
+acceptance_tests: [AWG-TEST-MVP1-001, AWG-TEST-MVP1-002, AWG-TEST-MVP1-003, AWG-TEST-MVP1-004, AWG-TEST-MVP1-005, AWG-TEST-MVP1-006, AWG-TEST-MVP1-007]
+performance_target: 100 agents, 200 journeys, and 1,400 events complete within five seconds on pack CI.
+security_offline_target: Zero external network dependencies and no AI provider import.
+validation_evidence:
+  - {command: make mvp1, result: passed}
+  - {command: make validate, result: passed}
+  - {command: make test, result: passed}
+documentation_complete: true
+documentation_summary: Spatial authority, kernel behavior, performance, provenance, risks, and tests are recorded.
+known_limitations: Generated district and one presentation tile; production daemons are not exercised.
+unresolved_risks: Component approval, real OSM quality, UI evidence, and larger population baselines.
+release_decision: MVP 1 bounded reference may proceed to MVP 2.
+evidence_files:
+  - tests/test_mvp1_district.py
+  - examples/mvp1-district/bundle.json
+  - generated/validation-report.md

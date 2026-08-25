@@ -1,0 +1,215 @@
+version: 0.2.0
+risks:
+- id: AWG-RISK-001
+  description: LLM output mutates authoritative state
+  severity: critical
+  mitigation: Prevent direct writes; typed command validation and capability isolation.
+  affected_documents:
+  - AWG-GOV-001
+  - AWG-PLAT-007
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-002
+  description: Spatially impossible movement or teleportation
+  severity: critical
+  mitigation: Authoritative routes, journey states, elapsed time, and invariant tests.
+  affected_documents:
+  - AWG-DOM-002
+  owner: AWG project
+  status: open
+  residual_risk: bounded synthetic MVP 1 evidence exists; real routing and production adapters remain unverified
+- id: AWG-RISK-003
+  description: Agents become omniscient through context assembly
+  severity: high
+  mitigation: Observation service, epistemic state, information paths, and access
+    controls.
+  affected_documents:
+  - AWG-DOM-009
+  - AWG-DOM-004
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-004
+  description: Per-agent per-tick model calls make scale and cost infeasible
+  severity: high
+  mitigation: Event-driven activation, classical policies, batching, LOD, budgets,
+    and caching.
+  affected_documents:
+  - AWG-DOM-003
+  - AWG-PLAT-005
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-005
+  description: Believable dialogue is mistaken for validated human behaviour
+  severity: critical
+  mitigation: Validation framework, responsible claims policy, human baselines, and
+    uncertainty.
+  affected_documents:
+  - AWG-GOV-006
+  - AWG-SCN-002
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-006
+  description: Synthetic population stereotypes cause biased outcomes
+  severity: high
+  mitigation: Provenance, calibration, constrained synthesis, sensitivity tests, and
+    ethics review.
+  affected_documents:
+  - AWG-DOM-012
+  - AWG-GOV-005
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-007
+  description: Information actions are incorrectly interpreted as belief
+  severity: high
+  mitigation: Separate exposure, reaction, motive inference, belief, and endorsement.
+  affected_documents:
+  - AWG-DOM-004
+  - AWG-DOM-013
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-008
+  description: Plugin compromise or dependency supply-chain attack
+  severity: critical
+  mitigation: Permissions, isolation, SBOM, pinning, verification, and contract tests.
+  affected_documents:
+  - AWG-PLAT-003
+  - AWG-OPS-011
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-009
+  description: External data or OSM gaps create false precision
+  severity: high
+  mitigation: Coverage metadata, uncertainty, fallback, visible limitations, and local
+    validation.
+  affected_documents:
+  - AWG-DOM-002
+  - AWG-SCN-009
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-010
+  description: Indoor geometry and entrances are absent or wrong
+  severity: medium
+  mitigation: Confidence levels, explicit unresolved access, local authoring, and
+    validation.
+  affected_documents:
+  - AWG-DOM-002
+  - AWG-UX-009
+  owner: AWG project
+  status: open
+  residual_risk: generated MVP 1 entrances are verified; imported real-world entrance quality remains unverified
+- id: AWG-RISK-011
+  description: Event volume overwhelms storage and analysis
+  severity: high
+  mitigation: Partitioning, compression, retention classes, projections, and capacity
+    tests.
+  affected_documents:
+  - AWG-PLAT-002
+  - AWG-PLAT-004
+  - AWG-OPS-003
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-012
+  description: Model or prompt drift invalidates comparisons
+  severity: high
+  mitigation: Immutable run records, version registry, recorded outputs, and sensitivity
+    analysis.
+  affected_documents:
+  - AWG-SCN-006
+  - AWG-SCN-003
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-013
+  description: Visual clusters imply false co-location or movement
+  severity: medium
+  mitigation: Distinct cluster types, precise labels, zoom-to-bounds, and anchored
+    radial expansion.
+  affected_documents:
+  - AWG-UX-002
+  owner: AWG project
+  status: open
+  residual_risk: MVP 1 read-only projection tests exist; interactive UI evidence remains outstanding
+- id: AWG-RISK-014
+  description: Counterfactual results are overclaimed as causal truth
+  severity: critical
+  mitigation: Baseline alignment, uncertainty, validation scope, and responsible-use
+    wording.
+  affected_documents:
+  - AWG-SCN-004
+  - AWG-GOV-006
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-015
+  description: Offline deployment still phones home through hidden dependencies
+  severity: high
+  mitigation: Network-deny tests, local assets, provider capability declarations,
+    and telemetry controls.
+  affected_documents:
+  - AWG-PLAT-006
+  - AWG-OPS-002
+  owner: AWG project
+  status: open
+  residual_risk: dependency-free MVP 1 runtime passes network-deny tests; production adapter bundles remain unverified
+- id: AWG-RISK-016
+  description: Replay diverges due to nondeterministic ordering or missing model records
+  severity: high
+  mitigation: Stable sequencing, random streams, snapshot validation, and recorded
+    inference.
+  affected_documents:
+  - AWG-PLAT-002
+  - AWG-DOM-008
+  owner: AWG project
+  status: open
+  residual_risk: MVP 1 deterministic replay checksum is automated; stochastic and recorded-model replay remain unverified
+- id: AWG-RISK-017
+  description: Licensing obligations block commercial distribution
+  severity: high
+  mitigation: Provisional register, legal review, architecture-pattern-only alternatives,
+    and SBOM.
+  affected_documents:
+  - AWG-OPS-011
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-018
+  description: Sensitive real-person or geospatial data is exposed
+  severity: critical
+  mitigation: Classification, least privilege, de-identification, retention, redaction,
+    and audit.
+  affected_documents:
+  - AWG-GOV-002
+  - AWG-GOV-004
+  - AWG-GOV-005
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-019
+  description: A single graph database becomes a performance and coupling bottleneck
+  severity: medium
+  mitigation: Semantic graph model over fit-for-purpose stores and projections.
+  affected_documents:
+  - AWG-PLAT-004
+  owner: AWG project
+  status: open
+  residual_risk: requires implementation evidence
+- id: AWG-RISK-020
+  description: Documentation, schemas, examples, and Linear drift apart
+  severity: high
+  mitigation: Manifest validation, generated indexes, traceability, staged contributor
+    workflow, closeout evidence, CI gates, and canonical source rule.
+  affected_documents:
+  - AWG-OPS-009
+  - AWG-OPS-010
+  owner: AWG project
+  status: open
+  residual_risk: workflow configuration is executable; external issue status and human approvals can still drift

@@ -1,0 +1,81 @@
+version: 0.2.0
+assumptions:
+- id: AWG-ASM-001
+  statement: A bounded region can be validated before planetary expansion.
+  affected_documents:
+  - AWG-OPS-001
+  owner: AWG project
+  status: active
+  review_trigger: architecture review or contradictory evidence
+- id: AWG-ASM-002
+  statement: OpenStreetMap-derived data provides a useful base but requires local
+    coverage assessment.
+  affected_documents:
+  - AWG-DOM-002
+  owner: AWG project
+  status: active
+  review_trigger: architecture review or contradictory evidence
+- id: AWG-ASM-003
+  statement: Offline deployments can obtain local PBF extracts, tiles, gazetteer,
+    routing data, and model artefacts lawfully.
+  affected_documents:
+  - AWG-PLAT-006
+  owner: AWG project
+  status: active
+  review_trigger: architecture review or contradictory evidence
+- id: AWG-ASM-004
+  statement: Users will distinguish scenario exploration from prediction when the
+    UI and reports communicate uncertainty correctly.
+  affected_documents:
+  - AWG-GOV-006
+  owner: AWG project
+  status: active
+  review_trigger: architecture review or contradictory evidence
+- id: AWG-ASM-005
+  statement: Classical agent systems can handle most routine behaviour without model
+    inference.
+  affected_documents:
+  - AWG-DOM-003
+  owner: AWG project
+  status: active
+  review_trigger: architecture review or contradictory evidence
+- id: AWG-ASM-006
+  statement: World state can be partitioned while maintaining one mutation authority
+    per entity or region.
+  affected_documents:
+  - AWG-PLAT-011
+  owner: AWG project
+  status: active
+  review_trigger: architecture review or contradictory evidence
+- id: AWG-ASM-007
+  statement: Indoor detail will often be incomplete and must support explicit confidence
+    and authoring.
+  affected_documents:
+  - AWG-DOM-002
+  owner: AWG project
+  status: active
+  review_trigger: architecture review or contradictory evidence
+- id: AWG-ASM-008
+  statement: A provider-neutral structured-output boundary is feasible for Ollama,
+    OpenRouter, and future providers.
+  affected_documents:
+  - AWG-PLAT-003
+  owner: AWG project
+  status: active
+  review_trigger: architecture review or contradictory evidence
+- id: AWG-ASM-009
+  statement: Event sourcing plus snapshots is suitable for required replay and audit
+    needs.
+  affected_documents:
+  - AWG-PLAT-002
+  owner: AWG project
+  status: active
+  review_trigger: architecture review or contradictory evidence
+- id: AWG-ASM-010
+  statement: The repository will later be imported into a version-control system with
+    protected review workflow.
+  affected_documents:
+  - AWG-OPS-006
+  owner: AWG project
+  status: active
+  review_trigger: architecture review or contradictory evidence

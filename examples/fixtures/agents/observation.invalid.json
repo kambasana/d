@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.2.0",
+  "observation_id": "observation:bad",
+  "observer_id": "agent:district-0000",
+  "channel": "vision",
+  "observed_at": "2042-05-04T08:15:00Z",
+  "fidelity": 0.9,
+  "uncertainty": 0.1,
+  "content": {},
+  "access_path": []
+}

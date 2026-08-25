@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/projections/world-explorer-status.schema.json",
+  "title": "World Explorer Status",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "bundle_id",
+    "healthy",
+    "read_only",
+    "spatial_state_checksum",
+    "information_state_checksum",
+    "scale_state_checksum",
+    "event_counts"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "healthy": {
+      "type": "boolean"
+    },
+    "read_only": {
+      "const": true
+    },
+    "spatial_state_checksum": {
+      "type": "string"
+    },
+    "information_state_checksum": {
+      "type": "string"
+    },
+    "scale_state_checksum": {
+      "type": "string"
+    },
+    "event_counts": {
+      "type": "object",
+      "required": [
+        "spatial",
+        "information",
+        "scale"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "spatial": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "information": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "scale": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

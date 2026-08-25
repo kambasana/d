@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.2.0",
+  "organizations": [
+    {
+      "organization_id": "org:civic-office",
+      "organization_type": "employer",
+      "name": "Civic Office",
+      "place_ids": ["place:office"],
+      "asset_ids": ["asset:office-key-01"],
+      "starting_tokens": 1000
+    },
+    {
+      "organization_id": "org:district-cafe",
+      "organization_type": "vendor",
+      "name": "District Cafe",
+      "place_ids": ["place:cafe"],
+      "asset_ids": [],
+      "starting_tokens": 50
+    }
+  ],
+  "exclusive_objects": [
+    {
+      "object_id": "object:cafe-counter",
+      "place_id": "place:cafe",
+      "capacity": 1,
+      "affordance_id": "order_meal"
+    }
+  ],
+  "starting_agent_tokens": 20,
+  "starting_agent_meals": 1,
+  "need_rates_per_hour": {
+    "hunger": 0.08,
+    "fatigue": 0.05
+  }
+}

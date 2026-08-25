@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/world-entities/building.schema.json",
+  "title": "Building",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "building_id": {
+      "type": "string"
+    },
+    "place_id": {
+      "type": "string"
+    },
+    "footprint_geometry_id": {
+      "type": "string"
+    },
+    "entrances": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "entrance_id": {
+            "type": "string"
+          },
+          "location": {
+            "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/locationRef"
+          },
+          "accessibility": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "access_rules": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "entrance_id",
+          "location"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "floors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "floor_id": {
+            "type": "string"
+          },
+          "level": {
+            "type": "number"
+          },
+          "room_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "floor_id",
+          "level",
+          "room_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "occupancy_zones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "zone_id": {
+            "type": "string"
+          },
+          "capacity": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          }
+        },
+        "required": [
+          "zone_id",
+          "capacity"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "position_precision": {
+      "enum": [
+        "exact",
+        "estimated",
+        "building_only"
+      ]
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/provenanceRef"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "building_id",
+    "place_id",
+    "footprint_geometry_id",
+    "entrances",
+    "floors",
+    "occupancy_zones",
+    "position_precision",
+    "provenance"
+  ],
+  "additionalProperties": false
+}

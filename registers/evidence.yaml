@@ -1,0 +1,215 @@
+version: 0.2.0
+evidence:
+- id: AWG-EV-001
+  title: 'Generative Agents: Interactive Simulacra of Human Behavior'
+  source_type: paper
+  url: https://arxiv.org/abs/2304.03442
+  relevance: Memory, reflection, planning, and believable social interaction; not
+    physical or predictive validation.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-002
+  title: Generative Agent Simulations of 1,000 People
+  source_type: paper
+  url: https://arxiv.org/abs/2411.10109
+  relevance: Interview grounding and comparison against human retest; limited scope
+    for prediction.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-003
+  title: SOTOPIA
+  source_type: paper
+  url: https://arxiv.org/abs/2310.11667
+  relevance: Benchmarking difficult social interactions and human-model gaps.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-004
+  title: 360CityArena
+  source_type: paper
+  url: https://arxiv.org/abs/2608.08814
+  relevance: Evidence that language models should not own authoritative urban navigation.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-005
+  title: Concordia
+  source_type: repository and paper
+  url: https://github.com/google-deepmind/concordia
+  relevance: Component composition and grounded game-master pattern; deterministic
+    resolver still required.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-006
+  title: AgentSociety
+  source_type: repository and papers
+  url: https://github.com/tsinghua-fib-lab/AgentSociety
+  relevance: Experiment orchestration, replay, distributed tasks, and urban modules.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-007
+  title: OASIS
+  source_type: repository and paper
+  url: https://github.com/camel-ai/oasis
+  relevance: Typed social actions, feeds, recommendations, and scale/cost lessons.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-008
+  title: AgentTorch and Large Population Models
+  source_type: repository and paper
+  url: https://github.com/agenttorch/agenttorch
+  relevance: Archetypes, batching, calibration, and lower-fidelity population policies.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-009
+  title: CityBehavEx
+  source_type: repository and paper
+  url: https://github.com/gefgu/citybehavex
+  relevance: LLM-assisted rather than LLM-only urban behaviour with empirical validation
+    emphasis.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-010
+  title: MATSim
+  source_type: simulation platform and book
+  url: https://matsim.org/
+  relevance: Plans, activities, legs, scoring, replanning, and event-driven mobility.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-011
+  title: 'Three States and a Plan: The AI of F.E.A.R.'
+  source_type: game AI presentation
+  url: https://www.gdcvault.com/play/1013459/Three-States-and-a-Plan
+  relevance: GOAP preconditions, effects, costs, and separate action execution.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-012
+  title: Unreal Engine AI systems
+  source_type: official documentation
+  url: https://dev.epicgames.com/documentation/en-us/unreal-engine/artificial-intelligence-in-unreal-engine
+  relevance: Perception, blackboards, behaviour trees, StateTree, EQS, smart objects,
+    MassEntity, and debugging.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-013
+  title: Concurrent Interactions in The Sims 4
+  source_type: game AI presentation
+  url: https://www.gdcvault.com/play/1020190/Concurrent-Interactions-in-The-Sims
+  relevance: Data-defined interactions, compatibility, action channels, and concurrency.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-014
+  title: Valve publications and Left 4 Dead AI
+  source_type: game AI publications
+  url: https://www.valvesoftware.com/en/publications
+  relevance: Scenario direction, contextual dialogue, and replayable systems.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-015
+  title: A Context-Aware Character Dialog System in The Last of Us
+  source_type: game AI presentation
+  url: https://www.gdcvault.com/play/1020951/A-Context-Aware-Character-Dialog
+  relevance: Dialogue eligibility grounded in individual and shared knowledge state.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-016
+  title: OpenStreetMap
+  source_type: data project
+  url: https://www.openstreetmap.org/
+  relevance: Base geography and topology with variable coverage and ODbL obligations.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-017
+  title: osm2pgsql
+  source_type: official documentation
+  url: https://osm2pgsql.org/doc/manual.html
+  relevance: Controlled OSM ingestion and transformation.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-018
+  title: PostGIS
+  source_type: official project
+  url: https://postgis.net/
+  relevance: Authoritative spatial types, queries, and indexes.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-019
+  title: Nominatim
+  source_type: official documentation
+  url: https://nominatim.org/
+  relevance: Gazetteer semantics and reverse-geocoding limitations.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-020
+  title: Protomaps and PMTiles
+  source_type: official documentation
+  url: https://docs.protomaps.com/
+  relevance: Offline tile packaging and presentation, not authoritative topology.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-021
+  title: Valhalla
+  source_type: official documentation
+  url: https://valhalla.github.io/valhalla/
+  relevance: Hierarchical routing, costing, map matching, and multimodal travel.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-022
+  title: SUMO
+  source_type: official documentation
+  url: https://sumo.dlr.de/docs/
+  relevance: Microscopic traffic and transport simulation.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-023
+  title: Recast Navigation
+  source_type: official repository
+  url: https://github.com/recastnavigation/recastnavigation
+  relevance: Navmesh generation, pathfinding, and crowd support.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-024
+  title: W3C PROV-O
+  source_type: standard
+  url: https://www.w3.org/TR/prov-o/
+  relevance: Vocabulary for agents, entities, activities, derivation, and attribution.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-025
+  title: ActivityStreams 2.0
+  source_type: standard
+  url: https://www.w3.org/TR/activitystreams-core/
+  relevance: Actor-activity-object structures for social actions.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.
+- id: AWG-EV-026
+  title: ODD protocol
+  source_type: model documentation protocol
+  url: https://www.usgs.gov/publications/odd-protocol-describing-agent-based-and-other-simulation-models-a-second-update
+  relevance: Reproducible description of agent-based models.
+  retrieved: '2026-08-20'
+  quality: primary_or_official_where_available
+  limitations: See research specification for detailed interpretation.

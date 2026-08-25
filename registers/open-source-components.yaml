@@ -1,0 +1,195 @@
+version: 0.2.0
+components:
+- id: AWG-COMP-001
+  name: PostgreSQL
+  role: database
+  declared_or_reported_licence: PostgreSQL Licence
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-002
+  name: PostGIS
+  role: spatial database extension
+  declared_or_reported_licence: GPL-2.0-or-later reported; verify exact release
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-003
+  name: osm2pgsql
+  role: OSM ingestion
+  declared_or_reported_licence: GPL-2.0-or-later reported; verify exact release
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-004
+  name: Nominatim
+  role: gazetteer
+  declared_or_reported_licence: GPL-2.0-or-later reported; verify exact release
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-005
+  name: Protomaps PMTiles
+  role: offline tile archive
+  declared_or_reported_licence: verify repository and package licence before adoption
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-006
+  name: MapLibre GL JS
+  role: map rendering
+  declared_or_reported_licence: BSD-style reported; verify exact release
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-007
+  name: Valhalla
+  role: routing
+  declared_or_reported_licence: MIT reported; verify exact release
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-008
+  name: SUMO
+  role: microscopic traffic simulation
+  declared_or_reported_licence: EPL-2.0 reported; verify exact release
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-009
+  name: Recast Navigation and Detour
+  role: navmesh and local pathfinding
+  declared_or_reported_licence: zlib reported; verify exact release
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-010
+  name: MATSim
+  role: activity and mobility simulation patterns
+  declared_or_reported_licence: verify current distribution licence and module terms
+  adoption_status: pattern_or_candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-011
+  name: Ollama
+  role: local model runtime adapter
+  declared_or_reported_licence: MIT reported; verify exact release and model licences
+    separately
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-012
+  name: OpenRouter
+  role: remote model routing service
+  declared_or_reported_licence: service terms and model-specific terms; not treated
+    as an open-source dependency
+  adoption_status: service_candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-013
+  name: Concordia
+  role: generative social simulation patterns
+  declared_or_reported_licence: Apache-2.0 reported; verify dependencies
+  adoption_status: pattern_or_candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-014
+  name: AgentSociety
+  role: distributed experiment and agent simulation patterns
+  declared_or_reported_licence: Apache-2.0 reported with repository-specific exceptions;
+    verify folders
+  adoption_status: pattern_or_candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-015
+  name: OASIS
+  role: social-platform simulation patterns
+  declared_or_reported_licence: Apache-2.0 reported; verify datasets and dependencies
+  adoption_status: pattern_or_candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-016
+  name: AgentTorch
+  role: large-population and archetype patterns
+  declared_or_reported_licence: licence requires verification before code reuse
+  adoption_status: pattern_only_until_verified
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-017
+  name: CityBehavEx
+  role: urban behaviour validation patterns
+  declared_or_reported_licence: AGPL-3.0 reported; legal review required before code
+    reuse
+  adoption_status: pattern_only
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-018
+  name: DuckDB
+  role: analytical query engine
+  declared_or_reported_licence: MIT reported; verify exact release
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-019
+  name: Ray
+  role: distributed task execution
+  declared_or_reported_licence: Apache-2.0 reported; verify exact release
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-020
+  name: OpenTelemetry
+  role: software telemetry
+  declared_or_reported_licence: Apache-2.0 reported; verify exact release
+  adoption_status: candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.
+- id: AWG-COMP-021
+  name: PettingZoo
+  role: multi-agent environment interface patterns
+  declared_or_reported_licence: MIT reported; verify exact release
+  adoption_status: pattern_or_candidate
+  code_reuse_approved: false
+  legal_review_required: true
+  security_review_required: true
+  notes: Architecture discussion does not grant redistribution rights.

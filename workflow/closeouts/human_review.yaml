@@ -1,0 +1,37 @@
+stage: human_review
+status: open
+issue: ELE-147
+objectives: Require an explicit human review of the World Explorer application before any claim of a finished product.
+in_scope:
+- Operator inspection of the read-only World Explorer
+- Confirmation that mutation is impossible from the UI
+- Confirmation that clusters and PMTiles are labeled projection-only
+non_goals:
+- Automated approval of draft Constitution or ADRs
+- Production release
+- Empirical validation
+dependencies:
+- Closed review_app stage
+- AWG-OPS-012 human stop conditions
+acceptance_tests:
+- AWG-TEST-WFL-002
+performance_target: Not applicable; this stage is a human stop.
+security_offline_target: Review MUST use the read-only service. No mutating methods may be introduced to pass review.
+validation_evidence: []
+documentation_complete: false
+documentation_summary: Waiting for a human reviewer. Automated contributors MUST NOT close this gate.
+known_limitations:
+- No human sign-off has been recorded
+- Application review is not scientific validation
+unresolved_risks:
+- Treating plan_complete as human approval
+- Shipping a review UI as a production product
+release_decision: Do not close. A human MUST inspect the application.
+evidence_files:
+- workflow/closeouts/human_review.yaml
+human_stop_conditions:
+- Human review of the World Explorer application
+- Constitutional or accepted-ADR change
+- Empirical validation claim
+- Production release decision
+notes: The workflow loop stops here with awaiting_human_review.

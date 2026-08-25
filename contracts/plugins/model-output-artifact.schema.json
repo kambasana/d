@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/plugins/model-output-artifact.schema.json",
+  "title": "Model Output Artifact",
+  "type": "object",
+  "properties": {
+    "artifact_version": {
+      "const": "0.2.0"
+    },
+    "capability": {
+      "enum": [
+        "propose_intent",
+        "rank_options",
+        "realize_dialogue",
+        "summarize_memories",
+        "extract_claims"
+      ]
+    },
+    "accepted": {
+      "type": "boolean"
+    },
+    "proposal": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "error_code": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "adapter_id": {"type": "string", "minLength": 1},
+        "adapter_version": {"type": "string", "minLength": 1},
+        "provider_id": {"type": "string", "minLength": 1},
+        "model_version": {"type": "string", "minLength": 1},
+        "prompt_policy_version": {"type": "string", "minLength": 1},
+        "interface_version": {"type": "string", "minLength": 1},
+        "output_schema_version": {"type": "string", "minLength": 1},
+        "request_id": {"type": "string", "minLength": 1},
+        "outcome": {"type": "string", "minLength": 1}
+      },
+      "required": [
+        "adapter_id",
+        "adapter_version",
+        "provider_id",
+        "model_version",
+        "prompt_policy_version",
+        "interface_version",
+        "output_schema_version",
+        "request_id",
+        "outcome"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "artifact_version",
+    "capability",
+    "accepted",
+    "proposal",
+    "error_code",
+    "provenance"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {"accepted": {"const": true}},
+        "required": ["accepted"]
+      },
+      "then": {
+        "properties": {
+          "proposal": {"type": "object"},
+          "error_code": {"type": "null"}
+        }
+      },
+      "else": {
+        "properties": {
+          "proposal": {"type": "null"},
+          "error_code": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

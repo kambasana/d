@@ -1,0 +1,325 @@
+version: 0.2.0
+terms:
+- id: AWG-TERM-001
+  term: Adapter
+  definition: A replaceable implementation of a stable capability contract.
+  allowed_synonyms:
+  - connector
+  not_interchangeable_with:
+  - plugin implementation
+  status: canonical
+- id: AWG-TERM-002
+  term: Agent
+  definition: A persistent simulated actor with identity, state, constraints, history,
+    perception, goals, and executable actions.
+  allowed_synonyms:
+  - NPC
+  - simulated person
+  not_interchangeable_with:
+  - LLM
+  - user account
+  - cohort
+  status: canonical
+- id: AWG-TERM-003
+  term: Analytical cluster
+  definition: A visual grouping created by a query or filter rather than physical
+    co-location.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - geographic cluster
+  - co-location cluster
+  status: canonical
+- id: AWG-TERM-004
+  term: Belief
+  definition: An agent-specific disposition toward a claim, including confidence,
+    uncertainty, provenance, and contradiction state.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - world truth
+  status: canonical
+- id: AWG-TERM-005
+  term: Branch
+  definition: A scenario-run lineage that inherits state at a branch point and then
+    diverges through declared changes and consequences.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - copy
+  status: canonical
+- id: AWG-TERM-006
+  term: Building
+  definition: A spatial entity with geometry, entrances, occupancy areas, and optional
+    floors, rooms, routes, and affordances.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - place name
+  status: canonical
+- id: AWG-TERM-007
+  term: Claim
+  definition: A proposition carried through observation or communication with source
+    and lineage.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - fact
+  status: canonical
+- id: AWG-TERM-008
+  term: Co-location cluster
+  definition: A visual grouping of agents occupying the same place, room, vehicle,
+    entrance, or near-identical coordinate.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - geographic cluster
+  status: canonical
+- id: AWG-TERM-009
+  term: Command
+  definition: A typed request for a state-changing operation that is validated before
+    execution.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - event
+  - intent
+  status: canonical
+- id: AWG-TERM-010
+  term: Counterfactual
+  definition: A branch comparison that changes declared conditions after a common
+    baseline; it is not proof of real-world causality by itself.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - prediction
+  status: canonical
+- id: AWG-TERM-011
+  term: Event
+  definition: An immutable record that something occurred or was rejected at a defined
+    simulation time and sequence.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - command
+  status: canonical
+- id: AWG-TERM-012
+  term: Evidence
+  definition: An observation, record, message, measurement, or source used to support
+    or challenge a claim.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - belief
+  status: canonical
+- id: AWG-TERM-013
+  term: Firehose
+  definition: The structured, ordered stream of domain events emitted by worlds, agents,
+    groups, infrastructure, and information systems.
+  allowed_synonyms:
+  - event stream
+  not_interchangeable_with:
+  - software log
+  status: canonical
+- id: AWG-TERM-014
+  term: Gazetteer
+  definition: A system that resolves named places and addresses to geographic entities
+    and geometry references.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - routing engine
+  status: canonical
+- id: AWG-TERM-015
+  term: Geographic cluster
+  definition: A visual aggregation of agents distributed within a screen-space or
+    map area.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - co-location cluster
+  status: canonical
+- id: AWG-TERM-016
+  term: Information space
+  definition: The network of claims, messages, posts, media, channels, audiences,
+    platforms, and exposures connected to the physical world.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - global knowledge
+  status: canonical
+- id: AWG-TERM-017
+  term: Intent
+  definition: A proposed goal or desired action before typed command creation and
+    validation.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - command
+  - event
+  status: canonical
+- id: AWG-TERM-018
+  term: Journey
+  definition: A time-consuming movement process from origin to destination using one
+    or more routes and transport legs.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - teleport
+  status: canonical
+- id: AWG-TERM-019
+  term: LLM
+  definition: A language model used through bounded adapters for defined reasoning
+    or language tasks.
+  allowed_synonyms:
+  - language model
+  not_interchangeable_with:
+  - agent
+  - simulation kernel
+  status: canonical
+- id: AWG-TERM-020
+  term: Observation
+  definition: A bounded record made available to an agent through a valid physical,
+    digital, institutional, or communication path.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - world state
+  status: canonical
+- id: AWG-TERM-021
+  term: Place
+  definition: A stable spatial identity linked to one or more geometries, names, relationships,
+    access rules, and provenance.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - coordinate
+  status: canonical
+- id: AWG-TERM-022
+  term: Plugin
+  definition: A packaged extension that declares capabilities, permissions, versions,
+    dependencies, and compatibility.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - core contract
+  status: canonical
+- id: AWG-TERM-023
+  term: Projection
+  definition: A derived read model used for maps, dashboards, search, analytics, feeds,
+    or other views.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - authoritative state
+  status: canonical
+- id: AWG-TERM-024
+  term: Provenance
+  definition: The lineage explaining origin, transformations, sources, actors, times,
+    and derivations of data, claims, events, or artefacts.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - citation only
+  status: canonical
+- id: AWG-TERM-025
+  term: Random stream
+  definition: A named, owned sequence of stochastic values with a seed or recorded
+    position.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - unexplained noise
+  status: canonical
+- id: AWG-TERM-026
+  term: Replay
+  definition: Reconstruction of a run from recorded inputs, versions, random streams,
+    events, snapshots, and model outputs.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - rerun with new model calls
+  status: canonical
+- id: AWG-TERM-027
+  term: Scenario
+  definition: A versioned package of world state, population, assumptions, configuration,
+    events, interventions, measurements, and stop conditions.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - prompt
+  status: canonical
+- id: AWG-TERM-028
+  term: Semantic zoom
+  definition: A visualization strategy that changes what information is shown as scale
+    changes, rather than only resizing the same marks.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - marker scaling
+  status: canonical
+- id: AWG-TERM-029
+  term: Simulation level of detail
+  definition: The fidelity at which a population, cohort, individual, or local embodied
+    agent is simulated.
+  allowed_synonyms:
+  - simulation LOD
+  not_interchangeable_with:
+  - visualization LOD
+  status: canonical
+- id: AWG-TERM-030
+  term: Simulation time
+  definition: The authoritative temporal coordinate for world causality.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - wall-clock time
+  status: canonical
+- id: AWG-TERM-031
+  term: Smart object
+  definition: An object or place exposing typed affordances, slots, preconditions,
+    capacity, reservations, and effects.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - decorative prop
+  status: canonical
+- id: AWG-TERM-032
+  term: Snapshot
+  definition: A versioned state checkpoint used with event history for recovery or
+    replay.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - event history replacement
+  status: canonical
+- id: AWG-TERM-033
+  term: Synthetic geography
+  definition: Generated but coherent spatial data using explicit topology, places,
+    geometry, access, routing, and provenance.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - invented place names
+  status: canonical
+- id: AWG-TERM-034
+  term: Telemetry
+  definition: Software-operational measurements such as latency, CPU, memory, queue
+    depth, and errors.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - domain event
+  status: canonical
+- id: AWG-TERM-035
+  term: Trust
+  definition: An agent-specific, domain- and context-dependent evaluation of a source
+    based on relationships, history, and evidence.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - single universal score
+  status: canonical
+- id: AWG-TERM-036
+  term: Visualization level of detail
+  definition: The representation used at the current view scale, such as heatmap,
+    cluster, marker, or detailed avatar.
+  allowed_synonyms:
+  - visualization LOD
+  not_interchangeable_with:
+  - simulation LOD
+  status: canonical
+- id: AWG-TERM-037
+  term: Wall-clock time
+  definition: Real processing or user-interface time outside the simulated world chronology.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - simulation time
+  status: canonical
+- id: AWG-TERM-038
+  term: World
+  definition: A persistent spatial-temporal state containing entities, systems, rules,
+    histories, and branches.
+  allowed_synonyms: []
+  not_interchangeable_with:
+  - map
+  status: canonical
+- id: AWG-TERM-039
+  term: World truth
+  definition: The authoritative simulated state and events, distinct from any agent
+    belief or UI projection.
+  allowed_synonyms:
+  - authoritative state
+  not_interchangeable_with:
+  - belief
+  status: canonical

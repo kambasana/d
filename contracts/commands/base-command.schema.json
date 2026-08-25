@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/commands/base-command.schema.json",
+  "title": "Base Command",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/version"
+    },
+    "command_id": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+    },
+    "command_type": {
+      "type": "string"
+    },
+    "world_id": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+    },
+    "scenario_id": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+    },
+    "branch_id": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+    },
+    "actor_id": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+    },
+    "issued_by": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+    },
+    "requested_simulation_time": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/simulationTime"
+    },
+    "correlation_id": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+    },
+    "reason": {
+      "type": "string",
+      "maxLength": 2000
+    }
+  },
+  "required": [
+    "schema_version",
+    "command_id",
+    "command_type",
+    "world_id",
+    "scenario_id",
+    "branch_id",
+    "issued_by",
+    "requested_simulation_time"
+  ]
+}

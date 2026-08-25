@@ -1,0 +1,21 @@
+stage: mvp0
+status: closed
+issue: ELE-147
+objectives: Make constitutional rules, core contracts, traceability, and validation executable.
+in_scope: Authored specifications, registers, JSON Schemas, fixtures, validators, and CI skeleton.
+non_goals: Runtime geography, live agents, AI adapters, and claims of human approval.
+dependencies: [AWG-GOV-001, AWG-PLAT-001, AWG-PLAT-002, AWG-OPS-002]
+acceptance_tests: [AWG-TEST-INV-001, AWG-TEST-INV-020, AWG-TEST-COV-044]
+performance_target: Pack validation and pytest complete without GPU or model calls.
+security_offline_target: Contract validation imports no AI provider and runs offline.
+validation_evidence:
+  - {command: make validate, result: passed}
+  - {command: make test, result: passed}
+documentation_complete: true
+documentation_summary: Invariants map to requirements/tests and core engines map to contract groups.
+known_limitations: No deterministic runtime at this stage; Constitution remains draft.
+unresolved_risks: Human approval of normative documents and future implementation compliance.
+release_decision: MVP 0 pack slice may proceed to MVP 1.
+evidence_files:
+  - tests/test_mvp0_invariants.py
+  - generated/validation-report.md

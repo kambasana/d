@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+.venv/
+site/
+dist/*
+!dist/.gitkeep
+node_modules/
+*.pyc
+.DS_Store

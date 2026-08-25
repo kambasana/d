@@ -1,0 +1,6 @@
+PyYAML>=6.0
+jsonschema>=4.20
+referencing>=0.35
+pytest>=8.0
+mkdocs>=1.6
+mkdocs-material>=9.5

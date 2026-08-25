@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/world-entities/smart-object.schema.json",
+  "title": "Smart Object",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "object_id": {
+      "type": "string"
+    },
+    "object_type": {
+      "type": "string"
+    },
+    "location": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/locationRef"
+    },
+    "owner_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "affordances": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "affordance_id": {
+            "type": "string"
+          },
+          "preconditions": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "effects": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "duration_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "capacity": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "exclusive_slots": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "interruptible": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "affordance_id",
+          "preconditions",
+          "effects",
+          "duration_seconds",
+          "capacity",
+          "exclusive_slots",
+          "interruptible"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "state": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "object_id",
+    "object_type",
+    "location",
+    "affordances",
+    "state"
+  ],
+  "additionalProperties": false
+}

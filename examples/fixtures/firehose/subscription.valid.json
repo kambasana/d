@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.2.0",
+  "subscription_id": "subscription:analyst:001",
+  "world_ids": [
+    "world:london-demo"
+  ],
+  "branch_ids": [
+    "branch:baseline"
+  ],
+  "event_type_patterns": [
+    "movement.*",
+    "claim.*",
+    "social.*"
+  ],
+  "actor_ids": [],
+  "place_ids": [
+    "place:district-01"
+  ],
+  "cursor": null,
+  "delivery": "stream",
+  "batch_size": 250,
+  "backpressure": "spill_to_disk",
+  "redaction_profile": "analyst-standard"
+}

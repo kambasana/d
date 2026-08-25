@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/plugins/openrouter-config.schema.json",
+  "title": "OpenRouter Adapter Configuration",
+  "type": "object",
+  "properties": {
+    "base_url": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "secret_ref": {
+      "type": "string"
+    },
+    "timeout_seconds": {
+      "type": "number",
+      "minimum": 0.1
+    },
+    "data_policy": {
+      "enum": [
+        "scenario_approved_remote",
+        "prohibited_for_sensitive_data"
+      ]
+    },
+    "fallback_provider_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "base_url",
+    "model",
+    "secret_ref",
+    "timeout_seconds",
+    "data_policy"
+  ],
+  "additionalProperties": false
+}

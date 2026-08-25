@@ -1,0 +1,162 @@
+version: 0.2.0
+data_sources:
+- id: AWG-DATA-001
+  name: OpenStreetMap regional PBF extract
+  role: authoritative base geography input
+  provider: OpenStreetMap contributors or approved extract provider
+  licence: ODbL-1.0; verify attribution and produced-work obligations
+  status: required_per_world
+  provenance_fields:
+  - download URL
+  - retrieval time
+  - extract region
+  - replication sequence or timestamp
+  - checksum
+  - transformation version
+  known_limits:
+  - coverage and tagging vary
+  - indoor and entrance data may be incomplete
+- id: AWG-DATA-002
+  name: PostGIS spatial world database
+  role: derived authoritative geometry and relationships
+  provider: local transformation pipeline
+  licence: inherits source-data obligations
+  status: derived
+  provenance_fields:
+  - source PBF IDs
+  - osm2pgsql profile version
+  - schema version
+  - build log
+  - checksum
+  known_limits:
+  - derived classifications depend on transformation rules
+- id: AWG-DATA-003
+  name: Nominatim gazetteer index
+  role: place and address resolution
+  provider: local build from selected OSM source
+  licence: inherits source-data obligations
+  status: derived
+  provenance_fields:
+  - OSM source
+  - Nominatim version
+  - import style
+  - build time
+  known_limits:
+  - reverse geocoding selects nearest suitable indexed object
+- id: AWG-DATA-004
+  name: PMTiles vector-tile archive
+  role: offline presentation projection
+  provider: local tile build or licensed provider
+  licence: source and style specific
+  status: derived
+  provenance_fields:
+  - source datasets
+  - tile schema
+  - style version
+  - zoom range
+  - checksum
+  known_limits:
+  - generalized for display; not authoritative topology
+- id: AWG-DATA-005
+  name: Routing graph or tiles
+  role: walking, cycling, driving, and multimodal routing
+  provider: local Valhalla or selected adapter build
+  licence: source-data and engine specific
+  status: derived
+  provenance_fields:
+  - OSM source
+  - engine version
+  - costing profile
+  - build time
+  - checksum
+  known_limits:
+  - route quality follows source access tags and profile assumptions
+- id: AWG-DATA-006
+  name: GTFS transit feed
+  role: optional public-transport schedules and stops
+  provider: scenario-selected transport authority
+  licence: provider specific
+  status: optional
+  provenance_fields:
+  - feed URL
+  - publisher
+  - validity period
+  - retrieval time
+  - checksum
+  known_limits:
+  - planned schedules may differ from operations
+- id: AWG-DATA-007
+  name: Population and census distributions
+  role: optional population synthesis and calibration
+  provider: scenario-selected official or licensed source
+  licence: source specific
+  status: optional_sensitive
+  provenance_fields:
+  - publisher
+  - table IDs
+  - time period
+  - geographic level
+  - transformations
+  known_limits:
+  - aggregation, suppression, sampling error, outdated values
+- id: AWG-DATA-008
+  name: Time-use and mobility observations
+  role: optional activity and travel calibration
+  provider: scenario-selected research or official source
+  licence: source specific
+  status: optional_sensitive
+  provenance_fields:
+  - study
+  - population
+  - sampling
+  - period
+  - variables
+  - licence
+  known_limits:
+  - selection bias and context mismatch
+- id: AWG-DATA-009
+  name: Building interior geometry
+  role: optional floor, room, entrance, and local navigation detail
+  provider: scenario author, BIM, indoor mapping, or synthetic generator
+  licence: source specific
+  status: optional_restricted
+  provenance_fields:
+  - source
+  - coordinate reference
+  - version
+  - author
+  - confidence
+  known_limits:
+  - security sensitivity and frequent incompleteness
+- id: AWG-DATA-010
+  name: Weather and environmental inputs
+  role: optional scenario conditions
+  provider: local dataset, synthetic generator, or approved adapter
+  licence: source specific
+  status: optional
+  provenance_fields:
+  - provider
+  - station or model
+  - time coverage
+  - units
+  - retrieval time
+  known_limits:
+  - forecast and measurement uncertainty
+- id: AWG-DATA-011
+  name: MVP 1 synthetic reference district bundle
+  role: bounded offline correctness fixture for spatial, movement, replay, and projection tests
+  provider: AWG project generated fixture
+  licence: repository licence; contains no externally sourced geography
+  status: generated_test_fixture
+  provenance_fields:
+  - bundle schema version
+  - generator identity
+  - generated-data classification
+  - asset checksums
+  - spatial extent
+  - target population
+  known_limits:
+  - not calibrated to a real district or population
+  - PostGIS schema is structurally checked but no database daemon is exercised
+  - PMTiles archive contains one presentation-only tile
+  - route graph is intentionally small and supports walking and wheelchair profiles only

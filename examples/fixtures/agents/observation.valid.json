@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.2.0",
+  "observation_id": "observation:001",
+  "observer_id": "agent:district-0000",
+  "source_event_id": "event:mvp2-00000010",
+  "channel": "vision",
+  "observed_at": "2042-05-04T08:15:00Z",
+  "location": {
+    "place_id": "place:office",
+    "precision": "room"
+  },
+  "fidelity": 0.9,
+  "uncertainty": 0.1,
+  "content": {
+    "event_type": "LocationEntered",
+    "actor_id": "agent:district-0002"
+  },
+  "access_path": [
+    "physical_colocation"
+  ]
+}

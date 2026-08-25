@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/claims-and-provenance/exposure.schema.json",
+  "title": "Claim Exposure",
+  "type": "object",
+  "properties": {
+    "schema_version": {"type": "string"},
+    "exposure_id": {"type": "string"},
+    "agent_id": {"type": "string"},
+    "claim_id": {"type": "string"},
+    "channel_id": {"type": "string"},
+    "event_id": {"type": "string"},
+    "visibility": {
+      "enum": ["private", "group", "followers", "public"]
+    },
+    "acquired_at": {"type": "string", "format": "date-time"}
+  },
+  "required": [
+    "schema_version",
+    "exposure_id",
+    "agent_id",
+    "claim_id",
+    "channel_id",
+    "event_id",
+    "visibility",
+    "acquired_at"
+  ],
+  "additionalProperties": false
+}

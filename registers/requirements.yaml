@@ -1,0 +1,1497 @@
+version: 0.2.0
+requirements:
+- id: AWG-REQ-VIS-001
+  title: Build complete worlds and scenarios, not isolated chat agents.
+  statement: Build complete worlds and scenarios, not isolated chat agents.
+  source_conversation_requirement: AWG-CONV-001
+  source_documents: &id001
+  - AWG-VIS-001
+  - AWG-SCN-001
+  implemented_by: *id001
+  verified_by:
+  - AWG-TEST-COV-001
+  status: draft
+- id: AWG-REQ-GEO-001
+  title: Ground real worlds in OpenStreetMap geography and topology.
+  statement: Ground real worlds in OpenStreetMap geography and topology.
+  source_conversation_requirement: AWG-CONV-002
+  source_documents: &id002
+  - AWG-DOM-002
+  implemented_by: *id002
+  verified_by:
+  - AWG-TEST-COV-002
+  status: draft
+- id: AWG-REQ-GEO-002
+  title: Support planet and regional tile views while keeping tiles separate from
+    authoritative world state.
+  statement: Support planet and regional tile views while keeping tiles separate from
+    authoritative world state.
+  source_conversation_requirement: AWG-CONV-003
+  source_documents: &id003
+  - AWG-DOM-002
+  - AWG-UX-003
+  implemented_by: *id003
+  verified_by:
+  - AWG-TEST-COV-003
+  status: draft
+- id: AWG-REQ-GEO-003
+  title: Use Nominatim-compatible gazetteer semantics for places, streets, and addresses.
+  statement: Use Nominatim-compatible gazetteer semantics for places, streets, and
+    addresses.
+  source_conversation_requirement: AWG-CONV-004
+  source_documents: &id004
+  - AWG-DOM-002
+  implemented_by: *id004
+  verified_by:
+  - AWG-TEST-COV-004
+  status: draft
+- id: AWG-REQ-GEO-004
+  title: Use Protomaps and PMTiles for offline map presentation.
+  statement: Use Protomaps and PMTiles for offline map presentation.
+  source_conversation_requirement: AWG-CONV-005
+  source_documents: &id005
+  - AWG-DOM-002
+  - AWG-PLAT-006
+  implemented_by: *id005
+  verified_by:
+  - AWG-TEST-COV-005
+  status: draft
+- id: AWG-REQ-PLG-001
+  title: Support Ollama as a local AI provider.
+  statement: Support Ollama as a local AI provider.
+  source_conversation_requirement: AWG-CONV-006
+  source_documents: &id006
+  - AWG-PLAT-003
+  - AWG-PLAT-006
+  implemented_by: *id006
+  verified_by:
+  - AWG-TEST-COV-006
+  status: draft
+- id: AWG-REQ-PLG-002
+  title: Support OpenRouter as a remote AI provider.
+  statement: Support OpenRouter as a remote AI provider.
+  source_conversation_requirement: AWG-CONV-007
+  source_documents: &id007
+  - AWG-PLAT-003
+  implemented_by: *id007
+  verified_by:
+  - AWG-TEST-COV-007
+  status: draft
+- id: AWG-REQ-PLG-003
+  title: Use modular plugin and adapter architecture so components can be swapped
+    without breaking core funct
+  statement: Use modular plugin and adapter architecture so components can be swapped
+    without breaking core functionality.
+  source_conversation_requirement: AWG-CONV-008
+  source_documents: &id008
+  - AWG-PLAT-003
+  implemented_by: *id008
+  verified_by:
+  - AWG-TEST-COV-008
+  status: draft
+- id: AWG-REQ-GOV-001
+  title: Treat the system as a serious simulation platform rather than a toy agent
+    demo.
+  statement: Treat the system as a serious simulation platform rather than a toy agent
+    demo.
+  source_conversation_requirement: AWG-CONV-009
+  source_documents: &id009
+  - AWG-GOV-001
+  - AWG-VIS-002
+  implemented_by: *id009
+  verified_by:
+  - AWG-TEST-COV-009
+  status: draft
+- id: AWG-REQ-EVT-001
+  title: Expose a structured firehose for each agent and world.
+  statement: Expose a structured firehose for each agent and world.
+  source_conversation_requirement: AWG-CONV-010
+  source_documents: &id010
+  - AWG-PLAT-002
+  implemented_by: *id010
+  verified_by:
+  - AWG-TEST-COV-010
+  status: draft
+- id: AWG-REQ-SCN-001
+  title: Allow scenarios and live changes so agents and groups react and communicate.
+  statement: Allow scenarios and live changes so agents and groups react and communicate.
+  source_conversation_requirement: AWG-CONV-011
+  source_documents: &id011
+  - AWG-SCN-001
+  - AWG-DOM-003
+  - AWG-DOM-013
+  implemented_by: *id011
+  verified_by:
+  - AWG-TEST-COV-011
+  status: draft
+- id: AWG-REQ-AGT-001
+  title: Build humanistic systems from established NPC, ABM, cognitive, social, and
+    behavioural patterns rath
+  statement: Build humanistic systems from established NPC, ABM, cognitive, social,
+    and behavioural patterns rather than unconstrained invention.
+  source_conversation_requirement: AWG-CONV-012
+  source_documents: &id012
+  - AWG-DOM-003
+  - AWG-DOM-011
+  - AWG-VIS-006
+  implemented_by: *id012
+  verified_by:
+  - AWG-TEST-COV-012
+  status: draft
+- id: AWG-REQ-GEO-005
+  title: Agents must understand the space they occupy.
+  statement: Agents must understand the space they occupy.
+  source_conversation_requirement: AWG-CONV-013
+  source_documents: &id013
+  - AWG-DOM-002
+  - AWG-DOM-009
+  implemented_by: *id013
+  verified_by:
+  - AWG-TEST-COV-013
+  status: draft
+- id: AWG-REQ-GEO-006
+  title: Synthetic worlds must use coherent OSM-like places, geometry, access, and
+    traversal.
+  statement: Synthetic worlds must use coherent OSM-like places, geometry, access,
+    and traversal.
+  source_conversation_requirement: AWG-CONV-014
+  source_documents: &id014
+  - AWG-DOM-002
+  implemented_by: *id014
+  verified_by:
+  - AWG-TEST-COV-014
+  status: draft
+- id: AWG-REQ-GEO-007
+  title: Movement must consume plausible time and obey route, mode, and speed constraints.
+  statement: Movement must consume plausible time and obey route, mode, and speed
+    constraints.
+  source_conversation_requirement: AWG-CONV-015
+  source_documents: &id015
+  - AWG-DOM-002
+  - AWG-DOM-008
+  implemented_by: *id015
+  verified_by:
+  - AWG-TEST-COV-015
+  status: draft
+- id: AWG-REQ-GEO-008
+  title: Agents cannot randomly spawn at destinations or teleport.
+  statement: Agents cannot randomly spawn at destinations or teleport.
+  source_conversation_requirement: AWG-CONV-016
+  source_documents: &id016
+  - AWG-GOV-001
+  - AWG-DOM-002
+  implemented_by: *id016
+  verified_by:
+  - AWG-TEST-COV-016
+  status: draft
+- id: AWG-REQ-EPI-001
+  title: Knowledge learned from another agent must retain source provenance.
+  statement: Knowledge learned from another agent must retain source provenance.
+  source_conversation_requirement: AWG-CONV-017
+  source_documents: &id017
+  - AWG-DOM-004
+  implemented_by: *id017
+  verified_by:
+  - AWG-TEST-COV-017
+  status: draft
+- id: AWG-REQ-EPI-002
+  title: Information sources may be reliable, mistaken, deceptive, malicious, or coordinated.
+  statement: Information sources may be reliable, mistaken, deceptive, malicious,
+    or coordinated.
+  source_conversation_requirement: AWG-CONV-018
+  source_documents: &id018
+  - AWG-DOM-004
+  implemented_by: *id018
+  verified_by:
+  - AWG-TEST-COV-018
+  status: draft
+- id: AWG-REQ-EPI-003
+  title: Relationship history and domain context affect trust.
+  statement: Relationship history and domain context affect trust.
+  source_conversation_requirement: AWG-CONV-019
+  source_documents: &id019
+  - AWG-DOM-004
+  implemented_by: *id019
+  verified_by:
+  - AWG-TEST-COV-019
+  status: draft
+- id: AWG-REQ-EPI-004
+  title: Model witness, second-hand report, post, repost, comment, message, and fact-checking
+    chains.
+  statement: Model witness, second-hand report, post, repost, comment, message, and
+    fact-checking chains.
+  source_conversation_requirement: AWG-CONV-020
+  source_documents: &id020
+  - AWG-DOM-004
+  - AWG-DOM-013
+  implemented_by: *id020
+  verified_by:
+  - AWG-TEST-COV-020
+  status: draft
+- id: AWG-REQ-EPI-005
+  title: A contacted witness may reply, clarify, contradict, ignore, block, or remain
+    uncertain.
+  statement: A contacted witness may reply, clarify, contradict, ignore, block, or
+    remain uncertain.
+  source_conversation_requirement: AWG-CONV-021
+  source_documents: &id021
+  - AWG-DOM-004
+  - AWG-DOM-013
+  implemented_by: *id021
+  verified_by:
+  - AWG-TEST-COV-021
+  status: draft
+- id: AWG-REQ-SOC-001
+  title: Provide a virtual social-media site where agents can post, react, comment,
+    repost, and message.
+  statement: Provide a virtual social-media site where agents can post, react, comment,
+    repost, and message.
+  source_conversation_requirement: AWG-CONV-022
+  source_documents: &id022
+  - AWG-DOM-013
+  - AWG-UX-010
+  implemented_by: *id022
+  verified_by:
+  - AWG-TEST-COV-022
+  status: draft
+- id: AWG-REQ-SOC-002
+  title: Support information-space actors that may not be fully embodied in the physical
+    world.
+  statement: Support information-space actors that may not be fully embodied in the
+    physical world.
+  source_conversation_requirement: AWG-CONV-023
+  source_documents: &id023
+  - AWG-DOM-013
+  implemented_by: *id023
+  verified_by:
+  - AWG-TEST-COV-023
+  status: draft
+- id: AWG-REQ-EVT-002
+  title: Capture social and information actions in the firehose.
+  statement: Capture social and information actions in the firehose.
+  source_conversation_requirement: AWG-CONV-024
+  source_documents: &id024
+  - AWG-PLAT-002
+  - AWG-DOM-004
+  implemented_by: *id024
+  verified_by:
+  - AWG-TEST-COV-024
+  status: draft
+- id: AWG-REQ-RES-001
+  title: Research papers, GitHub projects, systems, and proven game AI before designing
+    replacements.
+  statement: Research papers, GitHub projects, systems, and proven game AI before
+    designing replacements.
+  source_conversation_requirement: AWG-CONV-025
+  source_documents: &id025
+  - AWG-VIS-004
+  - AWG-VIS-005
+  implemented_by: *id025
+  verified_by:
+  - AWG-TEST-COV-025
+  status: draft
+- id: AWG-REQ-RES-002
+  title: Record useful reusable mechanisms and unsuitable mechanisms.
+  statement: Record useful reusable mechanisms and unsuitable mechanisms.
+  source_conversation_requirement: AWG-CONV-026
+  source_documents: &id026
+  - AWG-VIS-004
+  - AWG-VIS-006
+  implemented_by: *id026
+  verified_by:
+  - AWG-TEST-COV-026
+  status: draft
+- id: AWG-REQ-GOV-002
+  title: Maintain a never-do list for fake, invalid, or misleading simulation shortcuts.
+  statement: Maintain a never-do list for fake, invalid, or misleading simulation
+    shortcuts.
+  source_conversation_requirement: AWG-CONV-027
+  source_documents: &id027
+  - AWG-GOV-001
+  - AWG-VIS-002
+  implemented_by: *id027
+  verified_by:
+  - AWG-TEST-COV-027
+  status: draft
+- id: AWG-REQ-AGT-002
+  title: Prefer established game NPC architecture over prompt-only reinvention.
+  statement: Prefer established game NPC architecture over prompt-only reinvention.
+  source_conversation_requirement: AWG-CONV-028
+  source_documents: &id028
+  - AWG-DOM-003
+  - AWG-VIS-006
+  implemented_by: *id028
+  verified_by:
+  - AWG-TEST-COV-028
+  status: draft
+- id: AWG-REQ-UX-001
+  title: Balance agent markers with aggregate world views.
+  statement: Balance agent markers with aggregate world views.
+  source_conversation_requirement: AWG-CONV-029
+  source_documents: &id029
+  - AWG-UX-007
+  - AWG-UX-002
+  implemented_by: *id029
+  verified_by:
+  - AWG-TEST-COV-029
+  status: draft
+- id: AWG-REQ-UX-002
+  title: Allow thousands of raw dots as an optional debug view without making it the
+    only representation.
+  statement: Allow thousands of raw dots as an optional debug view without making
+    it the only representation.
+  source_conversation_requirement: AWG-CONV-030
+  source_documents: &id030
+  - AWG-UX-007
+  implemented_by: *id030
+  verified_by:
+  - AWG-TEST-COV-030
+  status: draft
+- id: AWG-REQ-UX-003
+  title: Provide detailed building and interior world views.
+  statement: Provide detailed building and interior world views.
+  source_conversation_requirement: AWG-CONV-031
+  source_documents: &id031
+  - AWG-UX-009
+  implemented_by: *id031
+  verified_by:
+  - AWG-TEST-COV-031
+  status: draft
+- id: AWG-REQ-RND-001
+  title: Use controlled randomness for variation, not arbitrary activity.
+  statement: Use controlled randomness for variation, not arbitrary activity.
+  source_conversation_requirement: AWG-CONV-032
+  source_documents: &id032
+  - AWG-DOM-007
+  implemented_by: *id032
+  verified_by:
+  - AWG-TEST-COV-032
+  status: draft
+- id: AWG-REQ-SCL-001
+  title: Keep simulation level of detail independent from visualization level of detail.
+  statement: Keep simulation level of detail independent from visualization level
+    of detail.
+  source_conversation_requirement: AWG-CONV-033
+  source_documents: &id033
+  - AWG-PLAT-005
+  - AWG-UX-002
+  implemented_by: *id033
+  verified_by:
+  - AWG-TEST-COV-033
+  status: draft
+- id: AWG-REQ-UX-004
+  title: Use semantic zoom where cluster totals progressively split into smaller clusters
+    and individuals.
+  statement: Use semantic zoom where cluster totals progressively split into smaller
+    clusters and individuals.
+  source_conversation_requirement: AWG-CONV-034
+  source_documents: &id034
+  - AWG-UX-002
+  implemented_by: *id034
+  verified_by:
+  - AWG-TEST-COV-034
+  status: draft
+- id: AWG-REQ-UX-005
+  title: Clicking a geographic cluster should normally zoom to member bounds.
+  statement: Clicking a geographic cluster should normally zoom to member bounds.
+  source_conversation_requirement: AWG-CONV-035
+  source_documents: &id035
+  - AWG-UX-002
+  implemented_by: *id035
+  verified_by:
+  - AWG-TEST-COV-035
+  status: draft
+- id: AWG-REQ-UX-006
+  title: Use a radial circle of clickable agents for small true co-location overlaps.
+  statement: Use a radial circle of clickable agents for small true co-location overlaps.
+  source_conversation_requirement: AWG-CONV-036
+  source_documents: &id036
+  - AWG-UX-002
+  implemented_by: *id036
+  verified_by:
+  - AWG-TEST-COV-036
+  status: draft
+- id: AWG-REQ-UX-007
+  title: Use building, floor, room, or occupant browsers for large co-located populations.
+  statement: Use building, floor, room, or occupant browsers for large co-located
+    populations.
+  source_conversation_requirement: AWG-CONV-037
+  source_documents: &id037
+  - AWG-UX-002
+  - AWG-UX-009
+  implemented_by: *id037
+  verified_by:
+  - AWG-TEST-COV-037
+  status: draft
+- id: AWG-REQ-UX-008
+  title: Distinguish geographic, co-location, and analytical clusters.
+  statement: Distinguish geographic, co-location, and analytical clusters.
+  source_conversation_requirement: AWG-CONV-038
+  source_documents: &id038
+  - AWG-UX-002
+  implemented_by: *id038
+  verified_by:
+  - AWG-TEST-COV-038
+  status: draft
+- id: AWG-REQ-UX-009
+  title: Base UI/UX on research and proven visual analytics patterns.
+  statement: Base UI/UX on research and proven visual analytics patterns.
+  source_conversation_requirement: AWG-CONV-039
+  source_documents: &id039
+  - AWG-UX-008
+  - AWG-UX-001
+  implemented_by: *id039
+  verified_by:
+  - AWG-TEST-COV-039
+  status: draft
+- id: AWG-REQ-UX-010
+  title: Provide a design system and frontend architecture.
+  statement: Provide a design system and frontend architecture.
+  source_conversation_requirement: AWG-CONV-040
+  source_documents: &id040
+  - AWG-UX-001
+  - AWG-UX-013
+  implemented_by: *id040
+  verified_by:
+  - AWG-TEST-COV-040
+  status: draft
+- id: AWG-REQ-DOC-001
+  title: Create a structured master Markdown documentation pack.
+  statement: Create a structured master Markdown documentation pack.
+  source_conversation_requirement: AWG-CONV-041
+  source_documents: &id041
+  - AWG-OPS-009
+  - AWG-APP-003
+  implemented_by: *id041
+  verified_by:
+  - AWG-TEST-COV-041
+  status: draft
+- id: AWG-REQ-DOC-002
+  title: Put structure and AI-agent instructions first so future agents know how to
+    work.
+  statement: Put structure and AI-agent instructions first so future agents know how
+    to work.
+  source_conversation_requirement: AWG-CONV-042
+  source_documents: &id042
+  - AWG-OPS-009
+  implemented_by: *id042
+  verified_by:
+  - AWG-TEST-COV-042
+  status: draft
+- id: AWG-REQ-OPS-001
+  title: Map the work to the AWG Linear project while retaining a separate canonical
+    source.
+  statement: Map the work to the AWG Linear project while retaining a separate canonical
+    source.
+  source_conversation_requirement: AWG-CONV-043
+  source_documents: &id043
+  - AWG-OPS-010
+  implemented_by: *id043
+  verified_by:
+  - AWG-TEST-COV-043
+  status: draft
+- id: AWG-REQ-OPS-002
+  title: Generate the full pack on disk with CLI validation.
+  statement: Generate the full pack on disk with CLI validation.
+  source_conversation_requirement: AWG-CONV-044
+  source_documents: &id044
+  - AWG-OPS-006
+  - AWG-OPS-009
+  implemented_by: *id044
+  verified_by:
+  - AWG-TEST-COV-044
+  status: draft
+- id: AWG-REQ-OPS-003
+  title: Provide a complete archive and downloadable logical parts.
+  statement: Provide a complete archive and downloadable logical parts.
+  source_conversation_requirement: AWG-CONV-045
+  source_documents: &id045
+  - AWG-OPS-005
+  - AWG-APP-003
+  implemented_by: *id045
+  verified_by:
+  - AWG-TEST-COV-045
+  status: draft
+- id: AWG-REQ-DOC-003
+  title: Preserve all prior conversation-derived specifications and research.
+  statement: Preserve all prior conversation-derived specifications and research.
+  source_conversation_requirement: AWG-CONV-046
+  source_documents: &id046
+  - AWG-VIS-004
+  - AWG-UX-008
+  - AWG-APP-003
+  implemented_by: *id046
+  verified_by:
+  - AWG-TEST-COV-046
+  status: draft
+- id: AWG-REQ-DOC-004
+  title: Validate that no declared document, requirement, schema, example, register,
+    or release file is missi
+  statement: Validate that no declared document, requirement, schema, example, register,
+    or release file is missing.
+  source_conversation_requirement: AWG-CONV-047
+  source_documents: &id047
+  - AWG-OPS-009
+  - AWG-APP-003
+  implemented_by: *id047
+  verified_by:
+  - AWG-TEST-COV-047
+  status: draft
+- id: AWG-REQ-GOV-003
+  title: Record risks, assumptions, data provenance, model versions, and open-source
+    licensing.
+  statement: Record risks, assumptions, data provenance, model versions, and open-source
+    licensing.
+  source_conversation_requirement: AWG-CONV-048
+  source_documents: &id048
+  - AWG-GOV-003
+  - AWG-GOV-007
+  - AWG-OPS-011
+  implemented_by: *id048
+  verified_by:
+  - AWG-TEST-COV-048
+  status: draft
+- id: AWG-REQ-TIME-001
+  title: Simulation time is separate from wall-clock time and is authoritative for
+    causality.
+  statement: Simulation time is separate from wall-clock time and is authoritative
+    for causality.
+  source_documents: &id049
+  - AWG-DOM-008
+  implemented_by: *id049
+  verified_by:
+  - AWG-TEST-TIME-001
+  status: draft
+- id: AWG-REQ-PER-001
+  title: Agents receive only observations available through valid sensing or communication
+    paths.
+  statement: Agents receive only observations available through valid sensing or communication
+    paths.
+  source_documents: &id050
+  - AWG-DOM-009
+  implemented_by: *id050
+  verified_by:
+  - AWG-TEST-PER-001
+  status: draft
+- id: AWG-REQ-OBJ-001
+  title: Object interactions enforce affordances, reservations, capacity, and concurrent-action
+    constraints.
+  statement: Object interactions enforce affordances, reservations, capacity, and
+    concurrent-action constraints.
+  source_documents: &id051
+  - AWG-DOM-010
+  implemented_by: *id051
+  verified_by:
+  - AWG-TEST-OBJ-001
+  status: draft
+- id: AWG-REQ-KER-001
+  title: The deterministic kernel is the sole authority for accepted state transitions.
+  statement: The deterministic kernel is the sole authority for accepted state transitions.
+  source_documents: &id052
+  - AWG-PLAT-007
+  implemented_by: *id052
+  verified_by:
+  - AWG-TEST-KER-001
+  status: draft
+- id: AWG-REQ-REP-001
+  title: Recorded model outputs support replay without external model calls.
+  statement: Recorded model outputs support replay without external model calls.
+  source_documents: &id053
+  - AWG-PLAT-002
+  - AWG-SCN-006
+  implemented_by: *id053
+  verified_by:
+  - AWG-TEST-REP-001
+  status: draft
+- id: AWG-REQ-SEC-001
+  title: Untrusted plugins and model output cannot access secrets or bypass typed
+    interfaces.
+  statement: Untrusted plugins and model output cannot access secrets or bypass typed
+    interfaces.
+  source_documents: &id054
+  - AWG-GOV-002
+  - AWG-PLAT-003
+  - AWG-OPS-011
+  implemented_by: *id054
+  verified_by:
+  - AWG-TEST-SEC-001
+  status: draft
+- id: AWG-REQ-DATA-001
+  title: Every external dataset records source, licence, coverage, version, transformations,
+    uncertainty, and
+  statement: Every external dataset records source, licence, coverage, version, transformations,
+    uncertainty, and permitted use.
+  source_documents: &id055
+  - AWG-GOV-007
+  - AWG-SCN-009
+  implemented_by: *id055
+  verified_by:
+  - AWG-TEST-DATA-001
+  status: draft
+- id: AWG-REQ-CMP-001
+  title: Counterfactual branches remain identical before their declared divergence
+    point.
+  statement: Counterfactual branches remain identical before their declared divergence
+    point.
+  source_documents: &id056
+  - AWG-SCN-004
+  implemented_by: *id056
+  verified_by:
+  - AWG-TEST-CMP-001
+  status: draft
+- id: AWG-REQ-A11Y-001
+  title: Every map workflow has a keyboard-operable and non-map alternative.
+  statement: Every map workflow has a keyboard-operable and non-map alternative.
+  source_documents: &id057
+  - AWG-UX-006
+  - AWG-UX-014
+  implemented_by: *id057
+  verified_by:
+  - AWG-TEST-A11Y-001
+  status: draft
+- id: AWG-REQ-MIG-001
+  title: Breaking schema changes preserve historical readability and provide migration
+    or explicit rejection.
+  statement: Breaking schema changes preserve historical readability and provide migration
+    or explicit rejection.
+  source_documents: &id058
+  - AWG-OPS-007
+  implemented_by: *id058
+  verified_by:
+  - AWG-TEST-MIG-001
+  status: draft
+- id: AWG-REQ-REL-001
+  title: Every release includes a file manifest, checksums, validation report, and
+    integrity-tested archives.
+  statement: Every release includes a file manifest, checksums, validation report,
+    and integrity-tested archives.
+  source_documents: &id059
+  - AWG-OPS-005
+  - AWG-OPS-009
+  implemented_by: *id059
+  verified_by:
+  - AWG-TEST-REL-001
+  status: draft
+- id: AWG-REQ-COV-001
+  title: Conform to Design Principles
+  statement: 'The implementation and review process must conform to AWG-VIS-003: Design
+    Principles.'
+  source_documents:
+  - AWG-VIS-003
+  implemented_by:
+  - AWG-VIS-003
+  verified_by:
+  - AWG-TEST-DOC-001
+  status: draft
+- id: AWG-REQ-COV-002
+  title: Conform to Canonical World Model and Ontology
+  statement: 'The implementation and review process must conform to AWG-DOM-001: Canonical
+    World Model and Ontology.'
+  source_documents:
+  - AWG-DOM-001
+  implemented_by:
+  - AWG-DOM-001
+  verified_by:
+  - AWG-TEST-DOC-002
+  status: draft
+- id: AWG-REQ-COV-003
+  title: Conform to Organization, Group, and Institution Model
+  statement: 'The implementation and review process must conform to AWG-DOM-005: Organization,
+    Group, and Institution Model.'
+  source_documents:
+  - AWG-DOM-005
+  implemented_by:
+  - AWG-DOM-005
+  verified_by:
+  - AWG-TEST-DOC-003
+  status: draft
+- id: AWG-REQ-COV-004
+  title: Conform to Economy, Resource, and Ownership Model
+  statement: 'The implementation and review process must conform to AWG-DOM-006: Economy,
+    Resource, and Ownership Model.'
+  source_documents:
+  - AWG-DOM-006
+  implemented_by:
+  - AWG-DOM-006
+  verified_by:
+  - AWG-TEST-DOC-004
+  status: draft
+- id: AWG-REQ-COV-005
+  title: Conform to System Architecture
+  statement: 'The implementation and review process must conform to AWG-PLAT-001:
+    System Architecture.'
+  source_documents:
+  - AWG-PLAT-001
+  implemented_by:
+  - AWG-PLAT-001
+  verified_by:
+  - AWG-TEST-DOC-005
+  status: draft
+- id: AWG-REQ-COV-006
+  title: Conform to Storage, Indexing, and Projection Architecture
+  statement: 'The implementation and review process must conform to AWG-PLAT-004:
+    Storage, Indexing, and Projection Architecture.'
+  source_documents:
+  - AWG-PLAT-004
+  implemented_by:
+  - AWG-PLAT-004
+  verified_by:
+  - AWG-TEST-DOC-006
+  status: draft
+- id: AWG-REQ-COV-007
+  title: Conform to Validation, Calibration, and Benchmark Framework
+  statement: 'The implementation and review process must conform to AWG-SCN-002: Validation,
+    Calibration, and Benchmark Framework.'
+  source_documents:
+  - AWG-SCN-002
+  implemented_by:
+  - AWG-SCN-002
+  verified_by:
+  - AWG-TEST-DOC-007
+  status: draft
+- id: AWG-REQ-COV-008
+  title: Conform to Uncertainty and Sensitivity Analysis
+  statement: 'The implementation and review process must conform to AWG-SCN-003: Uncertainty
+    and Sensitivity Analysis.'
+  source_documents:
+  - AWG-SCN-003
+  implemented_by:
+  - AWG-SCN-003
+  verified_by:
+  - AWG-TEST-DOC-008
+  status: draft
+- id: AWG-REQ-COV-009
+  title: Conform to Agent, Place, and Organization Inspectors
+  statement: 'The implementation and review process must conform to AWG-UX-004: Agent,
+    Place, and Organization Inspectors.'
+  source_documents:
+  - AWG-UX-004
+  implemented_by:
+  - AWG-UX-004
+  verified_by:
+  - AWG-TEST-DOC-009
+  status: draft
+- id: AWG-REQ-COV-010
+  title: Conform to Timeline, Replay, and Branch Comparison UX
+  statement: 'The implementation and review process must conform to AWG-UX-005: Timeline,
+    Replay, and Branch Comparison UX.'
+  source_documents:
+  - AWG-UX-005
+  implemented_by:
+  - AWG-UX-005
+  verified_by:
+  - AWG-TEST-DOC-010
+  status: draft
+- id: AWG-REQ-COV-011
+  title: Conform to MVP Roadmap and Definition of Done
+  statement: 'The implementation and review process must conform to AWG-OPS-001: MVP
+    Roadmap and Definition of Done.'
+  source_documents:
+  - AWG-OPS-001
+  implemented_by:
+  - AWG-OPS-001
+  verified_by:
+  - AWG-TEST-DOC-011
+  status: draft
+- id: AWG-REQ-COV-012
+  title: Conform to Software Testing and Quality Strategy
+  statement: 'The implementation and review process must conform to AWG-OPS-002: Software
+    Testing and Quality Strategy.'
+  source_documents:
+  - AWG-OPS-002
+  implemented_by:
+  - AWG-OPS-002
+  verified_by:
+  - AWG-TEST-DOC-012
+  status: draft
+- id: AWG-REQ-COV-013
+  title: Conform to Performance Budget and Capacity Plan
+  statement: 'The implementation and review process must conform to AWG-OPS-003: Performance
+    Budget and Capacity Plan.'
+  source_documents:
+  - AWG-OPS-003
+  implemented_by:
+  - AWG-OPS-003
+  verified_by:
+  - AWG-TEST-DOC-013
+  status: draft
+- id: AWG-REQ-COV-014
+  title: Conform to Observability, Reliability, and Recovery
+  statement: 'The implementation and review process must conform to AWG-OPS-004: Observability,
+    Reliability, and Recovery.'
+  source_documents:
+  - AWG-OPS-004
+  implemented_by:
+  - AWG-OPS-004
+  verified_by:
+  - AWG-TEST-DOC-014
+  status: draft
+- id: AWG-REQ-COV-015
+  title: Conform to Data Classification, Retention, and Deletion
+  statement: 'The implementation and review process must conform to AWG-GOV-004: Data
+    Classification, Retention, and Deletion.'
+  source_documents:
+  - AWG-GOV-004
+  implemented_by:
+  - AWG-GOV-004
+  verified_by:
+  - AWG-TEST-DOC-015
+  status: draft
+- id: AWG-REQ-COV-016
+  title: Conform to Human Subjects and Real-Person Representation Policy
+  statement: 'The implementation and review process must conform to AWG-GOV-005: Human
+    Subjects and Real-Person Representation Policy.'
+  source_documents:
+  - AWG-GOV-005
+  implemented_by:
+  - AWG-GOV-005
+  verified_by:
+  - AWG-TEST-DOC-016
+  status: draft
+- id: AWG-REQ-COV-017
+  title: Conform to Claims, Communication, and Responsible Use Policy
+  statement: 'The implementation and review process must conform to AWG-GOV-006: Claims,
+    Communication, and Responsible Use Policy.'
+  source_documents:
+  - AWG-GOV-006
+  implemented_by:
+  - AWG-GOV-006
+  verified_by:
+  - AWG-TEST-DOC-017
+  status: draft
+- id: AWG-REQ-COV-018
+  title: Conform to Population Synthesis, Cohorts, and Individual Instantiation
+  statement: 'The implementation and review process must conform to AWG-DOM-012: Population
+    Synthesis, Cohorts, and Individual Instantiation.'
+  source_documents:
+  - AWG-DOM-012
+  implemented_by:
+  - AWG-DOM-012
+  verified_by:
+  - AWG-TEST-DOC-018
+  status: draft
+- id: AWG-REQ-COV-019
+  title: Conform to API, Service, and Boundary Contracts
+  statement: 'The implementation and review process must conform to AWG-PLAT-008:
+    API, Service, and Boundary Contracts.'
+  source_documents:
+  - AWG-PLAT-008
+  implemented_by:
+  - AWG-PLAT-008
+  verified_by:
+  - AWG-TEST-DOC-019
+  status: draft
+- id: AWG-REQ-COV-020
+  title: Conform to Configuration, Secrets, and Feature Flags
+  statement: 'The implementation and review process must conform to AWG-PLAT-009:
+    Configuration, Secrets, and Feature Flags.'
+  source_documents:
+  - AWG-PLAT-009
+  implemented_by:
+  - AWG-PLAT-009
+  verified_by:
+  - AWG-TEST-DOC-020
+  status: draft
+- id: AWG-REQ-COV-021
+  title: Conform to Identity, Access, Tenancy, and Authorization
+  statement: 'The implementation and review process must conform to AWG-PLAT-010:
+    Identity, Access, Tenancy, and Authorization.'
+  source_documents:
+  - AWG-PLAT-010
+  implemented_by:
+  - AWG-PLAT-010
+  verified_by:
+  - AWG-TEST-DOC-021
+  status: draft
+- id: AWG-REQ-COV-022
+  title: Conform to World Partitioning, Region Ownership, and Handoff
+  statement: 'The implementation and review process must conform to AWG-PLAT-011:
+    World Partitioning, Region Ownership, and Handoff.'
+  source_documents:
+  - AWG-PLAT-011
+  implemented_by:
+  - AWG-PLAT-011
+  verified_by:
+  - AWG-TEST-DOC-022
+  status: draft
+- id: AWG-REQ-COV-023
+  title: Conform to Metrics, Measurements, and Outcome Catalog
+  statement: 'The implementation and review process must conform to AWG-SCN-007: Metrics,
+    Measurements, and Outcome Catalog.'
+  source_documents:
+  - AWG-SCN-007
+  implemented_by:
+  - AWG-SCN-007
+  verified_by:
+  - AWG-TEST-DOC-023
+  status: draft
+- id: AWG-REQ-COV-024
+  title: Conform to Scenario Cards, Model Cards, and Limitations
+  statement: 'The implementation and review process must conform to AWG-SCN-008: Scenario
+    Cards, Model Cards, and Limitations.'
+  source_documents:
+  - AWG-SCN-008
+  implemented_by:
+  - AWG-SCN-008
+  verified_by:
+  - AWG-TEST-DOC-024
+  status: draft
+- id: AWG-REQ-COV-025
+  title: Conform to Scenario Studio UX
+  statement: 'The implementation and review process must conform to AWG-UX-011: Scenario
+    Studio UX.'
+  source_documents:
+  - AWG-UX-011
+  implemented_by:
+  - AWG-UX-011
+  verified_by:
+  - AWG-TEST-DOC-025
+  status: draft
+- id: AWG-REQ-COV-026
+  title: Conform to Firehose and Causal Explorer UX
+  statement: 'The implementation and review process must conform to AWG-UX-012: Firehose
+    and Causal Explorer UX.'
+  source_documents:
+  - AWG-UX-012
+  implemented_by:
+  - AWG-UX-012
+  verified_by:
+  - AWG-TEST-DOC-026
+  status: draft
+- id: AWG-REQ-COV-027
+  title: Conform to Backup, Restore, and Disaster Recovery
+  statement: 'The implementation and review process must conform to AWG-OPS-008: Backup,
+    Restore, and Disaster Recovery.'
+  source_documents:
+  - AWG-OPS-008
+  implemented_by:
+  - AWG-OPS-008
+  verified_by:
+  - AWG-TEST-DOC-027
+  status: draft
+- id: AWG-REQ-COV-028
+  title: Conform to Standards, Conventions, and Identifiers
+  statement: 'The implementation and review process must conform to AWG-APP-001: Standards,
+    Conventions, and Identifiers.'
+  source_documents:
+  - AWG-APP-001
+  implemented_by:
+  - AWG-APP-001
+  verified_by:
+  - AWG-TEST-DOC-028
+  status: draft
+
+- id: AWG-REQ-INV-001
+  title: 'No direct LLM state mutation'
+  statement: 'An LLM MUST NOT directly write authoritative positions, ownership, resources, event truth, physical state, or completed actions.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-001
+  status: draft
+- id: AWG-REQ-INV-002
+  title: 'No unexplained physical relocation'
+  statement: 'After scenario initialization, every position change MUST require valid movement, transport, or an explicit logged intervention with authority and reason.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-002
+  status: draft
+- id: AWG-REQ-INV-003
+  title: 'Time is causal'
+  statement: 'Travel, actions, queues, communication, work, sleep, and other processes MUST consume simulation time according to their rules.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-003
+  status: draft
+- id: AWG-REQ-INV-004
+  title: 'Geography constrains behavior'
+  statement: 'Routes, barriers, entrances, access rights, modes, capacities, and topology MUST constrain movement.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-004
+  status: draft
+- id: AWG-REQ-INV-005
+  title: 'Information requires a path'
+  statement: 'An agent MUST only know information through direct perception, communication, accessible records or media, prior memory, or explicit inference from available evidence.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-005
+  status: draft
+- id: AWG-REQ-INV-006
+  title: 'Truth and belief are separate'
+  statement: 'World truth and agent belief MUST remain separate data. Agents MAY hold uncertain, incorrect, manipulated, or contradictory beliefs.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-006
+  status: draft
+- id: AWG-REQ-INV-007
+  title: 'Social actions do not imply belief'
+  statement: 'Viewing, understanding, believing, endorsing, liking, commenting, reposting, and forwarding MUST be distinct states or actions.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-007
+  status: draft
+- id: AWG-REQ-INV-008
+  title: 'History is append-preserving'
+  statement: 'Corrections, retractions, reversals, and updated beliefs MUST create new records or events. Causal history MUST NOT be silently erased.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-008
+  status: draft
+- id: AWG-REQ-INV-009
+  title: 'State transitions are observable'
+  statement: 'Important accepted commands and domain transitions MUST emit versioned machine-readable events to the world firehose.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-009
+  status: draft
+- id: AWG-REQ-INV-010
+  title: 'Randomness is reproducible'
+  statement: 'Stochastic behaviour MUST use named random streams or seeds and MUST be recorded sufficiently for experiment comparison and replay.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-010
+  status: draft
+- id: AWG-REQ-INV-011
+  title: 'Simulation and visualization fidelity are independent'
+  statement: 'Rendering an individual marker MUST NOT imply full cognition. Aggregating an individual into a map cluster MUST NOT remove their authoritative state.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-011
+  status: draft
+- id: AWG-REQ-INV-012
+  title: 'Aggregates are not fake individuals'
+  statement: 'When promoting cohorts to individuals, generated detail MUST be marked synthetic or instantiated and constrained by aggregate history; it MUST NOT be presented as previously observed personal history.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-012
+  status: draft
+- id: AWG-REQ-INV-013
+  title: 'Scenario controllers cannot secretly force conclusions'
+  statement: 'Interventions MUST change declared world conditions. Agents MUST react according to their own state, information, constraints, and decision systems.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-013
+  status: draft
+- id: AWG-REQ-INV-014
+  title: 'Plugins cannot bypass the constitution'
+  statement: 'Every adapter MUST preserve validation, provenance, eventing, access, and safety boundaries.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-014
+  status: draft
+- id: AWG-REQ-INV-015
+  title: 'Provider changes are experiment-visible'
+  statement: 'Model, provider, version, prompt-policy, and fallback changes MUST be recorded and MUST NOT silently alter a controlled run.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-015
+  status: draft
+- id: AWG-REQ-INV-016
+  title: 'Authoritative geography is not reconstructed from display tiles'
+  statement: 'PMTiles or Protomaps MAY present offline maps but MUST NOT replace OSM, PostGIS, or routing topology as simulation authority.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-016
+  status: draft
+- id: AWG-REQ-INV-017
+  title: 'Human realism claims require evidence'
+  statement: 'Believable output, LLM judge scores, or visual plausibility alone MUST NOT be treated as sufficient validation.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-017
+  status: draft
+- id: AWG-REQ-INV-018
+  title: 'Data provenance is explicit'
+  statement: 'Observed, imported, inferred, statistically sampled, scenario-assumed, and AI-generated data MUST be distinguishable.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-018
+  status: draft
+- id: AWG-REQ-INV-019
+  title: 'Trust is contextual'
+  statement: 'Trust MUST be evaluated in context such as source, domain, channel, situation, and history rather than a universal number alone.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-019
+  status: draft
+- id: AWG-REQ-INV-020
+  title: 'Core operation can degrade safely without AI'
+  statement: 'Loss or failure of an AI provider MUST NOT corrupt authoritative simulation state. Systems MUST fail closed, use deterministic fallback where specified, or leave agents inactive or deferred.'
+  source_documents:
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-GOV-001
+  verified_by:
+  - AWG-TEST-INV-020
+  status: draft
+- id: AWG-REQ-MVP1-001
+  title: 'The bounded district uses complete local spatial assets'
+  statement: 'The MVP 1 reference scenario MUST package checksummed generated OSM, a PostGIS spatial model, a local gazetteer, a local routing graph, and a PMTiles presentation archive with explicit provenance.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-002
+  - AWG-PLAT-006
+  implemented_by:
+  - AWG-DOM-002
+  - AWG-PLAT-006
+  verified_by:
+  - AWG-TEST-MVP1-001
+  status: draft
+- id: AWG-REQ-MVP1-002
+  title: 'Journeys cannot teleport and must obey routes and elapsed time'
+  statement: 'The MVP 1 kernel MUST reject teleportation and inaccessible modes, MUST use authoritative route topology, and MUST leave an agent at its origin until computed travel time has elapsed.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-002
+  - AWG-DOM-008
+  implemented_by:
+  - AWG-DOM-002
+  - AWG-DOM-008
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP1-002
+  status: draft
+- id: AWG-REQ-MVP1-003
+  title: 'Building entry uses valid entrances and capacity'
+  statement: 'The MVP 1 kernel MUST terminate a building route at a declared entrance and MUST keep building and smart-object occupancy within capacity.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-002
+  - AWG-DOM-010
+  implemented_by:
+  - AWG-DOM-002
+  - AWG-DOM-010
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP1-003
+  status: draft
+- id: AWG-REQ-MVP1-004
+  title: 'Immutable firehose replay reproduces world state'
+  statement: 'The MVP 1 event firehose MUST be append-only, snapshots MUST contain integrity checksums, and deterministic replay MUST reproduce the authoritative state checksum.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-002
+  - AWG-PLAT-007
+  implemented_by:
+  - AWG-PLAT-002
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP1-004
+  status: draft
+- id: AWG-REQ-MVP1-005
+  title: 'Map and occupancy projections cannot mutate world state'
+  statement: 'Semantic clustering and building occupancy inspection MUST operate as deterministic read projections and MUST NOT change authoritative agent positions or state checksums.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-UX-002
+  - AWG-UX-009
+  implemented_by:
+  - AWG-UX-002
+  - AWG-UX-009
+  verified_by:
+  - AWG-TEST-MVP1-005
+  status: draft
+- id: AWG-REQ-MVP1-006
+  title: 'The reference scenario operates offline'
+  statement: 'The MVP 1 reference scenario MUST complete with no external network dependency and MUST validate every packaged spatial asset against its recorded checksum.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-006
+  implemented_by:
+  - AWG-PLAT-006
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP1-006
+  status: draft
+- id: AWG-REQ-MVP1-007
+  title: 'The 24-hour target population run preserves integrity'
+  statement: 'The MVP 1 acceptance profile MUST simulate 100 scheduled agents for 24 hours and complete 200 journeys and 1,400 domain events with zero state-integrity failures within the declared test budget.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-OPS-002
+  - AWG-OPS-003
+  implemented_by:
+  - AWG-OPS-001
+  - AWG-OPS-002
+  - AWG-OPS-003
+  verified_by:
+  - AWG-TEST-MVP1-007
+  status: draft
+- id: AWG-REQ-MVP2-001
+  title: 'Agents produce coherent daily activity without LLM calls'
+  statement: 'The MVP 2 classical NPC kernel MUST produce 24-hour home and work activity from needs, utility, schedules, and planners without importing or calling an LLM.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-003
+  - AWG-DOM-011
+  implemented_by:
+  - AWG-DOM-003
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP2-001
+  status: draft
+- id: AWG-REQ-MVP2-002
+  title: 'Impossible concurrent actions are blocked'
+  statement: 'The MVP 2 kernel MUST occupy explicit action channels and MUST reject combinations such as sleep with travel or eat with work.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-003
+  implemented_by:
+  - AWG-DOM-003
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP2-002
+  status: draft
+- id: AWG-REQ-MVP2-003
+  title: 'Resources and unique ownership are conserved'
+  statement: 'Token and meal totals MUST be conserved across transfers, unique assets MUST have one owner, exclusive smart-object slots MUST NOT be double-reserved, and inventories MUST NOT go negative.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-006
+  - AWG-DOM-010
+  implemented_by:
+  - AWG-DOM-006
+  - AWG-DOM-010
+  verified_by:
+  - AWG-TEST-MVP2-003
+  status: draft
+- id: AWG-REQ-MVP2-004
+  title: 'Perception cannot leak global world state'
+  statement: 'An agent MUST know an event only as actor or via a valid co-located observation path and MUST NOT receive organization inventories or remote location changes automatically.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-009
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-DOM-009
+  - AWG-PLAT-007
+  verified_by:
+  - AWG-TEST-MVP2-004
+  status: draft
+- id: AWG-REQ-MVP3-001
+  title: 'AI provider adapters preserve domain schemas'
+  statement: 'Ollama and OpenRouter candidates MUST implement one provider-neutral AIProviderAdapter boundary, and switching provider MUST NOT change domain proposal schemas.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-003
+  implemented_by:
+  - AWG-PLAT-003
+  verified_by:
+  - AWG-TEST-MVP3-001
+  status: draft
+- id: AWG-REQ-MVP3-002
+  title: 'Invalid model output fails closed'
+  statement: 'Malformed, timed-out, schema-invalid, or provider-error model output MUST NOT mutate WorldState, EventLog, occupancy, claims, or live memory.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-003
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-PLAT-003
+  - AWG-PLAT-002
+  verified_by:
+  - AWG-TEST-MVP3-002
+  status: draft
+- id: AWG-REQ-MVP3-003
+  title: 'Recorded model output replays offline'
+  statement: 'Every accepted adapter output MUST be recordable and replayable into the same typed proposal without a provider call.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-003
+  - AWG-PLAT-002
+  implemented_by:
+  - AWG-PLAT-003
+  - AWG-PLAT-002
+  verified_by:
+  - AWG-TEST-MVP3-003
+  status: draft
+- id: AWG-REQ-MVP3-004
+  title: 'Model output provenance is complete'
+  statement: 'Every adapter output artifact MUST record adapter, provider, model, prompt-policy, interface, and output-schema versions plus request correlation and outcome.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-003
+  implemented_by:
+  - AWG-PLAT-003
+  verified_by:
+  - AWG-TEST-MVP3-004
+  status: draft
+- id: AWG-REQ-MVP4-001
+  title: 'Provenance chains are reconstructable'
+  statement: 'An observation-to-message-to-post-to-repost chain MUST be reconstructable from parent event identifiers without deleting prior transmissions.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-004
+  - AWG-DOM-013
+  implemented_by:
+  - AWG-DOM-004
+  - AWG-PLAT-002
+  verified_by:
+  - AWG-TEST-MVP4-001
+  status: draft
+- id: AWG-REQ-MVP4-002
+  title: 'Belief is not world truth or social action'
+  statement: 'Belief MUST remain agent-specific and MUST NOT be implied by likes, views, follows, comments, or reposts, and MUST NOT equal simulator world truth.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-004
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-DOM-004
+  - AWG-DOM-013
+  verified_by:
+  - AWG-TEST-MVP4-002
+  status: draft
+- id: AWG-REQ-MVP4-003
+  title: 'Unexposed claims remain unknown'
+  statement: 'An agent MUST NOT know a claim, and a participant feed MUST NOT include a post, unless an explicit exposure or audience rule granted access.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-004
+  - AWG-DOM-009
+  implemented_by:
+  - AWG-DOM-004
+  - AWG-DOM-013
+  verified_by:
+  - AWG-TEST-MVP4-003
+  status: draft
+- id: AWG-REQ-MVP4-004
+  title: 'Corrections preserve original history'
+  statement: 'Corrections and retractions MUST be append-only events and MUST NOT overwrite or delete the original post, claim, or transmission.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-DOM-004
+  implemented_by:
+  - AWG-DOM-004
+  - AWG-PLAT-002
+  verified_by:
+  - AWG-TEST-MVP4-004
+  status: draft
+- id: AWG-REQ-MVP5-001
+  title: 'Scale profiles separate records from active cognition'
+  statement: 'Scale benchmarks MUST report population records and active cognition as separate counts across fidelity levels S0 through S4.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-005
+  implemented_by:
+  - AWG-PLAT-005
+  verified_by:
+  - AWG-TEST-MVP5-001
+  status: draft
+- id: AWG-REQ-MVP5-002
+  title: 'Promotion and demotion conserve key state'
+  statement: 'Promotion and demotion MUST conserve tokens and beliefs for the affected record.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-PLAT-005
+  implemented_by:
+  - AWG-PLAT-005
+  verified_by:
+  - AWG-TEST-MVP5-002
+  status: draft
+- id: AWG-REQ-MVP5-003
+  title: 'Branch comparison isolates intervention effects'
+  statement: 'Branch comparison with a shared seed MUST distinguish an intervention effect from seed-only variance.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-SCN-002
+  - AWG-SCN-004
+  implemented_by:
+  - AWG-SCN-002
+  - AWG-SCN-004
+  verified_by:
+  - AWG-TEST-MVP5-003
+  status: draft
+- id: AWG-REQ-WFL-001
+  title: 'Roadmap stages use ordered validation and fail-closed closeout'
+  statement: 'Every roadmap stage MUST execute scope, traceability, implementation, contracts, verification, and closeout in order, and MUST NOT advance while required outputs, acceptance tests, evidence, or validation are incomplete.'
+  source_documents:
+  - AWG-OPS-012
+  implemented_by:
+  - AWG-OPS-012
+  - AWG-OPS-006
+  - AWG-OPS-009
+  verified_by:
+  - AWG-TEST-WFL-001
+  status: draft
+- id: AWG-REQ-UX-APP-001
+  title: World Explorer remains a read-only projection
+  statement: 'The World Explorer review application MUST serve GET-only projections, MUST NOT mutate authoritative world state, and MUST label PMTiles and display clusters as projection-only.'
+  source_documents:
+  - AWG-OPS-001
+  - AWG-UX-001
+  - AWG-GOV-001
+  implemented_by:
+  - AWG-UX-001
+  verified_by:
+  - AWG-TEST-UX-APP-001
+  - AWG-TEST-UX-APP-002
+  status: draft
+- id: AWG-REQ-WFL-002
+  title: Workflow loop stops for human application review
+  statement: 'After the review application stage, the workflow loop MUST stop with awaiting_human_review and MUST NOT auto-complete the human_review stage or report plan_complete as human approval.'
+  source_documents:
+  - AWG-OPS-012
+  - AWG-OPS-001
+  implemented_by:
+  - AWG-OPS-012
+  verified_by:
+  - AWG-TEST-WFL-002
+  status: draft

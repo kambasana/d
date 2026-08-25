@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.2.0",
+  "organization_id": "org:civic-office",
+  "organization_type": "employer",
+  "name": "Civic Office",
+  "member_ids": [
+    "agent:district-0000"
+  ],
+  "leader_ids": [
+    "agent:district-0000"
+  ],
+  "asset_ids": [
+    "asset:office-key-01"
+  ],
+  "place_ids": [
+    "place:office"
+  ],
+  "policies": [
+    {
+      "policy_id": "policy:work-hours",
+      "statement": "Members work at the civic office during scheduled hours."
+    }
+  ],
+  "goals": [
+    {
+      "goal_id": "goal:operate-office",
+      "statement": "Keep the office staffed without LLM control."
+    }
+  ],
+  "provenance": [
+    {
+      "source_id": "generated:mvp2-society",
+      "source_type": "generated",
+      "version": "0.2.0"
+    }
+  ]
+}

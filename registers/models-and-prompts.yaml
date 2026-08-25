@@ -1,0 +1,36 @@
+version: 0.2.0
+records:
+- id: AWG-AI-001
+  provider: Ollama
+  deployment: local/offline
+  roles:
+  - dialogue realization
+  - bounded option ranking
+  - memory summarization
+  - claim extraction
+  model_version: assigned per run
+  prompt_policy_version: assigned per run
+  fallback: deterministic policy or no-op according to capability contract
+  status: adapter_required
+- id: AWG-AI-002
+  provider: OpenRouter
+  deployment: remote/hybrid
+  roles:
+  - optional specialist reasoning and dialogue
+  model_version: assigned per run
+  prompt_policy_version: assigned per run
+  fallback: local provider or deterministic policy according to scenario configuration
+  status: adapter_optional
+- id: AWG-AI-003
+  provider: Provider-neutral structured-output contract
+  deployment: core boundary
+  roles:
+  - intent proposal
+  - option ranking
+  - dialogue realization
+  - claim extraction
+  - summarization
+  model_version: not applicable
+  prompt_policy_version: versioned schema and policy
+  fallback: reject invalid output and preserve state
+  status: required

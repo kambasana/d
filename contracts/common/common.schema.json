@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/common/common.schema.json",
+  "title": "AWG Common Definitions",
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 160,
+      "pattern": "^[A-Za-z][A-Za-z0-9._:-]+$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:[-+][A-Za-z0-9.-]+)?$"
+    },
+    "simulationTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "locationRef": {
+      "type": "object",
+      "properties": {
+        "place_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "geometry_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "building_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "floor_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "room_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "coordinates": {
+          "type": "object",
+          "properties": {
+            "longitude": {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            },
+            "latitude": {
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            }
+          },
+          "required": [
+            "longitude",
+            "latitude"
+          ],
+          "additionalProperties": false
+        },
+        "precision": {
+          "enum": [
+            "exact",
+            "estimated",
+            "room",
+            "floor",
+            "building",
+            "place",
+            "aggregate"
+          ]
+        }
+      },
+      "minProperties": 1,
+      "additionalProperties": false
+    },
+    "provenanceRef": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "source_type": {
+          "enum": [
+            "observed",
+            "imported",
+            "derived",
+            "sampled",
+            "generated",
+            "inferred",
+            "scenario_assumption"
+          ]
+        },
+        "version": {
+          "type": "string"
+        },
+        "checksum": {
+          "type": "string"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_type"
+      ],
+      "additionalProperties": false
+    },
+    "modelProvenance": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "model_version": {
+          "type": "string"
+        },
+        "prompt_policy_version": {
+          "type": "string"
+        },
+        "adapter_version": {
+          "type": "string"
+        },
+        "temperature": {
+          "type": "number"
+        },
+        "seed": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "input_digest": {
+          "type": "string"
+        },
+        "output_digest": {
+          "type": "string"
+        },
+        "recorded_output_ref": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "provider",
+        "model",
+        "prompt_policy_version",
+        "adapter_version"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

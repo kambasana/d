@@ -1,0 +1,10 @@
+.git
+.pytest_cache
+__pycache__
+*.pyc
+site
+dist
+apps/world-explorer/node_modules
+apps/world-explorer/dist
+apps/world-explorer/test-results
+apps/world-explorer/playwright-report

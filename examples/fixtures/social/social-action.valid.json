@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.2.0",
+  "action_id": "social-action:repost:001",
+  "actor_id": "agent:d-0004",
+  "platform_id": "platform:town-square",
+  "account_id": "account:d-0004",
+  "action_type": "repost",
+  "object_ref": "post:c-0003:001",
+  "target_refs": [
+    "account:c-0003"
+  ],
+  "content": null,
+  "claim_refs": [
+    "claim:transformer:002"
+  ],
+  "visibility": "public",
+  "simulation_time": "2042-05-04T14:32:18Z",
+  "inferred_motive": null,
+  "motive_confidence": null
+}

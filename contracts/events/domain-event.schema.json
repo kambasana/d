@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/events/domain-event.schema.json",
+  "title": "Domain Event",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/version"
+    },
+    "event_id": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "world_id": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+    },
+    "scenario_id": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+    },
+    "branch_id": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+    },
+    "simulation_time": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/simulationTime"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "target_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "command_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "parent_event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "caused_by_event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "location": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/locationRef"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "plugin": {
+      "type": "object",
+      "properties": {
+        "plugin_id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "plugin_id",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "model_provenance": {
+      "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/modelProvenance"
+    }
+  },
+  "required": [
+    "schema_version",
+    "event_id",
+    "event_type",
+    "world_id",
+    "scenario_id",
+    "branch_id",
+    "simulation_time",
+    "sequence",
+    "recorded_at",
+    "payload"
+  ],
+  "additionalProperties": false
+}

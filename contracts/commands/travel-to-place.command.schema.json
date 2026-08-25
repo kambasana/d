@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://awg.local/contracts/commands/travel-to-place.command.schema.json",
+  "title": "Travel To Place Command",
+  "allOf": [
+    {
+      "$ref": "https://awg.local/contracts/commands/base-command.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "command_type": {
+          "const": "TravelToPlace"
+        },
+        "actor_id": {
+          "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/identifier"
+        },
+        "origin": {
+          "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/locationRef"
+        },
+        "destination": {
+          "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/locationRef"
+        },
+        "transport_mode": {
+          "enum": [
+            "walk",
+            "wheelchair",
+            "bicycle",
+            "car",
+            "taxi",
+            "bus",
+            "tram",
+            "rail",
+            "ferry",
+            "air",
+            "custom"
+          ]
+        },
+        "depart_not_before": {
+          "$ref": "https://awg.local/contracts/common/common.schema.json#/$defs/simulationTime"
+        },
+        "route_constraints": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "command_type",
+        "actor_id",
+        "origin",
+        "destination",
+        "transport_mode"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

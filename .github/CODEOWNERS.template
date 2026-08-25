@@ -1,0 +1,5 @@
+# Copy to .github/CODEOWNERS after the GitHub organization and review teams exist.
+# Replace example handles with real repository owners.
+* @repository-maintainers
+/docs/01-governance-and-safety/ @architecture-reviewers @security-reviewers
+/contracts/ @architecture-reviewers

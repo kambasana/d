@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.2.0",
+  "command_id": "cmd:travel:001",
+  "command_type": "TravelToPlace",
+  "world_id": "world:london-demo",
+  "scenario_id": "scenario:bridge-closure",
+  "branch_id": "branch:baseline",
+  "actor_id": "agent:a-10482",
+  "issued_by": "agent:a-10482",
+  "requested_simulation_time": "2042-05-04T08:10:00Z",
+  "correlation_id": "corr:journey:001",
+  "reason": "Travel to work",
+  "origin": {
+    "place_id": "place:home-10482",
+    "building_id": "building:home-10482",
+    "precision": "building"
+  },
+  "destination": {
+    "place_id": "place:work-220",
+    "building_id": "building:work-220",
+    "precision": "building"
+  },
+  "transport_mode": "bus",
+  "depart_not_before": "2042-05-04T08:10:00Z",
+  "route_constraints": {
+    "accessible": true
+  }
+}

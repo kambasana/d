@@ -1,0 +1,54 @@
+{
+  "bundle_id": "bundle:world-explorer-review",
+  "external_network_dependencies": [],
+  "invariants_preserved": [
+    "INV-001",
+    "INV-006",
+    "INV-007",
+    "INV-011",
+    "INV-016"
+  ],
+  "mutation_allowed": false,
+  "pmtiles_authority": "presentation_only",
+  "read_only": false,
+  "schema_version": "0.2.0",
+  "static_assets_root": "apps/world-explorer/dist",
+  "worlds": {
+    "information": {
+      "actors": 101,
+      "branch_id": "branch:main",
+      "events": 1000,
+      "reference_time": "2042-05-04T14:30:10Z",
+      "replay_matches": true,
+      "scenario_id": "scenario:mvp4-reference",
+      "state_checksum": "c4b70b2312290402e0622f18c16676add2c2505612a1f3a5cc48c1b1fb7cf9ce",
+      "world_id": "world:mvp4-information"
+    },
+    "scale": {
+      "active_cognition": 50,
+      "branch_id": "branch:main",
+      "population_records": 1000,
+      "scenario_id": "scenario:mvp5-reference",
+      "state_checksum": "c417bce53abddd42f70d22acffb128f48b4df32abe7ddcd476c6919e1140a3bc",
+      "world_id": "world:mvp5-scale"
+    },
+    "spatial": {
+      "branch_id": "branch:baseline",
+      "buildings": [
+        "building:cafe",
+        "building:home-a",
+        "building:home-b",
+        "building:office"
+      ],
+      "district_id": "district:reference",
+      "end_time": "2042-05-05T00:00:00Z",
+      "pmtiles_authority": "presentation_only",
+      "pmtiles_file": "reference-district.pmtiles",
+      "population": 100,
+      "scenario_id": "scenario:mvp1-24-hour",
+      "start_time": "2042-05-04T00:00:00Z",
+      "state_checksum": "371b11d09a8227d11c1433dbcd994c57e10af16238b31dcbc9b427af6d0f9b64",
+      "world_id": "world:mvp1-reference-district"
+    }
+  }
+}
