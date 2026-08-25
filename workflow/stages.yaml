@@ -335,7 +335,7 @@ stages:
     - python3 scripts/stage_workflow.py gate mvp5
 - id: review_app
   title: Read-only World Explorer review application
-  state: active
+  state: closed
   prerequisites:
   - mvp5
   runner: make world-explorer
@@ -343,14 +343,14 @@ stages:
   steps:
   - id: scope
     role: scope
-    status: pending
+    status: completed
     outputs:
     - docs/06-delivery-and-operations/mvp-roadmap-and-definition-of-done.md
     validations:
     - python3 scripts/stage_workflow.py check review_app
   - id: traceability
     role: traceability
-    status: pending
+    status: completed
     outputs:
     - registers/requirements.yaml
     - registers/tests.yaml
@@ -358,7 +358,7 @@ stages:
     - python3 scripts/validate_traceability.py
   - id: implementation
     role: implementation
-    status: pending
+    status: completed
     outputs:
     - awg_world_explorer
     - apps/world-explorer
@@ -367,14 +367,14 @@ stages:
     - python3 -m pytest -q tests/test_world_explorer.py
   - id: contracts
     role: contracts
-    status: pending
+    status: completed
     outputs:
     - contracts/projections
     validations:
     - python3 scripts/validate_contracts.py
   - id: verification
     role: verification
-    status: pending
+    status: completed
     outputs:
     - tests/test_world_explorer.py
     - generated/validation-report.md
@@ -383,14 +383,14 @@ stages:
     - make test
   - id: closeout
     role: closeout
-    status: pending
+    status: completed
     outputs:
     - workflow/closeouts/review_app.yaml
     validations:
     - python3 scripts/stage_workflow.py gate review_app
 - id: human_review
   title: Human review of the World Explorer application
-  state: blocked
+  state: active
   stop_for_human: true
   prerequisites:
   - review_app
@@ -439,4 +439,3 @@ stages:
     - workflow/closeouts/human_review.yaml
     validations:
     - python3 scripts/stage_workflow.py check human_review
-

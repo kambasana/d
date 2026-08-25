@@ -1,7 +1,8 @@
 stage: review_app
-status: ready
+status: closed
 issue: ELE-147
-objectives: Provide a GET-only World Explorer so a human can review the MVP 1 district, information, and scale projections without mutating kernel state.
+objectives: Provide a GET-only World Explorer so a human can review the MVP 1 district, information, and scale projections
+  without mutating kernel state.
 in_scope:
 - Read-only HTTP projection service
 - Synthetic SVG World Explorer UI
@@ -22,8 +23,10 @@ acceptance_tests:
 - AWG-TEST-UX-APP-001
 - AWG-TEST-UX-APP-002
 - AWG-TEST-WFL-002
-performance_target: Building the review bundle and serving health plus review-bundle GET MUST complete without GPU or model calls.
-security_offline_target: The service MUST reject POST, PUT, PATCH, and DELETE, MUST run offline, and MUST NOT expose a mutation path.
+performance_target: Building the review bundle and serving health plus review-bundle GET MUST complete without GPU or model
+  calls.
+security_offline_target: The service MUST reject POST, PUT, PATCH, and DELETE, MUST run offline, and MUST NOT expose a mutation
+  path.
 validation_evidence:
 - command: python3 -m pytest -q tests/test_world_explorer.py
   result: passed
@@ -42,7 +45,8 @@ unresolved_risks:
 - Reviewers may treat the map as world authority
 - Reviewers may treat likes or fluent dialogue as belief
 - Closing the review_app gate could be mistaken for human approval
-release_decision: The review application MAY be shown to a human reviewer. It MUST NOT be treated as production release or empirical validation.
+release_decision: The review application MAY be shown to a human reviewer. It MUST NOT be treated as production release or
+  empirical validation.
 evidence_files:
 - tests/test_world_explorer.py
 - contracts/projections/world-explorer-review-bundle.schema.json
