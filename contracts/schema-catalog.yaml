@@ -88,6 +88,18 @@ schemas:
   id: https://awg.local/contracts/plugins/ollama-config.schema.json
   title: Ollama Adapter Configuration
   version: 0.2.0
+- path: contracts/projections/world-explorer-context.schema.json
+  id: https://awg.local/contracts/projections/world-explorer-context.schema.json
+  title: World Explorer Context
+  version: 0.2.0
+- path: contracts/projections/world-explorer-status.schema.json
+  id: https://awg.local/contracts/projections/world-explorer-status.schema.json
+  title: World Explorer Status
+  version: 0.2.0
+- path: contracts/projections/world-explorer-world-projection.schema.json
+  id: https://awg.local/contracts/projections/world-explorer-world-projection.schema.json
+  title: World Explorer World Projection
+  version: 0.2.0
 - path: contracts/plugins/openrouter-config.schema.json
   id: https://awg.local/contracts/plugins/openrouter-config.schema.json
   title: OpenRouter Adapter Configuration

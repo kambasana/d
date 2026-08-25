@@ -1,0 +1,278 @@
+{
+  "schema_version": "0.2.0",
+  "bundle_id": "review-bundle:mvp1-reference-district",
+  "projection_notice": "This bundle is a read-only review projection. Map clusters, PMTiles display tiles, and screen-space markers do not alter authoritative simulation state.",
+  "world": {
+    "world_id": "world:mvp1-reference-district",
+    "scenario_id": "scenario:mvp1-24-hour",
+    "branch_id": "branch:baseline",
+    "district_id": "district:reference",
+    "district_name": "MVP 1 synthetic reference district",
+    "simulation_time": "2042-05-04T14:30:00Z",
+    "start_time": "2042-05-04T00:00:00Z",
+    "end_time": "2042-05-05T00:00:00Z",
+    "run_state": "completed",
+    "source_classification": "generated",
+    "agent_count": 12
+  },
+  "map_projection": {
+    "kind": "synthetic_svg",
+    "authority": "projection_only",
+    "pmtiles_available": true,
+    "pmtiles_label": "PMTiles display archive (presentation only — not routing or world authority)",
+    "notice": "Basemap tiles and cluster markers are visualization projections. Authoritative positions remain in simulation state."
+  },
+  "semantic_zoom": {
+    "default_level": "district",
+    "levels": [
+      {
+        "id": "district",
+        "label": "District",
+        "description": "Geographic clusters and corridor flows across the reference district.",
+        "min_agent_marker_px": 0
+      },
+      {
+        "id": "street",
+        "label": "Street",
+        "description": "Smaller clusters, individual agents, and building occupancy badges.",
+        "min_agent_marker_px": 8
+      },
+      {
+        "id": "building",
+        "label": "Building",
+        "description": "Floor and room occupancy drill-down for selected buildings.",
+        "min_agent_marker_px": 12
+      }
+    ]
+  },
+  "district": {
+    "bounds": {
+      "min_lon": -2.248,
+      "max_lon": -2.232,
+      "min_lat": 53.479,
+      "max_lat": 53.488
+    },
+    "nodes": [
+      { "node_id": "1001", "longitude": -2.245, "latitude": 53.48, "place_id": "place:home-a" },
+      { "node_id": "1002", "longitude": -2.235, "latitude": 53.48, "place_id": "place:home-b" },
+      { "node_id": "1003", "longitude": -2.24, "latitude": 53.482 },
+      { "node_id": "1004", "longitude": -2.24, "latitude": 53.487, "place_id": "place:office" },
+      { "node_id": "1005", "longitude": -2.234, "latitude": 53.484, "place_id": "place:cafe" },
+      { "node_id": "1006", "longitude": -2.247, "latitude": 53.485, "place_id": "place:park" }
+    ],
+    "edges": [
+      { "edge_id": "edge:home-a-square", "source": "1001", "target": "1003", "distance_m": 390, "accessible": true },
+      { "edge_id": "edge:home-b-square", "source": "1002", "target": "1003", "distance_m": 430, "accessible": true },
+      { "edge_id": "edge:square-office", "source": "1003", "target": "1004", "distance_m": 560, "accessible": true },
+      { "edge_id": "edge:square-cafe", "source": "1003", "target": "1005", "distance_m": 470, "accessible": true },
+      { "edge_id": "edge:square-park", "source": "1003", "target": "1006", "distance_m": 650, "accessible": true },
+      { "edge_id": "edge:closed-shortcut", "source": "1001", "target": "1004", "distance_m": 100, "accessible": false }
+    ],
+    "places": [
+      { "place_id": "place:home-a", "name": "Aster House", "route_node_id": "1001", "building_id": "building:home-a" },
+      { "place_id": "place:home-b", "name": "Birch House", "route_node_id": "1002", "building_id": "building:home-b" },
+      { "place_id": "place:office", "name": "Civic Office", "route_node_id": "1004", "building_id": "building:office" },
+      { "place_id": "place:cafe", "name": "District Cafe", "route_node_id": "1005", "building_id": "building:cafe" },
+      { "place_id": "place:park", "name": "Foundry Park", "route_node_id": "1006" }
+    ],
+    "buildings": [
+      {
+        "building_id": "building:home-a",
+        "name": "Aster House",
+        "route_node_id": "1001",
+        "capacity": 60,
+        "occupancy": 18,
+        "floors": [{ "floor_id": "floor:home-a-ground", "level": 0, "label": "Ground", "occupancy": 18, "room_ids": ["room:home-a"] }]
+      },
+      {
+        "building_id": "building:home-b",
+        "name": "Birch House",
+        "route_node_id": "1002",
+        "capacity": 60,
+        "occupancy": 14,
+        "floors": [{ "floor_id": "floor:home-b-ground", "level": 0, "label": "Ground", "occupancy": 14, "room_ids": ["room:home-b"] }]
+      },
+      {
+        "building_id": "building:office",
+        "name": "Civic Office",
+        "route_node_id": "1004",
+        "capacity": 60,
+        "occupancy": 42,
+        "floors": [
+          { "floor_id": "floor:office-ground", "level": 0, "label": "Ground", "occupancy": 12, "room_ids": ["room:office-lobby"] },
+          { "floor_id": "floor:office-1", "level": 1, "label": "Floor 1", "occupancy": 30, "room_ids": ["room:office-main"] }
+        ]
+      },
+      {
+        "building_id": "building:cafe",
+        "name": "District Cafe",
+        "route_node_id": "1005",
+        "capacity": 60,
+        "occupancy": 22,
+        "floors": [{ "floor_id": "floor:cafe-ground", "level": 0, "label": "Ground", "occupancy": 22, "room_ids": ["room:cafe-main"] }]
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster_id": "cluster:residential-west",
+      "kind": "geographic",
+      "label": "Residential west",
+      "count": 8,
+      "centroid": { "longitude": -2.246, "latitude": 53.482 },
+      "visible_at": ["district"],
+      "member_agent_ids": ["agent:a-001", "agent:a-002", "agent:a-003", "agent:a-004"],
+      "member_building_ids": ["building:home-a"],
+      "projection_notice": "Geographic cluster — screen-space aggregation only."
+    },
+    {
+      "cluster_id": "cluster:civic-core",
+      "kind": "geographic",
+      "label": "Civic core",
+      "count": 14,
+      "centroid": { "longitude": -2.238, "latitude": 53.485 },
+      "visible_at": ["district"],
+      "member_agent_ids": ["agent:a-005", "agent:a-006", "agent:a-007", "agent:a-008"],
+      "member_building_ids": ["building:office", "building:cafe"],
+      "projection_notice": "Geographic cluster — screen-space aggregation only."
+    },
+    {
+      "cluster_id": "cluster:cafe-co-located",
+      "kind": "co_location",
+      "label": "Cafe co-located (9)",
+      "count": 9,
+      "centroid": { "longitude": -2.234, "latitude": 53.484 },
+      "visible_at": ["street", "building"],
+      "member_agent_ids": ["agent:a-009", "agent:a-010", "agent:a-011"],
+      "member_building_ids": ["building:cafe"],
+      "projection_notice": "Co-location cluster — radial expansion is a selection aid, not movement."
+    }
+  ],
+  "agents": [
+    { "agent_id": "agent:a-001", "display_name": "A-001", "longitude": -2.2451, "latitude": 53.4802, "place_id": "place:home-a", "building_id": "building:home-a", "status": "at_home", "cluster_id": "cluster:residential-west" },
+    { "agent_id": "agent:a-002", "display_name": "A-002", "longitude": -2.2448, "latitude": 53.4801, "place_id": "place:home-a", "building_id": "building:home-a", "status": "at_home", "cluster_id": "cluster:residential-west" },
+    { "agent_id": "agent:a-005", "display_name": "A-005", "longitude": -2.2402, "latitude": 53.4868, "place_id": "place:office", "building_id": "building:office", "status": "working", "cluster_id": "cluster:civic-core" },
+    { "agent_id": "agent:a-006", "display_name": "A-006", "longitude": -2.2398, "latitude": 53.4871, "place_id": "place:office", "building_id": "building:office", "status": "working", "cluster_id": "cluster:civic-core" },
+    { "agent_id": "agent:a-009", "display_name": "A-009", "longitude": -2.2341, "latitude": 53.4841, "place_id": "place:cafe", "building_id": "building:cafe", "status": "socializing", "cluster_id": "cluster:cafe-co-located" },
+    { "agent_id": "agent:a-010", "display_name": "A-010", "longitude": -2.2339, "latitude": 53.4840, "place_id": "place:cafe", "building_id": "building:cafe", "status": "socializing", "cluster_id": "cluster:cafe-co-located" },
+    { "agent_id": "agent:a-011", "display_name": "A-011", "longitude": -2.2415, "latitude": 53.4825, "place_id": "place:park", "status": "walking", "cluster_id": "cluster:civic-core" },
+    { "agent_id": "agent:a-012", "display_name": "A-012", "longitude": -2.2410, "latitude": 53.4820, "place_id": "place:park", "status": "walking" }
+  ],
+  "agent_details": {
+    "agent:a-005": {
+      "agent_id": "agent:a-005",
+      "display_name": "A-005",
+      "world_truth": {
+        "current_place_id": "place:office",
+        "current_place_name": "Civic Office — Floor 1",
+        "building_id": "building:office",
+        "building_name": "Civic Office",
+        "journey_status": "stationary",
+        "coordinates": { "longitude": -2.2402, "latitude": 53.4868 },
+        "occupancy_zone": "room:office-main",
+        "last_event_id": "event:occupancy-4412",
+        "last_event_summary": "Entered occupancy zone room:office-main at 14:12",
+        "fidelity": "S2_scheduled"
+      },
+      "agent_perspective": {
+        "observed_place_name": "Civic Office lobby",
+        "belief_summary": "Believes the office is at normal weekday occupancy; unaware of cafe queue length.",
+        "confidence": 0.72,
+        "claims": [
+          { "claim_id": "claim:office-open", "text": "Office is open for public services", "confidence": 0.91, "source_type": "routine_observation" },
+          { "claim_id": "claim:cafe-busy", "text": "District Cafe is unusually busy", "confidence": 0.34, "source_type": "hearsay" }
+        ],
+        "knowledge_gaps": ["Park footfall", "Closed shortcut status"],
+        "stale": false
+      }
+    },
+    "agent:a-009": {
+      "agent_id": "agent:a-009",
+      "display_name": "A-009",
+      "world_truth": {
+        "current_place_id": "place:cafe",
+        "current_place_name": "District Cafe — main room",
+        "building_id": "building:cafe",
+        "building_name": "District Cafe",
+        "journey_status": "stationary",
+        "coordinates": { "longitude": -2.2341, "latitude": 53.4841 },
+        "occupancy_zone": "room:cafe-main",
+        "last_event_id": "event:occupancy-4488",
+        "last_event_summary": "Co-located with 8 others in room:cafe-main",
+        "fidelity": "S2_scheduled"
+      },
+      "agent_perspective": {
+        "observed_place_name": "District Cafe",
+        "belief_summary": "Aware of crowding; uncertain how long the queue will last.",
+        "confidence": 0.81,
+        "claims": [
+          { "claim_id": "claim:queue-long", "text": "Cafe service queue exceeds 10 minutes", "confidence": 0.76, "source_type": "direct_observation" }
+        ],
+        "knowledge_gaps": ["Office staffing changes"],
+        "stale": false
+      }
+    },
+    "agent:a-011": {
+      "agent_id": "agent:a-011",
+      "display_name": "A-011",
+      "world_truth": {
+        "current_place_id": "place:park",
+        "current_place_name": "Foundry Park path",
+        "journey_status": "en_route",
+        "coordinates": { "longitude": -2.2415, "latitude": 53.4825 },
+        "last_event_id": "event:journey-9921",
+        "last_event_summary": "Walking toward Civic Office via square node 1003",
+        "fidelity": "S2_scheduled"
+      },
+      "agent_perspective": {
+        "observed_place_name": "Park path near square",
+        "belief_summary": "Recalled hearing about a bridge closure elsewhere; not verified locally.",
+        "confidence": 0.55,
+        "claims": [
+          { "claim_id": "claim:bridge-rumor", "text": "A bridge closure may affect evening commute", "confidence": 0.41, "source_type": "social_feed" }
+        ],
+        "knowledge_gaps": ["Exact route closure", "Cafe occupancy"],
+        "stale": true
+      }
+    }
+  },
+  "firehose": [
+    { "event_id": "event:journey-9910", "sequence": 1380, "simulation_time": "2042-05-04T14:00:00Z", "event_type": "journey.started", "actor_id": "agent:a-011", "place_id": "place:park", "summary": "A-011 started walking journey toward Civic Office", "causal_parent_ids": [] },
+    { "event_id": "event:occupancy-4412", "sequence": 1398, "simulation_time": "2042-05-04T14:12:00Z", "event_type": "occupancy.entered", "actor_id": "agent:a-005", "place_id": "place:office", "summary": "A-005 entered room:office-main", "causal_parent_ids": ["event:journey-8801"] },
+    { "event_id": "event:occupancy-4488", "sequence": 1402, "simulation_time": "2042-05-04T14:18:00Z", "event_type": "occupancy.entered", "actor_id": "agent:a-009", "place_id": "place:cafe", "summary": "A-009 co-located in room:cafe-main (9 agents)", "causal_parent_ids": [] },
+    { "event_id": "event:claim-2201", "sequence": 1405, "simulation_time": "2042-05-04T14:22:00Z", "event_type": "claim.observed", "actor_id": "agent:a-009", "summary": "A-009 formed claim: Cafe service queue exceeds 10 minutes", "causal_parent_ids": ["event:occupancy-4488"] },
+    { "event_id": "event:journey-9921", "sequence": 1410, "simulation_time": "2042-05-04T14:28:00Z", "event_type": "journey.progress", "actor_id": "agent:a-011", "place_id": "place:park", "summary": "A-011 progressing on walk route via node 1003", "causal_parent_ids": ["event:journey-9910"] },
+    { "event_id": "event:social-771", "sequence": 1412, "simulation_time": "2042-05-04T14:29:00Z", "event_type": "social.message_seen", "actor_id": "agent:a-011", "summary": "A-011 exposed to unverified bridge closure post", "causal_parent_ids": [] }
+  ],
+  "timeline": {
+    "default_tick_index": 4,
+    "ticks": [
+      { "tick_index": 0, "simulation_time": "2042-05-04T06:00:00Z", "label": "06:00 morning", "is_historical_projection": true, "event_count": 120 },
+      { "tick_index": 1, "simulation_time": "2042-05-04T09:00:00Z", "label": "09:00 commute", "is_historical_projection": true, "event_count": 340 },
+      { "tick_index": 2, "simulation_time": "2042-05-04T12:00:00Z", "label": "12:00 midday", "is_historical_projection": true, "event_count": 580 },
+      { "tick_index": 3, "simulation_time": "2042-05-04T14:00:00Z", "label": "14:00 afternoon", "is_historical_projection": true, "event_count": 920 },
+      { "tick_index": 4, "simulation_time": "2042-05-04T14:30:00Z", "label": "14:30 current review", "is_historical_projection": false, "event_count": 1412 },
+      { "tick_index": 5, "simulation_time": "2042-05-04T18:00:00Z", "label": "18:00 evening", "is_historical_projection": true, "event_count": 0 }
+    ]
+  },
+  "information_space": {
+    "channels": [
+      { "channel_id": "channel:district-board", "label": "District notice board", "message_count": 4, "reach_estimate": 120, "classification": "synthetic" },
+      { "channel_id": "channel:cafe-local", "label": "Cafe local chatter", "message_count": 18, "reach_estimate": 35, "classification": "simulated" },
+      { "channel_id": "channel:regional-feed", "label": "Regional feed (unverified)", "message_count": 7, "reach_estimate": 400, "classification": "synthetic" }
+    ],
+    "exposure_edges": 26,
+    "claim_count": 9,
+    "disputed_claim_count": 2,
+    "notice": "Information-space metrics are analytical projections over the event firehose — not empirical social-media measurements."
+  },
+  "scale_summary": {
+    "current_level": "district",
+    "population_visible": 12,
+    "population_total": 12,
+    "cluster_count": 3,
+    "building_count": 4,
+    "active_journeys": 2,
+    "projection_density": "sampled fixture (not population census)"
+  }
+}

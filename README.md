@@ -116,6 +116,16 @@ make mvp5
 Population records stay separate from active cognition. Promotion conserves
 tokens and beliefs. Shared-seed branch comparison isolates an intervention.
 
+## Run the World Explorer review service
+
+```bash
+make world-explorer
+```
+
+Serves read-only JSON projections from the MVP 1, MVP 4, and MVP 5 reference
+kernels. Mutating HTTP methods are rejected. See
+[`apps/world-explorer/README.md`](apps/world-explorer/README.md).
+
 ## Run the staged contributor workflow
 
 ```bash

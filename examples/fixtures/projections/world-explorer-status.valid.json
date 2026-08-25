@@ -1,0 +1,14 @@
+{
+  "bundle_id": "bundle:world-explorer-review",
+  "event_counts": {
+    "information": 1000,
+    "scale": 83,
+    "spatial": 1400
+  },
+  "healthy": true,
+  "information_state_checksum": "c4b70b2312290402e0622f18c16676add2c2505612a1f3a5cc48c1b1fb7cf9ce",
+  "read_only": true,
+  "scale_state_checksum": "c417bce53abddd42f70d22acffb128f48b4df32abe7ddcd476c6919e1140a3bc",
+  "schema_version": "0.2.0",
+  "spatial_state_checksum": "371b11d09a8227d11c1433dbcd994c57e10af16238b31dcbc9b427af6d0f9b64"
+}
