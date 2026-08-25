@@ -9,23 +9,24 @@ export type LoadState =
 
 export function useReviewBundle(): LoadState & { reload: () => void } {
   const [state, setState] = useState<LoadState>({ status: 'loading' })
+  const [reloadToken, setReloadToken] = useState(0)
 
-  const load = useCallback(() => {
-    const controller = new AbortController()
+  const reload = useCallback(() => {
     setState({ status: 'loading' })
+    setReloadToken((value) => value + 1)
+  }, [])
+
+  useEffect(() => {
+    const controller = new AbortController()
     fetchReviewBundle(controller.signal)
       .then((data) => setState({ status: 'ready', data }))
       .catch((error: unknown) => {
+        if (controller.signal.aborted) return
         const message = error instanceof Error ? error.message : 'Unknown load error'
         setState({ status: 'error', message })
       })
     return () => controller.abort()
-  }, [])
+  }, [reloadToken])
 
-  useEffect(() => {
-    const cleanup = load()
-    return cleanup
-  }, [load])
-
-  return { ...state, reload: load }
+  return { ...state, reload }
 }

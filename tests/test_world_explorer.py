@@ -152,6 +152,12 @@ def test_review_bundle_endpoint_matches_ui_contract(server_url, review_bundle) -
     assert local["bundle_id"] == payload["bundle_id"]
 
 
+def test_review_bundle_endpoint_caches_immutable_projection(server_url) -> None:
+    _, first = _get(f"{server_url}/api/review-bundle")
+    _, second = _get(f"{server_url}/api/review-bundle")
+    assert second == first
+
+
 def test_mutating_methods_return_405(server_url) -> None:
     for method in ("POST", "PUT", "PATCH", "DELETE"):
         assert _request(method, f"{server_url}/api/v1/context") == HTTPStatus.METHOD_NOT_ALLOWED

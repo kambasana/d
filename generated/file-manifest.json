@@ -1,14 +1,19 @@
 {
   "pack": "Agentic World Graph",
   "version": "0.2.0",
-  "created_at": "2026-08-25T00:23:59.976482+00:00",
+  "created_at": "2026-08-25T00:54:56.560891+00:00",
   "scope": "All source files except generated/file-manifest.json and dist release artefacts.",
   "excluded_paths": [
     "generated/file-manifest.json",
     "dist/**"
   ],
-  "file_count": 299,
+  "file_count": 362,
   "files": [
+    {
+      "path": ".dockerignore",
+      "size": 176,
+      "sha256": "c360c59c3e82e11256743a2c27c1c52b11e953b3e32a652a04a59b6a72a86d74"
+    },
     {
       "path": ".editorconfig",
       "size": 196,
@@ -41,8 +46,8 @@
     },
     {
       "path": ".gitignore",
-      "size": 79,
-      "sha256": "6564b24b2e121f5bcd4bc61b024ff5cb2f4a69cef3a78e923067c305a3c24254"
+      "size": 93,
+      "sha256": "9addc0d2614a711a92a5e0d93fb478649f3554e67dfde61ce1290648d2b3ce10"
     },
     {
       "path": "AGENTS.md",
@@ -51,8 +56,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "size": 2413,
-      "sha256": "48b680762cc5ebe99b6640719ebec2982800e61271cb1851d6ff5a84e618b190"
+      "size": 2602,
+      "sha256": "8da1841a67228727665524718d8c5fa2d3ffc1eaa58b2dfb10686d29dea722f3"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -61,8 +66,8 @@
     },
     {
       "path": "Dockerfile",
-      "size": 213,
-      "sha256": "090ba00a20c6d5f3d5434b6842b4df082a688e7e0c728673dad3f1d961429039"
+      "size": 483,
+      "sha256": "2eb58e64534894ad78fe02f6702d6d765c6c82ac69c45324c4793f0f554058bc"
     },
     {
       "path": "GOVERNANCE.md",
@@ -76,8 +81,8 @@
     },
     {
       "path": "Makefile",
-      "size": 1297,
-      "sha256": "49ac2860f406ac339a30283176ccbbd4866ea246cd38596658baa69f632fe2ce"
+      "size": 1484,
+      "sha256": "effedbfe9978091e72da6c4cfc6da462d83e5709a7b76653e9747158f8f3190b"
     },
     {
       "path": "NOTICE.md",
@@ -86,13 +91,228 @@
     },
     {
       "path": "README.md",
-      "size": 6087,
-      "sha256": "ba3433f63792439cfe65f2271bdbc058cb95e4ebc3b3159292c7225bf20ee49f"
+      "size": 6649,
+      "sha256": "ff117eea262866b51b440dd00874ee71053470252e43bbb6bcbe199002e562b8"
     },
     {
       "path": "SECURITY.md",
       "size": 642,
       "sha256": "9de18be2aa8be294d99cddb7254464bd7d2142dd5e9c02d4baf242cc2ae83694"
+    },
+    {
+      "path": "apps/world-explorer/.gitignore",
+      "size": 284,
+      "sha256": "d8cb89b46d4368107c42cf0647dbb9c50a77434bc7b41be264a4ace9b0012571"
+    },
+    {
+      "path": "apps/world-explorer/.oxlintrc.json",
+      "size": 245,
+      "sha256": "b4d344818a1e1bf43997e4744a9153c8eef770c98b58229cd86363dabb85ded4"
+    },
+    {
+      "path": "apps/world-explorer/README.md",
+      "size": 2133,
+      "sha256": "317bbfb8861fa1a3954fc9cc3aec5c7f5175f4124938d80a973f6fd551cd586f"
+    },
+    {
+      "path": "apps/world-explorer/e2e/world-explorer.spec.ts",
+      "size": 3346,
+      "sha256": "97446c58239d3a62d8ede8f663cec4a261f82c9df2aa36623b2abbc8d62f5fdd"
+    },
+    {
+      "path": "apps/world-explorer/index.html",
+      "size": 548,
+      "sha256": "b23b3819526ec9a4d20708360f858b53a3a32f6f2e99d7671f6e3fe91bb97c37"
+    },
+    {
+      "path": "apps/world-explorer/package-lock.json",
+      "size": 95627,
+      "sha256": "70f001bb634ccb7f9b94a0a150a37131b45f94c29357a306c9b85f8576f9ce91"
+    },
+    {
+      "path": "apps/world-explorer/package.json",
+      "size": 957,
+      "sha256": "594bc5d1f4367b6bba801d8020fb2f73c8973d05dea6ba4739313376af413581"
+    },
+    {
+      "path": "apps/world-explorer/playwright.config.ts",
+      "size": 642,
+      "sha256": "754a7e0e48944b96cba0c9fed5e6d632362bd3b06c99ed2ea2f1f2d8007f0da0"
+    },
+    {
+      "path": "apps/world-explorer/public/api/review-bundle.json",
+      "size": 15363,
+      "sha256": "aca803c5d438b05712c13dbe29e50a3aea1b8aabf45fa56a36f5e755fe344b97"
+    },
+    {
+      "path": "apps/world-explorer/public/favicon.svg",
+      "size": 9522,
+      "sha256": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66"
+    },
+    {
+      "path": "apps/world-explorer/public/icons.svg",
+      "size": 5031,
+      "sha256": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a"
+    },
+    {
+      "path": "apps/world-explorer/src/App.css",
+      "size": 14290,
+      "sha256": "38e2bd3ab2450b074da493ac526f8cb2e98e0e90eea80190998b51dcb47410f1"
+    },
+    {
+      "path": "apps/world-explorer/src/App.test.tsx",
+      "size": 935,
+      "sha256": "85679a58b5df4dccd7cb0557901af97e13af9891a26485bacb4e7b285d0da7da"
+    },
+    {
+      "path": "apps/world-explorer/src/App.tsx",
+      "size": 3920,
+      "sha256": "5c2979a0985574a264a41d25acadf3756b852d34e580c4f1a8b742f1b84bb73e"
+    },
+    {
+      "path": "apps/world-explorer/src/api/reviewBundle.test.ts",
+      "size": 1219,
+      "sha256": "ae0fd2df3b8bd6054c144d8df3326f8bc36185e31bc68d9ace0041b88cf4f4e4"
+    },
+    {
+      "path": "apps/world-explorer/src/api/reviewBundle.ts",
+      "size": 1424,
+      "sha256": "4605b4d4533d0e341d0c478839e3afa04718f257f06364842f7fb9ce8f42ff56"
+    },
+    {
+      "path": "apps/world-explorer/src/api/types.ts",
+      "size": 5079,
+      "sha256": "b627360a32ff5a2742b584277606be2c283ba8cf4dd5b00dec28ebafcc49f857"
+    },
+    {
+      "path": "apps/world-explorer/src/assets/hero.png",
+      "size": 13057,
+      "sha256": "881ffbcaafc212e49addad08846a5b82761355fa20624253af3477ba33262c5c"
+    },
+    {
+      "path": "apps/world-explorer/src/assets/react.svg",
+      "size": 4126,
+      "sha256": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5"
+    },
+    {
+      "path": "apps/world-explorer/src/assets/vite.svg",
+      "size": 8709,
+      "sha256": "5be21acd42eb7b896e517f4e0f0f11eb5c5d9e54fbbcebe9453f033008fcca6f"
+    },
+    {
+      "path": "apps/world-explorer/src/components/AppShell.css",
+      "size": 105,
+      "sha256": "a68176fe1e422f3fb90118efee511535ff0119c0c4593014dc2a7a7033bffe43"
+    },
+    {
+      "path": "apps/world-explorer/src/components/AppShell.tsx",
+      "size": 1254,
+      "sha256": "e811a28a599ab281fa08afc4a16057b7d88314d9eeefd1c7316e74a516f1a39d"
+    },
+    {
+      "path": "apps/world-explorer/src/components/DistrictMap.tsx",
+      "size": 8720,
+      "sha256": "cb5c1cf9b3b1148ff0d043285ae5992c30a5ade2fd98f87219eae583a1a68dcc"
+    },
+    {
+      "path": "apps/world-explorer/src/components/FirehosePanel.tsx",
+      "size": 4178,
+      "sha256": "6909621b9dc380b8cec1e5046dd1426cb0f0c00453ad3dd547456e5b569b2693"
+    },
+    {
+      "path": "apps/world-explorer/src/components/InformationSpacePanel.tsx",
+      "size": 1350,
+      "sha256": "8b1736d76b38a4e2bfd254734e9956e913db38d6c1d3a8df8484ab171b27c631"
+    },
+    {
+      "path": "apps/world-explorer/src/components/Inspector.tsx",
+      "size": 7152,
+      "sha256": "e8cea9e95e0b8901746b3c7b6f9a6b0ca075ed26f90569302cdc52f35395d571"
+    },
+    {
+      "path": "apps/world-explorer/src/components/LayerRail.tsx",
+      "size": 3136,
+      "sha256": "2c423180f01a53a26e33a4678d38a442f7db9a081dd3d533b4dc7fdb58c81700"
+    },
+    {
+      "path": "apps/world-explorer/src/components/ScaleSummaryPanel.tsx",
+      "size": 1134,
+      "sha256": "bbc225298d76b29a5527fa10bdab9a372fdcfdd040a727a52e858878786ffc11"
+    },
+    {
+      "path": "apps/world-explorer/src/components/TimelineScrubber.tsx",
+      "size": 2352,
+      "sha256": "c12cdfbb21ac338d5e9b296a70dd4e3fe271a7d4c0f630044cf31d4c2263fa28"
+    },
+    {
+      "path": "apps/world-explorer/src/components/TopBar.tsx",
+      "size": 1957,
+      "sha256": "4379d4ae99e066a7a5a9cedeafaf6810ae16aa587196eb0155edbc833cb8e768"
+    },
+    {
+      "path": "apps/world-explorer/src/fixtures/review-bundle.synthetic.json",
+      "size": 15363,
+      "sha256": "aca803c5d438b05712c13dbe29e50a3aea1b8aabf45fa56a36f5e755fe344b97"
+    },
+    {
+      "path": "apps/world-explorer/src/hooks/useFirehoseFilters.test.ts",
+      "size": 1595,
+      "sha256": "d9dec597bf98ffbea195b75700a7d1188698cc642f7499459c5d68b880c852a1"
+    },
+    {
+      "path": "apps/world-explorer/src/hooks/useFirehoseFilters.ts",
+      "size": 1530,
+      "sha256": "aacceb4c0526449e93d22690c2d911a6c5159b4a010723f331bdee4aa6b3bc70"
+    },
+    {
+      "path": "apps/world-explorer/src/hooks/useReviewBundle.ts",
+      "size": 1108,
+      "sha256": "34df750fe566786e0c9587007a56768616f0490a859fdb6124e0078e11bc66a9"
+    },
+    {
+      "path": "apps/world-explorer/src/index.css",
+      "size": 172,
+      "sha256": "4509701f8381e4f54da1ca0f4a8396a6d3c30b6f353cd18e3c7a0ec6a3208693"
+    },
+    {
+      "path": "apps/world-explorer/src/main.tsx",
+      "size": 230,
+      "sha256": "6e9e5807fcbd48b75a96db5cbef36c996262196be42e6d4760dc86babbe61ad2"
+    },
+    {
+      "path": "apps/world-explorer/src/test/setup.ts",
+      "size": 170,
+      "sha256": "72f888a501bfa76bacfc19922d6f9231aa8496596d3b5a5542992d1fc804e50f"
+    },
+    {
+      "path": "apps/world-explorer/src/utils/mapProjection.test.ts",
+      "size": 1149,
+      "sha256": "b4e56407294a63d6325eb16a4ea148dfda9c41c638368b9a490042802b4459cf"
+    },
+    {
+      "path": "apps/world-explorer/src/utils/mapProjection.ts",
+      "size": 1388,
+      "sha256": "8b99f02d9f2506a4878a95ba8d1858fb53c079b83d228b8b8f3fb33e3c4f92bb"
+    },
+    {
+      "path": "apps/world-explorer/tsconfig.app.json",
+      "size": 704,
+      "sha256": "f73eab2550a80016f93b53421ffa9f331d234f9bb13b8a1f629fb61d3b2c4f1c"
+    },
+    {
+      "path": "apps/world-explorer/tsconfig.json",
+      "size": 119,
+      "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808"
+    },
+    {
+      "path": "apps/world-explorer/tsconfig.node.json",
+      "size": 558,
+      "sha256": "d366cc0827139db39c61815f22491bbfda56c654354a42ad7795143d314e45e8"
+    },
+    {
+      "path": "apps/world-explorer/vite.config.ts",
+      "size": 1249,
+      "sha256": "7a32c2c09618c74cda537ccc539459e476fedc7eafaad2ecf71082155c3e4412"
     },
     {
       "path": "archive/README.md",
@@ -203,6 +423,26 @@
       "path": "awg_mvp5/scale.py",
       "size": 4447,
       "sha256": "ed30869057696731c2fc7fa89c5137997cff2962b8fa7a5acfa8d59ff07d0d24"
+    },
+    {
+      "path": "awg_world_explorer/__init__.py",
+      "size": 339,
+      "sha256": "5e98d936fbc66aa142a007fefef8d1d066c4ef4be257a9be048eaf522692bf01"
+    },
+    {
+      "path": "awg_world_explorer/bundle.py",
+      "size": 10924,
+      "sha256": "c73cd5c4d6a388587fa82ee3e496e7dfb7b33320b0427eade744841933dbf15e"
+    },
+    {
+      "path": "awg_world_explorer/projections.py",
+      "size": 14301,
+      "sha256": "42e46f29b62ff8e0b3be65ad8da82254ea53518e3df1b039d86e46e0ce9d46f7"
+    },
+    {
+      "path": "awg_world_explorer/server.py",
+      "size": 8810,
+      "sha256": "154334896b987e6ce440d73f19a54553fe5902407ec11d7459982bb8882ca46e"
     },
     {
       "path": "contracts/README.md",
@@ -330,6 +570,26 @@
       "sha256": "2886d13f1a87c240d86fcc77f63852883dc35e5098d963c6a1b1d4d36720962d"
     },
     {
+      "path": "contracts/projections/world-explorer-context.schema.json",
+      "size": 1426,
+      "sha256": "88e2e3893a0c3d5abcfedc4137034408a9c83e43da5a8a00c0e4d0936cb9ed0b"
+    },
+    {
+      "path": "contracts/projections/world-explorer-review-bundle.schema.json",
+      "size": 1635,
+      "sha256": "61f745d362df4f312cd6f61e7dc1be4944533b6665b6d062e4981c00e232ffea"
+    },
+    {
+      "path": "contracts/projections/world-explorer-status.schema.json",
+      "size": 1309,
+      "sha256": "cabd2a86bb13f217ac5ef63eb589008fdddedc0b395332eb8dbe5ec0f9725b7f"
+    },
+    {
+      "path": "contracts/projections/world-explorer-world-projection.schema.json",
+      "size": 1626,
+      "sha256": "5a3da4ca92cee3804dca4dbbf0b62ac1a3c1002e8a429a2288ab901f03468917"
+    },
+    {
       "path": "contracts/scenarios/fidelity-profile.schema.json",
       "size": 932,
       "sha256": "f5ef953f060f739bd35b345ae01178c1fd0e2e25b3c835bf61a4cf6d753c9f90"
@@ -351,8 +611,8 @@
     },
     {
       "path": "contracts/schema-catalog.yaml",
-      "size": 6013,
-      "sha256": "2951a2c388183d6d6ea8abfb3998144715c579196b18a960bcdfbef468ef7219"
+      "size": 6835,
+      "sha256": "b1cae3d37ce3ae151e5f90c6c33d0efdc4d3c3053a5bd3fce01785a327a5a209"
     },
     {
       "path": "contracts/social-platform/social-action.schema.json",
@@ -416,8 +676,8 @@
     },
     {
       "path": "docker-compose.yml",
-      "size": 138,
-      "sha256": "56b1c6c28d2f8c7833650ad064da78cda3316b491b7be87a38aeb49fded75802"
+      "size": 352,
+      "sha256": "0ffd4e4fe0bbd515cbb909d97cbdab4c745ac3deff997e94066f008f979ee87d"
     },
     {
       "path": "docs/00-vision-and-research/README.md",
@@ -756,8 +1016,8 @@
     },
     {
       "path": "docs/06-delivery-and-operations/automated-contributor-stage-workflow.md",
-      "size": 8287,
-      "sha256": "9abe1be390d0014c9304ca9b21704ae03777ee7500ec92324b571039d34e708b"
+      "size": 8525,
+      "sha256": "c2aba6c4caf96f4e66f8bb9cdefa63c290ede9114adff87a7b9310aee60a3a2d"
     },
     {
       "path": "docs/06-delivery-and-operations/backup-restore-and-disaster-recovery.md",
@@ -786,8 +1046,8 @@
     },
     {
       "path": "docs/06-delivery-and-operations/mvp-roadmap-and-definition-of-done.md",
-      "size": 14433,
-      "sha256": "e502dece96e0efe90a16167c577eca7a284a8e68cf88c1cde5380c5b2fc7317f"
+      "size": 15192,
+      "sha256": "d1357f8a1c42342e416b87eeaaf18b5bb1fe539871ad200729bb3198eab9a10f"
     },
     {
       "path": "docs/06-delivery-and-operations/observability-reliability-and-recovery.md",
@@ -936,8 +1196,8 @@
     },
     {
       "path": "examples/fixtures/index.yaml",
-      "size": 8749,
-      "sha256": "63a7847c11455aff331fb2ebe2fa4ad979b3f56c585a816f4c55d79d2ea66acb"
+      "size": 10362,
+      "sha256": "03e3a5a7833c3387426b20bf2ce98af627e6795f044381611753ec94d3bf44fe"
     },
     {
       "path": "examples/fixtures/plugins/model-output-artifact.invalid.json",
@@ -958,6 +1218,36 @@
       "path": "examples/fixtures/plugins/plugin-manifest.invalid.json",
       "size": 3,
       "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "path": "examples/fixtures/projections/world-explorer-context.invalid.json",
+      "size": 1692,
+      "sha256": "6ac128d593fbbf1ce471afab028815ad760d6414905fbedc2f24a4755517f569"
+    },
+    {
+      "path": "examples/fixtures/projections/world-explorer-context.valid.json",
+      "size": 1691,
+      "sha256": "eee2b3bf05f748a85a731daed61d08b392e57371e1d597a3badd11e4ddb60c8a"
+    },
+    {
+      "path": "examples/fixtures/projections/world-explorer-review-bundle.invalid.json",
+      "size": 816,
+      "sha256": "f8ed7d43f16ad35fed6f595c1f67c426248302a63008c95504b1d9fc71899eaf"
+    },
+    {
+      "path": "examples/fixtures/projections/world-explorer-review-bundle.valid.json",
+      "size": 1142,
+      "sha256": "4e8cbc59ac11f4a57f0f91961e33f9680fc71152d476eafcb91df53e8ccb932c"
+    },
+    {
+      "path": "examples/fixtures/projections/world-explorer-status.valid.json",
+      "size": 496,
+      "sha256": "930f642e6f26fc559d1f68762392cb9d46ab4afa7e3c2c2f0e574b7fd6a4ecbc"
+    },
+    {
+      "path": "examples/fixtures/projections/world-explorer-world-projection.valid.json",
+      "size": 34900,
+      "sha256": "b653e7de4e73fe637b6343d75e33f77c571141b98ceb4d71aa1a9ba83a212fe8"
     },
     {
       "path": "examples/fixtures/scenarios/bridge-closure.valid.json",
@@ -1107,7 +1397,7 @@
     {
       "path": "generated/completeness-report.md",
       "size": 697,
-      "sha256": "8ca44bce6801ce9e2a263d752a1441fbb024bbf3bfff60d09caa86405dc8133a"
+      "sha256": "7b48c49bf4fb328545cf4b7785b89eb35648781427481bdaad00212d08c503d4"
     },
     {
       "path": "generated/conversation-requirements-coverage.md",
@@ -1156,13 +1446,13 @@
     },
     {
       "path": "generated/pack-manifest.json",
-      "size": 35199,
-      "sha256": "d5499c1db4e051dfdae8ab74ba5188afae98e024d79006e08ffa06774be3b415"
+      "size": 35301,
+      "sha256": "b3e458eb05491ff1106ca9eb6ff4977e78aba62a5d68ee207b3399bcba980421"
     },
     {
       "path": "generated/requirements-traceability-matrix.md",
-      "size": 25805,
-      "sha256": "146a934d965b367c7087631fc2620eaa3f38ca90023a998be6cc51309273619a"
+      "size": 26385,
+      "sha256": "7667ebe56fef85cf8b98b57eacdd828cf8546970752ac2f86679a5cd06c149d1"
     },
     {
       "path": "generated/risk-and-assumption-register.md",
@@ -1172,7 +1462,7 @@
     {
       "path": "generated/validation-report.md",
       "size": 885,
-      "sha256": "e4e19c4f578e31ee6b3252cd393a9f201ffa1c69ddd824c8cd5be0fbf184e8cc"
+      "sha256": "1fe5d579d0a5e5a046c754cb80c30b9f24d9e261350d96690fba130c539802a0"
     },
     {
       "path": "mkdocs.yml",
@@ -1181,13 +1471,13 @@
     },
     {
       "path": "pack-manifest.yaml",
-      "size": 26816,
-      "sha256": "e5e3c15643d160f2188ff06443c1ac9eb72fb199a70bbf7614b9b57117cdc090"
+      "size": 26903,
+      "sha256": "f666fe7bbcba0ef92c32bf432eb01f01e85a757662ddc0152e2e1d1d9e945713"
     },
     {
       "path": "pyproject.toml",
-      "size": 532,
-      "sha256": "a038a5c3c426a68f7cba0b10e6141eab22b91db791bc0568ebb138a684b4cf36"
+      "size": 562,
+      "sha256": "05634db4e8b111db34c1158204dd7f243c6951ed9ca3d2a7a1be139b51ba03c7"
     },
     {
       "path": "registers/assumptions.yaml",
@@ -1236,8 +1526,8 @@
     },
     {
       "path": "registers/requirements.yaml",
-      "size": 47442,
-      "sha256": "76d696598e6ec7b1bb007dcea706ece5cd243a7e8989c3a0efce3e9e6d3feb1a"
+      "size": 48311,
+      "sha256": "76224f0f894634ed8a421582a0da36f5926942ecf5e9999029e7e78e5b704914"
     },
     {
       "path": "registers/risks.yaml",
@@ -1246,8 +1536,8 @@
     },
     {
       "path": "registers/tests.yaml",
-      "size": 38127,
-      "sha256": "3023edd04da767c512791b37260cf32735c7550fdce4dfd86a890c09b9476f65"
+      "size": 38931,
+      "sha256": "4570646f57d80450c492cf91489e59384eecb3c9f7f520f45817c68aaa531228"
     },
     {
       "path": "requirements-dev.txt",
@@ -1256,8 +1546,8 @@
     },
     {
       "path": "scripts/_common.py",
-      "size": 2108,
-      "sha256": "2e7d2d0d20e84024d13be6a1028bbebdcd891dd2c79b87dcf908b3d215b1844d"
+      "size": 2195,
+      "sha256": "b1d25724fa2022a8cf684a3b142835c25b578dc7d668a058de0b0d642c41bc3d"
     },
     {
       "path": "scripts/build_generated.py",
@@ -1271,8 +1561,8 @@
     },
     {
       "path": "scripts/build_release.py",
-      "size": 9239,
-      "sha256": "4fa12e2903b8a9edb4843c5fbaca00999e05ce91b3636c4a5e3fd92d4f033a1f"
+      "size": 9721,
+      "sha256": "48dae7896291660f16b02dca2bc2cee3225dc7694e384071e4130b8e2dd7f30b"
     },
     {
       "path": "scripts/entrypoint.py",
@@ -1305,9 +1595,14 @@
       "sha256": "f541154f05113e6f7ed6ed85f840293f32f6d7b607ddf30b486e6b2d29a85724"
     },
     {
+      "path": "scripts/run_world_explorer.py",
+      "size": 1178,
+      "sha256": "4aac6aca7f6977bbc4a93d1da43cc777593ee642b576c2910c970e95c8b17243"
+    },
+    {
       "path": "scripts/stage_workflow.py",
-      "size": 20336,
-      "sha256": "dcd3ae7797bceedc89f4674feebc687d43d688785655a664c1b20fe7f00c7559"
+      "size": 21684,
+      "sha256": "ae777be8fc60c7e5f56b04379d0e1dd7c971c840df931b0a6068ee8ece5acef9"
     },
     {
       "path": "scripts/validate_all.py",
@@ -1380,6 +1675,11 @@
       "sha256": "8473688f879d807771a9fd55266087fa043f967572b2ae9fc25b0baf07328c16"
     },
     {
+      "path": "tests/conftest.py",
+      "size": 338,
+      "sha256": "2d6d7105c6be12b996f8a10a0dea0e9151802d6f6dd0a24566c428dde2e2381f"
+    },
+    {
       "path": "tests/test_contracts.py",
       "size": 272,
       "sha256": "3cd893200184b5f97ef08a9de9fa6fa1659facf2bad4743b46452ed3838887ea"
@@ -1421,13 +1721,23 @@
     },
     {
       "path": "tests/test_stage_workflow.py",
-      "size": 6915,
-      "sha256": "a339887e2014adce242e63d89ea2d87acc86bbf4800b39bbae32c8a92b01b1ae"
+      "size": 7676,
+      "sha256": "5247d6e92523bed60d2da3db26480ddb6de2a44cad0406997f6aa0e47b37ffd2"
     },
     {
       "path": "tests/test_traceability.py",
       "size": 265,
       "sha256": "405de89a4444d3b9e71601c683f77e1c80ccfdd693528855c71c1e1889b834b6"
+    },
+    {
+      "path": "tests/test_world_explorer.py",
+      "size": 6460,
+      "sha256": "5bb1baf9ffc92df90fa837c1e8600305e5c98399f4bb0f1251ba29f5921c7448"
+    },
+    {
+      "path": "workflow/closeouts/human_review.yaml",
+      "size": 1487,
+      "sha256": "53fc99ada88ec5a20732c87ae245c5173474f5f7a3bbbc4ff2c94033892c718a"
     },
     {
       "path": "workflow/closeouts/mvp0.yaml",
@@ -1458,6 +1768,11 @@
       "path": "workflow/closeouts/mvp5.yaml",
       "size": 3067,
       "sha256": "b0b1d36c98c938361622d459d5c0efbce82b778c104a9afa3c34df7f2addb7d9"
+    },
+    {
+      "path": "workflow/closeouts/review_app.yaml",
+      "size": 2371,
+      "sha256": "015495be1e3e550fb0662e6b0980ef9192773cbc82af5c9e2a454d3720a6cff7"
     },
     {
       "path": "workflow/roles/closeout.md",
@@ -1501,8 +1816,8 @@
     },
     {
       "path": "workflow/stages.yaml",
-      "size": 7879,
-      "sha256": "bf6bc1eb0a8b7bb2efc4d0518897a9813b483e2a5050bcb681d7c3b4c9309016"
+      "size": 10575,
+      "sha256": "88d30bdc38849dce83d94b362e6489cd070d5c6d80295b8781c6d7455ea78c8b"
     }
   ]
 }

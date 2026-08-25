@@ -261,12 +261,13 @@ def ui_review_bundle(bundle: ReviewBundle) -> dict[str, Any]:
             "agent_count": len(agents),
         },
         "map_projection": {
-            "kind": "synthetic_svg",
+            "kind": "maplibre_geojson",
             "authority": "projection_only",
             "pmtiles_available": True,
             "pmtiles_label": "PMTiles display archive (presentation only — not routing or world authority)",
             "notice": (
-                "Basemap tiles and cluster markers are visualization projections. "
+                "MapLibre renders district GeoJSON for review. "
+                "PMTiles and cluster markers are visualization projections only. "
                 "Authoritative positions remain in simulation state."
             ),
         },

@@ -14,10 +14,10 @@
     "agent_count": 100
   },
   "map_projection": {
-    "kind": "synthetic_svg",
+    "kind": "maplibre_geojson",
     "authority": "projection_only",
     "pmtiles_available": true,
-    "notice": "Basemap tiles are visualization projections."
+    "notice": "MapLibre and PMTiles are visualization projections only."
   },
   "semantic_zoom": { "default_level": "district", "levels": [] },
   "district": { "bounds": {}, "nodes": [], "edges": [], "places": [], "buildings": [] },

@@ -6,3 +6,15 @@ services:
       - .:/workspace
     network_mode: none
     command: validate
+  explorer:
+    build: .
+    working_dir: /workspace
+    entrypoint:
+      - python
+      - scripts/run_world_explorer.py
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8765"
+    ports:
+      - "8765:8765"

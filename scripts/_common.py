@@ -62,11 +62,11 @@ def all_files(exclude_dist: bool = True) -> list[Path]:
         if not p.is_file():
             continue
         rel = p.relative_to(ROOT)
-        if exclude_dist and rel.parts and rel.parts[0] == 'dist':
+        if exclude_dist and 'dist' in rel.parts:
             continue
         if '__pycache__' in rel.parts or '.pytest_cache' in rel.parts or '.git' in rel.parts:
             continue
-        if 'node_modules' in rel.parts:
+        if {'node_modules', 'test-results', 'playwright-report'} & set(rel.parts):
             continue
         result.append(p)
     return sorted(result)

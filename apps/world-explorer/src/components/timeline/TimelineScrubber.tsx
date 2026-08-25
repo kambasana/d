@@ -1,5 +1,5 @@
-import type { TimelineState } from '../api/types'
-import { formatSimulationTime } from '../utils/mapProjection'
+import type { TimelineState } from '../../api/types'
+import { formatSimulationTime } from '../../utils/mapProjection'
 
 interface TimelineScrubberProps {
   timeline: TimelineState
@@ -16,9 +16,7 @@ export function TimelineScrubber({ timeline, tickIndex, onTickChange }: Timeline
       <div className="timeline__header">
         <h2 className="panel-heading">Timeline</h2>
         {isHistorical ? (
-          <span className="badge badge--historical" title="Viewing a historical projection snapshot">
-            Historical projection
-          </span>
+          <span className="badge badge--historical">Historical projection</span>
         ) : (
           <span className="badge badge--current">Current review time</span>
         )}
@@ -31,27 +29,18 @@ export function TimelineScrubber({ timeline, tickIndex, onTickChange }: Timeline
           id="timeline-scrubber"
           type="range"
           min={0}
-          max={timeline.ticks.length - 1}
+          max={Math.max(timeline.ticks.length - 1, 0)}
           step={1}
           value={tickIndex}
-          onChange={(e) => onTickChange(Number(e.target.value))}
+          onChange={(event) => onTickChange(Number(event.target.value))}
           aria-valuetext={`${current?.label ?? ''}, ${current?.event_count ?? 0} events`}
         />
         <output htmlFor="timeline-scrubber" className="timeline__output">
           <time dateTime={current?.simulation_time}>{formatSimulationTime(current?.simulation_time ?? '')}</time>
-          <span className="timeline__tick-label">{current?.label}</span>
-          <span className="timeline__events">{current?.event_count ?? 0} events</span>
+          <span>{current?.label}</span>
+          <span>{current?.event_count ?? 0} events</span>
         </output>
       </div>
-      <ol className="timeline__ticks" aria-hidden="true">
-        {timeline.ticks.map((tick) => (
-          <li
-            key={tick.tick_index}
-            className={`timeline__tick ${tick.tick_index === tickIndex ? 'timeline__tick--active' : ''} ${tick.is_historical_projection ? 'timeline__tick--historical' : ''}`}
-            title={tick.label}
-          />
-        ))}
-      </ol>
       <p className="timeline__note" role="note">
         Scrubbing reads historical projections; it does not mutate simulation state.
       </p>

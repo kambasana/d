@@ -40,7 +40,15 @@ def expand(prefixes: list[str], include_root: bool = True) -> list[Path]:
                 for x in p.rglob('*')
                 if x.is_file()
                 and not (
-                    {'dist', '__pycache__', '.pytest_cache', '.git', 'node_modules'}
+                    {
+                        'dist',
+                        '__pycache__',
+                        '.pytest_cache',
+                        '.git',
+                        'node_modules',
+                        'test-results',
+                        'playwright-report',
+                    }
                     & set(x.relative_to(ROOT).parts)
                 )
             ]

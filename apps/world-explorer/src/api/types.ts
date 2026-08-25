@@ -4,6 +4,8 @@ export type ProjectionAuthority = 'projection_only'
 
 export type SemanticZoomLevelId = 'district' | 'street' | 'building'
 
+export type WorkspaceId = 'world_explorer' | 'information_space' | 'firehose'
+
 export type RunState = 'completed' | 'running' | 'paused'
 
 export type ClusterKind = 'geographic' | 'co_location' | 'analytical'
@@ -42,7 +44,7 @@ export interface WorldContext {
 }
 
 export interface MapProjection {
-  kind: 'synthetic_svg' | 'pmtiles_display'
+  kind: 'synthetic_svg' | 'pmtiles_display' | 'maplibre_geojson'
   authority: ProjectionAuthority
   pmtiles_available: boolean
   pmtiles_label: string

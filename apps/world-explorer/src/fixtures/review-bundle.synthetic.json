@@ -16,11 +16,11 @@
     "agent_count": 12
   },
   "map_projection": {
-    "kind": "synthetic_svg",
+    "kind": "maplibre_geojson",
     "authority": "projection_only",
     "pmtiles_available": true,
     "pmtiles_label": "PMTiles display archive (presentation only — not routing or world authority)",
-    "notice": "Basemap tiles and cluster markers are visualization projections. Authoritative positions remain in simulation state."
+    "notice": "MapLibre renders district GeoJSON for review. PMTiles and cluster markers are visualization projections only. Authoritative positions remain in simulation state."
   },
   "semantic_zoom": {
     "default_level": "district",
