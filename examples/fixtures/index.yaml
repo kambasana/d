@@ -153,3 +153,19 @@ fixtures:
   expected_valid: false
   note: 'Invalid firehose subscription: identity, filters, delivery, and backpressure
     are absent.'
+- path: examples/fixtures/projections/world-explorer-context.valid.json
+  schema_id: https://awg.local/contracts/projections/world-explorer-context.schema.json
+  expected_valid: true
+  note: Valid read-only World Explorer context with preserved constitutional invariants.
+- path: examples/fixtures/projections/world-explorer-context.invalid.json
+  schema_id: https://awg.local/contracts/projections/world-explorer-context.schema.json
+  expected_valid: false
+  note: Invalid because read_only is false for a projection-only service.
+- path: examples/fixtures/projections/world-explorer-status.valid.json
+  schema_id: https://awg.local/contracts/projections/world-explorer-status.schema.json
+  expected_valid: true
+  note: Valid World Explorer status with checksums and event totals.
+- path: examples/fixtures/projections/world-explorer-world-projection.valid.json
+  schema_id: https://awg.local/contracts/projections/world-explorer-world-projection.schema.json
+  expected_valid: true
+  note: Valid deterministic world projection with separate cluster authority.
