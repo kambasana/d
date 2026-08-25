@@ -1,62 +1,69 @@
-# World Explorer
+# World Explorer (read-only)
 
-Human-reviewable, read-only HTTP projection service for the Agentic World Graph MVP reference kernels.
+Human-reviewable, **read-only** frontend for exploring synthetic district review projections from the Agentic World Graph documentation pack.
 
-## Purpose
+This build is **not** authoritative geography, **not** MapLibre/PMTiles world authority, and **not** empirical validation of simulated outcomes.
 
-The World Explorer serves deterministic read projections derived from:
+## Prerequisites
 
-- **MVP 1** — spatial movement, semantic clusters, building occupancy, and firehose events
-- **MVP 4** — information-world claims, exposure, beliefs, and social actions
-- **MVP 5** — multi-resolution population records, active cognition, and branch comparison
+- Node.js 20+
+- npm 10+
 
-This is a review and inspection surface, not a production application. It does not mutate authoritative kernel state, does not require a database, and operates fully offline.
+## Commands
 
-## Run
-
-```bash
-make world-explorer
-```
-
-Or directly:
+From this directory (`apps/world-explorer`):
 
 ```bash
-PYTHONPATH=. python3 scripts/run_world_explorer.py --host 127.0.0.1 --port 8765
+# Install dependencies
+npm install
+
+# Development server (serves GET /api/review-bundle from public/api/review-bundle.json)
+npm run dev
+
+# Unit tests
+npm run test
+
+# Lint
+npm run lint
+
+# Production build
+npm run build
+
+# Preview production build (includes /api/review-bundle middleware)
+npm run preview
+
+# Lint + test + build
+npm run check
 ```
 
-Print bundle context without starting the server:
+## API contract
 
-```bash
-PYTHONPATH=. python3 scripts/run_world_explorer.py --print-context
-```
+| Method | Path | Description |
+| --- | --- | --- |
+| `GET` | `/api/review-bundle` | Returns a read-only JSON review bundle for the current world/scenario projection. |
 
-## API (GET only)
+When the API is unavailable (static hosting, offline review), the client falls back to `src/fixtures/review-bundle.synthetic.json` without mutating simulation state.
 
-| Endpoint | Description |
-|----------|-------------|
-| `GET /health` | Service health |
-| `GET /api/v1/context` | Bundle metadata, preserved invariants, offline status |
-| `GET /api/v1/status` | Checksums and event counts |
-| `GET /api/v1/world?simulation_time=...&zoom=...&building_id=...` | Agents, clusters, optional building occupancy |
-| `GET /api/v1/firehose?from_sequence=...&limit=...&world_id=...` | Combined timeline/firehose page |
-| `GET /api/v1/timeline` | Timeline markers and event totals |
-| `GET /api/v1/information?mode=participant\|analyst&agent_id=...` | Information summary |
-| `GET /api/v1/scale` | Scale and branch-comparison summary |
+The bundled fixture mirrors the MVP 1 synthetic reference district (`world:mvp1-reference-district`).
 
-`POST`, `PUT`, `PATCH`, and `DELETE` return **405 Method Not Allowed**.
+## UI regions
 
-## Static frontend
+- **Top bar** — world, scenario, branch, simulation time, run state, projection notices
+- **Left rail** — semantic zoom levels and projection layer toggles (clusters/PMTiles labeled projection-only)
+- **Center** — SVG synthetic district map with selectable clusters, agents, and buildings
+- **Right inspector** — world truth vs agent perspective (clearly separated)
+- **Bottom** — timeline scrubber with historical projection badge; collapsible, filterable firehose table
+- **Info panels** — information-space and scale summary
 
-If a built frontend exists under `apps/world-explorer/dist`, it is served for non-API routes. PMTiles and map tiles remain presentation-only and are not authoritative geography (INV-016).
+## Accessibility
 
-## Preserved invariants
+- Keyboard navigation on the map (arrow keys, Escape)
+- `prefers-reduced-motion` respected
+- Text labels for confidence and cluster kinds (not color-only)
+- Responsive layout for narrower viewports
 
-- **INV-001** — no direct mutation of authoritative state via HTTP
-- **INV-006** — world truth and agent belief remain separate in information projections
-- **INV-007** — likes are not treated as belief
-- **INV-011** — clusters are display projections; authoritative agent state is unchanged
-- **INV-016** — PMTiles are presentation-only
+## Non-goals
 
-## Contracts
-
-Executable JSON Schemas live under `contracts/projections/` with valid fixtures in `examples/fixtures/projections/`.
+- No command forms or state mutation controls
+- No claims of PMTiles/display cluster authority
+- No network writes

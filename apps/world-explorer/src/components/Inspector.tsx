@@ -1,5 +1,5 @@
 import type { ReviewBundle, Selection } from '../api/types'
-import { clusterKindLabel, confidenceLabel, formatSimulationTime } from '../utils/mapProjection'
+import { clusterKindLabel, confidenceLabel } from '../utils/mapProjection'
 
 interface InspectorProps {
   bundle: ReviewBundle

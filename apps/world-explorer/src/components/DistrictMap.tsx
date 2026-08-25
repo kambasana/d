@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useId, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import type { ReviewBundle, Selection, SemanticZoomLevelId } from '../api/types'
 import { clusterKindLabel, projectLonLat } from '../utils/mapProjection'
 import { visibleAgents, visibleClusters } from '../hooks/useFirehoseFilters'
@@ -86,7 +86,7 @@ export function DistrictMap({
     return map
   }, [bundle.district.nodes, project])
 
-  const handleKeyDown = (event: React.KeyboardEvent) => {
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (!focusables.length) return
     if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
       event.preventDefault()
@@ -105,7 +105,7 @@ export function DistrictMap({
     }
   }
 
-  const isSelected = (kind: Selection['kind'], id: string) =>
+  const isSelected = (kind: NonNullable<Selection>['kind'], id: string) =>
     selection?.kind === kind && selection.id === id
 
   return (
