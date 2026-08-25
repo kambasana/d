@@ -51,7 +51,7 @@ Before changing any file, read:
 For MVP roadmap work:
 
 1. Run `make workflow-check`.
-2. Run `make workflow-run` or `make workflow-next` and perform only the returned unblocked role/step.
+2. Run `make workflow-loop` to drive every unblocked step to closure, or `make workflow-next` to perform only the next returned role/step.
 3. Produce every declared output.
 4. Complete the step with `python3 scripts/stage_workflow.py complete <stage> <step>`; this runs its validation before updating workflow state.
 5. Repeat through `scope`, `traceability`, `implementation`, `contracts`, `verification`, and `closeout` until `plan_complete` or a human stop condition.

@@ -88,11 +88,21 @@ make workflow-next
 python3 scripts/stage_workflow.py check mvp3
 python3 scripts/stage_workflow.py complete mvp3 scope
 python3 scripts/stage_workflow.py gate mvp3
+python3 scripts/stage_workflow.py loop --limit 64
 ```
 
 `workflow-next` emits a machine-readable task packet containing the active stage, first pending step, role instructions, required outputs, validation commands, and closeout path.
 
-`workflow-graph` emits the directed stage/step graph: sequential edges inside a stage and prerequisite edges from one closeout to the next scope. `workflow-run` prints status, the graph, and the next packet, then exits 2 while work remains so contributors can keep looping until `plan_complete`.
+`workflow-graph` emits the directed stage/step graph: sequential edges inside a stage and prerequisite edges from one closeout to the next scope. `workflow-run` prints status, the graph, and the next packet, then exits 2 while work remains.
+
+`workflow-loop` drives the graph without further prompting. It repeatedly takes the next unblocked packet and completes it, which runs that step's declared validation commands, until one of the following happens:
+
+- every stage is closed and the loop reports `plan_complete`;
+- a step's outputs, evidence, or validation commands fail and the loop reports `blocked` with the failing stage, step, and reason;
+- a step returns without advancing the graph, which the loop reports as blocked rather than spinning;
+- the step limit is reached.
+
+The loop MUST NOT skip a step, edit stage state directly, or continue past a failed gate. Because step validation runs `make test`, the loop refuses to start a nested run that would execute repository steps recursively.
 
 ```text
 mvpN/scope -> traceability -> implementation -> contracts -> verification -> closeout
@@ -153,6 +163,8 @@ Automation MUST stop and request an explicit decision for:
 ## Acceptance criteria
 
 - Invalid stage order, unknown roles, missing closeout fields, missing completed outputs, unknown test IDs, and contradictory stage states fail validation.
+- The loop advances every pending step of a ready stage and stops at the first failing gate without completing later steps.
+- A nested loop started from inside a step validation is refused.
 - `workflow-next` selects MVP 3 scope after MVP 0-2 are closed.
 - MVP 3 cannot close while prior steps and evidence are incomplete.
 - Full pack validation and pytest include the workflow checks.

@@ -1,4 +1,4 @@
-.PHONY: generate validate test workflow-check workflow-status workflow-next workflow-graph workflow-run mvp1 mvp2 mvp3 mvp4 mvp5 release clean
+.PHONY: generate validate test workflow-check workflow-status workflow-next workflow-graph workflow-run workflow-loop mvp1 mvp2 mvp3 mvp4 mvp5 release clean
 
 PYTHON ?= python3
 
@@ -25,6 +25,9 @@ workflow-graph:
 
 workflow-run:
 	PYTHONPATH=scripts $(PYTHON) scripts/stage_workflow.py run
+
+workflow-loop:
+	PYTHONPATH=scripts $(PYTHON) scripts/stage_workflow.py loop
 
 mvp1:
 	PYTHONPATH=scripts $(PYTHON) scripts/run_mvp1.py

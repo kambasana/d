@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shlex
 import subprocess
 import sys
@@ -33,6 +34,7 @@ REQUIRED_GATE_FIELDS = {
 }
 STAGE_STATES = {"blocked", "active", "closed"}
 STEP_STATES = {"pending", "completed"}
+LOOP_GUARD_ENV = "AWG_WORKFLOW_LOOP_ACTIVE"
 
 
 class WorkflowError(RuntimeError):
@@ -393,6 +395,72 @@ def run_until_blocked() -> None:
     raise SystemExit(2)
 
 
+def loop_workflow(
+    limit: int = 64,
+    packet_fn: Any = None,
+    complete_fn: Any = None,
+) -> dict[str, Any]:
+    """Drive the stage graph step by step until it completes or refuses to advance.
+
+    The loop never skips a step, never edits stage state directly, and stops at the
+    first packet whose declared outputs, evidence, or validation commands fail.
+    Step validations run `make test`, so a nested loop started from inside one of
+    those commands is refused rather than allowed to recurse.
+    """
+    drives_repository = complete_fn is None
+    if drives_repository and os.environ.get(LOOP_GUARD_ENV) == "1":
+        raise WorkflowError(
+            "refusing to start a nested workflow loop; a step validation is already running one"
+        )
+    packet_fn = packet_fn or next_packet
+    complete_fn = complete_fn or complete_step
+    executed: list[dict[str, str]] = []
+    if drives_repository:
+        os.environ[LOOP_GUARD_ENV] = "1"
+    try:
+        for _ in range(limit):
+            packet = packet_fn()
+            if packet.get("status") == "plan_complete":
+                return {"status": "plan_complete", "executed": executed, "blocked": None}
+            current = {
+                "stage": packet["stage"],
+                "step": packet["step"],
+                "role": packet["role"],
+            }
+            try:
+                complete_fn(packet["stage"], packet["step"])
+            except WorkflowError as exc:
+                return {
+                    "status": "blocked",
+                    "executed": executed,
+                    "blocked": {**current, "reason": str(exc)},
+                }
+            if executed and executed[-1] == current:
+                return {
+                    "status": "blocked",
+                    "executed": executed,
+                    "blocked": {**current, "reason": "step repeated without advancing the graph"},
+                }
+            executed.append(current)
+    finally:
+        if drives_repository:
+            os.environ.pop(LOOP_GUARD_ENV, None)
+    return {
+        "status": "limit_reached",
+        "executed": executed,
+        "blocked": {"reason": f"stopped after {limit} steps"},
+    }
+
+
+def print_loop(limit: int) -> None:
+    report = loop_workflow(limit=limit)
+    print(json.dumps(report, indent=2))
+    print()
+    print_status()
+    if report["status"] != "plan_complete":
+        raise SystemExit(2)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="AWG staged automated-contributor workflow")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -401,6 +469,8 @@ def main() -> None:
     subparsers.add_parser("next")
     subparsers.add_parser("graph")
     subparsers.add_parser("run")
+    loop = subparsers.add_parser("loop")
+    loop.add_argument("--limit", type=int, default=64)
     check = subparsers.add_parser("check")
     check.add_argument("stage")
     gate = subparsers.add_parser("gate")
@@ -422,6 +492,8 @@ def main() -> None:
             print_graph()
         elif args.command == "run":
             run_until_blocked()
+        elif args.command == "loop":
+            print_loop(args.limit)
         elif args.command == "check":
             errors = check_stage(args.stage)
             if errors:

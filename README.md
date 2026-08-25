@@ -124,6 +124,7 @@ make workflow-status
 make workflow-graph
 make workflow-next
 make workflow-run
+make workflow-loop
 ```
 
 The workflow emits the next role packet and blocks stage advancement until ordered outputs, validation, closeout evidence, limitations, and risks are complete. See [`AWG-OPS-012`](docs/06-delivery-and-operations/automated-contributor-stage-workflow.md).
